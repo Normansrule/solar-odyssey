@@ -54,7 +54,7 @@ jobs:
         run: cargo metadata --locked --format-version 1 --manifest-path desktop/src-tauri/Cargo.toml > /dev/null
       - name: Check the bundled data before packaging it
         run: node scripts/sign-manifest.mjs --verify
-      - uses: tauri-apps/tauri-action@fce9c6108b31ea247710505d3aaaa893ee6768d4 # v0
+      - uses: tauri-apps/tauri-action@84b9d35b5fc46c1e45415bdb6144030364f7ebc5 # v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
