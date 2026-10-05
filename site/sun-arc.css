@@ -1,0 +1,58 @@
+/* The sun-arc: history as one day. Shared by index.html and timeline.html.
+   Sky tones are mixed from the palette, so light and dark themes both follow. */
+
+.sky {
+  --sky-dawn: color-mix(in srgb, var(--hole) 9%, var(--sun-wash));
+  --sky-morning: color-mix(in srgb, var(--sun-wash) 70%, var(--paper));
+  --sky-midday: color-mix(in srgb, var(--electron) 10%, var(--paper));
+  --sky-afternoon: color-mix(in srgb, var(--sun) 20%, var(--paper));
+  position: relative;
+  background: var(--sky-midday);
+  transition: background-color 900ms ease;
+}
+.sky[data-era="dawn"] { background: var(--sky-dawn); }
+.sky[data-era="morning"] { background: var(--sky-morning); }
+.sky[data-era="midday"] { background: var(--sky-midday); }
+.sky[data-era="afternoon"] { background: var(--sky-afternoon); }
+
+.arc-hour { font-family: var(--body); font-size: 11.5px; font-weight: 650; fill: var(--ink-2); font-variant-numeric: lining-nums; }
+:root[data-theme="dark"] .sky { --sky-dawn: color-mix(in srgb, var(--hole) 16%, var(--paper)); --sky-morning: color-mix(in srgb, var(--sun) 11%, var(--paper)); --sky-midday: color-mix(in srgb, var(--electron) 16%, var(--paper)); --sky-afternoon: color-mix(in srgb, var(--sun) 15%, var(--paper-2)); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sky { --sky-dawn: color-mix(in srgb, var(--hole) 16%, var(--paper)); --sky-morning: color-mix(in srgb, var(--sun) 11%, var(--paper)); --sky-midday: color-mix(in srgb, var(--electron) 16%, var(--paper)); --sky-afternoon: color-mix(in srgb, var(--sun) 15%, var(--paper-2)); }
+}
+.arc-svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.arc-ground { fill: var(--paper); }
+.arc-horizon { stroke: var(--ink-2); stroke-width: 1; opacity: 0.55; }
+.arc-era-tick { stroke: var(--ink-2); stroke-width: 1; opacity: 0.55; }
+.arc-track { fill: none; stroke: var(--ink-2); stroke-width: 1.25; opacity: 0.35; }
+.arc-frontier { fill: none; stroke: var(--sun-ink); stroke-width: 2; stroke-dasharray: 2 6; stroke-linecap: round; }
+.arc-era-band { fill: none; stroke: var(--sun); stroke-width: 9; stroke-linecap: round; opacity: 0.22; }
+.arc-trail { fill: none; stroke: var(--sun); stroke-width: 3.5; stroke-linecap: round; }
+.arc-today { stroke: var(--sun-ink); stroke-width: 1; stroke-dasharray: 1 4; opacity: 0.8; }
+.arc-tick { fill: var(--paper); stroke: var(--ink-2); stroke-width: 1.25; transition: r 200ms ease; }
+.arc-tick.is-passed { fill: var(--sun); stroke: var(--sun-ink); }
+.arc-tick--wind.is-passed { fill: var(--r-wind); stroke: var(--r-wind); }
+.arc-tick--hydro.is-passed { fill: var(--r-hydro); stroke: var(--r-hydro); }
+.arc-tick--geothermal.is-passed { fill: var(--r-geothermal); stroke: var(--r-geothermal); }
+.arc-tick--ocean.is-passed { fill: var(--r-ocean); stroke: var(--r-ocean); }
+.arc-tick--storage.is-passed { fill: var(--r-storage); stroke: var(--r-storage); }
+.arc-tick.is-current { r: 6px; stroke: var(--ink); stroke-width: 2; }
+.arc-sun-disc { fill: var(--sun); }
+.arc-sun-halo { fill: var(--sun); opacity: 0.2; }
+.arc-sun-halo2 { fill: var(--sun); opacity: 0.08; }
+.arc-callout { stroke: var(--ink-2); stroke-width: 1; opacity: 0.6; }
+.arc-label { font-family: var(--body); font-size: 13px; fill: var(--ink-2); }
+.arc-label-year { font-family: var(--display); font-weight: 650; font-size: 15px; fill: var(--ink); }
+
+/* era names under the horizon double as jump links */
+.arc-eras { position: absolute; left: 0; right: 0; bottom: 0; height: var(--arc-ground, 2rem); margin: 0; padding: 0; list-style: none; }
+.arc-eras li { position: absolute; top: 0.3rem; transform: translateX(-50%); margin: 0; white-space: nowrap; }
+.arc-eras a {
+  font-size: var(--s-1); font-weight: 650; color: var(--ink-2); text-decoration: none;
+  padding: 0.1rem 0.35rem; border-radius: var(--radius);
+}
+.arc-eras a:hover { color: var(--ink); text-decoration: underline; }
+.arc-eras a[aria-current="true"] { color: var(--sun-ink); }
+@media (max-width: 30rem) {
+  .arc-eras a { font-size: var(--s-2); padding: 0.1rem 0.15rem; }
+}

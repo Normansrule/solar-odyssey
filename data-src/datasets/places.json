@@ -1,0 +1,294 @@
+{
+  "meta": {
+    "title": "Preset places for the sun path page",
+    "units": "lat and lon in decimal degrees (north and east positive); elevation in metres above sea level; utcOffset in hours (standard time, without daylight saving)",
+    "description": "Cities and sites spread across latitudes and continents, from Longyearbyen (78° N) to Ushuaia (55° S). Coordinates are rounded city-centre values (0.01°, about 1 km); elevations are rounded city-centre values and vary across each city. region groups the list in the place picker.",
+    "sources": [
+      "geonames"
+    ],
+    "license": "CC BY 4.0 (compiled by Solar Odyssey; GeoNames data CC BY 4.0)",
+    "last_verified": "2026-09-30"
+  },
+  "data": [
+    {
+      "id": "anchorage",
+      "name": "Anchorage",
+      "country": "USA",
+      "region": "North America",
+      "lat": 61.22,
+      "lon": -149.9,
+      "elevation": 30,
+      "utcOffset": -9
+    },
+    {
+      "id": "seattle",
+      "name": "Seattle",
+      "country": "USA",
+      "region": "North America",
+      "lat": 47.61,
+      "lon": -122.33,
+      "elevation": 50,
+      "utcOffset": -8
+    },
+    {
+      "id": "los-angeles",
+      "name": "Los Angeles",
+      "country": "USA",
+      "region": "North America",
+      "lat": 34.05,
+      "lon": -118.24,
+      "elevation": 90,
+      "utcOffset": -8
+    },
+    {
+      "id": "honolulu",
+      "name": "Honolulu",
+      "country": "USA",
+      "region": "North America",
+      "lat": 21.31,
+      "lon": -157.86,
+      "elevation": 5,
+      "utcOffset": -10
+    },
+    {
+      "id": "mexico-city",
+      "name": "Mexico City",
+      "country": "Mexico",
+      "region": "North America",
+      "lat": 19.43,
+      "lon": -99.13,
+      "elevation": 2240,
+      "utcOffset": -6
+    },
+    {
+      "id": "quito",
+      "name": "Quito",
+      "country": "Ecuador",
+      "region": "South America",
+      "lat": -0.18,
+      "lon": -78.47,
+      "elevation": 2850,
+      "utcOffset": -5
+    },
+    {
+      "id": "calama",
+      "name": "Calama (Atacama Desert)",
+      "country": "Chile",
+      "region": "South America",
+      "lat": -22.46,
+      "lon": -68.93,
+      "elevation": 2260,
+      "utcOffset": -4
+    },
+    {
+      "id": "sao-paulo",
+      "name": "São Paulo",
+      "country": "Brazil",
+      "region": "South America",
+      "lat": -23.55,
+      "lon": -46.63,
+      "elevation": 760,
+      "utcOffset": -3
+    },
+    {
+      "id": "buenos-aires",
+      "name": "Buenos Aires",
+      "country": "Argentina",
+      "region": "South America",
+      "lat": -34.6,
+      "lon": -58.38,
+      "elevation": 25,
+      "utcOffset": -3
+    },
+    {
+      "id": "ushuaia",
+      "name": "Ushuaia",
+      "country": "Argentina",
+      "region": "South America",
+      "lat": -54.8,
+      "lon": -68.3,
+      "elevation": 20,
+      "utcOffset": -3
+    },
+    {
+      "id": "longyearbyen",
+      "name": "Longyearbyen (Svalbard)",
+      "country": "Norway",
+      "region": "Europe",
+      "lat": 78.22,
+      "lon": 15.65,
+      "elevation": 10,
+      "utcOffset": 1
+    },
+    {
+      "id": "reykjavik",
+      "name": "Reykjavík",
+      "country": "Iceland",
+      "region": "Europe",
+      "lat": 64.15,
+      "lon": -21.94,
+      "elevation": 20,
+      "utcOffset": 0
+    },
+    {
+      "id": "oslo",
+      "name": "Oslo",
+      "country": "Norway",
+      "region": "Europe",
+      "lat": 59.91,
+      "lon": 10.75,
+      "elevation": 20,
+      "utcOffset": 1
+    },
+    {
+      "id": "berlin",
+      "name": "Berlin",
+      "country": "Germany",
+      "region": "Europe",
+      "lat": 52.52,
+      "lon": 13.4,
+      "elevation": 35,
+      "utcOffset": 1
+    },
+    {
+      "id": "london",
+      "name": "London",
+      "country": "United Kingdom",
+      "region": "Europe",
+      "lat": 51.51,
+      "lon": -0.13,
+      "elevation": 15,
+      "utcOffset": 0
+    },
+    {
+      "id": "madrid",
+      "name": "Madrid",
+      "country": "Spain",
+      "region": "Europe",
+      "lat": 40.42,
+      "lon": -3.7,
+      "elevation": 660,
+      "utcOffset": 1
+    },
+    {
+      "id": "cairo",
+      "name": "Cairo",
+      "country": "Egypt",
+      "region": "Africa",
+      "lat": 30.04,
+      "lon": 31.24,
+      "elevation": 25,
+      "utcOffset": 2
+    },
+    {
+      "id": "lagos",
+      "name": "Lagos",
+      "country": "Nigeria",
+      "region": "Africa",
+      "lat": 6.52,
+      "lon": 3.38,
+      "elevation": 40,
+      "utcOffset": 1
+    },
+    {
+      "id": "nairobi",
+      "name": "Nairobi",
+      "country": "Kenya",
+      "region": "Africa",
+      "lat": -1.29,
+      "lon": 36.82,
+      "elevation": 1795,
+      "utcOffset": 3
+    },
+    {
+      "id": "cape-town",
+      "name": "Cape Town",
+      "country": "South Africa",
+      "region": "Africa",
+      "lat": -33.92,
+      "lon": 18.42,
+      "elevation": 10,
+      "utcOffset": 2
+    },
+    {
+      "id": "beijing",
+      "name": "Beijing",
+      "country": "China",
+      "region": "Asia",
+      "lat": 39.9,
+      "lon": 116.41,
+      "elevation": 45,
+      "utcOffset": 8
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "country": "Japan",
+      "region": "Asia",
+      "lat": 35.68,
+      "lon": 139.69,
+      "elevation": 40,
+      "utcOffset": 9
+    },
+    {
+      "id": "lhasa",
+      "name": "Lhasa",
+      "country": "China",
+      "region": "Asia",
+      "lat": 29.65,
+      "lon": 91.13,
+      "elevation": 3650,
+      "utcOffset": 8
+    },
+    {
+      "id": "delhi",
+      "name": "Delhi",
+      "country": "India",
+      "region": "Asia",
+      "lat": 28.61,
+      "lon": 77.21,
+      "elevation": 215,
+      "utcOffset": 5.5
+    },
+    {
+      "id": "riyadh",
+      "name": "Riyadh",
+      "country": "Saudi Arabia",
+      "region": "Asia",
+      "lat": 24.71,
+      "lon": 46.68,
+      "elevation": 610,
+      "utcOffset": 3
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "country": "Singapore",
+      "region": "Asia",
+      "lat": 1.35,
+      "lon": 103.82,
+      "elevation": 15,
+      "utcOffset": 8
+    },
+    {
+      "id": "alice-springs",
+      "name": "Alice Springs",
+      "country": "Australia",
+      "region": "Oceania",
+      "lat": -23.7,
+      "lon": 133.88,
+      "elevation": 545,
+      "utcOffset": 9.5
+    },
+    {
+      "id": "sydney",
+      "name": "Sydney",
+      "country": "Australia",
+      "region": "Oceania",
+      "lat": -33.87,
+      "lon": 151.21,
+      "elevation": 20,
+      "utcOffset": 10
+    }
+  ]
+}

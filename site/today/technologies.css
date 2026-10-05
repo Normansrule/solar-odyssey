@@ -1,0 +1,92 @@
+/* Cell technologies today: cross-section explorer, share bars, comparison table. */
+
+/* layer role colours (shared by the drawing, the list chips and the legend) */
+.r-metal { --fill: var(--ink-2); }
+.r-arc { --fill: var(--t-multijunction); }
+.r-pass { --fill: var(--t-perovskite); }
+.r-tco { --fill: var(--sun); }
+.r-n, .r-n-fill, .r-n-metal { --fill: var(--electron); }
+.r-p, .r-p-fill, .r-p-metal { --fill: var(--hole); }
+.r-i { --fill: var(--t-thinfilm); }
+.r-glass { --fill: var(--paper-2); }
+
+.tech-picker { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.4rem 0 1.1rem; }
+.tech-pick {
+  font: inherit; font-size: var(--s-1); font-weight: 650; cursor: pointer; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 0.35rem 0.85rem;
+}
+.tech-pick:hover { border-color: var(--silicon); }
+.tech-pick[aria-pressed="true"] { background: var(--silicon); border-color: var(--silicon); color: var(--paper); }
+
+.tech-body { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 56rem) { .tech-body { grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 1fr); align-items: start; } }
+.tech-figure { margin: 0; }
+.widget svg.tech-stage { background: var(--paper); border: 1px solid var(--rule); }
+
+.tech-layer .shape { fill: var(--fill); stroke: var(--panel); stroke-width: 1; }
+.tech-layer.r-glass .shape { stroke: var(--rule); }
+.tech-layer.is-absorber .shape { fill: color-mix(in srgb, var(--fill) 34%, var(--paper)); }
+.tech-layer .hit { fill: transparent; }
+.tech-layer .r-p-metal { fill: color-mix(in srgb, var(--hole) 55%, var(--ink-2)); }
+.tech-layer .r-n-metal { fill: color-mix(in srgb, var(--electron) 55%, var(--ink-2)); }
+.tech-layer .r-p-fill { fill: var(--hole); }
+.tech-layer .r-n-fill { fill: var(--electron); }
+.tech-layer .local-contact { fill: var(--ink-2); }
+.tech-layer { cursor: pointer; }
+.tech-layer.is-sel .shape { stroke: var(--ink); stroke-width: 2.5; }
+.tech-layer:hover .shape { filter: brightness(1.08); }
+
+.tech-sun line, .tech-sun path { stroke: var(--sun); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.tech-sun-label, .tech-foot { fill: var(--ink-2); font-family: var(--body); font-size: 13px; }
+.tech-num { cursor: pointer; }
+.tech-num circle { fill: var(--panel); stroke: var(--rule); stroke-width: 1.5; }
+.tech-num text { fill: var(--ink); font-family: var(--body); font-size: 12px; font-weight: 700; }
+.tech-num .leader { stroke: var(--rule); stroke-width: 1; fill: none; }
+.tech-num.is-sel circle { fill: var(--ink); stroke: var(--ink); }
+.tech-num.is-sel text { fill: var(--paper); }
+.tech-num.is-sel .leader { stroke: var(--ink); }
+
+.tech-summary { margin: 0 0 0.8rem; font-size: var(--s-1); }
+.tech-summary strong { display: block; font-family: var(--display); font-size: var(--s1); font-weight: 620; line-height: 1.25; }
+.tech-facts { display: block; color: var(--ink-2); margin-top: 0.25rem; }
+ol.tech-layers { list-style: none; padding: 0; margin: 0 0 1rem; counter-reset: layer; display: grid; gap: 0.15rem; }
+ol.tech-layers li { margin: 0; counter-increment: layer; }
+.layer-btn {
+  font: inherit; font-size: var(--s-1); color: var(--ink); width: 100%; text-align: left; cursor: pointer;
+  display: grid; grid-template-columns: 1.6rem 0.9rem 1fr; align-items: center; gap: 0.5rem;
+  background: none; border: 1px solid transparent; border-radius: var(--radius); padding: 0.3rem 0.45rem;
+}
+.layer-btn::before { content: counter(layer); font-weight: 700; color: var(--ink-2); text-align: right; font-variant-numeric: tabular-nums; }
+.layer-btn:hover { background: var(--paper-2); }
+.layer-btn.is-sel { background: var(--paper-2); border-color: var(--ink); }
+.layer-btn.is-sel::before { color: var(--ink); }
+.chip, .tech-legend .swatch { width: 0.9rem; height: 0.9rem; border-radius: 3px; background: var(--fill); border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent); display: inline-block; }
+.chip.is-absorber, .tech-legend .swatch.is-absorber { background: color-mix(in srgb, var(--fill) 34%, var(--paper)); }
+.tech-detail { border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+.tech-detail h3 { margin: 0 0 0.3rem; font-size: var(--s0); font-family: var(--body); font-weight: 700; }
+.tech-detail p { margin: 0 0 0.5rem; font-size: var(--s-1); }
+.tech-detail .detail-meta { color: var(--ink-2); }
+.tech-legend { margin-top: 1rem; }
+
+/* share bars: one series, one colour, value at the tip */
+.shares-sub { margin-top: 0.4rem; font-size: var(--s0); font-family: var(--body); font-weight: 700; }
+.bars { display: grid; gap: 0.45rem; margin-bottom: 0.6rem; }
+.bar-row { display: grid; grid-template-columns: minmax(7.5rem, 11rem) 1fr 3.6rem; gap: 0.6rem; align-items: center; font-size: var(--s-1); }
+.bar-label { color: var(--ink); line-height: 1.25; }
+.bar-track { height: 0.9rem; display: block; }
+.bar-fill { display: block; height: 100%; background: var(--silicon); border-radius: 0 4px 4px 0; }
+.bar-value { font-variant-numeric: tabular-nums; font-weight: 650; text-align: right; }
+
+#compare-table td.num, #compare-table th.num { white-space: nowrap; }
+#compare-table .cell-note { display: block; color: var(--ink-2); font-size: var(--s-2); white-space: normal; max-width: 11rem; margin-left: auto; }
+#compare-table .src-cell { font-size: var(--s-2); min-width: 8rem; }
+#compare-table tbody th { font-weight: 650; background: none; }
+
+.carriers circle.e { fill: var(--electron); }
+.carriers circle.h { fill: var(--hole); }
+.carriers text { fill: var(--paper); font: 700 10px var(--body); pointer-events: none; } /* light on the carrier colour in both themes (5:1 or better) */
+.carriers .arrow { fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.carriers .arrow.e { stroke: var(--electron); }
+.carriers .arrow.h { stroke: var(--hole); }
+.carriers { pointer-events: none; }
+.tech-layer .break { stroke: var(--ink-2); stroke-width: 1.5; fill: none; }

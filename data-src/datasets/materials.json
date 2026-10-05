@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "Band gaps of common photovoltaic materials",
+    "units": "electronvolts (eV), near room temperature (about 300 K)",
+    "description": "One representative band gap per material for the lessons, with the range where the gap depends on composition or preparation. 'kind' is direct, indirect or amorphous (no sharp band edge). 'family' picks the technology colour.",
+    "sources": ["sze-ng-2007", "pveducation-silicon", "zhang-2020", "doe-cigs", "street-1991", "carlson-wronski-1976"],
+    "license": "CC BY 4.0 (compiled by Solar Odyssey from the cited sources)",
+    "last_verified": "2026-09-30"
+  },
+  "data": [
+    {
+      "id": "ge", "name": "Germanium", "short": "Ge", "gap": 0.66, "kind": "indirect", "family": "multijunction",
+      "use": "Bottom cell and substrate of many space multi-junction cells",
+      "sources": ["sze-ng-2007"],
+      "note": "Standard 300 K value."
+    },
+    {
+      "id": "cigs", "name": "Copper indium gallium selenide", "short": "CIGS", "gap": 1.15, "range": [1.04, 1.68], "kind": "direct", "family": "thinfilm", "representative": true,
+      "use": "Thin-film modules on glass or flexible foil",
+      "sources": ["doe-cigs"],
+      "note": "The gap rises from about 1.04 eV (CuInSe2) to about 1.68 eV (CuGaSe2) as gallium replaces indium. 1.15 eV is our representative value for a gallium-poor mix, not a single measured number."
+    },
+    {
+      "id": "si", "name": "Crystalline silicon", "short": "Si", "gap": 1.12, "kind": "indirect", "family": "silicon",
+      "use": "Wafer-based cells in most solar panels",
+      "sources": ["sze-ng-2007", "pveducation-silicon"],
+      "note": "1.12 eV (PVEducation gives 1.124 eV) at 300 K. Indirect gap, so absorption near the edge is weak."
+    },
+    {
+      "id": "gaas", "name": "Gallium arsenide", "short": "GaAs", "gap": 1.42, "kind": "direct", "family": "multijunction",
+      "use": "Record single-junction cells, space power",
+      "sources": ["sze-ng-2007", "zhang-2020"],
+      "note": "About 1.42 eV at room temperature."
+    },
+    {
+      "id": "cdte", "name": "Cadmium telluride", "short": "CdTe", "gap": 1.5, "kind": "direct", "family": "thinfilm",
+      "use": "Thin-film modules on glass",
+      "sources": ["zhang-2020"],
+      "note": "Room-temperature single-crystal value about 1.51 eV, rounded to 1.50 eV. Values near 1.45–1.5 eV are commonly quoted for polycrystalline films."
+    },
+    {
+      "id": "mapbi3", "name": "Methylammonium lead iodide perovskite", "short": "MAPbI₃", "gap": 1.61, "range": [1.55, 1.63], "kind": "direct", "family": "perovskite",
+      "use": "The archetypal perovskite absorber; mixed-ion versions tune the gap",
+      "sources": ["zhang-2020"],
+      "note": "Spectroscopy puts the room-temperature gap at 1.61–1.63 eV; absorption-edge estimates near 1.55–1.6 eV are also common. Mixing ions shifts it widely."
+    },
+    {
+      "id": "asi", "name": "Hydrogenated amorphous silicon", "short": "a-Si:H", "gap": 1.7, "kind": "amorphous", "family": "thinfilm",
+      "use": "Calculators and early thin-film modules",
+      "sources": ["street-1991", "carlson-wronski-1976"],
+      "note": "Disordered, so there is no sharp band edge; the optical gap is about 1.7 eV and depends on hydrogen content."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+/* The photovoltaic effect: page-local styles for the photon lab. */
+
+.pv-intro { margin-top: -0.4rem; margin-bottom: 1.2rem; max-width: 46rem; }
+.pv-stage-wrap { min-width: 0; }
+.widget canvas.pv-canvas { width: 100%; height: 400px; background: none; }
+.pv-legend { margin-top: 0.7rem; }
+.pv-sw-electron { background: var(--electron); border-radius: 50%; }
+.pv-sw-hole { background: var(--panel); border: 2px solid var(--hole); border-radius: 50%; }
+.pv-sw-heat { background: var(--sun); }
+.pv-sw-ir {
+  background: repeating-linear-gradient(90deg, var(--ink-2) 0 5px, transparent 5px 8px);
+  height: 3px; width: 1.2rem; border-radius: 0;
+}
+.pv-buttons { margin-top: 0.9rem; }
+.pv-live { min-height: 1.4em; margin: 0.6rem 0 0; font-size: var(--s-1); color: var(--ink-2); }
+
+.pv-spectrum-strip { margin: 0.15rem 0 0.25rem; }
+.widget canvas.pv-strip { width: 100%; height: 16px; border-radius: 3px; background: none; }
+.control select:disabled, .control input:disabled { opacity: 0.55; }
+.control small { display: block; line-height: 1.4; margin-top: 0.15rem; }
+
+.pv-readout-h { font-size: var(--s0); font-family: var(--body); font-weight: 700; margin: 0.4rem 0 -0.3rem; }
+.pv-readout { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; }
+.pv-readout dd { font-size: var(--s0); overflow-wrap: anywhere; }
+.pv-readout dd output { color: var(--ink); }
+.pv-tally { font-size: var(--s-1); color: var(--ink-2); margin: 0.6rem 0 0; padding-top: 0.6rem; border-top: 1px solid var(--rule); }

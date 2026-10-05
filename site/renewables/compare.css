@@ -1,0 +1,169 @@
+/* Comparison dashboard. Colour per source comes from a --k custom property set by
+   a k-<source> class, so SVG marks, chips and table swatches share one mapping and
+   follow the theme without redrawing. */
+
+.k-solar { --k: var(--r-solar); }
+.k-wind { --k: var(--r-wind); }
+.k-ocean { --k: var(--r-ocean); }
+.k-hydro { --k: var(--r-hydro); }
+.k-geothermal { --k: var(--r-geothermal); }
+.k-biomass { --k: var(--r-biomass); }
+.k-csp { --k: var(--r-csp); }
+.k-context { --k: var(--ink-2); }
+.k-neutral { --k: var(--ink-2); }
+
+/* ---------- the board ---------- */
+.cmp-board { padding-top: clamp(1.1rem, 2.5vw, 1.6rem); }
+.cmp-board-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem 1.2rem; margin-bottom: 1rem; }
+.cmp-board-head h2 { margin: 0; font-size: var(--s2); }
+.cmp-metrics, .cmp-seg {
+  display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 2px; border-radius: 999px;
+  background: var(--paper-2); border: 1px solid var(--rule);
+}
+.cmp-metrics button, .cmp-seg button {
+  font: inherit; font-size: var(--s-1); font-weight: 650; color: var(--ink-2); background: none; border: 0;
+  border-radius: 999px; padding: 0.35rem 0.85rem; cursor: pointer; min-height: 2.1rem;
+}
+.cmp-metrics button:hover, .cmp-seg button:hover { color: var(--ink); }
+.cmp-metrics button[aria-checked="true"], .cmp-seg button[aria-checked="true"] {
+  background: var(--panel); color: var(--ink); box-shadow: 0 1px 2px rgb(0 0 0 / 0.18);
+}
+@media (max-width: 40rem) {
+  .cmp-metrics { border-radius: var(--radius-lg); }
+  .cmp-metrics button { border-radius: var(--radius); }
+}
+
+.cmp-sources { border: 0; padding: 0; margin: 0 0 0.9rem; min-width: 0; }
+.cmp-sources legend { font-size: var(--s-1); font-weight: 650; padding: 0; margin-bottom: 0.4rem; }
+.cmp-chips { display: flex; flex-wrap: wrap; gap: 0.35rem 0.4rem; }
+.cmp-chip {
+  display: inline-flex; align-items: center; gap: 0.45rem; font-size: var(--s-1); cursor: pointer;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 0.22rem 0.7rem 0.22rem 0.45rem; background: var(--panel);
+  user-select: none;
+}
+.cmp-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.cmp-chip-sw { width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--k); border: 2px solid var(--k); flex: none; }
+.cmp-chip:has(input:not(:checked)) { color: var(--ink-2); border-style: dashed; }
+.cmp-chip:has(input:not(:checked)) .cmp-chip-sw { background: transparent; }
+.cmp-chip:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.cmp-quick { margin-top: 0.6rem; align-items: center; }
+.cmp-quick .btn { padding: 0.3rem 0.7rem; }
+.cmp-sort, .cmp-check { display: inline-flex; align-items: center; gap: 0.4rem; font-size: var(--s-1); font-weight: 600; cursor: pointer; }
+.cmp-sort input, .cmp-check input { accent-color: var(--silicon); width: 1rem; height: 1rem; }
+
+.cmp-key { list-style: none; padding: 0.6rem 0 0; margin: 0 0 0.3rem; border-top: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; gap: 0.3rem 1.3rem; font-size: var(--s-1); color: var(--ink-2); }
+.cmp-key li { display: inline-flex; align-items: center; gap: 0.45rem; margin: 0; }
+.cmp-key-icon { width: 1.75rem; height: 1rem; flex: none; overflow: visible; }
+
+.cmp-chart-wrap { width: 100%; }
+.cmp-chart { display: block; width: 100%; height: auto; overflow: visible; }
+.cmp-gridline { stroke: var(--rule); stroke-width: 1; }
+.cmp-tick { fill: var(--ink-2); font-size: 12px; font-family: var(--body); font-variant-numeric: tabular-nums; }
+.cmp-axis-title { fill: var(--ink-2); font-size: 12.5px; font-family: var(--body); }
+.cmp-row { outline: none; cursor: default; }
+.cmp-row-bg { fill: transparent; }
+.cmp-row.hot .cmp-row-bg, .cmp-row:focus-visible .cmp-row-bg { fill: var(--paper-2); }
+.cmp-row:focus-visible .cmp-row-bg { stroke: var(--focus); stroke-width: 2; }
+.cmp-row-name { fill: var(--ink); font-size: 14px; font-weight: 600; font-family: var(--body); }
+.cmp-row-val { fill: var(--ink); font-size: 13.5px; font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; }
+.cmp-row-rule { stroke: var(--rule); stroke-width: 1; opacity: 0.55; }
+.cmp-nodata { fill: var(--ink-2); font-size: 12.5px; font-style: italic; font-family: var(--body); }
+.mk-range { fill: color-mix(in srgb, var(--k) 38%, transparent); stroke: none; }
+.mk-central { fill: var(--k); stroke: var(--panel); stroke-width: 2; }
+.mk-us { fill: var(--panel); stroke: var(--k); stroke-width: 2; }
+.mk-direct { fill: var(--panel); stroke: var(--k); stroke-width: 2.5; }
+.k-neutral .mk-range { fill: color-mix(in srgb, var(--ink-2) 38%, transparent); }
+
+.cmp-readout { font-size: var(--s-1); min-height: 3em; margin: 0.6rem 0 0.4rem; padding: 0.5rem 0.75rem;
+  background: var(--paper-2); border-radius: var(--radius); }
+.cmp-takeaway { font-family: var(--display); font-size: var(--s1); line-height: 1.4; margin: 1rem 0 0.4rem; max-width: 46rem; }
+.cmp-source-line { margin-top: 0.3rem; }
+
+.cmp-defs { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+.cmp-defs dt { font-family: var(--display); font-weight: 620; font-size: var(--s1); margin-top: 0.9rem; }
+.cmp-defs dd { margin: 0; }
+
+/* ---------- growth ---------- */
+.cmp-growth-controls { display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; align-items: end; margin-bottom: 0.8rem; }
+.cmp-growth-controls .control { min-width: 12rem; }
+.cmp-growth-controls select { min-width: 12rem; }
+.cmp-growth-controls .control .label { display: block; }
+.cmp-growth-summary { font-size: var(--s0); margin: 0.6rem 0 0.2rem; }
+
+/* ---------- LCOE lab ---------- */
+.cmp-lab .lead { margin-top: -0.4rem; margin-bottom: 1.2rem; }
+.cmp-lab-result { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.3rem 0.7rem; }
+.cmp-lab-num { font-family: var(--display); font-weight: 520; font-size: clamp(var(--s4), 7vw, var(--s5)); line-height: 1;
+  letter-spacing: -0.02em; padding-left: 0.8rem; border-left: 4px solid var(--sun); }
+.cmp-lab-unit { font-size: var(--s-1); color: var(--ink-2); white-space: pre-wrap; }
+.cmp-lab-compare { font-size: var(--s-1); color: var(--ink-2); margin: 0.6rem 0 0.9rem; }
+.cmp-stack, .cmp-sens { display: block; width: 100%; overflow: visible; }
+.cmp-part.pt-capital, .swatch.pt-capital { fill: var(--silicon); background: var(--silicon); }
+.cmp-part.pt-fom, .swatch.pt-fom { fill: var(--t-multijunction); background: var(--t-multijunction); }
+.cmp-part.pt-vom, .swatch.pt-vom { fill: var(--sun); background: var(--sun); }
+.cmp-part.pt-fuel, .swatch.pt-fuel { fill: var(--hole); background: var(--hole); }
+.cmp-stack-key { margin: 0.3rem 0 0.4rem; }
+.cmp-stack-key strong { color: var(--ink); font-family: var(--mono); font-weight: 650; }
+.cmp-small-h { font-family: var(--body); font-size: var(--s-1); font-weight: 700; margin: 1.1rem 0 0.4rem; }
+.cmp-ref { stroke: var(--ink-2); stroke-width: 1; }
+.cmp-ref-label { fill: var(--ink-2); font-size: 12px; font-family: var(--body); }
+.cmp-sens-line { fill: none; stroke: var(--silicon); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.cmp-sens-dot { fill: var(--sun); stroke: var(--panel); stroke-width: 2; }
+.cmp-lab-in .control { margin: 0; }
+.cmp-lab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem 0.9rem; }
+.cmp-lab-in .u { font-weight: 500; color: var(--ink-2); font-size: var(--s-2); }
+.cmp-in-src { font-size: var(--s-2); color: var(--ink-2); margin: 0.25rem 0 0; line-height: 1.35; }
+.cmp-assume { font-size: var(--s-1); }
+.cmp-lab .expert-note { margin-top: 1rem; font-size: var(--s-1); }
+
+/* ---------- custom metric ---------- */
+.cmp-formula input { font-family: var(--mono); font-size: var(--s0); padding: 0.55rem 0.7rem; }
+.cmp-formula label .u { font-weight: 500; color: var(--ink-2); font-size: var(--s-2); }
+.cmp-examples { margin: 0.6rem 0 0.2rem; }
+.cmp-examples .btn { padding: 0.3rem 0.7rem; font-weight: 600; }
+.cmp-formula-msg { font-size: var(--s-1); margin: 0.7rem 0 0.5rem; min-height: 1.5em; }
+.cmp-formula-msg[data-state="error"] { color: var(--hole); font-weight: 650; }
+.cmp-rank { list-style: none; padding: 0; margin: 0 0 0.5rem; counter-reset: rank; }
+.cmp-rank li { counter-increment: rank; display: grid; grid-template-columns: 1.6rem minmax(7rem, 14rem) minmax(0, 1fr) 6.5rem;
+  align-items: center; gap: 0.6rem; margin: 0; padding: 0.3rem 0; border-top: 1px solid var(--rule); font-size: var(--s-1); }
+.cmp-rank li::before { content: counter(rank); color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: right; }
+.cmp-rank-name { font-weight: 600; }
+.cmp-rank-track { height: 0.6rem; display: block; }
+.cmp-rank-bar { display: block; height: 100%; background: var(--k); border-radius: 0 4px 4px 0; }
+.cmp-rank-val { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; font-weight: 650; }
+@media (max-width: 34rem) {
+  .cmp-rank li { grid-template-columns: 1.4rem minmax(0, 1fr) 5.5rem; }
+  .cmp-rank-track { grid-column: 2 / 4; grid-row: 2; }
+}
+.cmp-vars summary { cursor: pointer; font-weight: 650; font-size: var(--s-1); color: var(--silicon); }
+.cmp-vars table { margin-top: 0.6rem; }
+
+/* ---------- table view ---------- */
+.cmp-table-wrap { max-width: var(--wide); }
+.cmp-table th[scope="row"] { white-space: nowrap; font-weight: 650; }
+.cmp-table thead th { font-size: var(--s-2); vertical-align: bottom; }
+.cmp-sw { display: inline-block; width: 0.65rem; height: 0.65rem; border-radius: 50%; background: var(--k); margin-right: 0.45rem; }
+.cmp-caveats li { margin-bottom: 0.4rem; }
+
+@media print {
+  .cmp-board, .cmp-lab, .cmp-custom, .cmp-growth { break-inside: avoid-page; }
+  .cmp-chips, .cmp-quick, .cmp-examples { display: none; }
+}
+
+/* KaTeX keeps a visually hidden MathML copy; anchor it so it cannot widen the page. */
+.cmp-page .tex { position: relative; max-width: 100%; }
+.cmp-page .eq div.tex { overflow-x: auto; overflow-y: hidden; }
+.cmp-page .table-wrap { position: relative; }
+.cmp-table td { white-space: nowrap; }
+.cmp-table thead th { min-width: 5.5rem; }
+.cmp-table tbody th[scope="row"] { background: none; }
+.cmp-page .worked .katex, .cmp-page dl.symbols dd .katex { font-size: 0.94em; }
+@media (max-width: 40rem) {
+  .cmp-seg { border-radius: var(--radius-lg); }
+  .cmp-seg button { border-radius: var(--radius); }
+  .cmp-table tbody th[scope="row"] { white-space: normal; min-width: 8.5rem; }
+}
+.cmp-lab > .cmp-small-h { margin-top: 1.8rem; }
+.cmp-growth .chart { height: 28rem; }
+.mk-link { stroke: var(--k); stroke-width: 1.5; opacity: 0.6; }

@@ -1,0 +1,27 @@
+.teach-tools .btn-row { align-items: center; margin-top: 0.8rem; }
+.teach-toggle { display: inline-flex; gap: 0.45rem; align-items: center; font-weight: 650; font-size: var(--s-1); margin-right: auto; }
+.teach-min { font-family: var(--body); font-size: var(--s-1); font-weight: 600; color: var(--sun-ink); white-space: nowrap; }
+.teach-group > h2 { border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+.teach-group > h2 .teach-min { display: block; white-space: normal; margin-top: 0.3rem; }
+#print-status:empty { display: none; }
+.teach-lesson { margin: 0 0 2.2rem; }
+.teach-lesson h3 { margin-bottom: 0.2rem; }
+.teach-lesson h3 a { color: var(--ink); text-decoration: none; }
+.teach-lesson h3 a:hover { text-decoration: underline; }
+.teach-lesson h4 { font-size: var(--s-1); color: var(--ink-2); margin: 0.9rem 0 0.3rem; }
+.teach-lesson ul, .teach-qs { font-size: var(--s-1); }
+.teach-qs > li { margin-bottom: 0.9rem; }
+.teach-qs > li > p { margin: 0 0 0.3rem; }
+.teach-choices { margin: 0 0 0.3rem; padding-left: 1.5em; }
+.teach-choices li + li { margin-top: 0.1rem; }
+.teach-key { display: none; color: var(--ink-2); margin: 0.2rem 0 0; }
+body.show-answers .teach-key { display: block; }
+body.show-answers .teach-choices .is-answer { font-weight: 700; color: var(--good); }
+@media print {
+  #print-status { display: none !important; }
+  .teach-tools .btn-row, #in-class ~ ul a::after { display: none !important; }
+  .teach-lesson { break-inside: avoid-page; }
+  .teach-group > h2 { break-before: page; }
+  body:not(.show-answers) .teach-key { display: none !important; }
+  body.show-answers .teach-choices .is-answer { color: #000; text-decoration: underline; }
+}

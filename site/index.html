@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Solar Odyssey</title>
+<meta name="description" content="Start here: the learning path from 1839 to the clean-energy grid.">
+<link rel="icon" href="assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/odyssey.css">
+<link rel="stylesheet" href="sun-arc.css">
+<link rel="stylesheet" href="index.css">
+<script type="module" src="assets/js/core.js"></script>
+<script type="module" src="index.js"></script>
+</head>
+<body data-page="home">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page home">
+  <section class="hero sky full" id="hero" data-era="midday" aria-labelledby="hero-h">
+    <svg class="arc-svg hero-arc" id="hero-arc" role="img" aria-label="The history of solar power drawn as the sun's path across one day. It rises in 1839, when Becquerel first saw light make a current, climbs past the first practical silicon cell in 1954, and stands at today, when solar makes about 8.7 percent of the world's electricity. The dashed path beyond today is the research frontier, where stacked tandem cells have reached 35.5 percent efficiency."></svg>
+    <div class="hero-copy">
+      <h1 id="hero-h">Solar Odyssey</h1>
+      <p class="hero-promise">How sunlight became electricity, from a flicker in a Paris lab in 1839 to some of the cheapest power on Earth, one interactive step at a time.</p>
+      <p class="hero-actions">
+        <a class="btn" href="timeline.html">Walk the timeline</a>
+        <a class="btn ghost" href="learn/photovoltaic-effect.html">Start the first lesson</a>
+      </p>
+    </div>
+    <p class="hero-key" id="hero-key">The sun’s place on the arc is the year: dawn is 1839, noon is the 1970s, and the dashed path past today is the research still under way.</p>
+  </section>
+
+  <section class="resume" id="resume" aria-live="polite" hidden></section>
+
+  <section class="journey wide" aria-labelledby="path-h">
+    <header class="journey-head">
+      <h2 id="path-h">The learning path</h2>
+      <p>Six stops, in order. Each one builds on the one before, but every page also stands on its own, so you can start wherever you like.</p>
+    </header>
+    <div class="journey-map">
+      <svg class="journey-line" id="journey-line" aria-hidden="true"></svg>
+      <ol class="stations" id="stations">
+        <li class="station" data-stop="story">
+          <h3><a href="timeline.html">The story</a></h3>
+          <p>Who discovered what, and how a lab curiosity became an industry.</p>
+          <ul class="stop-pages"><li><a href="timeline.html" data-id="timeline">The timeline</a></li></ul>
+        </li>
+        <li class="station" data-stop="cell">
+          <h3><a href="learn/photovoltaic-effect.html">How a cell works</a></h3>
+          <p>Photons, band gaps and the junction that pushes charges apart.</p>
+          <ul class="stop-pages">
+            <li><a href="learn/photovoltaic-effect.html" data-id="photovoltaic-effect">The photovoltaic effect</a></li>
+            <li><a href="learn/band-gap.html" data-id="band-gap">The band gap</a></li>
+            <li><a href="learn/pn-junction.html" data-id="pn-junction">The p-n junction</a></li>
+            <li><a href="learn/iv-curve.html" data-id="iv-curve">Current, voltage and power</a></li>
+          </ul>
+        </li>
+        <li class="station" data-stop="today">
+          <h3><a href="today/technologies.html">Solar today</a></h3>
+          <p>Real cells, real systems, and why a watt now costs cents.</p>
+          <ul class="stop-pages">
+            <li><a href="today/technologies.html" data-id="technologies">Cell technologies today</a></li>
+            <li><a href="today/cell-to-grid.html" data-id="cell-to-grid">From cell to grid</a></li>
+            <li><a href="today/system-builder.html" data-id="system-builder">System builder</a></li>
+            <li><a href="today/sun-path.html" data-id="sun-path">Sun path and energy yield</a></li>
+            <li><a href="today/efficiency-records.html" data-id="efficiency-records">Efficiency over time</a></li>
+            <li><a href="today/cost-decline.html" data-id="cost-decline">The cost collapse</a></li>
+          </ul>
+        </li>
+        <li class="station" data-stop="frontier">
+          <h3><a href="frontier.html">The frontier</a></h3>
+          <p>Perovskites, tandems, and how close we are to the limits.</p>
+          <ul class="stop-pages">
+            <li><a href="frontier.html" data-id="frontier">The frontier</a></li>
+            <li><a href="state-of-the-field.html" data-id="state-of-the-field">State of the field</a></li>
+          </ul>
+        </li>
+        <li class="station" data-stop="renewables">
+          <h3><a href="renewables/index.html">Other renewables</a></h3>
+          <p>Wind, water, Earth heat, plants and concentrated sunlight.</p>
+          <ul class="stop-pages">
+            <li><a href="renewables/index.html" data-id="renewables">The clean-energy system</a></li>
+            <li><a href="renewables/wind.html" data-id="wind">Wind</a></li>
+            <li><a href="renewables/hydro.html" data-id="hydro">Hydropower</a></li>
+            <li><a href="renewables/geothermal.html" data-id="geothermal">Geothermal</a></li>
+            <li><a href="renewables/ocean.html" data-id="ocean">Tidal and wave</a></li>
+            <li><a href="renewables/biomass.html" data-id="biomass">Biomass</a></li>
+            <li><a href="renewables/csp.html" data-id="csp">Concentrated solar power</a></li>
+          </ul>
+        </li>
+        <li class="station" data-stop="grid">
+          <h3><a href="renewables/storage.html">Storage and the grid</a></h3>
+          <p>Keeping the lights on when the sun sets and the wind drops.</p>
+          <ul class="stop-pages">
+            <li><a href="renewables/storage.html" data-id="storage">Energy storage</a></li>
+            <li><a href="renewables/grid.html" data-id="grid">The smart grid</a></li>
+            <li><a href="renewables/compare.html" data-id="compare">Comparison dashboard</a></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="differences" aria-labelledby="diff-h">
+    <h2 id="diff-h">How this course works</h2>
+    <dl class="diff-list">
+      <dt>Every number has a source and a date</dt>
+      <dd>Each figure links to the paper, dataset or report it comes from, and the <a href="sources.html">sources page</a> says when we last checked it. Numbers that change quickly, like efficiency records and prices, are gathered on the <a href="state-of-the-field.html">State of the field</a> page.</dd>
+      <dt>You learn by changing things</dt>
+      <dd>Most lessons have a widget: move a slider, build a circuit, pick a place on the map, and watch the physics answer. The equations behind them are checked by automated tests.</dd>
+      <dt>Two depths</dt>
+      <dd>Intro is written for anyone who has finished school science. Switch to Expert at the top of any page to add the derivations and the detail a specialist would want.</dd>
+      <dt>Works offline, and nothing is tracked</dt>
+      <dd>There are no accounts, cookies, analytics or third-party requests. Your progress stays in this browser. A desktop app runs the whole course without an internet connection; see <a href="about.html">About, privacy and download</a>.</dd>
+    </dl>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

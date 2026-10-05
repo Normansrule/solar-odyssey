@@ -1,0 +1,37 @@
+/* Sources: a bibliography that reads like one, with the record facts in a quiet line under each citation. */
+
+.src-tools { display: grid; gap: 0.8rem 1.5rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 40rem) { .src-tools { grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr); } }
+.src-tools input { font-size: var(--s0); padding: 0.55rem 0.7rem; }
+.src-tools select { font-size: var(--s0); padding: 0.5rem 0.6rem; }
+.src-meta { font-size: var(--s-1); color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin: 0.8rem auto 1.2rem; }
+
+.src-list { list-style: none; padding: 0; counter-reset: none; border-top: 1px solid var(--rule); }
+.src-list > li.src { margin: 0; padding: 1.1rem 0 1.15rem; border-bottom: 1px solid var(--rule); scroll-margin-top: calc(var(--header-h) + 1rem); }
+.src-list > li[hidden] { display: none; }
+.src-list > li.src:target { background: linear-gradient(var(--sun-wash), var(--sun-wash)) no-repeat; box-shadow: -0.8rem 0 0 var(--sun-wash), 0.8rem 0 0 var(--sun-wash); }
+.src-cite { margin: 0 0 0.45rem; max-width: var(--measure); line-height: 1.5; }
+.src-authors { font-weight: 650; }
+.src-year { color: var(--ink-2); }
+.src-title { font-style: italic; }
+a.src-title { font-weight: 500; }
+.src-container { color: var(--ink-2); }
+.src-cite { overflow-wrap: anywhere; } /* long repository and commit strings wrap at 320 px */
+.src-facts { display: flex; flex-wrap: wrap; gap: 0.2rem 1.4rem; margin: 0; font-size: var(--s-2); color: var(--ink-2); }
+.src-facts > div { display: flex; gap: 0.35rem; min-width: 0; }
+.src-facts dt { font-weight: 700; }
+.src-facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.src-facts .src-url { flex-basis: 100%; }
+@media (min-width: 60rem) { .src-facts .src-url { flex-basis: auto; max-width: 32rem; } }
+.src-facts .src-id dd { font-family: var(--mono); }
+.src-anchor { color: var(--ink-2); text-decoration: none; }
+.src-anchor:hover { color: var(--silicon); text-decoration: underline; }
+.src-note { margin: 0.45rem 0 0; font-size: var(--s-1); color: var(--ink-2); max-width: var(--measure); padding-left: 0.8rem; border-left: 2px solid var(--rule); }
+.src-none { padding: 1.5rem 0; }
+
+.src-how { margin-top: 4rem; }
+.checks { padding-left: 1.4em; }
+.checks li { margin-bottom: 0.6rem; }
+.checks li::marker { font-family: var(--display); font-weight: 600; color: var(--sun-ink); }
+.src-licences { margin-top: 3rem; }
+.src-licences .table-wrap { margin-top: 1rem; }

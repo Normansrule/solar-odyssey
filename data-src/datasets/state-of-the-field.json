@@ -1,0 +1,164 @@
+{
+ "meta": {
+  "title": "State of the field: fast-moving solar numbers",
+  "description": "One row per fast-moving figure. Each row: { id, group, label, value (number, or null when the figure is read from another dataset), unit, as_of (date of the underlying measurement or data year: YYYY, YYYY-MM or YYYY-Qn), from (optional: { dataset, pick } — the page reads the latest value from that dataset: 'last' = last [year, value] pair, 'capacity_gw.last', 'capacity_gw.diff' = last minus previous, 'World.solar_share_elec.last'), detail, source (bibliography id), last_verified (YYYY-MM-DD) }. Record efficiencies are also in efficiency-records.json.",
+  "units": "per row",
+  "sources": [
+   "pv-magazine-longi-hibc-2026",
+   "green-tables-68",
+   "solaeon-2026",
+   "longi-tandem-2026",
+   "fraunhofer-ise-47-6",
+   "fraunhofer-pv-report-2026",
+   "owid-solar-pv-prices",
+   "owid-solar-capacity",
+   "ember-yearly-electricity",
+   "owid-lcoe"
+  ],
+  "license": "CC BY 4.0 (Solar Odyssey compilation)",
+  "last_verified": "2026-10-02"
+ },
+ "data": [
+  {
+   "id": "record-silicon",
+   "group": "Record cells",
+   "label": "Crystalline silicon cell record",
+   "value": 28.29,
+   "unit": "%",
+   "as_of": "2026-09",
+   "detail": "LONGi hybrid interdigitated back-contact (HIBC) cell, certified by ISFH. Silicon's own practical limit is about 29.4 %.",
+   "source": "pv-magazine-longi-hibc-2026",
+   "last_verified": "2026-10-02"
+  },
+  {
+   "id": "record-perovskite",
+   "group": "Record cells",
+   "label": "Perovskite single-junction cell record",
+   "value": 28.0,
+   "unit": "%",
+   "as_of": "2026-05",
+   "detail": "Hainan University, 0.05 cm² cell, listed in the Solar cell efficiency tables (Version 68, May 2026). Earlier in 2026 the company SolaEon announced 27.87 % for a 0.076 cm² cell certified by China's NPVM.",
+   "source": "green-tables-68",
+   "last_verified": "2026-10-02"
+  },
+  {
+   "id": "record-tandem",
+   "group": "Record cells",
+   "label": "Perovskite-on-silicon tandem cell record",
+   "value": 35.5,
+   "unit": "%",
+   "as_of": "2026-07",
+   "detail": "LONGi, certified by the European Solar Test Installation (ESTI).",
+   "source": "longi-tandem-2026",
+   "last_verified": "2026-10-02"
+  },
+  {
+   "id": "record-multijunction",
+   "group": "Record cells",
+   "label": "Highest efficiency of any solar cell",
+   "value": 47.6,
+   "unit": "%",
+   "as_of": "2022-05",
+   "detail": "Fraunhofer ISE four-junction III-V cell under 665 suns of concentrated light.",
+   "source": "fraunhofer-ise-47-6",
+   "last_verified": "2026-10-02"
+  },
+  {
+   "id": "module-efficiency",
+   "group": "Commercial modules",
+   "label": "Average commercial silicon module efficiency",
+   "value": 22.7,
+   "unit": "%",
+   "as_of": "2024-Q4",
+   "detail": "Weighted average of wafer-based crystalline-silicon modules sold. The best certified full-size silicon module in the efficiency tables reached 26.4 % in 2026.",
+   "source": "fraunhofer-pv-report-2026",
+   "last_verified": "2026-10-02"
+  },
+  {
+   "id": "module-price",
+   "group": "Commercial modules",
+   "label": "Solar module price",
+   "value": null,
+   "unit": "US$ per watt (constant 2025 US$)",
+   "as_of": "2024",
+   "from": {
+    "dataset": "module-prices.json",
+    "pick": "last"
+   },
+   "detail": "Average selling price of crystalline-silicon modules; from 2010 the series follows IRENA's benchmark prices for modules sold in Europe.",
+   "source": "owid-solar-pv-prices",
+   "last_verified": "2026-10-02"
+  },
+  {
+   "id": "learning-rate",
+   "group": "Commercial modules",
+   "label": "Module price learning rate",
+   "value": 26.6,
+   "unit": "% per doubling of cumulative production",
+   "as_of": "2026-07",
+   "detail": "Fraunhofer ISE's price-experience-curve fit over the past 45 years (Photovoltaics Report of 14 July 2026, slide 'Price Experience Curve'; the report's executive summary rounds it to 26.7 %). Our own fit to OWID prices and IRENA capacity for 2000–2024 gives about 28 %.",
+   "source": "fraunhofer-pv-report-2026",
+   "last_verified": "2026-10-02"
+  },
+  {
+   "id": "capacity-cumulative",
+   "group": "Deployment",
+   "label": "Solar capacity installed worldwide",
+   "value": null,
+   "unit": "GW",
+   "as_of": "2025",
+   "from": {
+    "dataset": "solar-deployment.json",
+    "pick": "capacity_gw.last"
+   },
+   "detail": "Cumulative capacity at the end of the year.",
+   "source": "owid-solar-capacity",
+   "last_verified": "2026-09-30"
+  },
+  {
+   "id": "capacity-annual",
+   "group": "Deployment",
+   "label": "Solar capacity added in the year",
+   "value": null,
+   "unit": "GW",
+   "as_of": "2025",
+   "from": {
+    "dataset": "solar-deployment.json",
+    "pick": "capacity_gw.diff"
+   },
+   "detail": "Difference between two year-end totals (net additions).",
+   "source": "owid-solar-capacity",
+   "last_verified": "2026-09-30"
+  },
+  {
+   "id": "solar-share",
+   "group": "Deployment",
+   "label": "Solar share of world electricity",
+   "value": null,
+   "unit": "% of generation",
+   "as_of": "2025",
+   "from": {
+    "dataset": "electricity-mix.json",
+    "pick": "World.solar_share_elec.last"
+   },
+   "detail": "Share of all electricity generated worldwide.",
+   "source": "ember-yearly-electricity",
+   "last_verified": "2026-09-30"
+  },
+  {
+   "id": "lcoe",
+   "group": "Cost of electricity",
+   "label": "Cost of electricity from new solar PV",
+   "value": null,
+   "unit": "US$ per kWh (constant 2025 US$)",
+   "as_of": "2025",
+   "from": {
+    "dataset": "solar-deployment.json",
+    "pick": "lcoe_pv.last"
+   },
+   "detail": "Global weighted-average levelised cost of electricity (LCOE) for projects commissioned that year.",
+   "source": "owid-lcoe",
+   "last_verified": "2026-09-30"
+  }
+ ]
+}

@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Sun path and energy yield – Solar Odyssey</title>
+<meta name="description" content="Pick a place and a season; see how much sunlight a tilted panel catches.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="sun-path.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="sun-path.js"></script>
+</head>
+<body data-page="sun-path">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">Solar today</span>
+    <h1>Sun path and energy yield</h1>
+    <p class="lede">The Sun draws a different arc across the sky every day, and a solar panel only catches the light that hits it face on. Pick a place and a date, tilt and turn a panel, and see how much sunlight it collects in a day and in a year.</p>
+  </header>
+
+  <p>Everything on this page comes from a few pieces of geometry and one simple model of the atmosphere. The Sun's position is computed from the date, the time and where you stand. The atmosphere dims the beam more when the Sun is low. Then a single cosine decides how much of that beam lands on the panel. The numbers are for a <dfn data-term="clear-sky-model">clear sky</dfn>, so they are the most sunlight a place could get, not what it gets on average. <a href="#limits">Clear sky is a ceiling</a> explains how real weather changes them.</p>
+
+  <section class="widget sp-widget" id="sky" aria-labelledby="sky-h">
+    <div class="sp-head">
+      <h2 id="sky-h">The sky over <span id="sp-place-name">Los Angeles</span></h2>
+      <span class="data-badge" id="sp-badge">Loading places</span>
+    </div>
+    <div class="sp-main">
+      <div class="sp-stage-col">
+        <div class="sp-stage" id="sp-stage"></div>
+        <div class="sp-stage-tools">
+          <div class="sp-seg" role="group" aria-label="Drawing">
+            <button type="button" id="sp-view-dome" aria-pressed="true">Sky dome</button>
+            <button type="button" id="sp-view-flat" aria-pressed="false">Sun path chart</button>
+          </div>
+          <div class="btn-row sp-orbit" id="sp-orbit">
+            <button type="button" class="btn ghost sp-small" id="sp-turn-l">Turn left</button>
+            <button type="button" class="btn ghost sp-small" id="sp-turn-r">Turn right</button>
+            <button type="button" class="btn ghost sp-small" id="sp-top">From above</button>
+            <button type="button" class="btn ghost sp-small" id="sp-reset">Reset view</button>
+          </div>
+        </div>
+        <ul class="legend sp-legend" aria-label="Key">
+          <li><span class="sp-key sp-key--day" aria-hidden="true"></span><span id="sp-key-day">The chosen date</span></li>
+          <li><span class="sp-key sp-key--jun" aria-hidden="true"></span>June solstice</li>
+          <li><span class="sp-key sp-key--eq" aria-hidden="true"></span>Equinoxes</li>
+          <li><span class="sp-key sp-key--dec" aria-hidden="true"></span>December solstice</li>
+          <li><span class="sp-key sp-key--normal" aria-hidden="true"></span>Panel normal</li>
+        </ul>
+        <p class="caption sp-hint" id="sp-hint">Drag the dome to look around it, or use the buttons. The amber line runs from the Sun to the panel; the arrow sticking straight out of the panel is its normal. The angle between them is the angle of incidence.</p>
+      </div>
+
+      <div class="sp-now">
+        <h3 class="sp-sub">Now</h3>
+        <dl class="readout sp-readout">
+          <div><dt>Sun elevation</dt><dd id="r-el">—</dd></div>
+          <div><dt>Sun azimuth</dt><dd id="r-az">—</dd></div>
+          <div><dt>Air mass</dt><dd id="r-am">—</dd></div>
+          <div><dt>Angle of incidence</dt><dd id="r-aoi">—</dd></div>
+        </dl>
+        <h3 class="sp-sub">Clear-sky light</h3>
+        <dl class="readout sp-readout sp-readout--three">
+          <div><dt><abbr title="Direct normal irradiance">DNI</abbr></dt><dd id="r-dni">—</dd></div>
+          <div><dt><abbr title="Diffuse horizontal irradiance">DHI</abbr></dt><dd id="r-dhi">—</dd></div>
+          <div><dt><abbr title="Global horizontal irradiance">GHI</abbr></dt><dd id="r-ghi">—</dd></div>
+        </dl>
+        <div class="sp-poa">
+          <p class="sp-poa-k">On the panel (<abbr title="plane of array">POA</abbr>)</p>
+          <p class="sp-poa-v"><span id="r-poa">—</span> <small>W/m²</small></p>
+          <div class="sp-bar" id="sp-poa-bar" role="img" aria-label="Plane-of-array irradiance split into beam, sky and ground parts">
+            <span class="sp-bar-beam" id="sp-bar-beam"></span><span class="sp-bar-sky" id="sp-bar-sky"></span><span class="sp-bar-ground" id="sp-bar-ground"></span>
+          </div>
+          <ul class="legend sp-bar-legend">
+            <li><span class="swatch sp-sw-beam" aria-hidden="true"></span>Beam <output id="r-beam">0</output></li>
+            <li><span class="swatch sp-sw-sky" aria-hidden="true"></span>Sky <output id="r-sky">0</output></li>
+            <li><span class="swatch sp-sw-ground" aria-hidden="true"></span>Ground <output id="r-ground">0</output></li>
+          </ul>
+        </div>
+        <p class="caption sp-status" id="sp-status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="sp-time">
+      <button type="button" class="btn" id="sp-play">Play the day</button>
+      <div class="control">
+        <label for="sp-time">Solar time <output id="sp-time-out" for="sp-time">10:30</output></label>
+        <input type="range" id="sp-time" min="0" max="1440" step="5" value="630">
+        <p class="caption sp-clock" id="sp-clock"></p>
+      </div>
+    </div>
+
+    <div class="sp-panels">
+      <fieldset class="sp-panel">
+        <legend>Place</legend>
+        <div class="control"><label for="sp-place">Preset place</label><select id="sp-place"><option value="los-angeles">Los Angeles, USA</option></select></div>
+        <div class="sp-latlon">
+          <div class="control"><label for="sp-lat">Latitude (°N)</label><input type="number" id="sp-lat" min="-90" max="90" step="0.01" value="34.05" inputmode="decimal" aria-describedby="sp-place-msg"></div>
+          <div class="control"><label for="sp-lon">Longitude (°E)</label><input type="number" id="sp-lon" min="-180" max="180" step="0.01" value="-118.24" inputmode="decimal" aria-describedby="sp-place-msg"></div>
+        </div>
+        <div class="control"><label for="sp-elev">Site elevation (m)</label><input type="number" id="sp-elev" min="-430" max="8850" step="10" value="90" inputmode="numeric" aria-describedby="sp-place-msg"></div>
+        <p class="sp-msg" id="sp-place-msg" aria-live="polite">South and west are negative. Type your own coordinates to make a custom place.</p>
+      </fieldset>
+      <fieldset class="sp-panel">
+        <legend>Date</legend>
+        <div class="control">
+          <label for="sp-day">Day of the year <output id="sp-day-out" for="sp-day">2 October</output></label>
+          <input type="range" id="sp-day" min="1" max="365" step="1" value="275">
+        </div>
+        <div class="sp-chips" role="group" aria-label="Jump to a date">
+          <button type="button" class="sp-chip" data-doy="79">March equinox</button>
+          <button type="button" class="sp-chip" data-doy="172">June solstice</button>
+          <button type="button" class="sp-chip" data-doy="355">December solstice</button>
+          <button type="button" class="sp-chip" data-doy="today">Today</button>
+        </div>
+      </fieldset>
+      <fieldset class="sp-panel">
+        <legend>Panel</legend>
+        <div class="control">
+          <label for="sp-tilt">Tilt from flat <output id="sp-tilt-out" for="sp-tilt">30°</output></label>
+          <input type="range" id="sp-tilt" min="0" max="90" step="1" value="30">
+        </div>
+        <div class="control">
+          <label for="sp-az">Facing <output id="sp-az-out" for="sp-az">180° south</output></label>
+          <input type="range" id="sp-az" min="0" max="359" step="1" value="180">
+        </div>
+        <div class="sp-chips" role="group" aria-label="Face a compass direction">
+          <button type="button" class="sp-chip" data-az="0">N</button>
+          <button type="button" class="sp-chip" data-az="90">E</button>
+          <button type="button" class="sp-chip" data-az="180">S</button>
+          <button type="button" class="sp-chip" data-az="270">W</button>
+          <button type="button" class="sp-chip" data-az="equator">Face the equator</button>
+        </div>
+      </fieldset>
+      <fieldset class="sp-panel">
+        <legend>Ground</legend>
+        <div class="control">
+          <label for="sp-albedo">Ground albedo <output id="sp-albedo-out" for="sp-albedo">0.20</output></label>
+          <input type="range" id="sp-albedo" min="0" max="0.9" step="0.01" value="0.2">
+        </div>
+        <div class="sp-chips" role="group" aria-label="Ground type">
+          <button type="button" class="sp-chip" data-albedo="0.2">Grass 0.20</button>
+          <button type="button" class="sp-chip" data-albedo="0.3">Concrete 0.30</button>
+          <button type="button" class="sp-chip" data-albedo="0.4">Sand 0.40</button>
+          <button type="button" class="sp-chip" data-albedo="0.75">Fresh snow 0.75</button>
+        </div>
+        <p class="sp-msg">Typical values used in PV modelling.<sup class="cite" data-src="pvlib-albedo"></sup></p>
+      </fieldset>
+    </div>
+
+    <h3 class="sp-sub sp-sub--day">The chosen day</h3>
+    <div class="sp-day-grid">
+      <div id="sp-day-chart" class="chart sp-day-chart" aria-label="Clear-sky irradiance on the tilted panel and on flat ground through the chosen day, in watts per square metre against solar time."></div>
+      <dl class="readout sp-day-readout">
+        <div class="sp-psh"><dt>On the panel today</dt><dd><span id="d-poa">—</span> <small>kWh/m² = peak sun hours</small></dd></div>
+        <div><dt>On flat ground</dt><dd><span id="d-ghi">—</span> <small>kWh/m²</small></dd></div>
+        <div><dt>Daylight</dt><dd><span id="d-len">—</span> <small>hours</small></dd></div>
+      </dl>
+    </div>
+    <p class="caption">Clear-sky model, computed live in your browser: NOAA solar position,<sup class="cite" data-src="noaa-solar-calc"></sup> Kasten–Young air mass,<sup class="cite" data-src="kasten-young-1989"></sup> Meinel direct beam with diffuse light at 10 % of it,<sup class="cite" data-src="pveducation-air-mass"></sup> and an isotropic sky.<sup class="cite" data-src="liu-jordan-1963"></sup> Times are local solar time, so the Sun crosses the meridian near 12:00 at every longitude.</p>
+  </section>
+
+  <h2 id="reading">Reading the sky</h2>
+  <p>Stand outside facing the equator and the Sun climbs from the east, peaks over the equator side of the sky at noon, and sinks to the west. Two angles pin it down at any moment: its <dfn data-term="solar-elevation">elevation</dfn> above the horizon and its <dfn data-term="solar-azimuth">azimuth</dfn>, the compass direction you would point to.</p>
+  <ul>
+    <li><strong>The seasons move the arc.</strong> Earth's axis is tilted about 23.4°, so over a year the latitude where the noon Sun stands overhead, its <dfn data-term="solar-declination">declination</dfn>, swings between about 23.4° north in June and 23.4° south in December.<sup class="cite" data-src="pveducation-declination"></sup> In your summer the arc is high and long; in winter it is low and short. Compare the red and blue arcs on the dome.</li>
+    <li><strong>The equinox arc is the same everywhere.</strong> In March and September the Sun rises due east and sets due west everywhere except at the poles, after about 12 hours. Only the height of the arc changes: the noon Sun stands at 90° minus your latitude.</li>
+    <li><strong>Latitude tilts the whole picture.</strong> Pick <em>Quito</em>, almost on the equator: every arc stands nearly upright, and the Sun passes north of overhead in June and south of it in December. Pick <em>Longyearbyen</em> at 78° north: in June the Sun circles the sky without setting, and in December it never rises.</li>
+  </ul>
+  <p>The time slider runs on <dfn data-term="solar-time">solar time</dfn>, the time a sundial would show, so noon is when the Sun is highest. Your clock can be well over an hour away from it, because a time zone is wide, because of daylight saving, and because of the small wobble called the <dfn data-term="equation-of-time">equation of time</dfn>. For preset places the widget shows the matching standard clock time under the slider.</p>
+  <div class="expert expert-note">
+    <p>The position comes from the equations behind NOAA's solar calculator, which follow Meeus's <em>Astronomical Algorithms</em>:<sup class="cite" data-src="noaa-solar-calc"></sup> the Sun's apparent longitude gives the declination <span class="tex">\delta</span> and the equation of time; true solar time gives the hour angle <span class="tex">\omega</span> (15° per hour from solar noon); then spherical trigonometry gives the zenith and azimuth. Our implementation agrees with pvlib's implementation of NREL's Solar Position Algorithm<sup class="cite" data-src="reda-andreas-2004,pvlib-2023"></sup> to within 0.02° in the project's cross-check tests. The elevation shown is geometric: refraction lifts the Sun's image by about half a degree at the horizon, which matters for sunrise times but hardly at all for energy.</p>
+  </div>
+
+  <h2 id="light">From sunlight to watts on a panel</h2>
+  <p>Sunlight reaches the ground in two ways. The <dfn data-term="direct-normal-irradiance">direct beam</dfn> comes straight from the Sun's disc and casts sharp shadows. <dfn data-term="diffuse-horizontal-irradiance">Diffuse light</dfn> has been scattered by air and haze and arrives from the whole sky; it is what lights a shady spot. Weather stations usually measure the total on flat ground, the <dfn data-term="global-horizontal-irradiance">global horizontal irradiance</dfn> (GHI).</p>
+  <p>The beam weakens as the Sun sinks, because it crosses more atmosphere. The <dfn data-term="air-mass">air mass</dfn> counts how many atmospheres' worth: 1 with the Sun overhead, 2 at 30° elevation, about 38 at the horizon.<sup class="cite" data-src="kasten-young-1989"></sup> A tilted panel then collects three things, its <dfn data-term="plane-of-array-irradiance">plane-of-array irradiance</dfn>: the beam, reduced by the cosine of the <dfn data-term="angle-of-incidence">angle of incidence</dfn>; the part of the sky it can see; and a little light reflected from the ground in front of it, which depends on the ground's <dfn data-term="albedo">albedo</dfn>. Try fresh snow in front of a steep panel and watch the ground slice of the bar grow.</p>
+  <p>Add up a day of plane-of-array irradiance and you get the day's <dfn data-term="insolation">insolation</dfn> in kWh/m². Because standard test conditions use 1000 W/m², that number is also the day's <dfn data-term="peak-sun-hours">peak sun hours</dfn>: the hours of full one-sun light that would deliver the same energy.<sup class="cite" data-src="pveducation-average-radiation"></sup></p>
+
+  <section class="widget sp-year" id="year" aria-labelledby="year-h">
+    <h2 id="year-h">Across the year</h2>
+    <p class="caption sp-year-setup" id="sp-year-setup"></p>
+    <div class="sp-year-grid">
+      <figure class="sp-fig">
+        <figcaption class="sp-fig-h">Average daily sunlight in each month <span class="sp-unit">kWh/m² per day</span></figcaption>
+        <div id="sp-month-chart" class="chart short" aria-label="Clear-sky insolation per day on the 15th of each month, for the tilted panel and for flat ground, in kWh per square metre."></div>
+      </figure>
+      <figure class="sp-fig">
+        <figcaption class="sp-fig-h">Yearly sunlight against tilt, facing <span id="sp-sweep-dir">south</span> <span class="sp-unit">kWh/m² per year</span></figcaption>
+        <div id="sp-tilt-chart" class="chart short" aria-label="Yearly clear-sky insolation on the panel for every tilt from 0 to 90 degrees, with the best tilt and your tilt marked."></div>
+      </figure>
+    </div>
+    <div class="sp-best">
+      <div class="sp-wheel-wrap">
+        <svg class="sp-wheel" id="sp-wheel" viewBox="0 0 360 360" role="img" aria-labelledby="sp-wheel-title"><title id="sp-wheel-title">Orientation map</title></svg>
+        <ul class="legend sp-wheel-legend" id="sp-wheel-legend" aria-label="Share of the best yearly sunlight"></ul>
+      </div>
+      <div class="sp-best-text">
+        <h3 class="sp-sub">Every tilt and direction at once</h3>
+        <p class="caption">Distance from the centre is the tilt (flat in the middle, vertical at the edge), the angle round the circle is the direction the panel faces, and the colour is the yearly sunlight as a share of the best. The ring marks your panel; the dot marks the best. Click the map to set the panel, or use the sliders above.</p>
+        <p id="sp-best-text" aria-live="polite"></p>
+        <div class="btn-row"><button type="button" class="btn ghost" id="sp-use-best">Use the best tilt and direction</button></div>
+        <dl class="readout sp-year-readout">
+          <div><dt>Your panel, per year</dt><dd><span id="y-poa">—</span> <small>kWh/m²</small></dd></div>
+          <div><dt>Flat ground, per year</dt><dd><span id="y-ghi">—</span> <small>kWh/m²</small></dd></div>
+        </dl>
+      </div>
+    </div>
+    <p class="caption">Each month is represented by its 15th day, sampled every 15 minutes. Yearly totals are clear-sky ceilings.</p>
+  </section>
+
+  <h2 id="best-tilt">Why the best tilt is not quite your latitude</h2>
+  <p>A common rule of thumb says a fixed panel should be tilted at your latitude.<sup class="cite" data-src="pveducation-tilted-surface"></sup> The reasoning is neat: at the equinoxes the noon Sun is then exactly face on, and the panel splits the difference between the high summer Sun and the low winter one. The map above usually disagrees by a few degrees, and the reasons are worth knowing.</p>
+  <ul>
+    <li><strong>Summer days are longer.</strong> More hours of daylight, with the Sun higher, put more of the year's energy into the summer half. A slightly flatter panel serves those hours better.</li>
+    <li><strong>The winter beam is weaker.</strong> A low Sun shines through more air, so winter's light is thinned before it arrives. Tilting steeply for winter gains less than it seems.</li>
+    <li><strong>A flatter panel sees more sky.</strong> Diffuse light comes from the whole dome; a flat panel sees all of it, a vertical one only half.</li>
+  </ul>
+  <p>For Los Angeles at 34° north the clear-sky model gives a best tilt of about 30°, and the curve is flat near the top: ten degrees either way costs only a couple of percent. Real weather usually pushes the best tilt flatter still. Clouds scatter sunlight across the whole sky, which favours panels that face up, so a study using typical-year weather found optimal tilts of 45° at Calgary but only 34° at a cloudier Dutch site at nearly the same latitude.<sup class="cite" data-src="jacobson-jadhav-2018"></sup> The same study's fit for the Northern Hemisphere gives about 29° at 34° north.</p>
+  <div class="worked" data-check="sunpath:bestTiltFor" data-args="[{&quot;lat&quot;: 34.05, &quot;lon&quot;: -118.24}]" data-expect="30.15" data-tol="0.2">
+    Sweep every tilt for a south-facing panel in Los Angeles (34.05° N, taken at sea level), add up the clear-sky insolation over a year, and the maximum comes at <span class="answer">30.1°</span>, about 4° flatter than the latitude.
+  </div>
+  <div class="worked" data-check="sunpath:jacobsonFitTilt" data-args="[34.05]" data-expect="28.76" data-tol="0.01">
+    The Jacobson–Jadhav fit to optimal tilts from real-weather simulations, <span class="tex">\beta_\text{opt} = 1.3793 + \varphi(1.2011 + \varphi(-0.014404 + 0.000080509\,\varphi))</span>, gives <span class="answer">28.8°</span> at the same latitude.<sup class="cite" data-src="jacobson-jadhav-2018"></sup>
+  </div>
+  <div class="expert expert-note">
+    <p>Two details of the model show up if you look closely. Near the equator the best tilt comes out at 0°, though in practice panels are usually given a small tilt so that rain can run off and wash them. And the Southern Hemisphere's optimum comes out a degree or two steeper than the Northern one at the same latitude: the Northern summer half-year is about a week longer, because Earth moves more slowly near aphelion in July. The model leaves out the matching effect of distance, about ±3.3 % in sunlight over the year, which favours the Southern summer and partly cancels it.</p>
+  </div>
+
+  <section class="widget sp-yield" id="yield" aria-labelledby="yield-h">
+    <h2 id="yield-h">Energy yield calculator</h2>
+    <p class="caption">From sunlight to kilowatt-hours for a whole array, using the panel and place set above.</p>
+    <div class="sp-yield-grid">
+      <div class="controls">
+        <div class="control">
+          <label for="sp-kwp">Array size <output id="sp-kwp-out" for="sp-kwp">5 kWp</output></label>
+          <input type="number" id="sp-kwp" min="0.1" max="100000" step="0.1" value="5" inputmode="decimal">
+        </div>
+        <div class="control">
+          <label for="sp-pr">Performance ratio <output id="sp-pr-out" for="sp-pr">0.80</output></label>
+          <input type="range" id="sp-pr" min="0.5" max="0.95" step="0.01" value="0.8">
+        </div>
+        <p class="sp-msg" id="sp-kwp-msg" aria-live="polite">Array size is the total rated power of the panels, in kilowatts at 1000 W/m². A 400 W panel is 0.4 kWp.</p>
+      </div>
+      <div>
+        <dl class="readout sp-yield-readout">
+          <div><dt>On the chosen day</dt><dd><span id="e-day">—</span> <small>kWh</small></dd></div>
+          <div class="sp-psh"><dt>Over a clear-sky year</dt><dd><span id="e-year">—</span> <small>kWh</small></dd></div>
+          <div><dt>Average per day</dt><dd><span id="e-avg">—</span> <small>kWh</small></dd></div>
+          <div><dt>Specific yield</dt><dd><span id="e-spec">—</span> <small>kWh per kWp per year</small></dd></div>
+        </dl>
+        <p class="sp-formula" id="sp-formula" aria-live="polite"></p>
+      </div>
+    </div>
+    <p class="caption">The <dfn data-term="performance-ratio">performance ratio</dfn> lumps together every loss between sunlight on the panels and electricity delivered: hot cells, wiring, the inverter, dirt, mismatch and short outages.</p>
+  </section>
+
+  <h2 id="limits">Clear sky is a ceiling</h2>
+  <p><span class="claim claim--consensus">Current consensus</span> These numbers assume a cloudless, fairly clean sky every day of the year. No real place has that. Clouds can cut a day's sunlight to a small fraction, haze and dust dim the beam, and mountains or buildings shade the panel early and late. How far a real year falls below the ceiling depends strongly on the climate: much further in cloudy Seattle or London than in the Atacama around Calama. PVEducation makes the same point about its own clear-sky calculator: such numbers are not used for sizing real systems.<sup class="cite" data-src="pveducation-insolation"></sup></p>
+  <p>The clear-sky model itself is simple. The Meinel formula uses one fixed atmosphere for the whole planet,<sup class="cite" data-src="pveducation-air-mass"></sup> diffuse light is a flat 10 % of the beam, and the isotropic sky ignores the bright glow around the Sun and along the horizon. It is a teaching model: it gets the shapes and the ratios right, and puts the totals in the right range.</p>
+  <p>To estimate a real system, use measured weather. The National Solar Radiation Database (NSRDB) provides satellite-derived hourly sunlight, split into the same DNI, DHI and GHI shown here, and typical-year files built from it.<sup class="cite" data-src="nsrdb-2018,nsrdb-viewer"></sup> NREL's free PVWatts calculator (the lab was renamed the National Laboratory of the Rockies in December 2025<sup class="cite" data-src="pv-magazine-nrel-rename-2025"></sup>) runs a <dfn data-term="typical-meteorological-year">typical meteorological year</dfn> through a fuller model with cell temperature and system losses, and returns the monthly and yearly energy for an address.<sup class="cite" data-src="pvwatts-calculator,pvwatts-v5-2014"></sup> Open-source libraries such as pvlib let you build the same model chain yourself.<sup class="cite" data-src="pvlib-2023"></sup></p>
+
+  <h2 id="equations">The equations</h2>
+
+  <section class="eq" id="eq-sun" aria-labelledby="eq-sun-h">
+    <h3 id="eq-sun-h">How high is the Sun?</h3>
+    <p>Three angles decide it: your latitude <span class="tex">\varphi</span>, the Sun's declination <span class="tex">\delta</span> (where it stands overhead today), and the hour angle <span class="tex">\omega</span>, which turns 15° for every hour away from solar noon.</p>
+    <div class="tex">\cos\theta_z = \sin\varphi\,\sin\delta + \cos\varphi\,\cos\delta\,\cos\omega, \qquad \alpha = 90^\circ - \theta_z</div>
+    <dl class="symbols">
+      <dt><span class="tex">\theta_z</span></dt><dd><dfn data-term="solar-zenith-angle">solar zenith angle</dfn>, from straight overhead (°)</dd>
+      <dt><span class="tex">\alpha</span></dt><dd>solar elevation above the horizon (°)</dd>
+      <dt><span class="tex">\varphi</span></dt><dd>latitude, north positive (°)</dd>
+      <dt><span class="tex">\delta</span></dt><dd>solar declination, between about −23.4° and +23.4° (°)</dd>
+      <dt><span class="tex">\omega</span></dt><dd>hour angle: 0 at solar noon, 15° per hour, negative in the morning (°)</dd>
+    </dl>
+    <div class="worked" data-check="sunpath:zenithFromAngles" data-args="[34.05, 23.44, 0]" data-expect="10.61" data-tol="0.01">
+      Los Angeles at solar noon on the June solstice: <span class="tex">\varphi = 34.05°</span>, <span class="tex">\delta = 23.44°</span>, <span class="tex">\omega = 0</span>. At noon the formula reduces to <span class="tex">\theta_z = \varphi - \delta</span> = <span class="answer">10.61°</span>, so the Sun stands 79.4° high.
+    </div>
+    <div class="worked" data-check="sunpath:sunAt" data-args="[&quot;2026-03-20T12:07:26Z&quot;, 0, 0]" data-pick="elevation" data-expect="89.96" data-tol="0.01">
+      On the equator at the Greenwich meridian, on the March 2026 equinox, the full NOAA calculation puts the Sun <span class="answer">89.96°</span> high at 12:07 UTC. It is at its highest, almost exactly overhead, 7 minutes after clock noon because of the equation of time.
+    </div>
+    <div class="worked expert" data-check="sunpath:noonElevation" data-args="[78.22, -23.44]" data-expect="-11.66" data-tol="0.01">
+      Longyearbyen (78.22° N) on the December solstice: the highest the Sun gets is <span class="tex">90° - |\varphi - \delta|</span> = <span class="answer">−11.66°</span>, below the horizon all day. That is polar night.
+    </div>
+  </section>
+
+  <section class="eq" id="eq-beam" aria-labelledby="eq-beam-h">
+    <h3 id="eq-beam-h">How strong is the beam?</h3>
+    <p>The lower the Sun, the longer its path through the air. For a flat atmosphere the path would grow as <span class="tex">1/\cos\theta_z</span>, which blows up at the horizon; Kasten and Young's formula follows the curved, refracting atmosphere instead.<sup class="cite" data-src="kasten-young-1989"></sup> An empirical rule then turns air mass into beam strength.<sup class="cite" data-src="pveducation-air-mass"></sup></p>
+    <div class="tex">AM = \frac{1}{\cos\theta_z + 0.50572\,(96.07995^\circ - \theta_z)^{-1.6364}}</div>
+    <div class="tex">\text{DNI} = 1353\left[(1 - a h)\,0.7^{AM^{0.678}} + a h\right]</div>
+    <dl class="symbols">
+      <dt><span class="tex">AM</span></dt><dd>relative air mass (no unit); <span class="tex">\theta_z</span> in degrees</dd>
+      <dt><span class="tex">\text{DNI}</span></dt><dd>clear-sky direct normal irradiance (W/m²)</dd>
+      <dt><span class="tex">1353</span></dt><dd>the solar constant used by Meinel and Meinel (W/m²)</dd>
+      <dt><span class="tex">0.7,\ 0.678</span></dt><dd>empirical: about 70 % of the beam survives one air mass</dd>
+      <dt><span class="tex">a,\ h</span></dt><dd><span class="tex">a = 0.14</span> per km; <span class="tex">h</span> is the site's height above sea level (km)</dd>
+    </dl>
+    <div class="worked" data-check="solar:airMass" data-args="[60]" data-expect="1.994" data-tol="0.001">
+      With the Sun 30° above the horizon (<span class="tex">\theta_z = 60°</span>), the light crosses <span class="answer">1.99</span> atmospheres; the flat-Earth estimate <span class="tex">1/\cos 60° = 2</span> is still good here.
+    </div>
+    <div class="worked" data-check="solar:clearSkyDNI" data-args="[48.19]" data-expect="846.4" data-tol="0.5">
+      At <span class="tex">\theta_z = 48.19°</span>, air mass 1.5 (the standard test spectrum's), the beam at sea level is <span class="tex">1353 \times 0.7^{1.5^{0.678}}</span> = <span class="answer">846 W/m²</span>.
+    </div>
+    <div class="worked" data-check="solar:clearSkyDNI" data-args="[0, 2.24]" data-expect="1074.4" data-tol="0.5">
+      With the Sun overhead, the beam is 947 W/m² at sea level but <span class="answer">1074 W/m²</span> in Mexico City, 2.24 km up: there is less air above it. Set the site elevation to 0 and back to see the difference.
+    </div>
+  </section>
+
+  <section class="eq" id="eq-aoi" aria-labelledby="eq-aoi-h">
+    <h3 id="eq-aoi-h">The angle of incidence</h3>
+    <p>A beam hitting a surface at an angle spreads over more area, so each square metre gets less: the cosine of the angle between the beam and the panel's normal. It combines the Sun's position with the panel's tilt and direction.<sup class="cite" data-src="pveducation-arbitrary-tilt"></sup></p>
+    <div class="tex">\cos\theta = \cos\theta_z\cos\beta + \sin\theta_z\sin\beta\cos(\gamma_s - \gamma)</div>
+    <dl class="symbols">
+      <dt><span class="tex">\theta</span></dt><dd>angle of incidence between the beam and the panel normal (°)</dd>
+      <dt><span class="tex">\beta</span></dt><dd>panel tilt from horizontal (°)</dd>
+      <dt><span class="tex">\gamma_s,\ \gamma</span></dt><dd>azimuth of the Sun and of the direction the panel faces, clockwise from north (°)</dd>
+    </dl>
+    <div class="worked" data-check="solar:cosAOI" data-args="[30, 180, 40, 200]" data-expect="0.9654" data-tol="0.0001">
+      A panel tilted 30° facing south (180°), with the Sun 50° high in the south-southwest (zenith 40°, azimuth 200°): <span class="tex">\cos\theta = \cos 40°\cos 30° + \sin 40°\sin 30°\cos 20°</span> = <span class="answer">0.965</span>, an angle of incidence of 15°. The panel catches 96.5 % of what a Sun-facing panel would.
+    </div>
+  </section>
+
+  <section class="eq" id="eq-poa" aria-labelledby="eq-poa-h">
+    <h3 id="eq-poa-h">Light on the panel: beam + sky + ground</h3>
+    <p>The beam arrives through the cosine. The <dfn data-term="isotropic-sky-model">isotropic sky model</dfn> assumes the diffuse sky is equally bright everywhere, so the panel gets the share of the sky it can see, <span class="tex">(1+\cos\beta)/2</span>; the rest of its view is ground, reflecting the albedo's share of the global light.<sup class="cite" data-src="liu-jordan-1963,kamphuis-2020"></sup></p>
+    <div class="tex">G_\text{POA} = \text{DNI}\,\max(\cos\theta, 0) + \text{DHI}\,\frac{1 + \cos\beta}{2} + \text{GHI}\,\rho\,\frac{1 - \cos\beta}{2}</div>
+    <dl class="symbols">
+      <dt><span class="tex">G_\text{POA}</span></dt><dd>plane-of-array irradiance (W/m²)</dd>
+      <dt><span class="tex">\text{DHI},\ \text{GHI}</span></dt><dd>diffuse and global irradiance on horizontal ground (W/m²); here DHI = 0.1 DNI and GHI = DNI cos θ<sub>z</sub> + DHI</dd>
+      <dt><span class="tex">\rho</span></dt><dd>ground albedo (no unit)</dd>
+    </dl>
+    <div class="worked" data-check="solar:poaIsotropic" data-args="[{&quot;dni&quot;: 800, &quot;dhi&quot;: 80, &quot;ghi&quot;: 692.8, &quot;tilt&quot;: 30, &quot;surfaceAzimuth&quot;: 180, &quot;zenith&quot;: 40, &quot;azimuth&quot;: 200, &quot;albedo&quot;: 0.2}]" data-pick="total" data-expect="856.3" data-tol="0.1">
+      The same panel and Sun, with DNI = 800 W/m², DHI = 80 W/m², GHI = 692.8 W/m² over grass (ρ = 0.2): beam 772.3 + sky 74.6 + ground 9.3 = <span class="answer">856 W/m²</span>, about 24 % more than flat ground gets.
+    </div>
+    <div class="expert expert-note">
+      <p>Liu and Jordan's 1963 tilted-surface method made this model standard,<sup class="cite" data-src="liu-jordan-1963"></sup> though a historical review traces correct isotropic results back to 1942, and recommends anisotropic models for accurate work.<sup class="cite" data-src="kamphuis-2020"></sup> Real skies are brighter near the Sun (circumsolar light) and along the horizon, so the isotropic model tends to underestimate light on Sun-facing tilted panels. Models such as Hay–Davies and Perez, available in pvlib, split the diffuse light into these parts.<sup class="cite" data-src="pvlib-2023"></sup></p>
+    </div>
+  </section>
+
+  <section class="eq" id="eq-energy" aria-labelledby="eq-energy-h">
+    <h3 id="eq-energy-h">From sunlight to energy</h3>
+    <p>A panel's rating is the power it makes at 1000 W/m². So each peak sun hour is worth one hour at rated power, and the performance ratio takes off the losses.</p>
+    <div class="tex">H = \int G_\text{POA}\,dt, \qquad E = P_\text{STC} \times \text{PSH} \times PR</div>
+    <dl class="symbols">
+      <dt><span class="tex">H</span></dt><dd>insolation over a day (kWh/m²); the page sums 10-minute steps</dd>
+      <dt><span class="tex">\text{PSH}</span></dt><dd>peak sun hours: numerically equal to <span class="tex">H</span> in kWh/m² (h)</dd>
+      <dt><span class="tex">P_\text{STC}</span></dt><dd>array rating at standard test conditions (kWp)</dd>
+      <dt><span class="tex">PR</span></dt><dd>performance ratio, typically 0.75–0.85 (no unit)</dd>
+      <dt><span class="tex">E</span></dt><dd>energy delivered (kWh)</dd>
+    </dl>
+    <div class="worked" data-check="sunpath:dailyInsolationOn" data-args="[&quot;2026-06-21&quot;, {&quot;lat&quot;: 34.05, &quot;lon&quot;: -118.24, &quot;tilt&quot;: 0}]" data-expect="8.56" data-tol="0.01">
+      Flat ground in Los Angeles on a clear June solstice collects <span class="answer">8.56 kWh/m²</span>: 8.56 peak sun hours, spread over more than 14 hours of daylight.
+    </div>
+    <div class="worked" data-check="solar:arrayEnergyKWh" data-args="[5, 5.5, 0.8]" data-expect="22" data-tol="0.001">
+      A 5 kWp array on a day with 5.5 peak sun hours and a performance ratio of 0.8: <span class="tex">5 \times 5.5 \times 0.8</span> = <span class="answer">22 kWh</span>.
+    </div>
+    <div class="worked" data-check="solar:arrayEnergyKWh" data-args="[5, 2443, 0.8]" data-expect="9772" data-tol="0.5">
+      The same array tilted 30° south in Los Angeles, with the clear-sky year's 2443 kWh/m² at sea level (the widget adds the city's 90 m of height): <span class="tex">5 \times 2443 \times 0.8</span> = <span class="answer">9772 kWh</span> per year, a ceiling that real weather will not reach.
+    </div>
+  </section>
+
+  <h2 id="next">Where next</h2>
+  <p>The <a href="system-builder.html">system builder</a> uses this same clear-sky light to drive a whole array through an inverter, hour by hour. <a href="cell-to-grid.html">From cell to grid</a> explains what the performance ratio is made of, and <a href="../learn/iv-curve.html">current, voltage and power</a> shows why hot cells lose output.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

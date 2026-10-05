@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Hydropower – Solar Odyssey</title>
+<meta name="description" content="Falling water, dams and turbines.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="renewables-a-common.css">
+<link rel="stylesheet" href="hydro.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="hydro.js"></script>
+</head>
+<body data-page="hydro">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page ra-page" data-source="hydro">
+  <header class="page-head">
+    <span class="kicker"><a href="index.html">Renewables</a></span>
+    <h1>Hydropower</h1>
+    <p class="lede">The Sun lifts water as vapour and drops it as rain on high ground. On its way back to the sea, that water can be made to fall through a turbine. Hydropower is the oldest large source of clean electricity and still the biggest.</p>
+  </header>
+
+  <section class="today-figure" aria-label="Hydropower's share of world electricity">
+    <div>
+      <span class="tf-num" data-slot="pct">14.0 %</span>
+      <p class="tf-what">of the world's electricity came from <strong>hydropower</strong> in <span data-slot="year">2025</span>: <span data-slot="twh">4,435 TWh</span>.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> <span class="verified">2026-09-30</span></p>
+    </div>
+    <div class="tf-side">
+      <div data-slot="spark"></div>
+      <p class="tf-note">Highest shares among the countries in this course's dataset:</p>
+      <ul class="tf-leaders" data-slot="leaders"><li>Norway 90.0 % (2025)</li></ul>
+      <span class="data-badge"></span>
+    </div>
+  </section>
+
+  <p>At the end of 2025 the world had about 1,300 gigawatts of conventional hydropower, plus about 200 gigawatts of pumped storage, which uses the same machines as a giant rechargeable battery.<sup class="cite" data-src="irena-capacity-2026,iha-outlook-2026"></sup> Its share of world electricity has slipped slowly as wind and solar grow faster, but no other renewable yet makes more. The latest figures are on the <a href="../state-of-the-field.html">State of the field</a> page.</p>
+
+  <h2 id="history">From a country house to a 22-gigawatt dam</h2>
+  <ol class="mini-timeline">
+    <li><time datetime="1878">1878</time><p><span class="mt-what">Cragside.</span> William Armstrong's house in Northumberland, England, lights arc lamps from a water-driven dynamo, and in 1880 adds Swan's new incandescent bulbs: the first home lit by hydroelectricity.<sup class="cite" data-src="nt-cragside"></sup></p></li>
+    <li><time datetime="1882">1882</time><p><span class="mt-what">Appleton, Wisconsin.</span> The Vulcan Street plant, about 12.5 kW, becomes the first Edison hydroelectric central station selling power to customers in North America, weeks after Edison's coal-fired Pearl Street station.<sup class="cite" data-src="asme-vulcan-street,asce-vulcan-street"></sup></p></li>
+    <li><time datetime="1895">1895</time><p><span class="mt-what">Niagara Falls.</span> The Adams plant starts large-scale alternating-current generation; by 1900 ten 5,000-horsepower generators run there, and AC wins the argument over long-distance transmission.<sup class="cite" data-src="ethw-adams-1895"></sup></p></li>
+    <li><time datetime="1936">1936</time><p><span class="mt-what">Hoover Dam.</span> The first power reaches Los Angeles on 9 October 1936. Today its 17 main units total about 2,080 MW.<sup class="cite" data-src="census-hoover-2025,usbr-hoover-power"></sup></p></li>
+    <li><time datetime="1984">1984</time><p><span class="mt-what">Itaipu.</span> Brazil and Paraguay's dam on the Paraná starts generating; its twenty 700 MW units total 14,000 MW, and in 2016 it set its own record of 103 TWh in one year.<sup class="cite" data-src="itaipu-faq"></sup></p></li>
+    <li><time datetime="2012">2012</time><p><span class="mt-what">Three Gorges.</span> China's 22,500 MW dam on the Yangtze becomes the world's largest power station. Seasonal swings in the river mean its yearly output is similar to Itaipu's.<sup class="cite" data-src="usgs-three-gorges"></sup></p></li>
+    <li><time datetime="2025">2025</time><p><span class="mt-what">Water batteries.</span> Pumped storage passes 200 GW worldwide after a record 11.7 GW is added in a single year.<sup class="cite" data-src="iha-outlook-2026"></sup> <span class="verified">2026-09-30</span></p></li>
+  </ol>
+
+  <h2 id="how">How a hydro plant works</h2>
+  <p>A dam holds back a river and raises its level. Water enters an <em>intake</em> near the bottom of the reservoir, rushes down a steel pipe called a <dfn data-term="penstock">penstock</dfn>, and spins a turbine. The turbine turns a generator above it on the same shaft. The spent water leaves through the <dfn data-term="tailrace">tailrace</dfn> back into the river. Two numbers set the power: the <dfn data-term="hydraulic-head">head</dfn>, how far the water falls, and the flow, how much water passes each second.</p>
+
+  <section class="widget" id="dam" aria-labelledby="dam-h">
+    <h2 id="dam-h">A dam in cross-section</h2>
+    <p class="caption lead">Raise the head and the flow and watch the power. Switch between a storage dam, a run-of-river plant and pumped storage, and try each kind of turbine.</p>
+    <div class="widget-body split">
+      <div>
+        <canvas id="dam-canvas" class="ra-canvas" role="img" aria-label="Cross-section of a hydropower plant: reservoir, dam, intake, penstock, powerhouse with turbine and generator, and tailrace, with water flowing through and the head marked."></canvas>
+        <div class="ra-toolbar">
+          <div class="segmented" role="group" aria-label="Kind of plant" id="mode">
+            <button type="button" value="storage" aria-pressed="true">Storage dam</button>
+            <button type="button" value="river" aria-pressed="false">Run-of-river</button>
+            <button type="button" value="pumped" aria-pressed="false">Pumped storage</button>
+          </div>
+          <span class="spacer"></span>
+          <button type="button" class="btn ghost" id="pump" hidden>Switch to pumping</button>
+          <button type="button" class="btn ghost" id="dam-play">Pause</button>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="h-head">Head <output id="h-head-out" for="h-head">100 m</output></label>
+          <input type="range" id="h-head" min="0" max="1000" step="1" value="500">
+        </div>
+        <div class="control">
+          <label for="h-flow">Flow <output id="h-flow-out" for="h-flow">200 m³/s</output></label>
+          <input type="range" id="h-flow" min="0" max="1000" step="1" value="700">
+        </div>
+        <div class="control">
+          <label for="h-eta">Efficiency η <output id="h-eta-out" for="h-eta">90 %</output></label>
+          <input type="range" id="h-eta" min="60" max="95" step="1" value="90">
+        </div>
+        <div class="control">
+          <span class="label" id="tt-label">Turbine</span>
+          <div class="segmented" role="group" aria-labelledby="tt-label" id="tt">
+            <button type="button" value="auto" aria-pressed="true">Best for head</button>
+            <button type="button" value="kaplan" aria-pressed="false">Kaplan</button>
+            <button type="button" value="francis" aria-pressed="false">Francis</button>
+            <button type="button" value="pelton" aria-pressed="false">Pelton</button>
+          </div>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div><span class="k" id="o-p-k">Power</span><span class="v" id="o-p">177 MW</span></div>
+          <div><span class="k">Energy per m³</span><span class="v" id="o-e">0.25 kWh</span></div>
+          <div><span class="k">Free-fall water speed</span><span class="v" id="o-v">44 m/s</span></div>
+          <div><span class="k">Turbine</span><span class="v" id="o-t">Francis</span></div>
+        </div>
+        <p class="ra-status" id="h-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <h3 id="turbines">Three turbines for three kinds of site</h3>
+  <p>Engineers pick the turbine by the head.<sup class="cite" data-src="doe-hydro-turbines"></sup></p>
+  <div class="table-wrap">
+    <table class="ra-table">
+      <thead><tr><th scope="col">Turbine</th><th scope="col">How the water drives it</th><th scope="col">Best for</th></tr></thead>
+      <tbody>
+        <tr id="row-kaplan"><td><dfn data-term="kaplan-turbine">Kaplan</dfn></td><td>A ship's propeller in reverse, with blades that swivel to match the flow.</td><td>Low heads (a few to a few tens of metres) and big flows: rivers and estuaries.</td></tr>
+        <tr id="row-francis"><td><dfn data-term="francis-turbine">Francis</dfn></td><td>Water spirals in through a snail-shaped casing and pushes on curved vanes as it turns down through the runner.</td><td>Medium to high heads, about 40 to 600 m (130 to 2,000 ft): most large dams.</td></tr>
+        <tr id="row-pelton"><td><dfn data-term="pelton-turbine">Pelton</dfn></td><td>Jets of water hit a ring of split cups; the water's speed, not its pressure, does the work.</td><td>Very high heads and small flows: mountain plants.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="equations">The hydropower equation</h2>
+  <section class="eq" aria-labelledby="eq-p">
+    <h3 id="eq-p">Power from falling water</h3>
+    <p>Every kilogram of water that falls a height H gives up energy gH. Multiply by the kilograms arriving each second, ρQ, and by the share the turbine and generator keep, η. That is all: double the head or double the flow and the power doubles. A modern plant keeps about 90 % of the water's energy, far more than any fuel-burning plant, which is limited by heat-engine physics.<sup class="cite" data-src="usbr-hydro-pamphlet"></sup></p>
+    <div class="tex">P = \eta\,\rho\,g\,Q\,H</div>
+    <dl class="symbols">
+      <dt><span class="tex">P</span></dt><dd>electrical power, watts (W)</dd>
+      <dt><span class="tex">\eta</span></dt><dd>efficiency of turbine and generator together, about 0.9 (no units)</dd>
+      <dt><span class="tex">\rho</span></dt><dd>density of water, 1,000 kg/m³</dd>
+      <dt><span class="tex">g</span></dt><dd>gravitational acceleration, 9.81 m/s²</dd>
+      <dt><span class="tex">Q</span></dt><dd>flow through the turbines, cubic metres per second</dd>
+      <dt><span class="tex">H</span></dt><dd>net head, metres</dd>
+    </dl>
+    <div class="worked" data-check="renewables:hydroPower" data-args="[200, 100, 0.9]" data-expect="176.52e6" data-tol="0.01e6">
+      A dam with a 100 m head passing 200 m³/s (a small river's worth) at 90 % efficiency makes 0.9 × 1,000 × 9.81 × 200 × 100 = <span class="answer">176.5 MW</span>.
+    </div>
+    <div class="worked" data-check="fluids:jetSpeed" data-args="[500]" data-expect="99.03" data-tol="0.01">
+      Water falling 500 m to a Pelton wheel leaves the nozzle at up to √(2 × 9.81 × 500) = <span class="answer">99 m/s</span>, about 360 km/h. That is why high-head plants use jets and cups rather than a propeller.
+    </div>
+    <div class="expert expert-note">
+      <p>The net head is the gross drop between reservoir and tailwater minus friction losses in the intake and penstock, which grow with the square of the water speed; designers trade a wider, costlier penstock against lost head. Turbine families are chosen by specific speed, n<sub>s</sub> = n√P / H<sup>5/4</sup>: Pelton wheels have low specific speeds, Francis runners medium, and Kaplan and propeller runners high. Low heads therefore need large, fast-turning runners passing huge flows, which is why run-of-river plants are physically big for their output.<sup class="cite" data-src="doe-hydro-turbines"></sup></p>
+    </div>
+  </section>
+
+  <h2 id="kinds">Run-of-river, storage and pumped storage</h2>
+  <p>A <dfn data-term="run-of-river">run-of-river</dfn> plant uses the river as it comes. It floods little land, but its output rises and falls with the seasons. A storage dam keeps months of rain in its reservoir and can release it when electricity is needed: it is renewable power you can switch on, which makes it a natural partner for wind and solar.<sup class="cite" data-src="usbr-hydro-pamphlet"></sup></p>
+  <p><dfn data-term="pumped-storage">Pumped storage</dfn> adds a second reservoir. When power is plentiful, the turbines run backwards as pumps and lift water uphill; when it is scarce, the water runs back down. It stores energy rather than making it, and it is by far the largest form of grid storage today.<sup class="cite" data-src="doe-pumped-storage,iha-outlook-2026"></sup> More on the <a href="storage.html">energy storage</a> page.</p>
+  <section class="eq" aria-labelledby="eq-e">
+    <h3 id="eq-e">Energy stored by lifting water</h3>
+    <div class="tex">E = \rho\,V\,g\,H</div>
+    <dl class="symbols">
+      <dt><span class="tex">E</span></dt><dd>energy, joules (divide by 3.6 × 10⁶ for kWh)</dd>
+      <dt><span class="tex">V</span></dt><dd>volume of water lifted, cubic metres</dd>
+    </dl>
+    <div class="worked" data-check="renewables:liftedWaterEnergyJ" data-args="[1000000, 300]" data-expect="2.942e12" data-tol="0.001e12">
+      Lifting one million cubic metres (a lake 1 km × 1 km × 1 m) by 300 m stores <span class="answer">2.94 × 10¹² J</span>, about 817 MWh before losses: enough to deliver 100 MW for about eight hours.
+    </div>
+  </section>
+
+  <h2 id="fit">Strengths, limits and where hydro fits</h2>
+  <div class="fit-grid">
+    <div>
+      <h3>Strengths</h3>
+      <ul class="plus">
+        <li>Very efficient, and plants run for many decades.</li>
+        <li>Storage dams can be dispatched: they ramp up and down within minutes to follow demand or cover a lull in the wind.</li>
+        <li>Pumped storage is the largest grid-scale store of energy in the world.<sup class="cite" data-src="iha-outlook-2026"></sup></li>
+        <li>Reservoirs can also supply water, irrigation and flood control.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Limits</h3>
+      <ul class="minus">
+        <li>Depends on rain and snow: droughts cut output, and climate change makes river flows less predictable. <span class="claim claim--consensus">Current consensus</span></li>
+        <li>Large dams flood valleys, can displace communities, block fish migration and change rivers downstream.</li>
+        <li>Most of the best sites in rich countries are already used; much of the remaining potential is in Africa, Asia and South America.</li>
+        <li>Big projects take many years to plan and build.</li>
+      </ul>
+    </div>
+  </div>
+  <p>Hydro's flexibility is often worth more than its energy. In a grid with lots of wind and solar, a reservoir can hold its water back on sunny, windy days and run hard in the evening peak. See how that balancing works on the <a href="grid.html">smart grid</a> page, compare sources on the <a href="compare.html">comparison dashboard</a>, or follow the water's heat-driven cousin on the <a href="geothermal.html">geothermal</a> page.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

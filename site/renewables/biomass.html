@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Biomass – Solar Odyssey</title>
+<meta name="description" content="Stored sunlight in plants, burned or digested for power.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="renewables-a-common.css">
+<link rel="stylesheet" href="renewables-b-common.css">
+<link rel="stylesheet" href="biomass.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="biomass.js"></script>
+</head>
+<body data-page="biomass">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page ra-page rb-page" data-source="biomass">
+  <header class="page-head">
+    <span class="kicker"><a href="index.html">Renewables</a></span>
+    <h1>Biomass</h1>
+    <p class="lede">A log on the fire is sunlight from the last few decades, packed into sugar and wood by a plant. Burn it, rot it or ferment it and you get the energy back. Whether that helps the climate depends on what grows back afterwards.</p>
+  </header>
+
+  <section class="today-figure share-figure" data-sources="biofuel" data-noun="bioenergy" aria-label="Bioenergy's share of world electricity">
+    <div>
+      <span class="tf-num" data-slot="pct">2.2 %</span>
+      <p class="tf-what">of the world's electricity came from <strong>bioenergy</strong> in <span data-slot="year">2025</span>: <span data-slot="twh">710 TWh</span>.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> <span class="verified">2026-09-30</span></p>
+    </div>
+    <div class="tf-side">
+      <div data-slot="spark"></div>
+      <p class="tf-note">Electricity is only part of bioenergy's story: far more is burned for heat and cooking or made into transport fuels. See <a href="../state-of-the-field.html">State of the field</a> for current figures.</p>
+      <span class="data-badge"></span>
+    </div>
+  </section>
+
+  <p><dfn data-term="biomass">Biomass</dfn> is any plant or animal material used as fuel: wood and wood pellets, straw and husks, manure, food waste, and crops grown for energy. All of it got its energy from the same place as a solar panel, the Sun, through <dfn data-term="photosynthesis">photosynthesis</dfn>. Unlike a solar panel, a plant stores what it catches, so biomass can be burned when it is needed. The price is efficiency: plants are poor solar collectors.</p>
+
+  <h2 id="history">From a Nobel prize to the carbon debt</h2>
+  <ol class="mini-timeline">
+    <li><time datetime="1961">1961</time><p><span class="mt-what">How plants capture carbon.</span> Melvin Calvin wins the Nobel Prize in Chemistry for working out how plants take carbon dioxide from the air and build it into sugars, the chemistry every form of biomass energy starts from.<sup class="cite" data-src="nobel-chemistry-1961"></sup></p></li>
+    <li><time datetime="1975">1975</time><p><span class="mt-what">Brazil bets on sugarcane.</span> Brazil launches its National Alcohol Programme (Pró-Álcool) to replace petrol with ethanol from sugarcane.<sup class="cite" data-src="fapesp-proalcool-2016"></sup></p></li>
+    <li><time datetime="2003">2003</time><p><span class="mt-what">Cars that take either fuel.</span> Flexible-fuel cars, which run on any mix of petrol and ethanol, go on sale in Brazil.<sup class="cite" data-src="goldemberg-2008"></sup></p></li>
+    <li><time datetime="2008">2008</time><p><span class="mt-what">The carbon debt.</span> A study in <i>Science</i> shows that clearing rainforest, peatland or grassland to grow biofuel crops releases far more carbon than the biofuel saves each year: a debt that takes a long time to repay.<sup class="cite" data-src="fargione-2008"></sup></p></li>
+    <li><time datetime="2008">2008</time><p><span class="mt-what">The ceiling on leaves.</span> Plant scientists calculate the most a plant could ever store: 4.6 % of the sunlight for most crops (C3 plants) and 6 % for maize and sugarcane (C4 plants).<sup class="cite" data-src="zhu-long-ort-2008"></sup></p></li>
+    <li><time datetime="2011">2011</time><p><span class="mt-what">Leaves against panels.</span> A cross-disciplinary team compares photosynthesis with solar cells on equal terms and finds solar-powered electrolysis about ten times more efficient over a year than crops.<sup class="cite" data-src="blankenship-2011,ort-durham-2012"></sup> The same year, an ethanol plant in Decatur, Illinois, starts capturing its CO₂ and storing it underground.<sup class="cite" data-src="bioenergyintl-iccs-2017,adm-decatur-2021"></sup></p></li>
+    <li><time datetime="2017">2017</time><p><span class="mt-what">BECCS at commercial scale.</span> The Illinois project's commercial phase begins, able to handle up to 2,000 tonnes of CO₂ a day, roughly 0.7 million tonnes a year: still one of very few large plants of its kind.<sup class="cite" data-src="bioenergyintl-iccs-2017,adm-decatur-2021"></sup> <span class="claim claim--research">Early deployment</span></p></li>
+    <li><time datetime="2022">2022</time><p><span class="mt-what">The IPCC weighs the trade-offs.</span> The UN's climate panel finds bioenergy and <dfn data-term="beccs">BECCS</dfn> can be a large part of mitigation, but warns that poorly planned biomass production can harm biodiversity, water and food security.<sup class="cite" data-src="ipcc-ar6-wg3-ch7"></sup></p></li>
+  </ol>
+
+  <h2 id="how">Four ways to get the sunlight back</h2>
+  <p>Biomass is chemical energy: sugars, starch, cellulose and oils that the plant made from carbon dioxide, water and light. There are four main routes to release it.</p>
+  <ul class="routes">
+    <li><strong>Burning.</strong> Wood chips, pellets or straw are burned in a boiler; the steam spins a turbine, just as in a coal plant. Some coal plants have been converted to burn wood pellets, and the waste heat can warm buildings.</li>
+    <li><strong><dfn data-term="gasification">Gasification</dfn>.</strong> Heating biomass with too little air to burn it makes a fuel gas, mostly carbon monoxide and hydrogen, which can run an engine or be turned into liquid fuels.</li>
+    <li><strong><dfn data-term="anaerobic-digestion">Anaerobic digestion</dfn>.</strong> Microbes in a sealed tank break down manure, sewage or food waste and give off biogas, mostly methane. The biogas runs an engine or is cleaned up and fed into the gas network.</li>
+    <li><strong><dfn data-term="biofuel">Biofuels</dfn>.</strong> Yeast ferments sugar from sugarcane or maize into ethanol; vegetable oils and waste fats become biodiesel. These mostly power vehicles rather than the grid.</li>
+  </ul>
+
+  <section class="widget" id="loop" aria-labelledby="loop-h">
+    <h2 id="loop-h">Two carbon loops</h2>
+    <p class="caption lead">Burn a tonne of carbon in each power station and follow it. On the left it came from plants, which drew it from the air; on the right it came from a coal seam, out of the air for millions of years. Change what happens after the harvest and see how much carbon builds up in the air. <span class="tag-illustrative">Toy model</span></p>
+    <div class="widget-body">
+      <div>
+        <canvas id="loop-canvas" class="rb-canvas loop-canvas" role="img" aria-label="Two panels. Left: carbon dots rise from a biomass power station into the air and are drawn back down into regrowing plants. Right: carbon dots rise from a coal seam through a power station into the air and stay there. A gauge above each panel shows the carbon added to the air."></canvas>
+        <ul class="rb-key" aria-label="Key">
+          <li><span class="sw sw-c" aria-hidden="true"></span>Carbon, as CO₂ or in plants</li>
+          <li><span class="sw sw-store" aria-hidden="true"></span>Captured and stored underground</li>
+          <li><span class="sw sw-air" aria-hidden="true"></span>Extra carbon in the air</li>
+        </ul>
+        <div class="ra-toolbar">
+          <button type="button" class="btn ghost" id="loop-play">Play</button>
+          <button type="button" class="btn ghost" id="loop-step">Next harvest</button>
+          <button type="button" class="btn ghost" id="loop-reset">Reset</button>
+          <span class="spacer"></span>
+          <span class="muted loop-count" id="loop-count" aria-live="polite">Harvest 0 of 10</span>
+        </div>
+      </div>
+      <div class="controls loop-controls">
+        <div class="control">
+          <label for="l-regrow">Regrowth before the next harvest <output id="l-regrow-out" for="l-regrow">100 %</output></label>
+          <input type="range" id="l-regrow" min="0" max="100" step="5" value="100">
+          <p class="hint">100 %: as much carbon grows back as was burned (a well-run coppice or a crop residue). Lower: slow-growing forest, or land that is not replanted.</p>
+        </div>
+        <div class="control">
+          <label for="l-capture">Captured at the chimney (BECCS) <output id="l-capture-out" for="l-capture">0 %</output></label>
+          <input type="range" id="l-capture" min="0" max="90" step="10" value="0">
+        </div>
+        <div class="control">
+          <label class="check"><input type="checkbox" id="l-debt"> Clear a forest to plant the energy crop first</label>
+          <p class="hint">Adds a one-off release of 3 tonnes of carbon in the first harvest: the trees and soil carbon lost in clearing.</p>
+        </div>
+        <div class="readout rb-readout" aria-live="polite">
+          <div><span class="k">Added to air, biomass</span><span class="v" id="r-bio">0 <small>t C</small></span></div>
+          <div><span class="k">Added to air, coal</span><span class="v" id="r-fossil">0 <small>t C</small></span></div>
+          <div><span class="k">As CO₂, biomass</span><span class="v" id="r-bio-co2">0 <small>t</small></span></div>
+        </div>
+        <p class="ra-status" id="loop-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <p>The left loop is what people mean by calling biomass <em>renewable</em>: the carbon goes round and round. But it only closes if the land grows back as much carbon as was burned, and on a timescale that matters. Turn regrowth down to 50 % and the biomass plant adds half as much carbon as coal, harvest after harvest. Tick the forest-clearing box and the biomass plant starts its life in debt. Turn on capture with full regrowth and the loop runs backwards: carbon leaves the air. That is the promise of BECCS. <span class="claim claim--consensus">Current consensus</span></p>
+  <div class="expert expert-note">
+    <p>The model counts carbon only at the chimney and in regrowth. A real lifecycle assessment also counts the fossil energy used to farm, fertilise, dry, pellet and ship the fuel, the nitrous oxide from fertiliser, the methane from digesters that leak, and what the land would have stored if it had been left alone (the counterfactual). Those terms can be larger than the chimney term, which is why published <dfn data-term="lifecycle-emissions">lifecycle emissions</dfn> for bioenergy span such a wide range.<sup class="cite" data-src="ipcc-ar6-wg3-ch7,fargione-2008"></sup></p>
+  </div>
+
+  <h2 id="equations">The numbers behind a leaf</h2>
+
+  <section class="eq" aria-labelledby="eq-collector">
+    <h3 id="eq-collector">A plant as a solar collector</h3>
+    <p>Think of a field as a solar panel that stores its output as chemical energy. The energy it stores in a year is the sunlight falling on it times the fraction it keeps. Plants waste most of the light: they use only part of the spectrum, they saturate in bright sun, they spend energy on breathing and growing, and fields are bare for part of the year. Even the theoretical best is 4.6 % for most crops and 6 % for C4 plants such as maize and sugarcane;<sup class="cite" data-src="zhu-long-ort-2008"></sup> in real fields, crops typically keep about 1 % of the year's sunlight.<sup class="cite" data-src="ort-durham-2012,blankenship-2011,fao-bioenergy-future"></sup></p>
+    <div class="tex">E = H\,\eta_{\text{ps}}\,A</div>
+    <dl class="symbols">
+      <dt><span class="tex">E</span></dt><dd>chemical energy stored in a year, kilowatt-hours (kWh)</dd>
+      <dt><span class="tex">H</span></dt><dd>yearly sunlight on the ground, kWh per square metre per year</dd>
+      <dt><span class="tex">\eta_{\text{ps}}</span></dt><dd>photosynthetic efficiency: share of the sunlight stored (no units)</dd>
+      <dt><span class="tex">A</span></dt><dd>area, square metres (m²)</dd>
+    </dl>
+    <div class="worked" data-check="bio:storedEnergyKWh" data-args="[1800, 0.01, 1]" data-expect="18" data-tol="0.001">
+      A sunny mid-latitude site receives about 1,800 kWh/m² a year (an assumed round figure). At 1 %, one square metre of crop stores 1,800 × 0.01 = <span class="answer">18 kWh</span> a year as chemical energy.
+    </div>
+    <div class="worked" data-check="renewables:roundTrip" data-args="[0.01, 0.3]" data-expect="0.003" data-tol="0.000001">
+      Burn that crop in a power station that turns an assumed 30 % of the fuel's heat into electricity, and the whole chain from sunlight to electricity is 0.01 × 0.30 = <span class="answer">0.003</span>, or 0.3 %. A solar panel on the same square metre would deliver tens of times more electricity. Biomass earns its place by being storable and by using wastes, not by efficiency.
+    </div>
+    <figure class="eff-bars" aria-labelledby="eff-cap">
+      <div class="eff-row"><span class="eff-name">Theoretical best, C4 plants</span><span class="eff-bar"><span class="eff-fill fill-6"></span></span><span class="eff-val">6 %</span></div>
+      <div class="eff-row"><span class="eff-name">Theoretical best, C3 plants</span><span class="eff-bar"><span class="eff-fill fill-46"></span></span><span class="eff-val">4.6 %</span></div>
+      <div class="eff-row"><span class="eff-name">Typical crop over a year</span><span class="eff-bar"><span class="eff-fill fill-1"></span></span><span class="eff-val">≈ 1 %</span></div>
+      <div class="eff-row"><span class="eff-name">Crop, then burned for power (assumed 30 %)</span><span class="eff-bar"><span class="eff-fill fill-03"></span></span><span class="eff-val">≈ 0.3 %</span></div>
+      <figcaption id="eff-cap">Share of the sunlight on a field that ends up stored or delivered, on a scale from 0 to 6 %.</figcaption>
+    </figure>
+    <div class="expert">
+      <h4>Where the light goes</h4>
+      <p>Photosynthesis builds sugar from carbon dioxide and water: 6 CO₂ + 6 H₂O + light → C₆H₁₂O₆ + 6 O₂. Zhu, Long and Ort follow a beam of sunlight down the chain: about half of the solar energy lies outside the 400–700 nm band that chlorophyll uses; some is reflected or passes through the leaf; each absorbed photon's energy above the reaction centres' needs is lost as heat; then the carbon-fixing enzyme Rubisco also grabs oxygen by mistake (photorespiration), which C4 plants largely avoid by concentrating CO₂; finally the plant respires part of what it made. Multiplying these stages gives the 4.6 % (C3, 30 °C, 380 ppm CO₂) and 6 % (C4) ceilings.<sup class="cite" data-src="zhu-long-ort-2008"></sup> Their analysis also notes that C4's advantage shrinks as atmospheric CO₂ rises.</p>
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-co2">
+    <h3 id="eq-co2">From carbon to carbon dioxide</h3>
+    <p>When biomass or coal burns, each carbon atom picks up two oxygen atoms from the air. Oxygen is heavy, so the carbon dioxide weighs more than the carbon did: 12 parts of carbon become 44 parts of CO₂. That is why a tonne of fuel can produce well over a tonne of CO₂.</p>
+    <div class="tex">m_{\mathrm{CO_2}} = m_{\mathrm{C}} \times \frac{M_{\mathrm{CO_2}}}{M_{\mathrm{C}}} = m_{\mathrm{C}} \times \frac{44.009}{12.011}</div>
+    <dl class="symbols">
+      <dt><span class="tex">m</span></dt><dd>mass, kilograms or tonnes</dd>
+      <dt><span class="tex">M</span></dt><dd>molar mass, grams per mole: carbon 12.011, carbon dioxide 44.009</dd>
+    </dl>
+    <div class="worked" data-check="bio:co2FromCarbonKg" data-args="[1]" data-expect="3.664" data-tol="0.001">
+      Burning 1 kg of carbon releases 1 × 44.009 ÷ 12.011 = <span class="answer">3.66 kg</span> of CO₂. In the carbon-loop model above, one harvest burns a tonne of carbon: 3.66 tonnes of CO₂.
+    </div>
+  </section>
+
+  <h2 id="debate">Is it good for the climate? The honest answer: it depends</h2>
+  <p>Few energy sources divide experts like biomass. The physics is not in dispute; the bookkeeping is.</p>
+  <ul class="debate">
+    <li><span class="claim claim--consensus">Current consensus</span> <strong>Wastes and residues are the low-risk end.</strong> Using crop residues, sawmill waste, manure and food waste that would otherwise rot or be burned in the open takes no extra land. Dedicated energy crops have a much larger potential, but also larger risks: the IPCC puts the technical potential of residues at roughly 5–50 exajoules a year by 2050, and of dedicated biomass at 50–250, with medium agreement.<sup class="cite" data-src="ipcc-ar6-wg3-ch7"></sup></li>
+    <li><span class="claim claim--consensus">Current consensus</span> <strong>Land is the crux.</strong> Clearing forest, peatland or grassland for energy crops releases stored carbon that can outweigh the fossil fuel saved for many years.<sup class="cite" data-src="fargione-2008"></sup> The IPCC finds with high confidence that poorly planned biomass production can conflict with biodiversity, water, food security and livelihoods.<sup class="cite" data-src="ipcc-ar6-wg3-ch7"></sup></li>
+    <li><span class="claim claim--research">Active research</span> <strong>BECCS at scale is unproven.</strong> Capturing CO₂ from bioenergy plants and storing it underground could remove carbon from the air. The IPCC estimates a technical potential of about 5.9 (range 0.5–11.3) billion tonnes of CO₂ a year, of which 1.6 billion is available below 100 US dollars per tonne.<sup class="cite" data-src="ipcc-ar6-wg3-ch7"></sup> Operating projects remain few and small next to those numbers: the best known, at an ethanol plant in Decatur, Illinois, had stored about 3.4 million tonnes in total by 2021.<sup class="cite" data-src="adm-decatur-2021"></sup></li>
+    <li><span class="claim claim--settled">Settled</span> <strong>Plants are inefficient collectors.</strong> On the same land, solar panels capture far more energy per year than crops.<sup class="cite" data-src="blankenship-2011"></sup> Biomass is worth its land mainly where it does something panels cannot: store energy for months, make liquid fuels and materials, or use waste.</li>
+  </ul>
+
+  <h2 id="fit">Strengths, limits and where biomass fits</h2>
+  <div class="fit-grid">
+    <div>
+      <h3>Strengths</h3>
+      <ul class="plus">
+        <li>Stored energy: a pile of pellets or a tank of biogas can run when wind and solar cannot.</li>
+        <li>Can reuse existing boilers, turbines, engines and gas networks.</li>
+        <li>Turns wastes that would rot (and emit methane) into useful energy.</li>
+        <li>With carbon capture, one of the few technologies that could remove CO₂ from the air while making energy.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Limits</h3>
+      <ul class="minus">
+        <li>Very low efficiency from sunlight, so it needs a lot of land.</li>
+        <li>Climate benefit depends on feedstock, land history and regrowth time; it can be worse than fossil fuel.</li>
+        <li>Competes with food, forests and biodiversity for land and water.</li>
+        <li>Burning causes local air pollution unless well controlled.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="compare-cta">Biomass is a fuel, so it can fill gaps that weather-driven sources leave. See how it compares on capacity factor, land use and cost on the <a href="compare.html">comparison dashboard</a>, or follow sunlight down a different path, through mirrors and heat, on the <a href="csp.html">concentrated solar power</a> page.</p>
+
+  <section class="references-block" data-auto aria-labelledby="refs-h"></section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

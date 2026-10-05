@@ -1,0 +1,400 @@
+{
+  "mollerstrom-2025": {
+    "type": "article",
+    "authors": "Möllerström, E.; Gipe, P.; Ottermo, F.",
+    "title": "Wind power development: A historical review",
+    "container": "Wind Engineering 49(2), 499–512",
+    "year": 2025,
+    "doi": "10.1177/0309524X241260061",
+    "verified": "2026-10-02",
+    "note": "Blyth 1887 (8 m, 3 kW), Brush 1888 (17 m, 12 kW, 144 blades, ran 20 years), la Cour 1891 (18 kW, aerodynamic experiments), Smith–Putnam 1941 (53 m, 1.25 MW, largest until 1979, blade failure 1945), Gedser 1957 (24 m, 200 kW, forerunner of the Danish concept)."
+  },
+  "price-2005-blyth": {
+    "type": "article",
+    "authors": "Price, T. J.",
+    "title": "James Blyth — Britain's first modern wind power pioneer",
+    "container": "Wind Engineering 29(3), 191–200",
+    "year": 2005,
+    "doi": "10.1260/030952405774354921",
+    "verified": "2026-10-02",
+    "note": "Blyth's electricity-generating wind experiments from July 1887; UK patent 1891."
+  },
+  "ethw-smith-putnam": {
+    "type": "web",
+    "authors": "Engineering and Technology History Wiki (IEEE History Center)",
+    "title": "Palmer Putnam's 1.5 MW wind turbine",
+    "year": 2024,
+    "url": "https://ethw.org/Palmer_Putnam's_1.5_MW_Wind_Turbine",
+    "verified": "2026-09-30",
+    "note": "Grandpa's Knob, Vermont; began operating 19 October 1941; about 300 000 kWh before a blade failure."
+  },
+  "manwell-2009": {
+    "type": "book",
+    "authors": "Manwell, J. F.; McGowan, J. G.; Rogers, A. L.",
+    "title": "Wind Energy Explained: Theory, Design and Application (2nd edition)",
+    "container": "John Wiley & Sons, Chichester",
+    "year": 2009,
+    "doi": "10.1002/9781119994367",
+    "verified": "2026-10-02",
+    "note": "Chapter 3 (aerodynamics): actuator disc, Betz limit, blade-element forces, tip-speed ratio; Chapter 2: Rayleigh wind-speed distributions."
+  },
+  "van-kuik-2007": {
+    "type": "article",
+    "authors": "van Kuik, G. A. M.",
+    "title": "The Lanchester–Betz–Joukowsky limit",
+    "container": "Wind Energy 10(3), 289–291",
+    "year": 2007,
+    "doi": "10.1002/we.218",
+    "verified": "2026-10-02",
+    "note": "The 16/27 limit was derived independently by Lanchester (1915), Betz (1920) and Joukowsky (1920)."
+  },
+  "vestas-v236": {
+    "type": "web",
+    "authors": "Vestas Wind Systems",
+    "title": "V236-15.0 MW offshore wind turbine",
+    "year": 2026,
+    "url": "https://www.vestas.com/en/energy-solutions/offshore-wind-turbines/V236-15MW",
+    "verified": "2026-10-02",
+    "note": "Rated 15 000 kW; rotor 236 m; swept area 43 742 m²; cut-in 3 m/s, cut-out 31 m/s; capacity factor 'exceeds 60 %' (manufacturer's claim, best sites); up to 80 GWh/year; launched February 2021."
+  },
+  "vestas-v172": {
+    "type": "web",
+    "authors": "Vestas Wind Systems",
+    "title": "V172-7.2 MW onshore wind turbine (EnVentus platform)",
+    "year": 2026,
+    "url": "https://www.vestas.com/en/energy-solutions/onshore-wind-turbines/enventus-platform/V172-7-2-MW",
+    "verified": "2026-09-30",
+    "note": "Rated 7 200 kW; rotor 172 m; swept area 23 235 m²; cut-in 3 m/s, cut-out 25 m/s; hub heights 114–199 m."
+  },
+  "gaertner-2020-iea15": {
+    "type": "report",
+    "authors": "Gaertner, E.; Rinker, J.; Sethuraman, L.; et al.",
+    "title": "IEA Wind TCP Task 37: Definition of the IEA 15-Megawatt Offshore Reference Wind Turbine",
+    "container": "National Renewable Energy Laboratory, NREL/TP-5000-75698",
+    "year": 2020,
+    "doi": "10.2172/1603478",
+    "verified": "2026-10-02",
+    "note": "Open reference design: 15 MW, 240 m rotor, 150 m hub height, direct drive."
+  },
+  "offshorewind-dongfang-2025": {
+    "type": "web",
+    "authors": "Offshore Wind (offshorewind.biz)",
+    "title": "Dongfang installs 'world's largest single-capacity' offshore wind turbine for testing",
+    "year": 2025,
+    "url": "https://www.offshorewind.biz/2025/09/03/dongfang-installs-worlds-largest-single-capacity-offshore-wind-turbine-for-testing",
+    "verified": "2026-09-30",
+    "note": "Trade press, 3 September 2025: 26 MW, 310 m rotor, installed at the Dongying test base, Shandong. Corroborated by Windtech International (windtech-dongfang-2025); no manufacturer page found."
+  },
+  "irena-capacity-2026": {
+    "type": "report",
+    "authors": "International Renewable Energy Agency (IRENA)",
+    "title": "Renewable capacity highlights 2026",
+    "container": "IRENA, Abu Dhabi, 31 March 2026",
+    "year": 2026,
+    "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2026/Mar/IRENA_DAT_RE_capacity_highlights_2026.pdf",
+    "verified": "2026-10-02",
+    "note": "End of 2025: wind 1 291 GW (offshore about 7.1 % of wind); hydropower 1 296 GW excluding pumped storage; geothermal 16 GW; marine energy 0.5 GW."
+  },
+  "irena-press-2025-costs": {
+    "type": "web",
+    "authors": "International Renewable Energy Agency (IRENA)",
+    "title": "91% of new renewable projects now cheaper than fossil fuel alternatives (press release)",
+    "year": 2025,
+    "url": "https://www.irena.org/News/pressreleases/2025/Jul/91-Percent-of-New-Renewable-Projects-Now-Cheaper-Than-Fossil-Fuels-Alternatives",
+    "verified": "2026-09-30",
+    "note": "Onshore wind: global weighted-average LCOE of USD 0.034/kWh for projects commissioned in 2024."
+  },
+  "nt-cragside": {
+    "type": "web",
+    "authors": "National Trust",
+    "title": "Cragside's history",
+    "year": 2026,
+    "url": "https://www.nationaltrust.org.uk/visit/north-east/cragside/history-of-cragside",
+    "verified": "2026-09-30",
+    "note": "Arc lamps in the Gallery in 1878; incandescent bulbs in the Library in 1880; described as the first place lit by hydroelectricity."
+  },
+  "ethw-adams-1895": {
+    "type": "web",
+    "authors": "IEEE History Center",
+    "title": "Milestones: Adams Hydroelectric Generating Plant, 1895",
+    "year": 1990,
+    "url": "https://ethw.org/Milestones:Adams_Hydroelectric_Generating_Plant,_1895",
+    "verified": "2026-09-30",
+    "note": "26 August 1895; ten 5 000 hp generators by 1900; first large-scale multiphase (AC) power station."
+  },
+  "census-hoover-2025": {
+    "type": "web",
+    "authors": "U.S. Census Bureau",
+    "title": "History and the Census: Hoover Dam",
+    "year": 2025,
+    "url": "https://www.census.gov/about/history/stories/monthly/2025/september-2025.html",
+    "verified": "2026-09-30",
+    "note": "The power plant began sending electricity to Los Angeles on 9 October 1936."
+  },
+  "usbr-hoover-power": {
+    "type": "web",
+    "authors": "U.S. Bureau of Reclamation",
+    "title": "Hoover Dam: frequently asked questions, hydropower",
+    "year": 2026,
+    "url": "https://www.usbr.gov/lc/hooverdam/faqs/powerfaq.html",
+    "verified": "2026-09-30",
+    "note": "Nameplate capacity about 2 080 MW from 17 main turbines."
+  },
+  "itaipu-faq": {
+    "type": "web",
+    "authors": "Itaipu Binacional",
+    "title": "Frequently asked questions",
+    "year": 2026,
+    "url": "https://www.itaipu.gov.py/en/press-office/faq",
+    "verified": "2026-09-30",
+    "note": "14 000 MW from 20 units of 700 MW; generation began May 1984; record 103.1 TWh in 2016."
+  },
+  "usgs-three-gorges": {
+    "type": "web",
+    "authors": "U.S. Geological Survey",
+    "title": "Three Gorges Dam: the world's largest hydroelectric plant",
+    "year": 2019,
+    "url": "https://www.usgs.gov/water-science-school/science/three-gorges-dam-worlds-largest-hydroelectric-plant",
+    "verified": "2026-10-02",
+    "note": "22 500 MW; became the largest hydroelectric plant in 2012; annual output similar to Itaipu's because of seasonal flow."
+  },
+  "doe-hydro-turbines": {
+    "type": "web",
+    "authors": "U.S. Department of Energy, Water Power Technologies Office",
+    "title": "Types of hydropower turbines",
+    "year": 2026,
+    "url": "https://www.energy.gov/cmei/water/types-hydropower-turbines",
+    "verified": "2026-10-02",
+    "note": "Pelton (impulse) for very high heads and low flows; Francis for medium to high heads (130–2 000 ft); propeller and Kaplan for low head and high flow."
+  },
+  "usbr-hydro-pamphlet": {
+    "type": "report",
+    "authors": "U.S. Bureau of Reclamation",
+    "title": "Hydroelectric power",
+    "container": "Reclamation Power Resources Office educational booklet",
+    "year": 2005,
+    "url": "https://www.usbr.gov/power/edu/pamphlet.pdf",
+    "verified": "2026-09-30",
+    "note": "States that a modern hydroelectric plant is about 90 % efficient; describes impoundment, diversion (run-of-river) and pumped storage."
+  },
+  "doe-pumped-storage": {
+    "type": "web",
+    "authors": "U.S. Department of Energy, Water Power Technologies Office",
+    "title": "Pumped storage hydropower",
+    "year": 2026,
+    "url": "https://www.energy.gov/eere/water/pumped-storage-hydropower",
+    "verified": "2026-09-30",
+    "note": "Two reservoirs at different heights; pumped storage is 88 % of U.S. utility-scale energy storage."
+  },
+  "doe-geothermal-plants": {
+    "type": "web",
+    "authors": "U.S. Department of Energy, Geothermal Technologies Office",
+    "title": "Electricity generation (geothermal power plant types)",
+    "year": 2026,
+    "url": "https://www.energy.gov/eere/geothermal/electricity-generation",
+    "verified": "2026-09-30",
+    "note": "Dry steam, flash (fluid above 182 °C / 360 °F) and binary-cycle plants (below 182 °C; the geothermal fluid never touches the turbine)."
+  },
+  "zarrouk-moon-2014": {
+    "type": "article",
+    "authors": "Zarrouk, S. J.; Moon, H.",
+    "title": "Efficiency of geothermal power plants: A worldwide review",
+    "container": "Geothermics 51, 142–153",
+    "year": 2014,
+    "doi": "10.1016/j.geothermics.2013.11.001",
+    "verified": "2026-09-30",
+    "note": "94 plants; worldwide average conversion efficiency about 12 %; about 21 % at the best dry-steam field; as low as 1 % for low-enthalpy binary plants."
+  },
+  "contact-wairakei": {
+    "type": "web",
+    "authors": "Contact Energy",
+    "title": "Wairākei geothermal power station",
+    "year": 2026,
+    "url": "https://contact.co.nz/about-us/our-story/our-generation-and-power-sites/geothermal/wairakei",
+    "verified": "2026-09-30",
+    "note": "Commissioned November 1958; 133 MW today."
+  },
+  "on-iceland-heating": {
+    "type": "web",
+    "authors": "ON Power (Orka náttúrunnar)",
+    "title": "A brief history of geothermal utilisation in Iceland",
+    "year": 2026,
+    "url": "https://www.on.is/en/geothermal-exhibition/geothermal-culture/a-brief-history-of-geothermal-utilisation-in-iceland/",
+    "verified": "2026-09-30",
+    "note": "Municipal geothermal district heating began in Reykjavík in 1930; about 90 % of Iceland's space heating is geothermal."
+  },
+  "utah-forge-2024": {
+    "type": "report",
+    "authors": "Utah FORGE (University of Utah; U.S. DOE Geothermal Technologies Office)",
+    "title": "Utah FORGE successfully completes stimulation and circulation tests (press release)",
+    "year": 2024,
+    "url": "https://utahforge.com/wp-content/uploads/2024/05/Stimulation-and-Circulation-May-23-2024-Press-Release-FINAL.pdf",
+    "verified": "2026-10-02",
+    "note": "April 2024: stimulated wells connected; outflow reached about 139 °C; about 70 % of injected water recovered; largest induced event magnitude 1.9. Figures re-checked via ThinkGeoEnergy's report of the release (the utahforge.com page did not load)."
+  },
+  "fervo-red-2026": {
+    "type": "web",
+    "authors": "Fervo Energy",
+    "title": "Enhanced geothermal has been proven at scale: what two years of production data show",
+    "year": 2026,
+    "url": "https://fervoenergy.com/enhanced-geothermal-has-been-proven-at-scale-heres-what-two-years-of-production-data-show/",
+    "verified": "2026-10-02",
+    "note": "Company report, 13 April 2026. Project Red, Nevada: commercial operation 30 October 2023; average 2.1 MW gross and about 1.4 MW net; production temperature 347 °F (175 °C); about 36 kg/s; more than 614 days on production; no observable thermal decline for more than 500 days."
+  },
+  "fervo-cape-2026": {
+    "type": "web",
+    "authors": "Fervo Energy",
+    "title": "Fervo Energy achieves first power at Cape Station",
+    "year": 2026,
+    "url": "https://fervoenergy.com/fervo-energy-achieves-first-power-at-cape-station-a-landmark-moment-for-the-future-of-enhanced-geothermal-systems/",
+    "verified": "2026-10-02",
+    "note": "Company announcement, 24 September 2026: first 33 MW block of a roughly 100 MW Phase I in Beaver County, Utah, synchronised to the grid."
+  },
+  "doe-egs": {
+    "type": "web",
+    "authors": "U.S. Department of Energy, Geothermal Technologies Office",
+    "title": "Enhanced geothermal systems",
+    "year": 2026,
+    "url": "https://www.energy.gov/eere/geothermal/enhanced-geothermal-systems",
+    "verified": "2026-09-30",
+    "note": "EGS creates permeability in hot rock by injecting fluid under controlled conditions."
+  },
+  "edf-rance-2026": {
+    "type": "report",
+    "authors": "EDF",
+    "title": "Tidal power station: the Rance (memo guide, 2026 edition)",
+    "container": "Électricité de France",
+    "year": 2026,
+    "url": "https://www.edf.fr/sites/groupe/files/2024-12/memoguide-la-rance-en.pdf",
+    "verified": "2026-09-30",
+    "note": "Commissioned 1966; 24 bulb units of 10 MW (240 MW); two-way operation; tidal range up to 13.5 m."
+  },
+  "tethys-sihwa": {
+    "type": "web",
+    "authors": "Tethys (Pacific Northwest National Laboratory, for DOE)",
+    "title": "Sihwa tidal power plant",
+    "year": 2026,
+    "url": "https://tethys.pnnl.gov/project-sites/sihwa-tidal-power-plant",
+    "verified": "2026-09-30",
+    "note": "254 MW from 10 units; commissioned 4 August 2011; about 550 GWh per year; generates on the flood tide only."
+  },
+  "iha-sihwa": {
+    "type": "web",
+    "authors": "International Hydropower Association (IHA)",
+    "title": "Technology case study: Sihwa Lake tidal power station",
+    "year": 2018,
+    "url": "https://www.hydropower.org/blog/technology-case-study-sihwa-lake-tidal-power-station",
+    "verified": "2026-09-30",
+    "note": "World's largest operating tidal power station; built into an existing seawall; improved lake water quality."
+  },
+  "ampeak-meygen": {
+    "type": "web",
+    "authors": "Ampeak Energy (formerly SAE Renewables)",
+    "title": "MeyGen tidal stream project",
+    "year": 2026,
+    "url": "https://ampeak.energy/tidal-stream/meygen/",
+    "verified": "2026-09-30",
+    "note": "Developer's page. Four 1.5 MW, 18 m three-bladed turbines in the Pentland Firth; over 51 GWh delivered; 59 MW Phase 2 awarded a Contract for Difference."
+  },
+  "powermag-meygen-2018": {
+    "type": "web",
+    "authors": "POWER magazine",
+    "title": "MeyGen array sets global records for harnessing tidal power",
+    "year": 2018,
+    "url": "https://www.powermag.com/meygen-array-sets-global-records-for-harnessing-tidal-power/",
+    "verified": "2026-09-30",
+    "note": "Phase 1A entered commercial operation in April 2018."
+  },
+  "guinness-first-wave-farm": {
+    "type": "web",
+    "authors": "Guinness World Records",
+    "title": "First wave farm",
+    "year": 2008,
+    "url": "https://www.guinnessworldrecords.com/world-records/first-wave-farm",
+    "verified": "2026-09-30",
+    "note": "Aguçadoura, Portugal, opened 23 September 2008; three Pelamis machines, 2.25 MW."
+  },
+  "powertech-pelamis": {
+    "type": "web",
+    "authors": "Power Technology",
+    "title": "Pelamis, world's first commercial wave energy project, Agucadoura",
+    "year": 2014,
+    "url": "https://www.power-technology.com/projects/pelamis/",
+    "verified": "2026-09-30",
+    "note": "The three machines were towed back to port after about four months because of technical problems."
+  },
+  "wiki-mutriku": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "Mutriku Breakwater Wave Plant",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/Mutriku_Breakwater_Wave_Plant",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia, used as a last resort because the operator's page could not be reached. Inaugurated 8 July 2011; 296 kW from 16 turbo-generators in an oscillating-water-column breakwater; over 3 GWh by the end of 2023."
+  },
+  "doe-marine-basics": {
+    "type": "web",
+    "authors": "U.S. Department of Energy, Water Power Technologies Office",
+    "title": "Marine energy basics",
+    "year": 2026,
+    "url": "https://www.energy.gov/eere/water/marine-energy-basics",
+    "verified": "2026-09-30",
+    "note": "Marine energy is predictable; the U.S. resource is equivalent to about 57 % of U.S. generation in 2019."
+  },
+  "asme-vulcan-street": {
+    "type": "web",
+    "authors": "American Society of Mechanical Engineers (ASME)",
+    "title": "Vulcan Street Power Plant (National Historic Mechanical Engineering Landmark)",
+    "year": 1977,
+    "url": "https://www.asme.org/about-asme/engineering-history/landmarks/29-vulcan-street-power-plant",
+    "verified": "2026-09-30",
+    "note": "Appleton, Wisconsin, 30 September 1882; about 12.5 kW; first Edison hydroelectric central station serving private and commercial customers in North America."
+  },
+  "pena-2025-mutriku": {
+    "type": "article",
+    "authors": "Peña, A.; Bidaguren, I.; Izquierdo, U.; Esteban, G. A.; Blanco, J. M.; Albaina, I.",
+    "title": "The Mutriku Breakwater Wave Plant: Improvements and Their Influence on the Levelized Cost of Electricity (LCoE)",
+    "container": "Journal of Ocean Engineering and Technology 39(2), 205–211",
+    "year": 2025,
+    "doi": "10.26748/KSOE.2024.099",
+    "verified": "2026-10-02",
+    "note": "Peer-reviewed. 16 chambers with Wells turbines, design capacity 296 kW (14 turbines in use, 259 kW); commissioned 2011; cumulative output 1 GWh in 2016, 2 GWh in 2020, over 3 GWh by 2023."
+  },
+  "delaleu-2009-rance": {
+    "type": "report",
+    "authors": "de Laleu, V. (EDF)",
+    "title": "La Rance tidal power plant: 40-year operation feedback, lessons learnt",
+    "container": "British Hydropower Association annual conference, Liverpool, 14–15 October 2009 (hosted by PNNL Tethys)",
+    "year": 2009,
+    "url": "https://tethys.pnnl.gov/sites/default/files/publications/La_Rance_Tidal_Power_Plant_40_year_operation_feedback.pdf",
+    "verified": "2026-10-02",
+    "note": "Operator's engineer: 24 bulb units of 10 MW (240 MW); 22 km² basin; tidal range average 8.2 m, maximum 13.5 m; generation 540 GWh/year; operation about 60 % ebb generation, 15–20 % pumping, 2–6 % flood generation."
+  },
+  "plct-la-cour": {
+    "type": "web",
+    "authors": "Poul la Cour Tunnel (DTU Wind)",
+    "title": "About Poul la Cour",
+    "year": 2026,
+    "url": "https://www.plct.dk/about/poul-la-cour",
+    "verified": "2026-10-02",
+    "note": "In 1891 la Cour built a test wind turbine at Askov folk high school; in 1896 he built small wind tunnels; concluded the ideal electricity turbine has few blades with an aerodynamic profile."
+  },
+  "fervo-cod-2026": {
+    "type": "web",
+    "authors": "Fervo Energy (press release via GlobeNewswire)",
+    "title": "Fervo Energy declares commercial operation at Cape Station ahead of schedule",
+    "year": 2026,
+    "url": "https://www.globenewswire.com/news-release/2026/10/01/3372717/0/en/fervo-energy-declares-commercial-operation-at-cape-station-ahead-of-schedule-leading-the-race-for-next-generation-geothermal-energy.html",
+    "verified": "2026-10-02",
+    "note": "Company announcement, 1 October 2026: first 33 MW (net) GeoBlock reached commercial operation on 30 September 2026; first power 24 September 2026; Phase I about 100 MW in three GeoBlocks, Beaver County, Utah."
+  },
+  "windtech-dongfang-2025": {
+    "type": "web",
+    "authors": "Windtech International",
+    "title": "Dongfang installs 26 MW offshore wind turbine at Dongying test base",
+    "year": 2025,
+    "url": "https://www.windtech-international.com/product-news/dongfang-installs-26-mw-offshore-wind-turbine-at-dongying-test-base",
+    "verified": "2026-10-02",
+    "note": "Trade press, 1 September 2025: 26 MW, 310 m rotor (153 m blades), hub height nearly 200 m, at the Dongying test base, Shandong. Corroborates offshorewind-dongfang-2025; the official SASAC English news pages (4 September and 6 November 2025, 'now operational') could not be fetched."
+  }
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Geothermal – Solar Odyssey</title>
+<meta name="description" content="Heat from the Earth’s interior, brought up in a loop.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="renewables-a-common.css">
+<link rel="stylesheet" href="geothermal.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="geothermal.js"></script>
+</head>
+<body data-page="geothermal">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page ra-page" data-source="geothermal">
+  <header class="page-head">
+    <span class="kicker"><a href="index.html">Renewables</a></span>
+    <h1>Geothermal</h1>
+    <p class="lede">Almost every other renewable is sunlight in disguise. Geothermal is not: it taps heat left over from the Earth's formation and released by radioactive decay deep inside it. Drill into hot rock, bring up hot water, make steam, spin a turbine, and send the cooled water back down.</p>
+  </header>
+
+  <section class="today-figure" aria-label="Share of world electricity from geothermal, tidal and wave">
+    <div>
+      <span class="tf-num" data-slot="pct">0.28 %</span>
+      <p class="tf-what">of the world's electricity came from <strong>geothermal</strong> (counted together with the much smaller tidal and wave) in <span data-slot="year">2025</span>: <span data-slot="twh">89 TWh</span>.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> <span class="verified">2026-09-30</span></p>
+    </div>
+    <div class="tf-side">
+      <div data-slot="spark"></div>
+      <p class="tf-note">Where it matters most, among the countries in this course's dataset:</p>
+      <ul class="tf-leaders" data-slot="leaders"><li>Kenya 45.9 % (2025)</li><li>Iceland 29.2 % (2024)</li></ul>
+      <span class="data-badge"></span>
+    </div>
+  </section>
+
+  <p>A small slice worldwide, but a backbone where the rock is hot near the surface: along plate boundaries and volcanic zones such as Iceland, Kenya's Rift Valley, Indonesia, New Zealand and California. The world had about 16 gigawatts of geothermal power plants at the end of 2025.<sup class="cite" data-src="irena-capacity-2026"></sup> Unlike wind and solar, a geothermal plant can run day and night, whatever the weather.</p>
+
+  <h2 id="history">From five light bulbs to engineered reservoirs</h2>
+  <ol class="mini-timeline">
+    <li><time datetime="1904">1904</time><p><span class="mt-what">Larderello, Italy.</span> Prince Piero Ginori Conti lights five bulbs with a small generator driven by natural steam from the ground.<sup class="cite" data-src="lund-2005"></sup></p></li>
+    <li><time datetime="1913">1913</time><p><span class="mt-what">The first geothermal power plant.</span> Larderello 1 runs a 250 kW turbine on natural steam.<sup class="cite" data-src="lund-2005"></sup></p></li>
+    <li><time datetime="1930">1930</time><p><span class="mt-what">Reykjavík's hot water.</span> Iceland's capital starts heating buildings with geothermal water. Today about 90 % of Iceland's space heating is geothermal.<sup class="cite" data-src="on-iceland-heating"></sup></p></li>
+    <li><time datetime="1958">1958</time><p><span class="mt-what">Wairākei, New Zealand.</span> The first plant to run on a hot-water (wet) field rather than dry steam, by flashing the water to steam. It still runs, at 133 MW.<sup class="cite" data-src="lund-2005,contact-wairakei"></sup></p></li>
+    <li><time datetime="1960">1960</time><p><span class="mt-what">The Geysers, California.</span> Unit 1, on a dry-steam field like Larderello's, is the first modern geothermal power plant in the United States.<sup class="cite" data-src="lund-2005,doe-geothermal-plants"></sup></p></li>
+    <li><time datetime="1967">1967</time><p><span class="mt-what">The binary cycle.</span> Paratunka, in Russia, is the first plant to use an organic working fluid, opening up cooler resources.<sup class="cite" data-src="lund-2005"></sup></p></li>
+    <li><time datetime="2023">2023</time><p><span class="mt-what">Enhanced geothermal on the grid.</span> Fervo Energy's Project Red in Nevada starts sending power to the grid from a reservoir engineered in hot rock: about 2 MW gross, 1.4 MW net.<sup class="cite" data-src="fervo-red-2026"></sup> <span class="claim claim--research">Active research</span></p></li>
+    <li><time datetime="2024">2024</time><p><span class="mt-what">Utah FORGE.</span> The U.S. Department of Energy's field laboratory connects two deep wells through stimulated granite and circulates water out at about 139 °C.<sup class="cite" data-src="utah-forge-2024"></sup></p></li>
+    <li><time datetime="2026">2026</time><p><span class="mt-what">Cape Station.</span> Fervo reports first power on 24 September from a 33 MW block of its Utah project, which it describes as the first utility-scale enhanced geothermal development to reach that milestone, and commercial operation on 30 September.<sup class="cite" data-src="fervo-cape-2026,fervo-cod-2026"></sup> <span class="verified">2026-10-02</span></p></li>
+  </ol>
+
+  <h2 id="how">How a geothermal plant works</h2>
+  <p>A production well, often 1 to 3 km deep, taps a reservoir of hot water held in cracked rock. The hot fluid rises to the surface plant. There are three ways to turn it into electricity.<sup class="cite" data-src="doe-geothermal-plants"></sup></p>
+  <ul>
+    <li>A <dfn data-term="dry-steam-plant">dry steam plant</dfn> uses steam straight from the ground, as at Larderello and The Geysers. Such fields are rare.</li>
+    <li>A <dfn data-term="flash-steam-plant">flash plant</dfn> takes water hotter than about 182 °C, held liquid by pressure, and lets the pressure drop so part of it boils instantly. This is the most common kind.</li>
+    <li>A <dfn data-term="binary-cycle-plant">binary plant</dfn> passes cooler brine through a heat exchanger to boil a second fluid with a low boiling point. The brine never touches the turbine.</li>
+  </ul>
+  <p>Either way, the cooled water goes back down a <dfn data-term="reinjection-well">reinjection well</dfn>. That keeps up the pressure in the reservoir and disposes of the dissolved minerals.</p>
+
+  <section class="widget" id="loop" aria-labelledby="loop-h">
+    <h2 id="loop-h">The geothermal loop</h2>
+    <p class="caption lead">Hot water rises up the production well, gives up heat at the surface plant, and returns down the reinjection well. Change the reservoir temperature and switch between a flash and a binary plant.</p>
+    <div class="widget-body split">
+      <div>
+        <canvas id="geo-canvas" class="ra-canvas" role="img" aria-label="Cross-section of a geothermal plant: a production well rising from a hot reservoir to a surface plant with turbine, generator, condenser and cooling, and a reinjection well returning cooled water to the reservoir. Temperatures are labelled at each stage."></canvas>
+        <div class="ra-toolbar">
+          <div class="segmented" role="group" aria-label="Kind of plant" id="plant">
+            <button type="button" value="flash" aria-pressed="true">Flash</button>
+            <button type="button" value="binary" aria-pressed="false">Binary</button>
+          </div>
+          <span class="spacer"></span>
+          <button type="button" class="btn ghost" id="geo-play">Pause</button>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="g-t">Reservoir temperature <output id="g-t-out" for="g-t">250 °C</output></label>
+          <input type="range" id="g-t" min="100" max="350" step="5" value="250">
+        </div>
+        <div class="control">
+          <label for="g-out">Water returned at <output id="g-out-out" for="g-out">80 °C</output></label>
+          <input type="range" id="g-out" min="40" max="180" step="5" value="80">
+          <p class="hint">Cooling the brine further extracts more heat, but dissolved minerals such as silica start to deposit in pipes.</p>
+        </div>
+        <div class="control">
+          <label for="g-m">Flow from the wells <output id="g-m-out" for="g-m">100 kg/s</output></label>
+          <input type="range" id="g-m" min="20" max="400" step="5" value="100">
+        </div>
+        <div class="control">
+          <label for="g-eta">Plant conversion efficiency <output id="g-eta-out" for="g-eta">12 %</output></label>
+          <input type="range" id="g-eta" min="1" max="21" step="0.5" value="12">
+          <p class="hint">Real plants span about 1 % to 21 %; the world average is about 12 %.</p>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div><span class="k">Heat from the rock</span><span class="v" id="o-q">71 MW</span></div>
+          <div><span class="k">Electricity</span><span class="v" id="o-p">8.6 MW</span></div>
+        </div>
+        <div class="ladder" aria-label="Efficiency ceilings compared with the chosen plant efficiency">
+          <p class="ladder-title">Efficiency: ceilings and reality</p>
+          <div class="rung"><span class="rung-k">Carnot ceiling</span><span class="bar"><span class="fill fill-carnot" id="b-carnot"></span></span><span class="rung-v" id="v-carnot">40 %</span></div>
+          <div class="rung expert"><span class="rung-k">Cooling-stream ceiling</span><span class="bar"><span class="fill fill-stream" id="b-stream"></span></span><span class="rung-v" id="v-stream">28 %</span></div>
+          <div class="rung"><span class="rung-k">This plant</span><span class="bar"><span class="fill fill-real" id="b-real"></span></span><span class="rung-v" id="v-real">12 %</span></div>
+        </div>
+        <p class="ra-status" id="g-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <h2 id="equations">Why so little of the heat becomes electricity</h2>
+  <section class="eq" aria-labelledby="eq-carnot">
+    <h3 id="eq-carnot">The Carnot ceiling</h3>
+    <p>Any engine that turns heat into work must dump some heat at a lower temperature; that is the second law of thermodynamics. The bigger the gap between hot and cold, the larger the share of heat that can become work. Geothermal fluid is hot, but much cooler than the steam in a modern fossil-fuel plant, so the ceiling is low. <span class="claim claim--settled">Settled physics</span></p>
+    <div class="tex">\eta_{\text{Carnot}} = 1 - \frac{T_c}{T_h}</div>
+    <dl class="symbols">
+      <dt><span class="tex">\eta_{\text{Carnot}}</span></dt><dd><dfn data-term="carnot-efficiency">Carnot efficiency</dfn>, the most any heat engine could achieve (no units)</dd>
+      <dt><span class="tex">T_h</span></dt><dd>temperature of the heat source, kelvin (°C + 273.15)</dd>
+      <dt><span class="tex">T_c</span></dt><dd>temperature where waste heat is dumped, kelvin</dd>
+    </dl>
+    <div class="worked" data-check="renewables:carnotEfficiency" data-args="[523.15, 313.15]" data-expect="0.4014" data-tol="0.0001">
+      A 250 °C reservoir (523 K) and a 40 °C condenser (313 K): 1 − 313.15/523.15 = <span class="answer">40 %</span> at the very most.
+    </div>
+    <p>Real plants reach far less. A review of 94 plants worldwide found an average conversion efficiency of about 12 %, from around 21 % at the best dry-steam field down to about 1 % for binary plants on lukewarm brine.<sup class="cite" data-src="zarrouk-moon-2014"></sup> Part of the gap is ordinary friction and pumping. Part of it is unavoidable, as the expert note explains.</p>
+    <div class="expert">
+      <h4>The cooling-stream ceiling</h4>
+      <p>Carnot's formula assumes heat arrives at one fixed temperature. Geothermal brine does not: it gives up its heat while cooling from T<sub>h</sub> to T<sub>out</sub>, so most of the heat comes in at temperatures below T<sub>h</sub>. Integrating the Carnot efficiency over the cooling stream, dW = (1 − T<sub>c</sub>/T) m c dT, gives</p>
+      <div class="tex">\eta_{\max} = 1 - \frac{T_c \ln(T_h/T_{\text{out}})}{T_h - T_{\text{out}}}</div>
+      <div class="worked" data-check="fluids:streamEfficiencyLimit" data-args="[523.15, 353.15, 313.15]" data-expect="0.2761" data-tol="0.0001">
+        Brine cooled from 250 °C to 80 °C with a 40 °C condenser can turn at most <span class="answer">27.6 %</span> of the heat it gives up into work, well below the 40 % Carnot figure. Lowering T<sub>out</sub> extracts more heat but at a lower average efficiency, so designers optimise the product, the net power.
+      </div>
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-heat">
+    <h3 id="eq-heat">How much heat the water carries</h3>
+    <p>The heat drawn from the rock depends on how much water flows and how much it cools.</p>
+    <div class="tex">\dot Q = \dot m\,c_p\,\Delta T</div>
+    <dl class="symbols">
+      <dt><span class="tex">\dot Q</span></dt><dd>heat flow, watts</dd>
+      <dt><span class="tex">\dot m</span></dt><dd>mass flow of water, kilograms per second</dd>
+      <dt><span class="tex">c_p</span></dt><dd>specific heat of water, about 4,200 J/(kg·K) (somewhat more for very hot water)</dd>
+      <dt><span class="tex">\Delta T</span></dt><dd>temperature drop between the production and reinjection wells, kelvin</dd>
+    </dl>
+    <div class="worked" data-check="renewables:heatFlow" data-args="[100, 4200, 80]" data-expect="3.36e7" data-tol="1e4">
+      A binary plant cooling 100 kg/s of brine from 150 °C to 70 °C draws <span class="answer">33.6 MW</span> of heat. Even at the world-average 12 % that would be about 4 MW of electricity, and low-temperature binary plants usually manage less.
+    </div>
+  </section>
+
+  <h2 id="egs">Enhanced geothermal: making reservoirs</h2>
+  <p>Hot rock lies under every continent, but most of it is too tight for water to flow through. An <dfn data-term="enhanced-geothermal-system">enhanced geothermal system</dfn> (EGS) creates the missing cracks by pumping water down under carefully controlled pressure, then circulates water between wells through the new fracture network.<sup class="cite" data-src="doe-egs"></sup> <span class="claim claim--research">Active research</span></p>
+  <p>Results since 2023 are encouraging: Fervo's Nevada pilot has run for more than 600 days with little sign of cooling, Utah FORGE has shown that stimulated wells can be connected, and the first commercial-scale EGS block reached the grid in September 2026.<sup class="cite" data-src="fervo-red-2026,utah-forge-2024,fervo-cape-2026,fervo-cod-2026"></sup> Open questions remain about cost, long-term heat decline and induced earthquakes, which FORGE monitors closely; its largest event during the 2024 tests was magnitude 1.9, too small to feel.<sup class="cite" data-src="utah-forge-2024"></sup> Most of the Fervo figures come from the company itself, so treat them as early reports. <span class="verified">2026-10-02</span></p>
+  <div class="expert expert-note">
+    <p>The key performance numbers for an EGS project are the flow rate per well pair, the production temperature, and how fast that temperature falls as cold injected water sweeps the fractures (thermal drawdown). Fervo reports about 2.1 MW gross (about 1.4 MW net) from Project Red, from roughly 36 kg/s at a production temperature near 175 °C: a modest flow, at a temperature suited to a binary plant.<sup class="cite" data-src="fervo-red-2026"></sup></p>
+  </div>
+
+  <h2 id="fit">Strengths, limits and where geothermal fits</h2>
+  <div class="fit-grid">
+    <div>
+      <h3>Strengths</h3>
+      <ul class="plus">
+        <li>Runs around the clock in any weather: firm, clean power that complements wind and solar.</li>
+        <li>Small land footprint for the energy produced.</li>
+        <li>Heat can be used directly for <dfn data-term="district-heating">district heating</dfn>, greenhouses and industry, as in Iceland.<sup class="cite" data-src="on-iceland-heating"></sup></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Limits</h3>
+      <ul class="minus">
+        <li>Conventional plants need rare places where hot water sits close to the surface.</li>
+        <li>Drilling is expensive and risky: a well may find less heat or flow than hoped.</li>
+        <li>Low conversion efficiency, and some fields release gases such as hydrogen sulfide and carbon dioxide from the brine.</li>
+        <li>Reservoirs can cool or lose pressure if they are worked too hard; reinjection helps.</li>
+      </ul>
+    </div>
+  </div>
+  <p>Geothermal is one of the few clean sources that runs whenever it is needed, which makes it valuable in a grid dominated by variable wind and solar: it reduces how much <a href="storage.html">storage</a> and backup the <a href="grid.html">grid</a> needs. Compare it with other sources on the <a href="compare.html">comparison dashboard</a>, or see the other heat-driven renewable on the <a href="csp.html">concentrated solar power</a> page.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

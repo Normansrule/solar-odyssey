@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The page uses no Tauri API, so the main window is granted no permissions at all (not even core:default, which would expose tray, menu, image-from-path and path resolution to page script). No filesystem, shell, HTTP, clipboard or updater access.",
+  "windows": ["main"],
+  "permissions": []
+}

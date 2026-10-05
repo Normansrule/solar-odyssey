@@ -1,0 +1,15 @@
+/* Concentrated solar power page */
+.field-canvas { aspect-ratio: 1 / 1; max-height: 34rem; margin: 0 auto; }
+@media (max-width: 40rem) { .field-canvas { aspect-ratio: 1 / 1; } }
+.rb-key .sw-hi { background: var(--sun); }
+.rb-key .sw-lo { background: var(--sun); opacity: 0.25; }
+.rb-key .ln-sun { border-top: 2.5px dashed var(--sun-ink); }
+.rb-key .ln-ref { border-top-color: var(--r-csp); }
+
+ul.designs { list-style: none; padding: 0; }
+ul.designs li { padding: 0.5rem 0 0.5rem 1rem; border-left: 3px solid var(--r-csp); margin: 0 0 0.6rem; }
+
+.control-wide { flex: 1 1 18rem; }
+.tank-chart { height: 9rem; }
+.chart-note { font-size: var(--s-2); margin: 0.2rem 0 0.4rem; }
+#night .readout { margin-top: 1rem; }

@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Check your understanding: Geothermal",
+    "sources": [
+      "doe-geothermal-plants",
+      "zarrouk-moon-2014"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "geothermal",
+    "minutes": 25,
+    "objectives": [
+      "Describe how dry steam, flash and binary plants turn underground heat into electricity",
+      "Calculate the Carnot ceiling and the heat carried by a flow of brine",
+      "Explain why geothermal plants turn only a small share of their heat into electricity"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Why can even a perfect geothermal plant turn only part of its heat into electricity?",
+        "choices": [
+          "Any heat engine must dump some heat at a lower temperature, and geothermal fluid is only moderately hot",
+          "Pumping the cooled water back underground uses up most of the electricity made",
+          "The heat comes from radioactive decay, which cannot drive a turbine efficiently",
+          "Steam from the ground is too wet for a turbine to use"
+        ],
+        "answer": 0,
+        "explain": "The second law of thermodynamics says a heat engine must reject some heat to somewhere colder, and the smaller the gap between hot and cold, the smaller the share that can become work. Geothermal fluid is much cooler than the steam in a fossil-fuel plant, so its ceiling is low; where the heat came from does not matter, only its temperature."
+      },
+      {
+        "id": "q2",
+        "prompt": "A reservoir delivers fluid at 180 °C and the condenser runs at 30 °C. What is the Carnot ceiling?",
+        "choices": [
+          "83 %",
+          "17 %",
+          "67 %",
+          "33 %"
+        ],
+        "answer": 3,
+        "explain": "Convert to kelvin first: 1 − 303.15 ÷ 453.15 ≈ 0.33, or 33 %. Using degrees Celsius gives 1 − 30 ÷ 180 ≈ 83 %, far too high, because the Carnot formula only works with absolute temperatures."
+      },
+      {
+        "id": "q3",
+        "prompt": "A plant cools 50 kg/s of brine by 100 K (specific heat about 4,200 J/(kg·K)) and turns the world-average 12 % of that heat into electricity. About how much electricity does it make?",
+        "choices": [
+          "21 MW",
+          "2.5 MW",
+          "0.25 MW",
+          "175 MW"
+        ],
+        "answer": 1,
+        "explain": "The heat drawn from the rock is 50 × 4,200 × 100 = 21 MW, and 12 % of that is about 2.5 MW of electricity. 21 MW is the heat, not the electrical output: most of it leaves through the cooling system and the reinjected water.",
+        "source": "zarrouk-moon-2014"
+      },
+      {
+        "id": "q4",
+        "prompt": "A newly drilled field produces brine at about 130 °C. Which kind of plant suits it best?",
+        "choices": [
+          "A dry steam plant, piping the brine straight to the turbine",
+          "A flash plant, lowering the pressure so that enough of the brine boils",
+          "A binary plant, where the brine boils a second fluid with a low boiling point",
+          "None: brine below about 182 °C cannot make electricity"
+        ],
+        "answer": 2,
+        "explain": "A binary plant passes cooler brine through a heat exchanger to boil a second fluid with a low boiling point, which is what opened up cooler resources. Flash plants need water hotter than about 182 °C, and dry steam plants need the rare fields that produce steam directly.",
+        "source": "doe-geothermal-plants"
+      }
+    ]
+  }
+}

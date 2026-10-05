@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Check your understanding: Energy storage",
+    "sources": [
+      "pnnl-storage-2019",
+      "inl-hydrogen-2023",
+      "iha-outlook-2025"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "storage",
+    "minutes": 35,
+    "objectives": [
+      "Distinguish a store's power (MW) from its energy (MWh) and calculate its duration",
+      "Calculate round-trip efficiency by multiplying the efficiency of each step",
+      "Compare batteries, pumped hydro and hydrogen by duration, efficiency and best use"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "A battery is rated 200 MW / 800 MWh. What can it do when full?",
+        "choices": [
+          "Deliver 800 MW for 15 minutes",
+          "Deliver 200 MW for 800 hours",
+          "Deliver 200 MW for about 4 hours",
+          "Deliver 800 MWh every hour for 4 hours"
+        ],
+        "answer": 2,
+        "explain": "Power (200 MW) is how fast it can discharge and energy (800 MWh) is how much it holds, so at full power it lasts 800 ÷ 200 = 4 hours. Its power rating caps it at 200 MW, so it cannot deliver 800 MW, however briefly."
+      },
+      {
+        "id": "q2",
+        "prompt": "A hydrogen store uses an electrolyser that keeps 70 %, compression and storage that keep 90 %, and a fuel cell that keeps 50 %. What is the round-trip efficiency?",
+        "choices": [
+          "70 %, the average of the three steps",
+          "50 %, set by the weakest step",
+          "10 %, after subtracting each step's losses",
+          "About 32 %"
+        ],
+        "answer": 3,
+        "explain": "Losses multiply: 0.70 × 0.90 × 0.50 = 0.315, so about 32 % comes back, close to the Department of Energy baseline of 31 %. Averaging, or looking only at the weakest step, ignores that each step works on what the step before has left.",
+        "source": "inl-hydrogen-2023"
+      },
+      {
+        "id": "q3",
+        "prompt": "An upper reservoir holds 2 million m³ of water 250 m above the lower one. About how much electricity comes back if the plant recovers 80 %?",
+        "choices": [
+          "About 1,090 MWh",
+          "About 1,360 MWh",
+          "About 1,700 MWh",
+          "About 4.9 MWh"
+        ],
+        "answer": 0,
+        "explain": "E = 1,000 × 2 × 10⁶ × 9.81 × 250 ≈ 4.9 × 10¹² J, about 1,360 MWh stored, and 80 % of that is about 1,090 MWh. 1,360 MWh forgets the losses, and 1,700 MWh divides by 0.8 instead of multiplying.",
+        "source": "pnnl-storage-2019"
+      },
+      {
+        "id": "q4",
+        "prompt": "Hydrogen returns only about 31 % of the electricity put in. Why is it still studied as a store for the grid?",
+        "choices": [
+          "It answers within a second, faster than a battery",
+          "It can store energy for weeks or seasons, which no battery can do cheaply",
+          "It already holds more than 90 % of the world's stored electricity",
+          "It has the lowest installed cost per kWh in the page's table"
+        ],
+        "answer": 1,
+        "explain": "Hydrogen's strength is size and time: a salt cavern of it can hold energy for weeks or seasons. Batteries answer in about a second but are economical for hours, not weeks, and the store holding more than 90 % of the world's stored electricity is pumped hydro.",
+        "source": "inl-hydrogen-2023"
+      }
+    ]
+  }
+}

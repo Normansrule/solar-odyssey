@@ -1,0 +1,54 @@
+/* From cell to grid: bypass-diode module and MPPT tracker. */
+
+.widget svg.bp-stage, .widget svg.mppt-stage { background: var(--paper); border: 1px solid var(--rule); }
+
+/* module */
+.bp-cell { fill: var(--silicon); stroke: var(--panel); stroke-width: 1; cursor: pointer; }
+.bp-cell:hover { fill: var(--silicon-2); }
+.bp-stage { --shade-c: var(--ink); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .bp-stage { --shade-c: #05080d; } }
+:root[data-theme="dark"] .bp-stage { --shade-c: #05080d; }
+.bp-cell.is-shaded { fill: var(--shade-c); }
+.bp-hot { fill: none; stroke: var(--hole); stroke-width: 3; pointer-events: none; }
+.bp-flow { fill: none; stroke: var(--sun); stroke-linejoin: round; opacity: 0.9; pointer-events: none; }
+.bp-wire { fill: none; stroke: var(--rule); stroke-linejoin: round; }
+.bp-wire.is-on { stroke: var(--sun); }
+.bp-box { fill: var(--paper-2); stroke: var(--rule); }
+.bp-diode { fill: var(--panel); stroke: var(--ink-2); stroke-width: 2; stroke-linejoin: round; }
+.bp-diode.is-on { fill: var(--sun); stroke: var(--ink); }
+.bp-nodiode { stroke: var(--hole); stroke-width: 2.5; stroke-linecap: round; }
+.bp-small { fill: var(--ink-2); font: 600 12px var(--body); }
+
+.bp-controls { display: grid; gap: 1rem 1.5rem; margin-top: 1rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 52rem) { .bp-controls { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto; align-items: end; } }
+.bp-groups { border: 0; padding: 0; margin: 0; min-width: 0; }
+.bp-groups legend { font-size: var(--s-1); font-weight: 650; padding: 0; margin-bottom: 0.3rem; }
+.bp-group-inputs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
+.bp-group-inputs label { font-weight: 500; color: var(--ink-2); }
+.bp-check { display: flex; align-items: center; gap: 0.5rem; font-size: var(--s-1); font-weight: 650; }
+.bp-check input { width: 1.1rem; height: 1.1rem; accent-color: var(--silicon); margin: 0; }
+.bp-check label { margin: 0; }
+#bp-readout, #mppt-readout { margin: 1rem 0 0; }
+
+/* MPPT chart */
+.mppt-axes .grid { stroke: var(--rule); stroke-width: 1; opacity: 0.7; }
+.mppt-axes .axis { stroke: var(--ink-2); stroke-width: 1; }
+.mppt-axes text { fill: var(--ink-2); font: 12px var(--body); font-variant-numeric: tabular-nums; }
+.mppt-axes text.title { font-weight: 650; }
+.mppt-curve { fill: none; stroke: var(--silicon); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.mppt-area { fill: var(--silicon); opacity: 0.08; }
+.mppt-global { fill: none; stroke: var(--sun); stroke-width: 3; }
+.mppt-local { fill: var(--panel); stroke: var(--ink-2); stroke-width: 2; }
+.mppt-label { fill: var(--ink); font: 650 12px var(--body); paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; }
+.mppt-trail { fill: var(--ink-2); }
+.mppt-op { fill: var(--hole); stroke: var(--paper); stroke-width: 2.5; }
+.mppt-drop { stroke: var(--hole); stroke-width: 1; opacity: 0.6; }
+.mppt-sample { fill: var(--sun-ink); }
+.mppt-sweep { stroke: var(--sun); stroke-width: 2; }
+.mppt-legend { margin-top: 0.6rem; }
+.key { display: inline-block; width: 1.1rem; height: 0.8rem; position: relative; }
+.key-curve { border-top: 3px solid var(--silicon); height: 0; }
+.key-trail { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--ink-2); }
+.key-op { width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--hole); }
+.key-peak { width: 0.8rem; height: 0.8rem; border-radius: 50%; border: 3px solid var(--sun); }
+#mppt-status { min-height: 3em; }

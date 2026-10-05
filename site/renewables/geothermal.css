@@ -1,0 +1,14 @@
+/* Geothermal page */
+#geo-canvas { aspect-ratio: 16 / 11; }
+@media (max-width: 40rem) { #geo-canvas { aspect-ratio: 4 / 4.6; } }
+.ladder { display: grid; gap: 0.45rem; }
+.ladder-title { font-size: var(--s-1); font-weight: 650; margin: 0; }
+.rung { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr) 3rem; gap: 0.6rem; align-items: center; font-size: var(--s-1); }
+.rung .rung-k { color: var(--ink-2); }
+.rung .rung-v { font-family: var(--mono); font-weight: 650; text-align: right; font-variant-numeric: tabular-nums; }
+.rung .bar { height: 0.7rem; background: var(--paper-2); border-radius: 999px; overflow: hidden; display: block; }
+.rung .fill { display: block; height: 100%; border-radius: 999px; width: 0; }
+.fill-carnot { background: var(--ink-2); }
+.fill-stream { background: color-mix(in srgb, var(--r-geothermal) 55%, var(--ink-2)); }
+.fill-real { background: var(--r-geothermal); }
+@media (max-width: 26rem) { .rung { grid-template-columns: 7.5rem minmax(0, 1fr) 2.8rem; } }

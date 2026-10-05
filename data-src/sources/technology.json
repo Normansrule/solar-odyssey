@@ -1,0 +1,368 @@
+{
+ "itrpv-2026": {
+  "type": "report",
+  "authors": "VDMA Photovoltaic Equipment",
+  "title": "International Technology Roadmap for Photovoltaic (ITRPV), 17th edition",
+  "container": "VDMA, Frankfurt am Main, 2026 (results for 2025)",
+  "year": 2026,
+  "url": "https://www.vdma.eu/en-GB/international-technology-roadmap-photovoltaic",
+  "verified": "2026-09-30",
+  "note": "The roadmap PDF is distributed by VDMA; the 2025 shares we quote were presented by ITRPV steering committee chair Markus Fischer and reported by TaiyangNews (taiyangnews-itrpv-2026) and PV Tech (pv-tech-itrpv-2026)."
+ },
+ "taiyangnews-itrpv-2026": {
+  "type": "web",
+  "authors": "Gattu, R. (TaiyangNews)",
+  "title": "ITRPV expects TOPCon to lead as BC and tandem technologies expand",
+  "container": "TaiyangNews, 7 September 2026",
+  "year": 2026,
+  "url": "https://taiyangnews.info/technology/itrpv-expects-topcon-to-lead-as-bc-and-tandem-technologies-expand",
+  "verified": "2026-09-30",
+  "note": "Report of the ITRPV 17th edition talk: in 2025 TOPCon about 75 % of crystalline-silicon cell production, PERC about 14 %, HJT about 5 %, TOPCon-based back contact about 5 %, HJT-based back contact about 0.1 %."
+ },
+ "pv-tech-itrpv-2026": {
+  "type": "web",
+  "authors": "PV Tech",
+  "title": "ITRPV 2026: solar industry maintains historic learning curve despite market turbulence",
+  "container": "PV Tech, 25 June 2026",
+  "year": 2026,
+  "url": "https://www.pv-tech.org/itrpv-2026-solar-industry-maintains-historic-learning-curve-despite-market-turbulence/",
+  "verified": "2026-09-30",
+  "note": "ITRPV 17th edition: mass-production module efficiency in 2025 of 21.7 % (p-type PERC), 23.5 % (TOPCon and HJT), 24.1 % (TOPCon back contact); n-type wafers about 82 %; c-Si about 98 % and thin film about 2 %."
+ },
+ "feldmann-2014": {
+  "type": "article",
+  "authors": "Feldmann, F.; Bivour, M.; Reichel, C.; Hermle, M.; Glunz, S. W.",
+  "title": "Passivated rear contacts for high-efficiency n-type Si solar cells providing high interface passivation quality and excellent transport characteristics",
+  "container": "Solar Energy Materials and Solar Cells 120, 270–274",
+  "year": 2014,
+  "doi": "10.1016/j.solmat.2013.09.017",
+  "verified": "2026-09-30",
+  "note": "The Fraunhofer ISE paper that introduced the TOPCon (tunnel oxide passivated contact) rear contact."
+ },
+ "haschke-2017": {
+  "type": "article",
+  "authors": "Haschke, J.; Seif, J. P.; Riesen, Y.; Tomasi, A.; Cattin, J.; Tous, L.; Choulat, P.; Aleman, M.; Cornagliotti, E.; Uruena, A.; Russell, R.; Duerinckx, F.; Champliaud, J.; Levrat, J.; Abdallah, A. A.; Aïssa, B.; Tabet, N.; Wyrsch, N.; Despeisse, M.; Szlufcik, J.; De Wolf, S.; Ballif, C.",
+  "title": "The impact of silicon solar cell architecture and cell interconnection on energy yield in hot & sunny climates",
+  "container": "Energy & Environmental Science 10(5), 1196–1206",
+  "year": 2017,
+  "doi": "10.1039/c7ee00286f",
+  "verified": "2026-10-02",
+  "note": "Compares Al-BSF, PERC, PERT and silicon heterojunction cells; higher open-circuit voltage gives a smaller temperature coefficient."
+ },
+ "kumar-rao-2014": {
+  "type": "article",
+  "authors": "Kumar, S. G.; Koteswara Rao, K. S. R.",
+  "title": "Physics and chemistry of CdTe/CdS thin film heterojunction photovoltaic devices: fundamental and critical aspects",
+  "container": "Energy & Environmental Science 7(1), 45–102",
+  "year": 2014,
+  "doi": "10.1039/C3EE41981A",
+  "verified": "2026-10-02"
+ },
+ "ramanujam-singh-2017": {
+  "type": "article",
+  "authors": "Ramanujam, J.; Singh, U. P.",
+  "title": "Copper indium gallium selenide based solar cells – a review",
+  "container": "Energy & Environmental Science 10, 1306–1319",
+  "year": 2017,
+  "doi": "10.1039/C7EE00826K",
+  "verified": "2026-10-02"
+ },
+ "jordan-kurtz-2013": {
+  "type": "article",
+  "authors": "Jordan, D. C.; Kurtz, S. R.",
+  "title": "Photovoltaic degradation rates — an analytical review",
+  "container": "Progress in Photovoltaics: Research and Applications 21(1), 12–29",
+  "year": 2013,
+  "doi": "10.1002/pip.1182",
+  "verified": "2026-10-02",
+  "note": "Nearly 2000 field measurements over 40 years; median power loss about 0.5 % per year."
+ },
+ "jordan-2016": {
+  "type": "article",
+  "authors": "Jordan, D. C.; Kurtz, S. R.; VanSant, K.; Newmiller, J.",
+  "title": "Compendium of photovoltaic degradation rates",
+  "container": "Progress in Photovoltaics: Research and Applications 24(7), 978–989",
+  "year": 2016,
+  "doi": "10.1002/pip.2744",
+  "verified": "2026-10-02"
+ },
+ "paudyal-imenes-2021": {
+  "type": "article",
+  "authors": "Paudyal, B. R.; Imenes, A. G.",
+  "title": "Investigation of temperature coefficients of PV modules through field measured data",
+  "container": "Solar Energy 224, 425–439",
+  "year": 2021,
+  "doi": "10.1016/j.solener.2021.06.013",
+  "verified": "2026-10-02",
+  "note": "Datasheet coefficients of the modules studied (Table 2), power then open-circuit voltage: mono c-Si −0.38 and −0.28 %/°C, multi c-Si −0.41 and −0.31 %/°C, heterojunction (Panasonic HIT) −0.29 and −0.25 %/°C, CIGS (Solibro) −0.38 and −0.29 %/°C."
+ },
+ "first-solar-series-7": {
+  "type": "web",
+  "authors": "First Solar",
+  "title": "Series 7 FT1 module datasheet",
+  "container": "First Solar, MPD-00671-07-IN, May 2024",
+  "year": 2024,
+  "url": "https://www.firstsolar.com/-/media/First-Solar/Technical-Documents/Series-7/Series-7-FT1-Datasheet.pdf",
+  "verified": "2026-09-30",
+  "note": "CdTe thin-film module: 505–550 W, efficiency 18.1–19.7 %, power temperature coefficient −0.32 %/°C, Voc coefficient −0.28 %/°C, warranted degradation 0.3 % per year."
+ },
+ "jinko-tiger-neo": {
+  "type": "web",
+  "authors": "JinkoSolar",
+  "title": "Tiger Neo (N-type TOPCon modules) product page",
+  "container": "JinkoSolar",
+  "year": 2026,
+  "url": "https://www.jinkosolar.com/en/site/tigerneo",
+  "verified": "2026-09-30",
+  "note": "Manufacturer figures: power temperature coefficient −0.29 %/°C versus −0.35 %/°C for p-type cells; first-year degradation at most 1 %, then 0.4 % per year."
+ },
+ "pveducation-czochralski": {
+  "type": "web",
+  "authors": "Honsberg, C. B.; Bowden, S. G.",
+  "title": "Czochralski silicon (PVEducation)",
+  "year": 2019,
+  "url": "https://www.pveducation.org/pvcdrom/manufacturing-si-cells/czochralski-silicon",
+  "verified": "2026-09-30",
+  "note": "Cz ingots grow from quartz crucibles, which add about 1e18 cm⁻³ oxygen; boron-oxygen degradation in p-type, none in phosphorus-doped n-type."
+ },
+ "pveducation-multicrystalline": {
+  "type": "web",
+  "authors": "Honsberg, C. B.; Bowden, S. G.",
+  "title": "Multi-crystalline silicon (PVEducation)",
+  "year": 2019,
+  "url": "https://www.pveducation.org/pvcdrom/manufacturing-si-cells/multi-crystalline-silicon",
+  "verified": "2026-09-30",
+  "note": "Cast as a slab, cut into bricks, sliced; grain boundaries add recombination and shunts. Mono became dominant from 2018, helped by PERC, which benefits mono more."
+ },
+ "pveducation-refining": {
+  "type": "web",
+  "authors": "Honsberg, C. B.; Bowden, S. G.",
+  "title": "Refining silicon (PVEducation)",
+  "year": 2019,
+  "url": "https://www.pveducation.org/pvcdrom/manufacturing-si-cells/refining-silicon",
+  "verified": "2026-09-30",
+  "note": "Quartz reduced with carbon in an arc furnace to metallurgical-grade silicon (about 98 %); Siemens process via trichlorosilane, distilled, then deposited on hot rods at about 1100 °C."
+ },
+ "pveducation-arc": {
+  "type": "web",
+  "authors": "Honsberg, C. B.; Bowden, S. G.",
+  "title": "Anti-reflection coatings (PVEducation)",
+  "year": 2019,
+  "url": "https://www.pveducation.org/pvcdrom/design-of-silicon-cells/anti-reflection-coatings",
+  "verified": "2026-09-30",
+  "note": "Bare silicon reflects over 30 %; quarter-wave thickness d = λ0/(4·n1); ideal index n1 = √(n0·n2); silicon taken as n = 3.5."
+ },
+ "pveducation-bypass": {
+  "type": "web",
+  "authors": "Honsberg, C. B.; Bowden, S. G.",
+  "title": "Bypass diodes (PVEducation)",
+  "year": 2019,
+  "url": "https://www.pveducation.org/pvcdrom/modules-and-arrays/bypass-diodes",
+  "verified": "2026-09-30",
+  "note": "A bypass diode across a group of cells limits the reverse bias on a shaded cell and prevents hot spots; about 15 silicon cells per diode at most for full protection; a 36-cell module typically has 2."
+ },
+ "pveducation-noct": {
+  "type": "web",
+  "authors": "Honsberg, C. B.; Bowden, S. G.",
+  "title": "Nominal operating cell temperature (PVEducation)",
+  "year": 2019,
+  "url": "https://www.pveducation.org/pvcdrom/modules-and-arrays/nominal-operating-cell-temperature",
+  "verified": "2026-09-30",
+  "note": "NOCT: open-circuit cell temperature at 800 W/m², 20 °C air, 1 m/s wind, open back; most modules 40–45 °C."
+ },
+ "iec-61215-1-2021": {
+  "type": "standard",
+  "authors": "International Electrotechnical Commission",
+  "title": "IEC 61215-1:2021 Terrestrial photovoltaic (PV) modules – Design qualification and type approval – Part 1: Test requirements",
+  "container": "Edition 2.0, 23 February 2021",
+  "year": 2021,
+  "url": "https://webstore.iec.ch/en/publication/61345",
+  "verified": "2026-09-30"
+ },
+ "iec-61730-1-2023": {
+  "type": "standard",
+  "authors": "International Electrotechnical Commission",
+  "title": "IEC 61730-1:2023 Photovoltaic (PV) module safety qualification – Part 1: Requirements for construction",
+  "container": "Edition 3.0, 2023",
+  "year": 2023,
+  "url": "https://webstore.ansi.org/standards/iec/iec61730ed2023-2508655",
+  "verified": "2026-09-30"
+ },
+ "ieee-1547-2018": {
+  "type": "standard",
+  "authors": "IEEE",
+  "title": "IEEE 1547-2018 Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces",
+  "year": 2018,
+  "doi": "10.1109/IEEESTD.2018.8332112",
+  "verified": "2026-10-02"
+ },
+ "ul-1741": {
+  "type": "standard",
+  "authors": "UL Standards & Engagement",
+  "title": "UL 1741 Inverters, Converters, Controllers and Interconnection System Equipment for Use With Distributed Energy Resources",
+  "container": "Edition 3, 28 September 2021 (revised since)",
+  "year": 2021,
+  "url": "https://www.shopulstandards.com/ProductDetail.aspx?productId=UL1741_3_S_20210928",
+  "verified": "2026-09-30",
+  "note": "For grid-interactive equipment it supplements IEEE 1547 and IEEE 1547.1."
+ },
+ "esram-chapman-2007": {
+  "type": "article",
+  "authors": "Esram, T.; Chapman, P. L.",
+  "title": "Comparison of photovoltaic array maximum power point tracking techniques",
+  "container": "IEEE Transactions on Energy Conversion 22(2), 439–449",
+  "year": 2007,
+  "doi": "10.1109/TEC.2006.874230",
+  "verified": "2026-09-30"
+ },
+ "patel-agarwal-2008": {
+  "type": "article",
+  "authors": "Patel, H.; Agarwal, V.",
+  "title": "Maximum power point tracking scheme for PV systems operating under partially shaded conditions",
+  "container": "IEEE Transactions on Industrial Electronics 55(4), 1689–1698",
+  "year": 2008,
+  "doi": "10.1109/TIE.2008.917118",
+  "verified": "2026-09-30"
+ },
+ "holt-nec-690-2016": {
+  "type": "web",
+  "authors": "Holt, M.",
+  "title": "Article 690, Solar Photovoltaic Systems — Part 2",
+  "container": "EC&M, 18 July 2016",
+  "year": 2016,
+  "url": "https://www.ecmweb.com/national-electrical-code/code-basics/article/20901284/article-690-solar-photovoltaic-systems-part-2",
+  "verified": "2026-09-30",
+  "note": "Explains NEC 690.7: maximum PV system voltage is the module Voc corrected to the lowest expected ambient temperature, using the manufacturer's coefficient; 600 V limit for one- and two-family dwellings, up to 1000 V otherwise."
+ },
+ "dupre-2015": {
+  "type": "article",
+  "authors": "Dupré, O.; Vaillon, R.; Green, M. A.",
+  "title": "Physics of the temperature coefficients of solar cells",
+  "container": "Solar Energy Materials and Solar Cells 140, 92–100",
+  "year": 2015,
+  "doi": "10.1016/j.solmat.2015.03.025",
+  "verified": "2026-09-30"
+ },
+ "doe-cigs": {
+  "type": "web",
+  "authors": "U.S. Department of Energy",
+  "title": "Copper indium gallium diselenide",
+  "year": 2025,
+  "url": "https://www.energy.gov/cmei/systems/copper-indium-gallium-diselenide",
+  "verified": "2026-10-02",
+  "note": "CuInSe2 band gap about 1.04 eV, CuGaSe2 about 1.68 eV; the best devices use a partial substitution of Ga for In. Page first published 24 January 2014 by the Solar Energy Technologies Office and last modified 29 September 2025; the old /eere/solar/ address now leads here (Integrated Energy Systems Office)."
+ },
+ "czochralski-1918": {
+  "type": "article",
+  "authors": "Czochralski, J.",
+  "title": "Ein neues Verfahren zur Messung der Kristallisationsgeschwindigkeit der Metalle",
+  "container": "Zeitschrift für Physikalische Chemie 92, 219–221",
+  "year": 1918,
+  "doi": "10.1515/zpch-1918-9212",
+  "verified": "2026-10-02"
+ },
+ "yoshikawa-2017": {
+  "type": "article",
+  "authors": "Yoshikawa, K.; Kawasaki, H.; Yoshida, W.; Irie, T.; Konishi, K.; Nakano, K.; Uto, T.; Adachi, D.; Kanematsu, M.; Uzu, H.; Yamamoto, K.",
+  "title": "Silicon heterojunction solar cell with interdigitated back contacts for a photoconversion efficiency over 26%",
+  "container": "Nature Energy 2(5), 17032",
+  "year": 2017,
+  "doi": "10.1038/nenergy.2017.32",
+  "verified": "2026-10-02"
+ },
+ "blakers-1989": {
+  "type": "article",
+  "authors": "Blakers, A. W.; Wang, A.; Milne, A. M.; Zhao, J.; Green, M. A.",
+  "title": "22.8% efficient silicon solar cell",
+  "container": "Applied Physics Letters 55(13), 1363–1365",
+  "year": 1989,
+  "doi": "10.1063/1.101596",
+  "verified": "2026-10-02"
+ },
+ "fraunhofer-pv-report-2026": {
+  "type": "report",
+  "authors": "Fraunhofer Institute for Solar Energy Systems ISE",
+  "title": "Photovoltaics Report",
+  "container": "Fraunhofer ISE, Freiburg, 14 July 2026",
+  "year": 2026,
+  "url": "https://www.ise.fraunhofer.de/en/publications/studies/photovoltaics-report.html",
+  "verified": "2026-10-02",
+  "note": "Weighted average efficiency of commercial wafer-based c-Si modules 22.7 % (Q4 2024); best lab module 26.0 %; module price fell about 26.6 % per doubling of cumulative production over 45 years (slide 'Price Experience Curve', p. 53; the executive summary on p. 9 and the web page say 26.7 %)."
+ },
+ "lin-2020-grid-forming": {
+  "type": "report",
+  "authors": "Lin, Y.; Eto, J.; Johnson, B.; Flicker, J.; Lasseter, R.; Villegas Pico, H.; Seo, G.; Pierre, B.; Ellis, A.",
+  "title": "Research Roadmap on Grid-Forming Inverters (NREL/TP-5D00-73476)",
+  "container": "National Renewable Energy Laboratory, November 2020",
+  "year": 2020,
+  "url": "https://research-hub.nrel.gov/en/publications/research-roadmap-on-grid-forming-inverters/",
+  "verified": "2026-09-30",
+  "note": "Inverter controls today are predominantly grid-following; the transition to grid-forming will be gradual."
+ },
+ "repins-2008": {
+  "type": "article",
+  "authors": "Repins, I.; Contreras, M. A.; Egaas, B.; DeHart, C.; Scharf, J.; Perkins, C. L.; To, B.; Noufi, R.",
+  "title": "19.9%-efficient ZnO/CdS/CuInGaSe2 solar cell with 81.2% fill factor",
+  "container": "Progress in Photovoltaics: Research and Applications 16(3), 235–239",
+  "year": 2008,
+  "doi": "10.1002/pip.822",
+  "verified": "2026-09-30"
+ },
+ "pvlib-2023": {
+  "type": "article",
+  "authors": "Anderson, K. S.; Hansen, C. W.; Holmgren, W. F.; Jensen, A. R.; Mikofski, M. A.; Driesse, A.",
+  "title": "pvlib python: 2023 project update",
+  "container": "Journal of Open Source Software 8(92), 5994",
+  "year": 2023,
+  "doi": "10.21105/joss.05994",
+  "url": "https://github.com/pvlib/pvlib-python",
+  "verified": "2026-10-02",
+  "note": "Used in tests/py to cross-check this site's solar-position and irradiance code."
+ },
+ "green-2003-temperature": {
+  "type": "article",
+  "authors": "Green, M. A.",
+  "title": "General temperature dependence of solar cell performance and implications for device modelling",
+  "container": "Progress in Photovoltaics: Research and Applications 11(5), 333–340",
+  "year": 2003,
+  "doi": "10.1002/pip.496",
+  "verified": "2026-10-02"
+ },
+ "carlson-wronski-1976": {
+  "type": "article",
+  "authors": "Carlson, D. E.; Wronski, C. R.",
+  "title": "Amorphous silicon solar cell",
+  "container": "Applied Physics Letters 28(11), 671–673",
+  "year": 1976,
+  "doi": "10.1063/1.88617",
+  "verified": "2026-10-02"
+ },
+ "pv-magazine-longi-hibc-2026": {
+  "type": "web",
+  "authors": "pv magazine",
+  "title": "Longi sets 28.29% world record for single-junction silicon solar cell efficiency",
+  "container": "pv magazine, 24 September 2026",
+  "year": 2026,
+  "url": "https://www.pv-magazine.com/2026/09/24/longi-sets-28-29-world-record-for-single-junction-silicon-solar-cell-efficiency/",
+  "verified": "2026-09-30",
+  "note": "HIBC cell certified by ISFH (Institute for Solar Energy Research Hamelin)."
+ },
+ "pveducation-temperature": {
+  "type": "web",
+  "authors": "Honsberg, C. B.; Bowden, S. G.",
+  "title": "Effect of temperature (PVEducation)",
+  "year": 2019,
+  "url": "https://www.pveducation.org/pvcdrom/solar-cell-operation/effect-of-temperature",
+  "verified": "2026-09-30",
+  "note": "Silicon: Voc falls about 2.2 mV/°C; Isc rises about 0.06 %/°C; I0 follows B'·T^γ·exp(−Eg0/kT) with Eg0 ≈ 1.2 eV and γ ≈ 3."
+ },
+ "pveducation-voc": {
+  "type": "web",
+  "authors": "Honsberg, C. B.; Bowden, S. G.",
+  "title": "Open-circuit voltage (PVEducation)",
+  "year": 2019,
+  "url": "https://www.pveducation.org/pvcdrom/solar-cell-operation/open-circuit-voltage",
+  "verified": "2026-10-02",
+  "note": "Voc depends on the light-generated and saturation currents (current densities), not on cell size; commercial silicon cells typically about 690 mV, best laboratory cells up to 764 mV at one sun."
+ }
+}

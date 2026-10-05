@@ -1,0 +1,35 @@
+/* Current, voltage and power: page-local styles for the I-V lab. */
+
+.iv-lead { margin-top: -0.2rem; margin-bottom: 1rem; }
+.iv-grid { display: grid; gap: 1.25rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 56rem) {
+  .iv-grid { grid-template-columns: minmax(0, 1fr) 15.5rem; align-items: start; }
+}
+.iv-plot { min-width: 0; }
+.chart.iv-chart { height: 31rem; }
+@media (max-width: 30rem) { .chart.iv-chart { height: 27rem; } }
+.widget .iv-chart canvas { background: none; border-radius: 0; }
+.iv-legend { margin: 0.6rem 0 0; }
+.iv-key { display: inline-block; width: 1.4rem; height: 0; border-top: 2.5px solid var(--silicon); flex: none; }
+.iv-key--ghost { border-top: 1.5px solid var(--ink-2); opacity: 0.55; }
+.iv-key--box { height: 0.8rem; border: 1.2px dashed var(--ink-2); width: 1rem; }
+.iv-key--mpp { height: 0.8rem; width: 1rem; border: 0; background: color-mix(in srgb, var(--sun) 40%, transparent); }
+
+.iv-readout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.iv-readout dd { font-size: var(--s0); }
+.iv-readout dd small { display: block; font-family: var(--body); font-size: var(--s-2); color: var(--ink-2); font-weight: 600; min-height: 1.2em; }
+.iv-readout .iv-eta { grid-column: 1 / -1; background: var(--sun-wash); }
+.iv-readout .iv-eta dd { font-size: var(--s2); }
+@media (min-width: 30rem) and (max-width: 55.99rem) {
+  .iv-readout { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .iv-readout .iv-eta { grid-column: span 2; }
+}
+
+.iv-controls {
+  margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--rule);
+  grid-template-columns: minmax(0, 1fr); gap: 0.9rem 1.75rem;
+}
+@media (min-width: 40rem) { .iv-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 60rem) { .iv-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.iv-buttons { align-self: end; }
+.iv-buttons .btn { padding: 0.35rem 0.7rem; font-size: var(--s-2); }

@@ -1,0 +1,27 @@
+{
+  "photovoltaic-effect": {
+    "term": "Photovoltaic effect",
+    "short": "Light falling on a material produces a voltage and can drive a current, with no moving parts. It is how every solar cell works.",
+    "see": ["photon", "semiconductor"]
+  },
+  "photoconductivity": {
+    "term": "Photoconductivity",
+    "short": "A material conducts electricity better when light shines on it, because light frees extra charge carriers. It needs an outside battery; it does not make power by itself.",
+    "see": ["photovoltaic-effect"]
+  },
+  "photoelectric-effect": {
+    "term": "Photoelectric effect",
+    "short": "Light knocks electrons out of a metal surface. Einstein explained it in 1905 by treating light as packets (photons), each with energy set by its colour.",
+    "see": ["photon", "photovoltaic-effect"]
+  },
+  "czochralski-process": {
+    "term": "Czochralski process",
+    "short": "A way to grow one large, nearly flawless crystal: dip a small seed crystal into molten material and pull it up slowly while turning it. Most single-crystal silicon is made this way.",
+    "see": ["semiconductor"]
+  },
+  "feed-in-tariff": {
+    "term": "Feed-in tariff",
+    "short": "A law that guarantees a fixed price, for many years, for each kilowatt-hour a renewable generator feeds into the grid. It makes small and large projects easy to finance.",
+    "see": ["lcoe"]
+  }
+}

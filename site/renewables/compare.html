@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Comparison dashboard – Solar Odyssey</title>
+<meta name="description" content="Capacity factor, land use, cost and growth across sources.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="compare.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="compare.js"></script>
+</head>
+<body data-page="compare">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page cmp-page">
+  <header class="page-head">
+    <span class="kicker"><a href="index.html">Renewables</a></span>
+    <h1>Comparison dashboard</h1>
+    <p class="lede">Eleven ways to make electricity, side by side: how many hours they run, what they cost to build and to run, how much land they take, how much greenhouse gas they release over their lives, and how fast they are growing.</p>
+  </header>
+
+  <p>No single number says which source is “best”. A solar farm is cheap to build but makes power only when the Sun is up; a geothermal plant costs nearly six times as much per kilowatt but runs almost all year. This page puts the main yardsticks next to each other, each with its unit, its year and the organisation that measured it, so you can see both the gaps and the trade-offs.</p>
+  <p>Costs come mostly from the International Renewable Energy Agency’s (IRENA) survey of projects finished in 2024,<sup class="cite" data-src="irena-costs-2025"></sup> with the Lazard 2025 study of new US plants for nuclear, gas and coal.<sup class="cite" data-src="lazard-lcoeplus-2025"></sup> The two use different methods, so read them as two views, not one ruler. <span class="verified">2026-09-30</span> Fast-moving numbers are kept current on <a href="../state-of-the-field.html">State of the field</a>.</p>
+
+  <section class="widget cmp-board" id="board" aria-labelledby="board-h">
+    <div class="cmp-board-head">
+      <h2 id="board-h">Compare on</h2>
+      <div class="cmp-metrics" role="radiogroup" aria-label="Measure to compare" id="metric-switch"></div>
+    </div>
+    <fieldset class="cmp-sources">
+      <legend>Sources shown</legend>
+      <div class="cmp-chips" id="source-chips"></div>
+      <div class="btn-row cmp-quick">
+        <button type="button" class="btn ghost" id="show-all">Show all eleven</button>
+        <button type="button" class="btn ghost" id="show-renew">Renewables only</button>
+        <label class="cmp-sort"><input type="checkbox" id="sort-toggle"> Sort by value</label>
+      </div>
+    </fieldset>
+    <ul class="cmp-key" id="mark-key" aria-label="How to read the marks"></ul>
+    <div class="cmp-chart-wrap" id="chart-wrap">
+      <svg class="cmp-chart" id="range-chart" role="img" aria-label="Range chart"></svg>
+    </div>
+    <p class="cmp-readout" id="row-readout" aria-live="polite">Point at or tab to a row to see every number behind it.</p>
+    <p class="cmp-takeaway" id="takeaway"></p>
+    <p class="caption cmp-source-line" id="source-line"></p>
+    <span class="data-badge" id="board-badge"></span>
+  </section>
+
+  <h2 id="yardsticks">What each yardstick means</h2>
+  <dl class="cmp-defs">
+    <dt>Capacity factor</dt>
+    <dd>A plant’s <dfn data-term="capacity-factor">capacity factor</dfn> is the energy it actually made in a year divided by what it would have made running at full <dfn data-term="nameplate-capacity">nameplate capacity</dfn> for all 8,760 hours. It is not an efficiency. For sun and wind it mostly measures how often the resource is there; for coal and gas it also measures how often the plant was asked to run. The US coal fleet ran at only 42.6 % of its capacity in 2024.<sup class="cite" data-src="eia-epa-table-4-08-a"></sup> <span class="claim claim--consensus">Current consensus</span></dd>
+    <dt>Installed cost</dt>
+    <dd>The <dfn data-term="installed-cost">total installed cost</dfn>: everything it takes to build the plant, divided by its capacity, in US dollars per kilowatt. A kilowatt of solar is the cheapest to build, but it makes far fewer kilowatt-hours a year than a kilowatt of geothermal, so cost per kilowatt alone misleads.<sup class="cite" data-src="irena-costs-2025"></sup></dd>
+    <dt>Levelized cost of energy</dt>
+    <dd>The <dfn data-term="lcoe">levelized cost of energy (LCOE)</dfn> spreads the building cost, the yearly <dfn data-term="operations-and-maintenance">operations and maintenance (O&amp;M)</dfn> and the fuel over every kilowatt-hour the plant makes in its life, with interest. It is the price per kilowatt-hour that just pays the plant back. The lab below lets you rebuild it.</dd>
+    <dt>Land use</dt>
+    <dd><dfn data-term="land-use-intensity">Land-use intensity</dfn>: square metres occupied for each megawatt-hour made per year, counting mines and gas fields as well as the plant. For wind and gas the study gives both the direct footprint and the whole site; the gap is large for wind, because the land between turbines stays farmland.<sup class="cite" data-src="lovering-2022"></sup></dd>
+    <dt>Lifecycle emissions</dt>
+    <dd><dfn data-term="lifecycle-emissions">Lifecycle emissions</dfn>: greenhouse gases from mining, manufacturing, building, fuel, running and dismantling, in grams of <dfn data-term="co2-equivalent">CO2-equivalent (CO2e)</dfn> per kilowatt-hour, from the Intergovernmental Panel on Climate Change (IPCC) review of published studies.<sup class="cite" data-src="ipcc-ar5-wg3-annex3"></sup> <span class="claim claim--consensus">Current consensus</span></dd>
+  </dl>
+  <div class="expert expert-note">
+    <p>Three things change these numbers more than the technology itself. First, the <dfn data-term="cost-of-capital">cost of capital</dfn>: IRENA uses country-specific rates, from 3.8 % in Europe to 12 % in Africa for 2024, so the same wind farm has a much higher LCOE in a country where money is expensive.<sup class="cite" data-src="irena-costs-2025"></sup> Second, IRENA computes an LCOE for each project and then averages; the average of many LCOEs is not the LCOE of the average inputs. Third, a fleet average (EIA’s marks) includes old, curtailed and part-time plants, while IRENA and Lazard describe new ones.</p>
+    <p>LCOE also ignores <em>when</em> energy arrives. A kilowatt-hour from a <dfn data-term="dispatchable">dispatchable</dfn> plant at the evening peak is worth more to a grid than one from a <dfn data-term="variable-renewable">variable</dfn> source at noon on a sunny day. System studies add storage, backup and transmission costs on top; none of those are in these figures. See <a href="grid.html">The smart grid</a>.</p>
+  </div>
+
+  <section class="widget cmp-growth" id="growth" aria-labelledby="growth-h">
+    <h2 id="growth-h">Who is growing</h2>
+    <div class="cmp-growth-controls">
+      <div class="control">
+        <label for="growth-entity">Country or region</label>
+        <select id="growth-entity"></select>
+      </div>
+      <div class="control">
+        <span class="label" id="growth-unit-l">Show</span>
+        <div class="cmp-seg" role="radiogroup" aria-labelledby="growth-unit-l" id="growth-unit">
+          <button type="button" role="radio" aria-checked="true" value="twh">Generation (TWh)</button>
+          <button type="button" role="radio" aria-checked="false" value="share">Share of electricity (%)</button>
+        </div>
+      </div>
+      <label class="cmp-check"><input type="checkbox" id="growth-context" checked> Include nuclear, gas and coal</label>
+    </div>
+    <div class="chart" id="growth-chart" aria-label="Electricity generation by source over time"></div>
+    <p class="cmp-growth-summary" id="growth-summary" aria-live="polite"></p>
+    <p class="caption">Our World in Data compilation of Ember and Energy Institute data, 1985–2025.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> Solar includes rooftop panels and CSP; wind includes offshore; “Geothermal and other” also holds tidal and wave power. Shares are of all electricity generated, including oil. <span class="verified">2026-09-30</span></p>
+    <span class="data-badge" id="growth-badge"></span>
+  </section>
+
+  <h2 id="capacity-factor">Equation: capacity factor</h2>
+  <div class="eq" id="eq-capacity-factor">
+    <p>Imagine a plant that never stopped and never dimmed. Its capacity factor is the fraction of that ideal year it actually delivered.</p>
+    <div class="tex">\mathrm{CF} = \frac{E_\text{year}}{P_\text{rated} \times 8760\ \text{h}}</div>
+    <dl class="symbols">
+      <dt><span class="tex">\mathrm{CF}</span></dt><dd>capacity factor, a fraction between 0 and 1 (often written as a percentage)</dd>
+      <dt><span class="tex">E_\text{year}</span></dt><dd>energy delivered in one year, megawatt-hours (MWh)</dd>
+      <dt><span class="tex">P_\text{rated}</span></dt><dd>nameplate capacity, megawatts (MW)</dd>
+      <dt>8760 h</dt><dd>hours in a (non-leap) year</dd>
+    </dl>
+    <div class="worked" data-check="econ:capacityFactor" data-args="[148920, 100]" data-expect="0.17" data-tol="0.0001">
+      A 100 MW solar farm that delivers 148,920 MWh in a year has CF = 148,920 ÷ (100 × 8,760) = <span class="answer">0.17</span>, IRENA’s 2024 global average for new solar PV.
+    </div>
+    <div class="worked" data-check="levelized:fullLoadHours" data-args="[0.17]" data-expect="1489.2" data-tol="0.01">
+      The same farm makes as much energy as <span class="answer">1,489 hours</span> at full power (0.17 × 8,760): its <dfn data-term="full-load-hours">full-load hours</dfn>. A geothermal plant at 0.88 manages about 7,700.
+    </div>
+  </div>
+
+  <h2 id="lcoe">Equation: levelized cost of energy</h2>
+  <div class="eq" id="eq-lcoe">
+    <p>Think of a mortgage. Building the plant is like buying a house with a loan: you repay it in equal yearly instalments that include interest. Add the yearly running costs, then divide by the energy made each year. That is the LCOE.</p>
+    <div class="tex">\mathrm{LCOE} = \frac{C \cdot \mathrm{CRF} + F}{8.76 \cdot \mathrm{CF}} + V + \Phi</div>
+    <div class="tex">\mathrm{CRF} = \frac{r(1+r)^n}{(1+r)^n - 1}</div>
+    <dl class="symbols">
+      <dt><span class="tex">\mathrm{LCOE}</span></dt><dd>levelized cost of energy, US dollars per megawatt-hour ($/MWh); divide by 1,000 for $/kWh</dd>
+      <dt><span class="tex">C</span></dt><dd>total installed cost, $/kW</dd>
+      <dt><span class="tex">\mathrm{CRF}</span></dt><dd><dfn data-term="capital-recovery-factor">capital recovery factor</dfn>: the share of <span class="tex">C</span> repaid each year, per year</dd>
+      <dt><span class="tex">r</span></dt><dd>real <dfn data-term="discount-rate">discount rate</dfn> (cost of capital after inflation), a fraction per year</dd>
+      <dt><span class="tex">n</span></dt><dd>economic life, years</dd>
+      <dt><span class="tex">F</span></dt><dd>fixed O&amp;M, $/kW per year</dd>
+      <dt><span class="tex">8.76\cdot\mathrm{CF}</span></dt><dd>MWh made per kW of capacity per year (8,760 h ÷ 1,000)</dd>
+      <dt><span class="tex">V</span></dt><dd>variable O&amp;M, $/MWh</dd>
+      <dt><span class="tex">\Phi</span></dt><dd>fuel cost, $/MWh</dd>
+    </dl>
+    <div class="worked" data-check="levelized:lcoeBreakdown" data-args="[{&quot;capex&quot;:691,&quot;fixedOM&quot;:12.5,&quot;varOM&quot;:0,&quot;fuel&quot;:0,&quot;cf&quot;:0.17,&quot;r&quot;:0.06,&quot;n&quot;:35}]" data-pick="total" data-expect="40.4" data-tol="0.05">
+      Utility solar with IRENA’s 2024 cost, <span class="tex">C</span> = 691 $/kW and CF = 0.17, Lazard’s mid-range fixed O&amp;M of 12.5 $/kW-yr and 35-year life, at <span class="tex">r</span> = 6 %: <span class="tex">\mathrm{CRF}</span> = 0.0690, so capital costs 691 × 0.0690 = 47.7 $/kW-yr. Adding O&amp;M gives 60.2 $/kW-yr, spread over 8.76 × 0.17 = 1.489 MWh: <span class="answer">40.4 $/MWh</span>, about 4.0 US cents per kWh. IRENA’s published average is 4.3 cents.
+    </div>
+    <div class="worked" data-check="levelized:lcoeBreakdown" data-args="[{&quot;capex&quot;:691,&quot;fixedOM&quot;:12.5,&quot;varOM&quot;:0,&quot;fuel&quot;:0,&quot;cf&quot;:0.17,&quot;r&quot;:0.06,&quot;n&quot;:35}]" data-pick="capital" data-expect="32.0" data-tol="0.05">
+      Of that, the loan repayment alone is <span class="answer">32.0 $/MWh</span>, four-fifths of the total. Solar and wind are almost all capital, which is why their cost depends so much on the interest rate.
+    </div>
+    <div class="expert expert-note">
+      <p>The annuity form above equals the textbook definition, total discounted costs divided by total discounted energy, <span class="tex">\sum_t c_t (1+r)^{-t} \big/ \sum_t e_t (1+r)^{-t}</span>, whenever yearly costs and output are constant. It is the form NREL’s Annual Technology Baseline uses.<sup class="cite" data-src="nrel-atb-equations"></sup> Discounting the energy is not a trick: it is what makes a constant price per MWh repay the loan.</p>
+      <p>Use a real rate with real (inflation-free) costs. Mixing a nominal rate with today’s prices overstates LCOE, most of all for long-lived, capital-heavy plants such as nuclear and hydro.</p>
+    </div>
+  </div>
+
+  <section class="widget cmp-lab" id="lab" aria-labelledby="lab-h">
+    <h2 id="lab-h">LCOE lab</h2>
+    <p class="caption lead">Pick a technology to load its numbers, then change any of them. The result is computed with the equation above.</p>
+    <div class="widget-body split">
+      <div class="cmp-lab-out">
+        <div class="cmp-lab-result">
+          <span class="cmp-lab-num" id="lab-total">–</span>
+          <span class="cmp-lab-unit" id="lab-total-unit">$/MWh</span>
+        </div>
+        <p class="cmp-lab-compare" id="lab-compare"></p>
+        <svg class="cmp-stack" id="lab-stack" role="img" aria-label="LCOE breakdown"></svg>
+        <ul class="legend cmp-stack-key" id="lab-stack-key"></ul>
+        <h3 class="cmp-small-h">LCOE against discount rate</h3>
+        <svg class="cmp-sens" id="lab-sens" role="img" aria-label="LCOE against discount rate"></svg>
+        <p class="caption" id="lab-sens-cap"></p>
+      </div>
+      <div class="controls cmp-lab-in">
+        <div class="control">
+          <label for="lab-preset">Technology preset</label>
+          <select id="lab-preset"></select>
+        </div>
+        <div class="control">
+          <label for="lab-r">Real discount rate <output id="lab-r-out" for="lab-r">6.0 %</output></label>
+          <input type="range" id="lab-r" min="0" max="15" step="0.1" value="6">
+        </div>
+        <div class="control">
+          <label for="lab-cf">Capacity factor <output id="lab-cf-out" for="lab-cf">–</output></label>
+          <input type="range" id="lab-cf" min="0.05" max="0.95" step="0.005" value="0.17">
+          <p class="cmp-in-src" id="src-cf"></p>
+        </div>
+        <div class="cmp-lab-grid">
+          <div class="control"><label for="lab-capex">Installed cost <span class="u">$/kW</span></label><input type="number" id="lab-capex" min="0" max="50000" step="1" inputmode="decimal"><p class="cmp-in-src" id="src-capex"></p></div>
+          <div class="control"><label for="lab-life">Life <span class="u">years</span></label><input type="number" id="lab-life" min="1" max="100" step="1" inputmode="numeric"><p class="cmp-in-src" id="src-life"></p></div>
+          <div class="control"><label for="lab-fom">Fixed O&amp;M <span class="u">$/kW-yr</span></label><input type="number" id="lab-fom" min="0" max="2000" step="0.01" inputmode="decimal"><p class="cmp-in-src" id="src-fom"></p></div>
+          <div class="control"><label for="lab-vom">Variable O&amp;M <span class="u">$/MWh</span></label><input type="number" id="lab-vom" min="0" max="500" step="0.01" inputmode="decimal"><p class="cmp-in-src" id="src-vom"></p></div>
+          <div class="control"><label for="lab-fuel">Fuel <span class="u">$/MWh</span></label><input type="number" id="lab-fuel" min="0" max="1000" step="0.01" inputmode="decimal"><p class="cmp-in-src" id="src-fuel"></p></div>
+        </div>
+        <button type="button" class="btn ghost" id="lab-reset">Reset to preset</button>
+      </div>
+    </div>
+    <h3 class="cmp-small-h">Assumptions in this lab</h3>
+    <ul class="cmp-assume">
+      <li>A <strong>real</strong> discount rate, constant over the life: costs are in today’s money. Our default of 6 % sits inside IRENA’s 2024 range of 3.8–12 %.</li>
+      <li>No subsidies, tax credits or carbon price.</li>
+      <li>No system or integration costs: no storage, backup, extra transmission or curtailment.</li>
+      <li>Constant output and running costs every year; no degradation; no decommissioning cost; construction counted as one up-front payment.</li>
+      <li>Presets mix sources: IRENA’s global installed cost and capacity factor where they exist, US O&amp;M figures from Lazard or the US Energy Information Administration (EIA).<sup class="cite" data-src="lazard-lcoeplus-2025,eia-aeo2026-emm,eia-aeo2023-costs"></sup> Each input names its source; lifetimes marked “this page” are our assumption.</li>
+    </ul>
+    <div class="expert expert-note" id="lab-expert">
+      <p>With IRENA’s 2024 inputs and these O&amp;M figures, which discount rate reproduces IRENA’s published LCOE exactly? If the answer lands inside IRENA’s 3.8–12 % range, the simple annuity model is consistent with IRENA’s far more detailed project-by-project calculation. The test suite checks this for every technology where it should hold.</p>
+      <div class="table-wrap"><table id="implied-table"><caption class="visually-hidden">Discount rate implied by IRENA's published LCOE</caption><thead><tr><th scope="col">Technology</th><th scope="col" class="num">IRENA LCOE</th><th scope="col" class="num">Lab at 6 %</th><th scope="col" class="num">Implied rate</th></tr></thead><tbody></tbody></table></div>
+      <p>Bioenergy needs about 11 % because the preset leaves feedstock out: IRENA’s figure includes it. Gas would need an implausible rate because IRENA’s global gas price is far above Lazard’s US price of 3.45 $/MMBtu. CSP and coal come out slightly <em>below</em> the 6 % default, a sign that their real O&amp;M or lifetimes differ from these US figures.</p>
+    </div>
+  </section>
+
+  <section class="widget cmp-custom" id="custom" aria-labelledby="custom-h">
+    <h2 id="custom-h">Make your own yardstick</h2>
+    <p class="caption lead">Type a formula using the names below. It is worked out for every technology that has the numbers it needs, and the results are ranked. The formula is read by a small calculator that only knows arithmetic; it is never run as code.</p>
+    <div class="control cmp-formula">
+      <label for="formula">Formula <span class="u" id="formula-count">0 / 200</span></label>
+      <input type="text" id="formula" maxlength="200" spellcheck="false" autocomplete="off" autocapitalize="off" value="capex / (cf * 8.76)">
+    </div>
+    <div class="btn-row cmp-examples" id="formula-examples" aria-label="Example formulas"></div>
+    <p class="cmp-formula-msg" id="formula-msg" role="status"></p>
+    <ol class="cmp-rank" id="formula-rank" aria-label="Ranking"></ol>
+    <p class="caption" id="formula-missing"></p>
+    <details class="cmp-vars">
+      <summary>Names you can use</summary>
+      <div class="table-wrap"><table id="var-table"><thead><tr><th scope="col">Name</th><th scope="col">Meaning</th><th scope="col">Unit</th></tr></thead><tbody></tbody></table></div>
+      <p class="caption">Also: + − × ÷ ^ and brackets; functions sqrt, ln, log10, exp, abs, min, max, round, pow; constants pi and e.</p>
+    </details>
+  </section>
+
+  <h2 id="table-view">All the numbers</h2>
+  <p>The same data as a table, for screen readers, printing and copying. Each column names its source; hover a citation number for the full reference.</p>
+  <div class="table-wrap wide cmp-table-wrap">
+    <table id="all-table" class="cmp-table">
+      <caption class="visually-hidden">Capacity factor, cost, land use, emissions and growth by source</caption>
+      <thead>
+        <tr>
+          <th scope="col">Source</th>
+          <th scope="col" class="num">Capacity factor, new 2024<sup class="cite" data-src="irena-costs-2025"></sup></th>
+          <th scope="col" class="num">US fleet 2024<sup class="cite" data-src="eia-epa-table-4-08-a,eia-epa-table-4-08-b"></sup></th>
+          <th scope="col" class="num">Installed cost, $/kW<sup class="cite" data-src="irena-costs-2025"></sup></th>
+          <th scope="col" class="num">LCOE, $/kWh<sup class="cite" data-src="irena-costs-2025"></sup></th>
+          <th scope="col" class="num">LCOE, new US, $/kWh<sup class="cite" data-src="lazard-lcoeplus-2025"></sup></th>
+          <th scope="col" class="num">Land, m² per MWh/yr<sup class="cite" data-src="lovering-2022"></sup></th>
+          <th scope="col" class="num">Lifecycle gCO2e/kWh<sup class="cite" data-src="ipcc-ar5-wg3-annex3"></sup></th>
+          <th scope="col" class="num">World 2025, TWh (share)<sup class="cite" data-src="owid-energy-data"></sup></th>
+          <th scope="col" class="num">Growth 2015–25, %/yr</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <p class="caption">A dash means the cited source does not report that figure. Land figures for wind and gas are whole site, with the direct footprint in brackets. Growth columns repeat for technologies that share an Our World in Data series (all solar, all wind).</p>
+
+  <h2 id="caveats">Before you quote a number</h2>
+  <ul class="cmp-caveats" id="caveat-list"></ul>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+/* The cost collapse */
+.cd-chart { min-height: 18rem; }
+.cd-replay { align-items: center; gap: 0.8rem; margin-top: 0.6rem; }
+
+/* event notes under the price chart: a quiet numbered key that matches the chart's markers on phones */
+.cd-notes { list-style: none; padding: 0; margin: 1.2rem 0 0; display: grid; gap: 0.7rem 1.6rem; counter-reset: ev; font-size: var(--s-1); }
+@media (min-width: 46rem) { .cd-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cd-notes li { counter-increment: ev; margin: 0; display: grid; grid-template-columns: 1.6rem minmax(0, 1fr); gap: 0 0.4rem; align-content: start; }
+.cd-notes li::before {
+  content: counter(ev); grid-row: span 2; width: 1.35rem; height: 1.35rem; border-radius: 50%;
+  border: 2px solid var(--ink); display: grid; place-items: center; font-size: var(--s-2); font-weight: 700; line-height: 1;
+}
+.cd-y { font-family: var(--display); font-weight: 650; font-size: var(--s0); }
+.cd-t { color: var(--ink-2); }
+.cd-table { margin-top: 1rem; font-size: var(--s-1); }
+.cd-table summary { cursor: pointer; font-weight: 650; color: var(--silicon); }
+.cd-table .table-wrap { max-height: 22rem; overflow-y: auto; margin-top: 0.5rem; }
+.cd-lcoe h3 { margin-top: 0; }

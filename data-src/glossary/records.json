@@ -1,0 +1,107 @@
+{
+  "perovskite": {
+    "term": "Perovskite",
+    "short": "A family of crystals with the same arrangement of atoms as the mineral perovskite. Metal-halide perovskites absorb sunlight strongly and can be made from solution at low temperature.",
+    "see": [
+      "band-gap",
+      "tandem-cell"
+    ]
+  },
+  "research-cell": {
+    "term": "Research cell",
+    "short": "A small, hand-made laboratory solar cell, often under 1 cm², built to show how far a technology can go. Its record efficiency is higher than any module you can buy.",
+    "see": [
+      "module-efficiency",
+      "certified-efficiency"
+    ]
+  },
+  "certified-efficiency": {
+    "term": "Certified efficiency",
+    "short": "An efficiency measured by an independent, accredited test lab (such as NREL, Fraunhofer ISE CalLab, ISFH or ESTI) under standard test conditions, rather than by the team that made the cell.",
+    "see": [
+      "standard-test-conditions",
+      "research-cell"
+    ]
+  },
+  "module-efficiency": {
+    "term": "Module efficiency",
+    "short": "The share of sunlight falling on a whole solar panel, frame and gaps included, that comes out as electricity. Lower than cell efficiency because of the gaps, wiring and edges.",
+    "see": [
+      "conversion-efficiency"
+    ]
+  },
+  "multijunction-cell": {
+    "term": "Multijunction cell",
+    "short": "A solar cell built from several stacked cells with different band gaps, each converting its own slice of the spectrum. A two-junction cell is a tandem.",
+    "see": [
+      "tandem-cell",
+      "band-gap"
+    ]
+  },
+  "concentrator-photovoltaics": {
+    "term": "Concentrator photovoltaics",
+    "short": "Solar cells placed under lenses or mirrors that focus sunlight many times over, so a tiny, expensive cell does the work of a large one.",
+    "see": [
+      "concentration-ratio",
+      "multijunction-cell"
+    ]
+  },
+  "current-matching": {
+    "term": "Current matching",
+    "short": "In a stack wired in series, the same current must flow through every cell, so the cell that makes the least current sets it. Designers choose band gaps so each cell makes about the same current.",
+    "see": [
+      "tandem-cell",
+      "short-circuit-current"
+    ]
+  },
+  "bifacial-module": {
+    "term": "Bifacial module",
+    "short": "A solar panel that collects light on both faces: sunlight on the front plus light reflected from the ground onto the back.",
+    "see": [
+      "albedo"
+    ]
+  },
+  "albedo": {
+    "term": "Albedo",
+    "short": "The fraction of sunlight a surface reflects, from 0 (absorbs everything) to 1 (reflects everything). Fresh snow and white gravel reflect far more than grass or dark soil.",
+    "see": [
+      "bifacial-module"
+    ]
+  },
+  "cumulative-capacity": {
+    "term": "Cumulative capacity",
+    "short": "All the generating capacity ever installed and still counted, added up. For learning curves, the total ever produced is what matters.",
+    "see": [
+      "learning-rate"
+    ]
+  },
+  "swansons-law": {
+    "term": "Swanson's law",
+    "short": "The solar version of Wright's law: module prices fall by a steady share each time the total ever shipped doubles. Named after Richard Swanson, founder of the solar company SunPower.",
+    "see": [
+      "wrights-law",
+      "learning-rate"
+    ]
+  },
+  "polysilicon": {
+    "term": "Polysilicon",
+    "short": "Ultra-pure silicon made of many small crystals; the raw material melted down to grow the crystals that are sliced into solar wafers.",
+    "see": [
+      "czochralski-process"
+    ]
+  },
+  "hot-carrier-cell": {
+    "term": "Hot-carrier cell",
+    "short": "A proposed solar cell that collects electrons before they cool down, keeping the energy that ordinary cells lose as heat.",
+    "see": [
+      "thermalisation"
+    ]
+  },
+  "intermediate-band-cell": {
+    "term": "Intermediate-band cell",
+    "short": "A proposed solar cell with an extra energy level inside the band gap, so two low-energy photons can together lift one electron across.",
+    "see": [
+      "band-gap"
+    ]
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schema": 1,
+  "algorithm": "sha256",
+  "signature": "ed25519",
+  "files": {
+    "efficiency-records.json": {
+      "bytes": 8767,
+      "sha256": "d97fba2f94c01e2921a1cc70682b1575665df8b197644b1c5649f2487441695c"
+    },
+    "electricity-mix.json": {
+      "bytes": 143680,
+      "sha256": "f3791e0014f951c01f54701f4f5316052a3f15eb62bdc8b8ba7ddb678ad69773"
+    },
+    "glossary.json": {
+      "bytes": 44729,
+      "sha256": "2bfd9d9f5b22b8a2cd0c6ba1eed7f93aaa46a29ef8f637f955f60b8bff562505"
+    },
+    "materials.json": {
+      "bytes": 2856,
+      "sha256": "43d4f78906865328eb6e114bc2ade7fea36d3975b674934e9e927df654a09d6f"
+    },
+    "module-prices.json": {
+      "bytes": 1293,
+      "sha256": "064291277bc9f0de06e3e2d4e318c4aead8f9f3a20e81b05766b483e1fb477d8"
+    },
+    "places.json": {
+      "bytes": 4312,
+      "sha256": "c0ac16f9d07261415432d64471c5a9edfd6370029eb80c3830a3d01f81229d4f"
+    },
+    "quiz-band-gap.json": {
+      "bytes": 3458,
+      "sha256": "aa766b0c9fc73353530537b185e637bd324a8ddaf794ac573ab3481bbdc00dc6"
+    },
+    "quiz-biomass.json": {
+      "bytes": 2861,
+      "sha256": "6ed02879b7eee6694125a4ed57a447b44dc28997a7fba68f5b0e008a72b5b204"
+    },
+    "quiz-cell-to-grid.json": {
+      "bytes": 3323,
+      "sha256": "7067a8625bb7a8b49d648558638d3cca94bba2f344c7c8f0034f10209ce1eba3"
+    },
+    "quiz-compare.json": {
+      "bytes": 3021,
+      "sha256": "9469eba4c4d4008e348ac81a8e936580ca42211712c9b88ae79851f1036da352"
+    },
+    "quiz-cost-decline.json": {
+      "bytes": 3034,
+      "sha256": "e391e4f13aa8024a49cc57f52e2f3d3275beac73103a5cd4a3b3a4911306a738"
+    },
+    "quiz-csp.json": {
+      "bytes": 2985,
+      "sha256": "5b72c84e435e83580075ddfecf22a9076536872d9c7bb0b974bd2bcd4ca86078"
+    },
+    "quiz-efficiency-records.json": {
+      "bytes": 3252,
+      "sha256": "f796f9c3dda5ba8e76b5ef45dd441e0147b09de83296fe329c992e32e1de66d5"
+    },
+    "quiz-frontier.json": {
+      "bytes": 3858,
+      "sha256": "152d37f18535210e93722525b9d9f0512ba5af6c70b7bbc174bf43674c8e6acb"
+    },
+    "quiz-geothermal.json": {
+      "bytes": 2963,
+      "sha256": "f0799b0bb9cf79211730156695c28762b97dcd80ecc3a999cb941569b197f921"
+    },
+    "quiz-grid.json": {
+      "bytes": 3236,
+      "sha256": "d7eb9776bd2f137b759a5912a2fa306d3e2a717c2edcdcfacaa2129c9b69df0a"
+    },
+    "quiz-hydro.json": {
+      "bytes": 3319,
+      "sha256": "ca0f7c93d315f53db6579e64d3622da145d1e7e2733559c9b46514fce299f61e"
+    },
+    "quiz-iv-curve.json": {
+      "bytes": 3154,
+      "sha256": "5154f106e14d060f864a23ed5054b3450968ce9c4ed625a1cab4501e46303cb9"
+    },
+    "quiz-ocean.json": {
+      "bytes": 3388,
+      "sha256": "68490a3f67da3e3648b7969f69f661bb3045140f9aca066cd98c7cdc801b2aa0"
+    },
+    "quiz-photovoltaic-effect.json": {
+      "bytes": 3169,
+      "sha256": "83ae7663c695a68020908b8424f814bf8cf623dda7f57f497be5ed8c623dd89e"
+    },
+    "quiz-pn-junction.json": {
+      "bytes": 3237,
+      "sha256": "0e3f3be5478d01f88f8e34860c30440b36bca1e22f9bbf65318d696092716134"
+    },
+    "quiz-renewables.json": {
+      "bytes": 3139,
+      "sha256": "4a9f1e028c405a7c522a5c249c1b6c86084631a7d1adf6384f29dfe47beb8b20"
+    },
+    "quiz-storage.json": {
+      "bytes": 2829,
+      "sha256": "65b99ca30f616c48017fa6ff0a3f3f4094d67c6e18fd4a63561ab1871d9935fd"
+    },
+    "quiz-sun-path.json": {
+      "bytes": 3132,
+      "sha256": "4fb5df4dd776e5676a9591876e436e6676cde43875cbee909edb407a4cb80123"
+    },
+    "quiz-system-builder.json": {
+      "bytes": 2853,
+      "sha256": "6c17f5578787a1657695206d243b1839307faa8deda2a81614d3498fd4e0e1a6"
+    },
+    "quiz-technologies.json": {
+      "bytes": 3404,
+      "sha256": "000625ef815b4760e1ac5a8911220639da74e00e952cbe407b61e7a1998d6b3b"
+    },
+    "quiz-timeline.json": {
+      "bytes": 3281,
+      "sha256": "23e43358638bc900403fa152dcd46e99484680e5cdd39cec9ccb08b0523618ce"
+    },
+    "quiz-wind.json": {
+      "bytes": 3027,
+      "sha256": "7403f4f1d138879c933f4702e2d8f83cf95a55c4aff451a354b41ef0143bfcbb"
+    },
+    "renewables-compare.json": {
+      "bytes": 34185,
+      "sha256": "ff7c75e0b95bf88127f308cfb8efdbc85f9e1370b6e4a27fdeb9e30dbef0826e"
+    },
+    "search.json": {
+      "bytes": 136763,
+      "sha256": "cad2732784f91ca2ea124f8c3663656460364f68992e8549b7ed921988383c40"
+    },
+    "solar-deployment.json": {
+      "bytes": 1627,
+      "sha256": "e96bf8388c337931e944733e697424f35af0b33fdc03492bcb6267554859fa16"
+    },
+    "sources.json": {
+      "bytes": 107710,
+      "sha256": "98f7e8f6d7aa6872d1b08ba2abf4d095988bf35c097c63f0a81e8f31f27f592e"
+    },
+    "state-of-the-field.json": {
+      "bytes": 4971,
+      "sha256": "d8e02e28d531d2e10b9964dec6966e989e9c899f5e6182b8e4f963b41e7f71b5"
+    },
+    "technologies.json": {
+      "bytes": 3395,
+      "sha256": "657b78c7d28c411ee1274d719cf6c9301c21437e760ba86e816047d859b68ce0"
+    },
+    "timeline.json": {
+      "bytes": 23457,
+      "sha256": "02e98459aa2fd3430aa1738a9aa10da1c1521e259d6064d868563cc1b0894a6c"
+    }
+  }
+}

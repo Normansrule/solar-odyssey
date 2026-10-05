@@ -1,0 +1,4 @@
+/* Hydropower page */
+#dam-canvas { aspect-ratio: 16 / 10.5; }
+@media (max-width: 40rem) { #dam-canvas { aspect-ratio: 4 / 4.2; } }
+.ra-table td:first-child { white-space: nowrap; font-weight: 650; }

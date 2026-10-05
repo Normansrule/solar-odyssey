@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>The photovoltaic effect – Solar Odyssey</title>
+<meta name="description" content="Light arrives in packets, and a packet with enough energy frees an electron.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="photovoltaic-effect.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="photovoltaic-effect.js"></script>
+</head>
+<body data-page="photovoltaic-effect">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">How a cell works, lesson 1</span>
+    <h1>The photovoltaic effect</h1>
+    <p class="lede">Light arrives in packets, and a packet with enough energy frees an electron.</p>
+  </header>
+
+  <p>
+    A solar cell has no moving parts, yet it turns sunlight straight into electric current. The trick
+    happens one tiny packet of light at a time. Each packet either has enough energy to free an electron
+    inside the cell, or it does not. Nothing in between.
+  </p>
+  <p>
+    Those packets are called <dfn data-term="photon">photons</dfn>. A photon's energy depends only on its
+    colour, which physicists describe by its <dfn data-term="wavelength">wavelength</dfn>: the shorter the
+    wavelength, the bigger the packet. Blue photons carry more energy than red ones, and infrared photons,
+    which our eyes cannot see, carry less still.
+  </p>
+
+  <section class="widget pv-lab" aria-labelledby="lab-h">
+    <h2 id="lab-h">Fire photons at a semiconductor</h2>
+    <p class="caption pv-intro">
+      Pick a colour of light and a material. On the left, photons fly into a slab of the material. On the right,
+      the same photons are drawn on the material's energy ladder: an electron can sit on the lower band or the
+      upper band, but not in the gap between.
+    </p>
+    <div class="widget-body split">
+      <div class="pv-stage-wrap">
+        <canvas id="pv-canvas" class="pv-canvas" role="img"
+          aria-label="Animation of photons entering a semiconductor slab, and the same photons on a band diagram. The text readout beside it gives the numbers for the current photon."></canvas>
+        <ul class="legend pv-legend" aria-label="Key">
+          <li><span class="swatch pv-sw-electron" aria-hidden="true"></span>Electron (−)</li>
+          <li><span class="swatch pv-sw-hole" aria-hidden="true"></span>Hole (+)</li>
+          <li><span class="swatch pv-sw-heat" aria-hidden="true"></span>Energy lost as heat</li>
+          <li><span class="swatch pv-sw-ir" aria-hidden="true"></span>Infrared or ultraviolet (invisible to us; drawn dashed)</li>
+        </ul>
+        <div class="btn-row pv-buttons">
+          <button type="button" class="btn" id="pv-play">Play</button>
+          <button type="button" class="btn ghost" id="pv-step">Fire one photon</button>
+          <button type="button" class="btn ghost" id="pv-reset">Clear tally</button>
+        </div>
+        <p class="pv-live" id="pv-live" aria-live="polite"></p>
+        <p class="pv-tally" id="pv-tally" aria-live="polite">No photons fired yet.</p>
+      </div>
+
+      <div class="controls">
+        <div class="control">
+          <label for="pv-source">Light source</label>
+          <select id="pv-source">
+            <option value="mono">One colour (set below)</option>
+            <option value="sun">Sunlight: a mix of colours</option>
+          </select>
+        </div>
+        <div class="control">
+          <label for="pv-wl"><span>Wavelength</span><output id="pv-wl-out" for="pv-wl">500 nm</output></label>
+          <input type="range" id="pv-wl" min="280" max="1600" step="1" value="500" aria-describedby="pv-wl-band">
+          <div class="pv-spectrum-strip" aria-hidden="true"><canvas id="pv-strip" class="pv-strip"></canvas></div>
+          <small class="muted" id="pv-wl-band">Visible (green)</small>
+        </div>
+        <div class="control">
+          <label for="pv-int"><span>Light intensity</span><output id="pv-int-out" for="pv-int">1 mW</output></label>
+          <input type="range" id="pv-int" min="0" max="100" step="1" value="50">
+          <small class="muted">Brighter light means more photons, not bigger ones.</small>
+        </div>
+        <div class="control">
+          <label for="pv-mat"><span>Material</span><span class="data-badge" id="pv-badge">Loading data</span></label>
+          <select id="pv-mat"><option value="si">Crystalline silicon (Si), 1.12 eV</option></select>
+          <small class="muted" id="pv-mat-note"></small>
+        </div>
+
+        <h3 class="pv-readout-h" id="pv-readout-h">This photon</h3>
+        <dl class="readout pv-readout" aria-labelledby="pv-readout-h">
+          <div><dt>Photon energy</dt><dd><output id="r-ev">2.48</output> <small>eV</small></dd></div>
+          <div><dt>Same, in joules</dt><dd><output id="r-j">3.97e-19</output> <small>J</small></dd></div>
+          <div><dt>Frequency</dt><dd><output id="r-f">600</output> <small>THz</small></dd></div>
+          <div><dt>Band gap</dt><dd><output id="r-gap">1.12</output> <small>eV</small></dd></div>
+          <div><dt>Absorbed?</dt><dd><output id="r-abs">Yes</output></dd></div>
+          <div><dt>Lost as heat</dt><dd><output id="r-heat">1.36</output> <small>eV</small></dd></div>
+          <div><dt>Usable share</dt><dd><output id="r-use">45</output> <small>%</small></dd></div>
+          <div><dt>Photons per second</dt><dd><output id="r-rate">2.5e15</output></dd></div>
+        </dl>
+      </div>
+    </div>
+    <p class="caption">
+      The animation is slowed enormously: a 1 milliwatt beam delivers more than a million billion photons
+      every second. Where each photon is absorbed in the slab is illustrative; the energies are exact.
+    </p>
+  </section>
+
+  <h2 id="inside">What happens inside</h2>
+  <p>
+    In a <dfn data-term="semiconductor">semiconductor</dfn> such as silicon, almost every electron is busy
+    holding atoms together. These bound electrons sit in a range of energies called the
+    <dfn data-term="valence-band">valence band</dfn>. Above it, separated by a forbidden stretch of energy,
+    is the <dfn data-term="conduction-band">conduction band</dfn>, where an electron is free to move and carry
+    current. The forbidden stretch is the <dfn data-term="band-gap">band gap</dfn>.<sup class="cite" data-src="pveducation-band-gap"></sup>
+  </p>
+  <p>
+    A photon that reaches an electron hands over all of its energy or none of it. If the photon carries at least
+    the band-gap energy, the electron jumps into the conduction band. It leaves behind an empty spot in the bond,
+    a <dfn data-term="hole">hole</dfn>, which behaves like a positive charge and can move too. Together they make an
+    <dfn data-term="electron-hole-pair">electron–hole pair</dfn>. If the photon carries less than the gap, there is
+    no allowed energy for the electron to land on, so nothing happens and the photon passes straight through.
+  </p>
+  <p>
+    A photon with more energy than the gap does not do extra work. The electron lands high in the conduction band,
+    then quickly shakes off the surplus as vibrations of the crystal, which is heat. This is
+    <dfn data-term="thermalisation">thermalisation</dfn>, and it is the single biggest loss in a solar cell. Watch
+    the amber squiggles in the widget: a violet photon in silicon throws more than half of its energy away.
+  </p>
+  <p>
+    Freeing electrons is only half the job. Left alone, an electron soon falls back into a hole and the energy is
+    lost again (<dfn data-term="recombination">recombination</dfn>). A working cell builds in an electric field that
+    pushes electrons one way and holes the other, so they flow out through a circuit as current. That field comes
+    from the <a href="pn-junction.html">p-n junction</a>, the next lesson but one; first, the
+    <a href="band-gap.html">band gap</a> explains why each material wastes sunlight differently.
+  </p>
+
+  <div class="expert expert-note">
+    <p>
+      Absorption must conserve both energy and crystal momentum. A photon carries almost no momentum, so in a
+      <dfn data-term="direct-band-gap">direct-gap</dfn> material (GaAs, CdTe, halide perovskites) the electron goes
+      straight up. Silicon and germanium have an <dfn data-term="indirect-band-gap">indirect gap</dfn>: the lowest
+      conduction-band states sit at a different momentum from the top of the valence band, so a lattice vibration
+      (<dfn data-term="phonon">phonon</dfn>) must take part. Near the gap that makes absorption weak, and silicon
+      needs a much thicker absorber.<sup class="cite" data-src="pveducation-si-optical,pveducation-absorption-depth"></sup>
+    </p>
+    <p>
+      In an ordinary cell one photon makes at most one pair, which is what the widget and the Shockley–Queisser
+      limit assume. Turning the surplus of a high-energy photon into a second pair (carrier multiplication, or
+      singlet fission in molecular layers) is studied as a way around thermalisation.
+      <span class="claim claim--research">Active research</span>
+    </p>
+  </div>
+
+  <section class="eq" aria-labelledby="eq-h">
+    <h2 id="eq-h">The energy of a photon</h2>
+    <p>
+      Light is a wave, and the energy of each photon is proportional to how fast the wave oscillates, its
+      <dfn data-term="frequency">frequency</dfn>. Because all light travels at the same speed, frequency and
+      wavelength are tied together: halve the wavelength and you double the frequency, and the energy.
+    </p>
+    <div class="tex">E = h f = \frac{h c}{\lambda}</div>
+    <dl class="symbols">
+      <dt><span class="tex">E</span></dt><dd>energy of one photon, in joules (J) or <dfn data-term="electronvolt">electronvolts</dfn> (eV); 1 eV = 1.602 × 10⁻¹⁹ J</dd>
+      <dt><span class="tex">h</span></dt><dd>Planck constant, 6.626 × 10⁻³⁴ J·s (exact by definition since 2019)</dd>
+      <dt><span class="tex">f</span></dt><dd>frequency of the light, in hertz (Hz)</dd>
+      <dt><span class="tex">c</span></dt><dd>speed of light, 299 792 458 m/s</dd>
+      <dt><span class="tex">\lambda</span></dt><dd>wavelength, in metres (here usually nanometres, nm)</dd>
+    </dl>
+    <p>
+      A handy shortcut: <span class="tex">hc \approx 1240\ \text{eV·nm}</span>, so the energy in electronvolts is
+      1240 divided by the wavelength in nanometres.
+    </p>
+    <div class="worked" data-check="pv:photonEnergyEV" data-args="[500]" data-expect="2.48" data-tol="0.005">
+      A green photon of wavelength 500 nm carries 1240 ÷ 500 ≈ <span class="answer">2.48 eV</span>.
+    </div>
+    <div class="worked" data-check="pv:photonEnergyJ" data-args="[500]" data-expect="3.97e-19" data-tol="0.01e-19">
+      In joules that is 2.48 × 1.602 × 10⁻¹⁹ ≈ <span class="answer">3.97 × 10⁻¹⁹ J</span>: tiny, which is why
+      sunlight is so many photons.
+    </div>
+    <div class="worked" data-check="pv:frequencyHz" data-args="[500]" data-expect="5.996e14" data-tol="0.001e14">
+      Its frequency is c ÷ λ = 2.998 × 10⁸ ÷ 500 × 10⁻⁹ ≈ <span class="answer">6.00 × 10¹⁴ Hz</span> (600 THz).
+    </div>
+    <div class="worked" data-check="pv:cutoffWavelengthNm" data-args="[1.12]" data-expect="1107" data-tol="1">
+      Turn the formula round to find the longest wavelength silicon (gap 1.12 eV) can absorb:
+      λ = 1240 ÷ 1.12 ≈ <span class="answer">1107 nm</span>, in the near infrared. Anything redder passes through.
+    </div>
+    <div class="worked" data-check="pv:excessEnergyEV" data-args="[500, 1.12]" data-expect="1.36" data-tol="0.005">
+      A 500 nm photon absorbed by silicon keeps 1.12 eV and loses 2.48 − 1.12 ≈ <span class="answer">1.36 eV</span>
+      as heat.
+    </div>
+    <div class="worked" data-check="photons:usableFraction" data-args="[500, 1.12]" data-expect="0.452" data-tol="0.001">
+      So only 1.12 ÷ 2.48 ≈ <span class="answer">45 %</span> of that photon's energy can ever reach the circuit.
+    </div>
+    <div class="worked" data-check="pv:photonRate" data-args="[0.001, 500]" data-expect="2.517e15" data-tol="0.002e15">
+      A 1 mW beam of 500 nm light carries 0.001 ÷ 3.97 × 10⁻¹⁹ ≈ <span class="answer">2.5 × 10¹⁵ photons per second</span>.
+    </div>
+  </section>
+
+  <h2 id="history">Two effects, two centuries</h2>
+  <p>
+    <span class="claim claim--settled">Settled history</span>
+    In 1839 the 19-year-old Edmond Becquerel shone light on two metal plates dipped in a conducting solution and
+    measured a small current that appeared when the light fell on them: the first recorded photovoltaic
+    effect.<sup class="cite" data-src="becquerel-1839,pveducation-first-pv"></sup>
+  </p>
+  <p>
+    Half a century later Heinrich Hertz noticed that ultraviolet light helps sparks jump between metal
+    electrodes.<sup class="cite" data-src="hertz-1887"></sup> Philipp Lenard then showed that light knocks electrons
+    out of a metal surface, and that their energy depends on the light's colour, not its
+    brightness.<sup class="cite" data-src="lenard-1902"></sup> In 1905 Albert Einstein explained this by treating
+    light as packets, each with energy <span class="tex">hf</span>.<sup class="cite" data-src="einstein-1905"></sup>
+    Robert Millikan's careful measurements confirmed the prediction in 1916,<sup class="cite" data-src="millikan-1916"></sup>
+    and Einstein's Nobel Prize cites this work on the photoelectric effect.<sup class="cite" data-src="nobel-physics-1921"></sup>
+  </p>
+  <p>
+    The two effects are cousins, and easy to mix up. Both start with a photon handing its energy to an electron.
+    What differs is where the electron goes.
+  </p>
+  <div class="table-wrap">
+    <table>
+      <caption class="visually-hidden">Photoelectric effect compared with the photovoltaic effect</caption>
+      <thead><tr><td></td><th scope="col"><dfn data-term="photoelectric-effect">Photoelectric effect</dfn></th><th scope="col"><dfn data-term="photovoltaic-effect">Photovoltaic effect</dfn></th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Where the electron goes</th><td>Out of the material, into the space around it</td><td>Stays inside, lifted from the valence band to the conduction band</td></tr>
+        <tr><th scope="row">Energy threshold</th><td>The work function: the energy to escape the surface</td><td>The band gap: the energy to break free of a bond</td></tr>
+        <tr><th scope="row">What you measure</th><td>Electrons flying off, collected by a separate electrode</td><td>A voltage across the material that drives current round a circuit</td></tr>
+        <tr><th scope="row">Typical light</th><td>Ultraviolet for most metals</td><td>Visible and near-infrared sunlight</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Einstein's packet picture is what makes the photovoltaic effect make sense: a single photon either clears the
+    band gap or it does not, however bright the light. Brighter light only means more photons, and so more pairs
+    and more current.
+  </p>
+  <div class="expert expert-note">
+    <p>
+      For the photoelectric effect Einstein wrote the largest kinetic energy of an ejected electron as
+      <span class="tex">K_\text{max} = hf - \phi</span>, with <span class="tex">\phi</span> the work function.
+      In a solar cell the electron is not ejected: the condition is simply <span class="tex">hf \ge E_g</span>, and the
+      surplus <span class="tex">hf - E_g</span> thermalises to the lattice rather than appearing as kinetic energy
+      outside.
+    </p>
+  </div>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

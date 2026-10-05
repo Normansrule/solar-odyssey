@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Equation atlas – Solar Odyssey</title>
+<meta name="description" content="Every equation on the site with symbols, units and a checked example.">
+<link rel="icon" href="assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/odyssey.css">
+<link rel="stylesheet" href="equations.css">
+<script type="module" src="assets/js/core.js"></script>
+<script type="module" src="equations.js"></script>
+</head>
+<body data-page="equations">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page atlas">
+  <header class="page-head">
+    <h1>Equation atlas</h1>
+    <p class="lede">Every equation used on this site, in one place. Each one starts with the idea in words, then the maths, what every symbol means and its units, and a worked example that our test suite recomputes.</p>
+    <p class="atlas-how">Read an entry top to bottom, or jump straight to one below. Each worked example is recalculated by the same code that drives the site's interactive visuals; when it agrees, you will see <span class="tick-note">Checked by the test suite</span> under it. The <a href="#playground">formula playground</a> at the end lets you change the numbers yourself.</p>
+  </header>
+
+  <nav class="atlas-index wide" aria-labelledby="index-h">
+    <h2 id="index-h" class="visually-hidden">Jump to an equation</h2>
+    <div class="index-group">
+      <h3>Light and the cell</h3>
+      <ul>
+        <li><a href="#eq-photon-energy">Photon energy</a></li>
+        <li><a href="#eq-band-gap">The band-gap condition</a></li>
+        <li><a href="#eq-diode">The single-diode equation</a></li>
+        <li><a href="#eq-voc">Open-circuit voltage</a></li>
+        <li><a href="#eq-fill-factor">Fill factor</a></li>
+        <li><a href="#eq-efficiency">Efficiency</a></li>
+        <li><a href="#eq-shockley-queisser">The Shockley–Queisser limit</a></li>
+      </ul>
+    </div>
+    <div class="index-group">
+      <h3>Sunlight and yield</h3>
+      <ul>
+        <li><a href="#eq-energy-yield">Irradiance and energy yield</a></li>
+        <li><a href="#eq-air-mass">Air mass</a></li>
+        <li><a href="#eq-incidence">Angle of incidence</a></li>
+      </ul>
+    </div>
+    <div class="index-group">
+      <h3>Money and learning</h3>
+      <ul>
+        <li><a href="#eq-capacity-factor">Capacity factor</a></li>
+        <li><a href="#eq-lcoe">Levelized cost of energy</a></li>
+        <li><a href="#eq-wrights-law">Wright's law</a></li>
+      </ul>
+    </div>
+    <div class="index-group">
+      <h3>Wind and water</h3>
+      <ul>
+        <li><a href="#eq-wind-power">Wind power</a></li>
+        <li><a href="#eq-betz">The Betz limit</a></li>
+        <li><a href="#eq-hydropower">Hydropower</a></li>
+        <li><a href="#eq-tidal-basin">Tidal basin energy</a></li>
+        <li><a href="#eq-wave-flux">Wave energy flux</a></li>
+      </ul>
+    </div>
+    <div class="index-group">
+      <h3>Heat and storage</h3>
+      <ul>
+        <li><a href="#eq-carnot">Carnot efficiency</a></li>
+        <li><a href="#eq-round-trip">Round-trip efficiency</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===================================================== LIGHT AND THE CELL -->
+  <h2 id="topic-cell" class="topic">Light and the cell</h2>
+
+  <article class="eq wide" id="eq-photon-energy" aria-labelledby="eq-photon-energy-h">
+    <div class="eq-text">
+      <h3 id="eq-photon-energy-h">Photon energy</h3>
+      <p class="intuition">Light arrives in packets called <dfn data-term="photon">photons</dfn>. The shorter the wavelength, the more energy each packet carries: blue light comes in bigger packets than red, and infrared in smaller ones still.<sup class="cite" data-src="einstein-1905"></sup></p>
+      <div class="tex">E = h f = \frac{h c}{\lambda}</div>
+      <dl class="symbols">
+        <dt><span class="tex">E</span></dt><dd>energy of one photon <span class="unit">J or eV</span></dd>
+        <dt><span class="tex">h</span></dt><dd>Planck constant, 6.626 × 10⁻³⁴ <span class="unit">J·s</span></dd>
+        <dt><span class="tex">f</span></dt><dd>frequency of the light <span class="unit">Hz</span></dd>
+        <dt><span class="tex">c</span></dt><dd>speed of light, 2.998 × 10⁸ <span class="unit">m/s</span></dd>
+        <dt><span class="tex">\lambda</span></dt><dd>wavelength <span class="unit">m (or nm)</span></dd>
+      </dl>
+      <p>Photon energies are tiny in joules, so we use the <dfn data-term="electronvolt">electronvolt</dfn>. With λ in nanometres the formula becomes <span class="tex">E\,[\text{eV}] \approx 1239.84 / \lambda\,[\text{nm}]</span>.</p>
+      <div class="worked" data-check="pv:photonEnergyEV" data-args="[500]" data-expect="2.48" data-tol="0.005">
+        Green light at 500 nm: <span class="tex">E = 1239.84 / 500</span> = <span class="answer">2.48 eV</span> per photon.
+      </div>
+      <div class="expert expert-note">
+        <p>The 1239.84 comes from <span class="tex">hc/q</span> with the exact 2019 SI values of <span class="tex">h</span>, <span class="tex">c</span> and the elementary charge <span class="tex">q</span>, times 10⁹ to turn metres into nanometres. A photon of 500 nm has frequency 6.0 × 10¹⁴ Hz and energy 3.97 × 10⁻¹⁹ J.</p>
+        <div class="worked" data-check="pv:photonEnergyJ" data-args="[500]" data-expect="3.9729e-19" data-tol="1e-22">
+          In joules: <span class="answer">3.97 × 10⁻¹⁹ J</span>, which is 2.48 eV divided by 1.602 × 10⁻¹⁹ J/eV.
+        </div>
+      </div>
+      <p class="eq-more">See it in motion: <a href="learn/photovoltaic-effect.html">The photovoltaic effect</a>. <a class="to-playground" href="#playground" data-formula="eq-photon-energy">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="photon"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-band-gap" aria-labelledby="eq-band-gap-h">
+    <div class="eq-text">
+      <h3 id="eq-band-gap-h">The band-gap condition</h3>
+      <p class="intuition">A solar cell's material has a <dfn data-term="band-gap">band gap</dfn>: the smallest energy that frees an electron to carry current. A photon is absorbed and makes a free electron only if its energy is at least the gap. Anything with less energy passes straight through, and anything with more loses its surplus as heat.</p>
+      <div class="tex">\text{absorbed} \iff E \ge E_g, \qquad \lambda_{\max} = \frac{hc}{E_g}</div>
+      <dl class="symbols">
+        <dt><span class="tex">E</span></dt><dd>photon energy <span class="unit">eV</span></dd>
+        <dt><span class="tex">E_g</span></dt><dd>band gap of the absorber <span class="unit">eV</span></dd>
+        <dt><span class="tex">\lambda_{\max}</span></dt><dd>longest wavelength that can be absorbed <span class="unit">nm</span></dd>
+      </dl>
+      <div class="worked" data-check="pv:cutoffWavelengthNm" data-args="[1.12]" data-expect="1107" data-tol="1">
+        Silicon's gap is about 1.12 eV, so <span class="tex">\lambda_{\max} = 1239.84 / 1.12</span> = <span class="answer">1107 nm</span>, in the near infrared. A 1200 nm photon carries only 1.03 eV and is not absorbed.
+      </div>
+      <div class="worked" data-check="pv:excessEnergyEV" data-args="[400, 1.12]" data-expect="1.98" data-tol="0.005">
+        A violet 400 nm photon (3.10 eV) is absorbed, but <span class="answer">1.98 eV</span> of it, more than half, is lost as heat.
+      </div>
+      <p class="eq-more">See it in motion: <a href="learn/band-gap.html">The band gap</a>. <a class="to-playground" href="#playground" data-formula="eq-band-gap">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="gap"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-diode" aria-labelledby="eq-diode-h">
+    <div class="eq-text">
+      <h3 id="eq-diode-h">The single-diode equation</h3>
+      <p class="intuition">A lit solar cell behaves like a current source (the light) wired in parallel with a diode. Light pushes a steady current out; the diode leaks some of it back inside, and the leak grows very fast as the voltage rises. What reaches your wires is the difference. Plotting it gives the <dfn data-term="iv-curve">I-V curve</dfn>.<sup class="cite" data-src="shockley-1949,sze-ng-2007"></sup></p>
+      <div class="tex">I = I_{ph} - I_0\left(e^{V/(n V_t)} - 1\right), \qquad V_t = \frac{k_B T}{q}</div>
+      <dl class="symbols">
+        <dt><span class="tex">I</span></dt><dd>current delivered by the cell <span class="unit">A</span></dd>
+        <dt><span class="tex">I_{ph}</span></dt><dd>current generated by light <span class="unit">A</span></dd>
+        <dt><span class="tex">I_0</span></dt><dd>diode <dfn data-term="saturation-current">saturation current</dfn> <span class="unit">A</span></dd>
+        <dt><span class="tex">V</span></dt><dd>voltage across the cell <span class="unit">V</span></dd>
+        <dt><span class="tex">n</span></dt><dd><dfn data-term="ideality-factor">ideality factor</dfn>, 1 for an ideal diode <span class="unit">none</span></dd>
+        <dt><span class="tex">V_t</span></dt><dd>thermal voltage, 25.7 mV at 25 °C <span class="unit">V</span></dd>
+        <dt><span class="tex">k_B,\ T,\ q</span></dt><dd>Boltzmann constant, cell temperature, electron charge <span class="unit">J/K, K, C</span></dd>
+      </dl>
+      <div class="worked" data-check="pv:thermalVoltage" data-args="[298.15]" data-expect="0.02569" data-tol="0.00001">
+        At 25 °C (298.15 K): <span class="tex">V_t = k_B T / q</span> = <span class="answer">25.69 mV</span>.
+      </div>
+      <div class="worked" data-check="pv:diodeCurrent" data-args='[0.6, {"Iph":9.72,"I0":1.215e-11}]' data-expect="9.551" data-tol="0.002">
+        A full-size silicon cell with <span class="tex">I_{ph}</span> = 9.72 A and <span class="tex">I_0</span> = 1.215 × 10⁻¹¹ A, held at 0.6 V: the diode leaks back 0.17 A, so the cell delivers <span class="answer">9.55 A</span>.
+      </div>
+      <div class="expert expert-note">
+        <p>Real cells add a series resistance <span class="tex">R_s</span> (contacts, fingers) and a shunt resistance <span class="tex">R_{sh}</span> (leakage paths). The current then appears on both sides, so the site solves it numerically with Newton's method:</p>
+        <div class="tex">I = I_{ph} - I_0\left(e^{(V + I R_s)/(n V_t)} - 1\right) - \frac{V + I R_s}{R_{sh}}</div>
+      </div>
+      <p class="eq-more">See it in motion: <a href="learn/iv-curve.html">Current, voltage and power</a>. <a class="to-playground" href="#playground" data-formula="eq-diode">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="iv"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-voc" aria-labelledby="eq-voc-h">
+    <div class="eq-text">
+      <h3 id="eq-voc-h">Open-circuit voltage</h3>
+      <p class="intuition">Disconnect the wires and no current can leave, so the voltage climbs until the diode leak swallows all the light current. That voltage is the <dfn data-term="open-circuit-voltage">open-circuit voltage</dfn>. Because of the logarithm, ten times more light adds only a small, fixed step in voltage.</p>
+      <div class="tex">V_{oc} = n V_t \ln\!\left(\frac{I_{ph}}{I_0} + 1\right)</div>
+      <dl class="symbols">
+        <dt><span class="tex">V_{oc}</span></dt><dd>open-circuit voltage <span class="unit">V</span></dd>
+        <dt><span class="tex">n V_t</span></dt><dd>ideality factor times thermal voltage <span class="unit">V</span></dd>
+        <dt><span class="tex">I_{ph},\ I_0</span></dt><dd>light current and saturation current <span class="unit">A</span></dd>
+      </dl>
+      <div class="worked" data-check="pv:idealVoc" data-args='[{"Iph":9.72,"I0":1.215e-11}]' data-expect="0.7042" data-tol="0.0005">
+        Same cell: <span class="tex">V_{oc} = 0.02569 \times \ln(8.0\times 10^{11})</span> = <span class="answer">0.704 V</span>.
+      </div>
+      <p class="expert">Each factor of 10 in light adds <span class="tex">n V_t \ln 10 \approx</span> 59 mV at 25 °C, which is why concentrator cells gain voltage and why dim light costs less voltage than you might expect.</p>
+      <p class="eq-more"><a class="to-playground" href="#playground" data-formula="eq-voc">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="voc"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-fill-factor" aria-labelledby="eq-fill-factor-h">
+    <div class="eq-text">
+      <h3 id="eq-fill-factor-h">Fill factor</h3>
+      <p class="intuition">A cell cannot deliver its full current and its full voltage at the same time. The <dfn data-term="fill-factor">fill factor</dfn> says how much of the ideal box, <span class="tex">V_{oc}\times I_{sc}</span>, the best operating point actually fills. A square-shouldered I-V curve means a high fill factor.<sup class="cite" data-src="green-1981-ff"></sup></p>
+      <div class="tex">FF = \frac{P_{mp}}{V_{oc}\, I_{sc}} = \frac{V_{mp}\, I_{mp}}{V_{oc}\, I_{sc}}</div>
+      <dl class="symbols">
+        <dt><span class="tex">FF</span></dt><dd>fill factor <span class="unit">none (0 to 1)</span></dd>
+        <dt><span class="tex">P_{mp}</span></dt><dd>power at the <dfn data-term="maximum-power-point">maximum power point</dfn> <span class="unit">W</span></dd>
+        <dt><span class="tex">V_{mp},\ I_{mp}</span></dt><dd>voltage and current at that point <span class="unit">V, A</span></dd>
+        <dt><span class="tex">I_{sc}</span></dt><dd><dfn data-term="short-circuit-current">short-circuit current</dfn> <span class="unit">A</span></dd>
+      </dl>
+      <div class="worked" data-check="pv:fillFactor" data-args='[{"Iph":9.72,"I0":1.215e-11}]' data-expect="0.847" data-tol="0.002">
+        The ideal cell above peaks at 0.621 V and 9.33 A, or 5.80 W. So <span class="tex">FF = 5.80 / (0.704 \times 9.72)</span> = <span class="answer">0.847</span>.
+      </div>
+      <div class="worked" data-check="pv:fillFactor" data-args='[{"Iph":9.72,"I0":1.215e-11,"Rs":0.00205761,"Rsh":20.5761}]' data-expect="0.819" data-tol="0.002">
+        Add a realistic series resistance (2.1 mΩ) and shunt resistance (21 Ω) and the shoulder rounds off: <span class="answer">0.819</span>.
+      </div>
+      <p class="eq-more">See it in motion: <a href="learn/iv-curve.html">Current, voltage and power</a>. <a class="to-playground" href="#playground" data-formula="eq-fill-factor">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="ff"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-efficiency" aria-labelledby="eq-efficiency-h">
+    <div class="eq-text">
+      <h3 id="eq-efficiency-h">Efficiency</h3>
+      <p class="intuition"><dfn data-term="conversion-efficiency">Efficiency</dfn> is electrical power out divided by sunlight power in. Cells are compared under <dfn data-term="standard-test-conditions">standard test conditions</dfn>: 1000 W/m² of light with the AM1.5 spectrum, and the cell at 25 °C.<sup class="cite" data-src="iec-60904-3-2019,pveducation-efficiency"></sup></p>
+      <div class="tex">\eta = \frac{P_{out}}{P_{in}} = \frac{V_{oc}\, I_{sc}\, FF}{G \, A}</div>
+      <dl class="symbols">
+        <dt><span class="tex">\eta</span></dt><dd>power-conversion efficiency <span class="unit">none (or %)</span></dd>
+        <dt><span class="tex">P_{out}</span></dt><dd>electrical power at the maximum power point <span class="unit">W</span></dd>
+        <dt><span class="tex">G</span></dt><dd><dfn data-term="irradiance">irradiance</dfn> on the cell <span class="unit">W/m²</span></dd>
+        <dt><span class="tex">A</span></dt><dd>cell area <span class="unit">m²</span></dd>
+      </dl>
+      <div class="worked" data-check="pv:efficiency" data-args="[5.8, 1000, 0.0243]" data-expect="0.2387" data-tol="0.0005">
+        The ideal cell above gives 5.80 W from a 243 cm² (0.0243 m²) cell under 1000 W/m²: <span class="tex">\eta = 5.80 / (1000 \times 0.0243)</span> = <span class="answer">23.9 %</span>.
+      </div>
+      <p class="eq-more">See it in motion: <a href="learn/iv-curve.html">Current, voltage and power</a> and the records in <a href="today/efficiency-records.html">Efficiency over time</a>. <a class="to-playground" href="#playground" data-formula="eq-efficiency">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="eta"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-shockley-queisser" aria-labelledby="eq-shockley-queisser-h">
+    <div class="eq-text">
+      <h3 id="eq-shockley-queisser-h">The Shockley–Queisser limit</h3>
+      <p class="intuition">Put the band-gap rule and the diode together and a ceiling appears. A small gap absorbs almost every photon but wastes most of each one's energy as heat and gives a low voltage. A large gap gives a high voltage but lets most photons through. Even a perfect single-junction cell also has to glow back a little light, as every warm object does. Balancing these losses gives the <dfn data-term="shockley-queisser-limit">Shockley–Queisser limit</dfn>. <span class="claim claim--consensus">Current consensus</span></p>
+      <div class="tex">\eta_{\max}(E_g) = \frac{\max_V \; V\left[J_{sc}(E_g) - J_0(E_g)\left(e^{V/V_t} - 1\right)\right]}{P_{sun}}</div>
+      <dl class="symbols">
+        <dt><span class="tex">J_{sc}(E_g)</span></dt><dd>charge per second from every sunlight photon above the gap, per area <span class="unit">A/m²</span></dd>
+        <dt><span class="tex">J_0(E_g)</span></dt><dd>the cell's own thermal glow above the gap, as a current density <span class="unit">A/m²</span></dd>
+        <dt><span class="tex">P_{sun}</span></dt><dd>incoming sunlight power per area <span class="unit">W/m²</span></dd>
+      </dl>
+      <p>Shockley and Queisser treated the Sun as a 6000 K blackbody and found a maximum of 30 % for a gap of 1.1 eV.<sup class="cite" data-src="shockley-queisser-1961"></sup> Using the real AM1.5G reference spectrum, Rühle's tabulation gives a maximum of <strong>33.16 %</strong> at a gap of <strong>1.34 eV</strong>.<sup class="cite" data-src="ruhle-2016"></sup> You will often see 33.7 % quoted instead; the small difference comes from the spectrum data and assumptions used. Either way, a single junction under ordinary sunlight cannot turn much more than a third of the light into electricity.</p>
+      <div class="worked" data-check="pv:shockleyQueisser" data-args='[1.1, {"Tsun":6000}]' data-pick="efficiency" data-expect="0.300" data-tol="0.003">
+        Our blackbody version, with a 6000 K Sun as in 1961 and a 1.1 eV gap, gives <span class="answer">30.0 %</span>, matching the original paper. The curve rises gently to about 31 % near 1.3 eV.
+      </div>
+      <div class="worked" data-check="pv:shockleyQueisser" data-args="[1.34]" data-pick="efficiency" data-expect="0.3038" data-tol="0.002">
+        With the Sun's modern effective temperature (5772 K) and a 1.34 eV gap: <span class="answer">30.4 %</span>. That is lower than 33.16 % because a blackbody is a rougher stand-in for sunlight at the ground than the AM1.5G spectrum.
+      </div>
+      <div class="expert expert-note">
+        <p>Assumptions of the detailed-balance limit: every photon above the gap makes exactly one electron-hole pair; carriers cool to the band edges instantly; the only recombination is radiative; the cell is at 300 K and sees the unconcentrated Sun. Break any of these (tandems, concentration, hot carriers, multiple exciton generation) and the ceiling moves, which is why multijunction cells exceed it. <span class="claim claim--research">Active research</span></p>
+        <p>In the site's model, <span class="tex">J_{sc} = q f_\omega \int_{E_g}^{\infty} \phi_{bb}(E, T_{sun})\, dE</span> and <span class="tex">J_0 = q\int_{E_g}^{\infty} \phi_{bb}(E, T_{cell})\, dE</span>, where <span class="tex">\phi_{bb} = \frac{2\pi}{h^3c^2}\frac{E^2}{e^{E/k_BT} - 1}</span> is the blackbody photon flux into a hemisphere and <span class="tex">f_\omega = (R_\odot / 1\,\text{au})^2</span> dilutes it to what reaches Earth.</p>
+      </div>
+      <p class="eq-more">See how close today's cells are: <a href="frontier.html">The frontier</a>.</p>
+    </div>
+    <figure class="eq-visual" data-plot="sq"></figure>
+  </article>
+
+  <!-- ===================================================== SUNLIGHT AND YIELD -->
+  <h2 id="topic-sun" class="topic">Sunlight and yield</h2>
+
+  <article class="eq wide" id="eq-energy-yield" aria-labelledby="eq-energy-yield-h">
+    <div class="eq-text">
+      <h3 id="eq-energy-yield-h">Irradiance and energy yield</h3>
+      <p class="intuition"><dfn data-term="irradiance">Irradiance</dfn> is power: how many watts of sunlight land on each square metre right now. Add it up over a day and you get energy in kWh/m². Divide that by the 1000 W/m² reference and you have <dfn data-term="peak-sun-hours">peak sun hours</dfn>: the day squeezed into full-strength hours. A panel's rating in kWp is its output at 1000 W/m², so the day's energy follows directly, trimmed by a <dfn data-term="performance-ratio">performance ratio</dfn> for heat, wiring, inverter and dirt losses.</p>
+      <div class="tex">E_{day} = P_{STC} \times PSH \times PR, \qquad E_{year} \approx 365 \times E_{day}</div>
+      <dl class="symbols">
+        <dt><span class="tex">G</span></dt><dd>irradiance <span class="unit">W/m²</span></dd>
+        <dt><span class="tex">P_{STC}</span></dt><dd>array rating at 1000 W/m² <span class="unit">kWp</span></dd>
+        <dt><span class="tex">PSH</span></dt><dd>peak sun hours: daily insolation in kWh/m² <span class="unit">h per day</span></dd>
+        <dt><span class="tex">PR</span></dt><dd>performance ratio, typically 0.75 to 0.85 <span class="unit">none</span></dd>
+        <dt><span class="tex">E_{day},\ E_{year}</span></dt><dd>energy delivered <span class="unit">kWh</span></dd>
+      </dl>
+      <div class="worked" data-check="solar:arrayEnergyKWh" data-args="[5, 4.5, 0.8]" data-expect="18" data-tol="1e-9">
+        A 5 kWp roof, 4.5 peak sun hours, PR 0.8: <span class="tex">5 \times 4.5 \times 0.8</span> = <span class="answer">18 kWh per day</span>.
+      </div>
+      <div class="worked" data-check="solar:arrayEnergyKWh" data-args="[5, 1642.5, 0.8]" data-expect="6570" data-tol="1e-6">
+        Over a year of such days (1642.5 peak sun hours): <span class="answer">6570 kWh</span>. Real years vary with season and weather.
+      </div>
+      <p class="eq-more">See it in motion: <a href="today/sun-path.html">Sun path and energy yield</a> and <a href="today/system-builder.html">System builder</a>. <a class="to-playground" href="#playground" data-formula="eq-energy-yield">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="yield"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-air-mass" aria-labelledby="eq-air-mass-h">
+    <div class="eq-text">
+      <h3 id="eq-air-mass-h">Air mass</h3>
+      <p class="intuition">When the Sun is low, its light crosses more atmosphere and arrives dimmer and redder. <dfn data-term="air-mass">Air mass</dfn> counts how many atmospheres thick that path is: 1 with the Sun straight overhead, about 1.5 at 48° from overhead (the AM1.5 used to test cells), and about 2 at 60°.<sup class="cite" data-src="kasten-young-1989,iec-60904-3-2019"></sup></p>
+      <div class="tex">AM \approx \frac{1}{\cos\theta_z} \quad\text{(flat Earth)}, \qquad AM = \frac{1}{\cos\theta_z + 0.50572\,(96.07995^\circ - \theta_z)^{-1.6364}}</div>
+      <dl class="symbols">
+        <dt><span class="tex">AM</span></dt><dd>relative optical air mass <span class="unit">none</span></dd>
+        <dt><span class="tex">\theta_z</span></dt><dd>solar zenith angle, measured from straight up <span class="unit">degrees</span></dd>
+      </dl>
+      <div class="worked" data-check="solar:airMass" data-args="[48.19]" data-expect="1.498" data-tol="0.002">
+        At a zenith angle of 48.19°: <span class="answer">AM 1.50</span>, the standard test spectrum's air mass.
+      </div>
+      <div class="worked" data-check="solar:airMass" data-args="[60]" data-expect="1.994" data-tol="0.002">
+        At 60°: <span class="answer">AM 1.99</span>. The simple <span class="tex">1/\cos\theta_z</span> gives exactly 2.
+      </div>
+      <p class="expert">The plain secant formula treats the atmosphere as a flat slab and blows up at the horizon. Kasten and Young's fit adds Earth's curvature and refraction, so it stays finite (about 38) at the horizon.</p>
+      <p class="eq-more">See it in motion: <a href="today/sun-path.html">Sun path and energy yield</a>. <a class="to-playground" href="#playground" data-formula="eq-air-mass">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="airmass"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-incidence" aria-labelledby="eq-incidence-h">
+    <div class="eq-text">
+      <h3 id="eq-incidence-h">Angle of incidence</h3>
+      <p class="intuition">A panel catches the most direct sunlight when it faces the Sun square on. Tilt it away and the same beam spreads over more surface, so each square metre gets less: the beam is multiplied by the cosine of the <dfn data-term="angle-of-incidence">angle of incidence</dfn>.</p>
+      <div class="tex">G_{beam} = DNI \cdot \cos\theta, \qquad \cos\theta = \cos\theta_z\cos\beta + \sin\theta_z\sin\beta\cos(\gamma_s - \gamma)</div>
+      <dl class="symbols">
+        <dt><span class="tex">DNI</span></dt><dd>direct normal irradiance, the beam measured facing the Sun <span class="unit">W/m²</span></dd>
+        <dt><span class="tex">\theta</span></dt><dd>angle between the sunbeam and the panel's normal <span class="unit">degrees</span></dd>
+        <dt><span class="tex">\theta_z,\ \gamma_s</span></dt><dd>solar zenith angle and solar azimuth <span class="unit">degrees</span></dd>
+        <dt><span class="tex">\beta,\ \gamma</span></dt><dd>panel tilt from horizontal and panel azimuth <span class="unit">degrees</span></dd>
+      </dl>
+      <div class="worked" data-check="solar:cosAOI" data-args="[30, 180, 50, 225]" data-expect="0.8275" data-tol="0.0005">
+        A south-facing panel tilted 30°, with the Sun 50° from overhead and 45° west of south: <span class="answer">cos θ = 0.828</span>, so the panel gets 83 % of the direct beam.
+      </div>
+      <p class="eq-more">See it in motion: <a href="today/sun-path.html">Sun path and energy yield</a>. <a class="to-playground" href="#playground" data-formula="eq-incidence">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="aoi"></figure>
+  </article>
+
+  <!-- ===================================================== MONEY -->
+  <h2 id="topic-money" class="topic">Money and learning</h2>
+
+  <article class="eq wide" id="eq-capacity-factor" aria-labelledby="eq-capacity-factor-h">
+    <div class="eq-text">
+      <h3 id="eq-capacity-factor-h">Capacity factor</h3>
+      <p class="intuition">A plant's nameplate says what it can produce flat out. The <dfn data-term="capacity-factor">capacity factor</dfn> says what share of that it actually delivered over a year, after night, weather, maintenance and low demand.</p>
+      <div class="tex">CF = \frac{E_{year}}{P_{rated} \times 8760\ \text{h}}</div>
+      <dl class="symbols">
+        <dt><span class="tex">CF</span></dt><dd>capacity factor <span class="unit">none (0 to 1)</span></dd>
+        <dt><span class="tex">E_{year}</span></dt><dd>energy produced in a year <span class="unit">MWh</span></dd>
+        <dt><span class="tex">P_{rated}</span></dt><dd>nameplate capacity <span class="unit">MW</span></dd>
+        <dt><span class="tex">8760</span></dt><dd>hours in a (non-leap) year <span class="unit">h</span></dd>
+      </dl>
+      <div class="worked" data-check="econ:capacityFactor" data-args="[219000, 100]" data-expect="0.25" data-tol="1e-9">
+        A 100 MW plant that delivers 219 000 MWh in a year: <span class="tex">219\,000 / (100 \times 8760)</span> = <span class="answer">0.25</span>, or 25 %.
+      </div>
+      <p class="eq-more">Compare sources: <a href="renewables/compare.html">Comparison dashboard</a>. <a class="to-playground" href="#playground" data-formula="eq-capacity-factor">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="cf"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-lcoe" aria-labelledby="eq-lcoe-h">
+    <div class="eq-text">
+      <h3 id="eq-lcoe-h">Levelized cost of energy</h3>
+      <p class="intuition">The <dfn data-term="lcoe">levelized cost of energy</dfn> is the price per MWh a plant would have to earn, every year of its life, to pay back what it cost to build and run, including the return its investors expect. The <dfn data-term="capital-recovery-factor">capital recovery factor</dfn> turns the up-front cost into an equal yearly payment, like a mortgage.<sup class="cite" data-src="nrel-atb-equations"></sup></p>
+      <div class="tex">LCOE = \frac{CAPEX \cdot CRF + FOM}{8.76 \cdot CF} + VOM + \text{fuel}, \qquad CRF = \frac{r(1+r)^n}{(1+r)^n - 1}</div>
+      <dl class="symbols">
+        <dt><span class="tex">CAPEX</span></dt><dd>up-front capital cost <span class="unit">$/kW</span></dd>
+        <dt><span class="tex">FOM</span></dt><dd>fixed operation and maintenance <span class="unit">$/kW per year</span></dd>
+        <dt><span class="tex">VOM</span>, fuel</dt><dd>variable running and fuel costs <span class="unit">$/MWh</span></dd>
+        <dt><span class="tex">CF</span></dt><dd>capacity factor <span class="unit">none</span></dd>
+        <dt><span class="tex">8.76</span></dt><dd>MWh per kW per year at CF = 1 <span class="unit">MWh/kW</span></dd>
+        <dt><span class="tex">r,\ n</span></dt><dd>real <dfn data-term="discount-rate">discount rate</dfn> and economic lifetime <span class="unit">fraction, years</span></dd>
+      </dl>
+      <p class="assumptions"><strong>Assumptions in this example.</strong> The inputs are round illustrative numbers chosen to show the arithmetic, not current market prices: $1000/kW to build, $20/kW a year to run, no fuel, 20 % capacity factor, 7 % real discount rate, 25-year life, no taxes or subsidies. For real, dated costs see <a href="today/cost-decline.html">The cost collapse</a> and <a href="state-of-the-field.html">State of the field</a>.</p>
+      <div class="worked" data-check="econ:capitalRecoveryFactor" data-args="[0.07, 25]" data-expect="0.08581" data-tol="0.00001">
+        At 7 % over 25 years: <span class="answer">CRF = 0.0858</span>, so each $1000 of capital costs $85.81 a year.
+      </div>
+      <div class="worked" data-check="econ:lcoe" data-args='[{"capex":1000,"fixedOM":20,"cf":0.2,"r":0.07,"n":25}]' data-expect="60.39" data-tol="0.01">
+        <span class="tex">(1000 \times 0.0858 + 20) / (8.76 \times 0.2)</span> = <span class="answer">$60.39 per MWh</span>, about 6 cents per kWh.
+      </div>
+      <div class="expert expert-note">
+        <p>The general definition discounts every year's cost and every year's energy: <span class="tex">LCOE = \sum_t \frac{C_t}{(1+r)^t} \Big/ \sum_t \frac{E_t}{(1+r)^t}</span>. With level yearly costs and output it reduces to the capital-recovery form above. LCOE ignores when the energy arrives and what it is worth then, which matters for variable sources; see <a href="renewables/grid.html">The smart grid</a>.</p>
+      </div>
+      <p class="eq-more"><a class="to-playground" href="#playground" data-formula="eq-lcoe">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="lcoe"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-wrights-law" aria-labelledby="eq-wrights-law-h">
+    <div class="eq-text">
+      <h3 id="eq-wrights-law-h">Wright's law</h3>
+      <p class="intuition">The more of something the world has made, the cheaper the next one gets. Wright's law says each doubling of cumulative production cuts the cost by a fixed share, the <dfn data-term="learning-rate">learning rate</dfn>. It was first described for aircraft in 1936 and has since fitted many technologies, solar modules among them.<sup class="cite" data-src="wright-1936,farmer-lafond-2016"></sup></p>
+      <div class="tex">C = C_0\,(1 - LR)^{d}, \qquad d = \log_2\frac{Q}{Q_0}</div>
+      <dl class="symbols">
+        <dt><span class="tex">C,\ C_0</span></dt><dd>cost now and at the starting point <span class="unit">$ per unit</span></dd>
+        <dt><span class="tex">LR</span></dt><dd>learning rate: fractional cost drop per doubling <span class="unit">none</span></dd>
+        <dt><span class="tex">Q,\ Q_0</span></dt><dd>cumulative production now and at the start <span class="unit">units (e.g. GW)</span></dd>
+        <dt><span class="tex">d</span></dt><dd>number of doublings <span class="unit">none</span></dd>
+      </dl>
+      <div class="worked" data-check="econ:wrightsLaw" data-args="[100, 0.2, 10]" data-expect="10.74" data-tol="0.01">
+        A 20 % learning rate over 10 doublings (about a thousandfold more production): <span class="tex">100 \times 0.8^{10}</span> = <span class="answer">$10.74</span>, roughly a tenth of the start.
+      </div>
+      <p class="eq-more">See it in the data: <a href="today/cost-decline.html">The cost collapse</a>. <a class="to-playground" href="#playground" data-formula="eq-wrights-law">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="wright"></figure>
+  </article>
+
+  <!-- ===================================================== WIND AND WATER -->
+  <h2 id="topic-water" class="topic">Wind and water</h2>
+
+  <article class="eq wide" id="eq-wind-power" aria-labelledby="eq-wind-power-h">
+    <div class="eq-text">
+      <h3 id="eq-wind-power-h">Wind power</h3>
+      <p class="intuition">Wind is moving air, and moving mass carries kinetic energy. The power flowing through a rotor's disc grows with the <em>cube</em> of the wind speed: the air is faster and more of it arrives each second. Double the wind and you get eight times the power.</p>
+      <div class="tex">P_{wind} = \tfrac{1}{2}\rho A v^3, \qquad P_{rotor} = \tfrac{1}{2}\rho A v^3\, C_p, \qquad A = \pi\left(\tfrac{D}{2}\right)^2</div>
+      <dl class="symbols">
+        <dt><span class="tex">\rho</span></dt><dd>air density, about 1.225 at sea level and 15 °C <span class="unit">kg/m³</span></dd>
+        <dt><span class="tex">A,\ D</span></dt><dd>swept area and rotor diameter <span class="unit">m², m</span></dd>
+        <dt><span class="tex">v</span></dt><dd>wind speed <span class="unit">m/s</span></dd>
+        <dt><span class="tex">C_p</span></dt><dd><dfn data-term="power-coefficient">power coefficient</dfn>: share captured <span class="unit">none</span></dd>
+      </dl>
+      <div class="worked" data-check="renewables:kineticPower" data-args="[1.225, 1, 10]" data-expect="612.5" data-tol="1e-6">
+        Through one square metre at 10 m/s: <span class="tex">0.5 \times 1.225 \times 1 \times 10^3</span> = <span class="answer">612.5 W</span>.
+      </div>
+      <div class="worked" data-check="renewables:rotorPower" data-args="[1.225, 120, 10, 0.45]" data-expect="3117245" data-tol="5">
+        A 120 m rotor with <span class="tex">C_p</span> = 0.45 at 10 m/s: <span class="answer">3.12 MW</span>.
+      </div>
+      <p class="eq-more">See it in motion: <a href="renewables/wind.html">Wind</a>. <a class="to-playground" href="#playground" data-formula="eq-wind-power">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="wind"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-betz" aria-labelledby="eq-betz-h">
+    <div class="eq-text">
+      <h3 id="eq-betz-h">The Betz limit</h3>
+      <p class="intuition">A rotor cannot stop the wind completely, or the air would pile up and nothing more could flow through. It cannot let it pass untouched either, or it would catch nothing. The best compromise slows the wind by a third at the rotor, which captures 16/27 of the power: the <dfn data-term="betz-limit">Betz limit</dfn>, about 59.3 %.<sup class="cite" data-src="okulov-van-kuik-2012"></sup> <span class="claim claim--settled">Settled physics</span></p>
+      <div class="tex">C_p = 4a(1-a)^2, \qquad C_{p,\max} = C_p\!\left(\tfrac{1}{3}\right) = \frac{16}{27} \approx 0.593</div>
+      <dl class="symbols">
+        <dt><span class="tex">a</span></dt><dd>axial induction factor: fraction by which the rotor slows the wind <span class="unit">none</span></dd>
+        <dt><span class="tex">C_p</span></dt><dd>power coefficient of an ideal actuator disc <span class="unit">none</span></dd>
+      </dl>
+      <div class="worked" data-check="renewables:actuatorDiscCp" data-args="[0.3333333333333333]" data-expect="0.5926" data-tol="0.0001">
+        At <span class="tex">a = 1/3</span>: <span class="tex">4 \times \tfrac13 \times \left(\tfrac23\right)^2 = \tfrac{16}{27}</span> = <span class="answer">0.593</span>.
+      </div>
+      <div class="expert expert-note">
+        <p>Momentum theory: the wind slows from <span class="tex">v</span> far upstream to <span class="tex">v(1-a)</span> at the disc and <span class="tex">v(1-2a)</span> far downstream. Power is thrust times disc velocity, <span class="tex">P = 2\rho A v^3 a(1-a)^2</span>; setting <span class="tex">dP/da = 0</span> gives <span class="tex">a = 1/3</span>. The history of who derived it first (Lanchester, Betz, Joukowsky) is reviewed in the cited paper.</p>
+      </div>
+      <p class="eq-more">See it in motion: <a href="renewables/wind.html">Wind</a>. <a class="to-playground" href="#playground" data-formula="eq-betz">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="betz"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-hydropower" aria-labelledby="eq-hydropower-h">
+    <div class="eq-text">
+      <h3 id="eq-hydropower-h">Hydropower</h3>
+      <p class="intuition">Falling water gives up its height energy. The power is how much water falls each second, times how far it falls (the <dfn data-term="hydraulic-head">head</dfn>), times gravity, less what the turbine and generator lose.</p>
+      <div class="tex">P = \eta\, \rho\, g\, Q\, H</div>
+      <dl class="symbols">
+        <dt><span class="tex">\eta</span></dt><dd>turbine and generator efficiency <span class="unit">none</span></dd>
+        <dt><span class="tex">\rho</span></dt><dd>water density, about 1000 <span class="unit">kg/m³</span></dd>
+        <dt><span class="tex">g</span></dt><dd>gravitational acceleration, 9.81 <span class="unit">m/s²</span></dd>
+        <dt><span class="tex">Q</span></dt><dd>flow through the turbines <span class="unit">m³/s</span></dd>
+        <dt><span class="tex">H</span></dt><dd>head: height the water drops <span class="unit">m</span></dd>
+      </dl>
+      <div class="worked" data-check="renewables:hydroPower" data-args="[100, 50, 0.9]" data-expect="44129925" data-tol="1">
+        100 m³/s falling 50 m at 90 % efficiency: <span class="tex">0.9 \times 1000 \times 9.81 \times 100 \times 50</span> = <span class="answer">44.1 MW</span>.
+      </div>
+      <p class="eq-more">See it in motion: <a href="renewables/hydro.html">Hydropower</a>. <a class="to-playground" href="#playground" data-formula="eq-hydropower">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="hydro"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-tidal-basin" aria-labelledby="eq-tidal-basin-h">
+    <div class="eq-text">
+      <h3 id="eq-tidal-basin-h">Tidal basin energy</h3>
+      <p class="intuition">A tidal barrage traps high water behind a wall and lets it out through turbines at low tide. The energy grows with the <em>square</em> of the tidal range: a bigger range means both more water and a longer fall.</p>
+      <div class="tex">E = \tfrac{1}{2}\rho\, g\, A\, R^2</div>
+      <dl class="symbols">
+        <dt><span class="tex">E</span></dt><dd>energy released by emptying the basin once <span class="unit">J</span></dd>
+        <dt><span class="tex">\rho</span></dt><dd>seawater density, about 1025 <span class="unit">kg/m³</span></dd>
+        <dt><span class="tex">A</span></dt><dd>basin area <span class="unit">m²</span></dd>
+        <dt><span class="tex">R</span></dt><dd>tidal range, high water minus low water <span class="unit">m</span></dd>
+      </dl>
+      <div class="worked" data-check="renewables:tidalBasinEnergyJ" data-args="[10000000, 8]" data-expect="3.2166e12" data-tol="1e8">
+        A 10 km² basin with an 8 m range: <span class="answer">3.2 × 10¹² J</span>, or about 890 MWh per emptying, before turbine losses.
+      </div>
+      <p class="expert">Why the ½: the water column of height <span class="tex">R</span> has its centre of mass at <span class="tex">R/2</span>, so its mass <span class="tex">\rho A R</span> falls an average of <span class="tex">R/2</span>.</p>
+      <p class="eq-more">See it in motion: <a href="renewables/ocean.html">Tidal and wave</a>. <a class="to-playground" href="#playground" data-formula="eq-tidal-basin">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="tidal"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-wave-flux" aria-labelledby="eq-wave-flux-h">
+    <div class="eq-text">
+      <h3 id="eq-wave-flux-h">Wave energy flux</h3>
+      <p class="intuition">Ocean waves carry energy toward the shore. The power arriving along each metre of wave crest grows with the square of the wave height and in step with the wave period: tall, slow swells carry the most.<sup class="cite" data-src="falnes-2007"></sup></p>
+      <div class="tex">P = \frac{\rho\, g^2\, H_s^2\, T_e}{64\pi}</div>
+      <dl class="symbols">
+        <dt><span class="tex">P</span></dt><dd>power per metre of wave crest <span class="unit">W/m</span></dd>
+        <dt><span class="tex">H_s</span></dt><dd><dfn data-term="significant-wave-height">significant wave height</dfn> <span class="unit">m</span></dd>
+        <dt><span class="tex">T_e</span></dt><dd>energy period of the waves <span class="unit">s</span></dd>
+        <dt><span class="tex">\rho,\ g</span></dt><dd>seawater density and gravity <span class="unit">kg/m³, m/s²</span></dd>
+      </dl>
+      <div class="worked" data-check="renewables:waveEnergyFlux" data-args="[2, 8]" data-expect="15689" data-tol="2">
+        Waves of 2 m with an 8 s period: <span class="answer">15.7 kW</span> along every metre of crest.
+      </div>
+      <p class="expert">This is the deep-water result, where the water depth exceeds about half a wavelength. In shallow water the waves slow down and the flux formula changes.</p>
+      <p class="eq-more">See it in motion: <a href="renewables/ocean.html">Tidal and wave</a>. <a class="to-playground" href="#playground" data-formula="eq-wave-flux">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="wave"></figure>
+  </article>
+
+  <!-- ===================================================== HEAT AND STORAGE -->
+  <h2 id="topic-heat" class="topic">Heat and storage</h2>
+
+  <article class="eq wide" id="eq-carnot" aria-labelledby="eq-carnot-h">
+    <div class="eq-text">
+      <h3 id="eq-carnot-h">Carnot efficiency</h3>
+      <p class="intuition">Any engine that turns heat into work, whether in a geothermal, solar-thermal or biomass plant, must dump some heat into a colder place. The hotter the source compared with the sink, the more work you can get. <dfn data-term="carnot-efficiency">Carnot efficiency</dfn> is the ceiling no real engine reaches. <span class="claim claim--settled">Settled physics</span></p>
+      <div class="tex">\eta_C = 1 - \frac{T_c}{T_h}</div>
+      <dl class="symbols">
+        <dt><span class="tex">T_h</span></dt><dd>hot-side temperature, in kelvin (°C + 273.15) <span class="unit">K</span></dd>
+        <dt><span class="tex">T_c</span></dt><dd>cold-side temperature <span class="unit">K</span></dd>
+      </dl>
+      <div class="worked" data-check="renewables:carnotEfficiency" data-args="[838.15, 313.15]" data-expect="0.6264" data-tol="0.0005">
+        Heat at 565 °C (838 K) rejected at 40 °C (313 K): <span class="answer">62.6 %</span> at most.
+      </div>
+      <div class="worked" data-check="renewables:carnotEfficiency" data-args="[473.15, 303.15]" data-expect="0.3593" data-tol="0.0005">
+        A cooler source at 200 °C, rejected at 30 °C: <span class="answer">35.9 %</span>, which is why low-temperature geothermal converts so little of its heat.
+      </div>
+      <p class="eq-more">See it in motion: <a href="renewables/geothermal.html">Geothermal</a> and <a href="renewables/csp.html">Concentrated solar power</a>. <a class="to-playground" href="#playground" data-formula="eq-carnot">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="carnot"></figure>
+  </article>
+
+  <article class="eq wide" id="eq-round-trip" aria-labelledby="eq-round-trip-h">
+    <div class="eq-text">
+      <h3 id="eq-round-trip-h">Round-trip efficiency</h3>
+      <p class="intuition">Storing energy and getting it back always costs something. Each step loses a share, and the shares multiply: the <dfn data-term="round-trip-efficiency">round-trip efficiency</dfn> is the product of every stage's efficiency, so a long chain of good steps can still add up to a poor whole.</p>
+      <div class="tex">\eta_{rt} = \frac{E_{out}}{E_{in}} = \eta_1 \times \eta_2 \times \cdots \times \eta_k</div>
+      <dl class="symbols">
+        <dt><span class="tex">E_{in},\ E_{out}</span></dt><dd>energy put in and taken back out <span class="unit">kWh</span></dd>
+        <dt><span class="tex">\eta_i</span></dt><dd>efficiency of stage <span class="tex">i</span> <span class="unit">none</span></dd>
+      </dl>
+      <div class="worked" data-check="renewables:roundTrip" data-args="[0.95, 0.95]" data-expect="0.9025" data-tol="1e-9">
+        Charging at 95 % and discharging at 95 %: <span class="answer">90.3 %</span> comes back.
+      </div>
+      <div class="worked" data-check="renewables:roundTrip" data-args="[0.7, 0.55]" data-expect="0.385" data-tol="1e-9">
+        A two-step chain of 70 % and 55 %: only <span class="answer">38.5 %</span> returns.
+      </div>
+      <p class="eq-more">See it in motion: <a href="renewables/storage.html">Energy storage</a>. <a class="to-playground" href="#playground" data-formula="eq-round-trip">Try it in the playground</a></p>
+    </div>
+    <figure class="eq-visual" data-plot="roundtrip"></figure>
+  </article>
+
+  <!-- ===================================================== PLAYGROUND -->
+  <section class="widget playground" id="playground" aria-labelledby="playground-h">
+    <h2 id="playground-h">Formula playground</h2>
+    <p class="muted">Pick an equation and change its numbers, or edit the formula itself. Everything is calculated in your browser by a small, safe calculator that only understands arithmetic: <code>+ − × ÷ ^</code>, brackets, <code>pi</code>, <code>e</code> and functions such as <code>sqrt</code>, <code>exp</code>, <code>ln</code>, <code>sin</code>, <code>cos</code>, <code>rad</code> and <code>deg</code>. Angles inside <code>sin</code> and <code>cos</code> are in radians; wrap degrees in <code>rad()</code>.</p>
+    <div class="pg-grid">
+      <div class="pg-setup">
+        <div class="control">
+          <label for="pg-pick">Equation</label>
+          <select id="pg-pick"></select>
+        </div>
+        <div class="pg-tex" id="pg-tex" aria-hidden="true"></div>
+        <div class="control">
+          <label for="pg-formula">Formula</label>
+          <input type="text" id="pg-formula" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="pg-formula-help">
+          <p class="pg-help" id="pg-formula-help">Names you type become inputs below. Write multiplication with <code>*</code>, and powers with <code>^</code>.</p>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn ghost" id="pg-reset">Reset this equation</button>
+        </div>
+      </div>
+      <div class="pg-inputs">
+        <fieldset id="pg-vars">
+          <legend>Values</legend>
+        </fieldset>
+      </div>
+      <div class="pg-result" aria-live="polite">
+        <p class="pg-label" id="pg-result-label">Result</p>
+        <output id="pg-out" for="pg-formula" aria-labelledby="pg-result-label">—</output>
+        <p class="pg-status" id="pg-status"></p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

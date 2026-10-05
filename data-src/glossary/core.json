@@ -1,0 +1,10 @@
+{
+  "photon": { "term": "Photon", "short": "A single packet of light. Its energy is set by its colour: bluer light comes in bigger packets.", "see": ["band-gap"] },
+  "band-gap": { "term": "Band gap", "short": "The minimum energy an electron in a semiconductor must gain to break free and carry current. Silicon's is about 1.12 eV.", "see": ["photon", "semiconductor"] },
+  "semiconductor": { "term": "Semiconductor", "short": "A material, such as silicon, that conducts electricity much better than an insulator but much worse than a metal, and whose conductivity can be tuned.", "see": ["band-gap"] },
+  "electronvolt": { "term": "Electronvolt (eV)", "short": "The energy one electron gains crossing one volt: 1.602 × 10⁻¹⁹ joules. Handy for photons: visible light carries 1.6 to 3.3 eV." },
+  "irradiance": { "term": "Irradiance", "short": "Sunlight power arriving per square metre, in watts per square metre (W/m²). Bright midday sun is about 1000 W/m²." },
+  "peak-sun-hours": { "term": "Peak sun hours", "short": "A day's sunlight energy expressed as hours of 1000 W/m² sunshine. 5 kWh/m² in a day is 5 peak sun hours.", "see": ["irradiance"] },
+  "capacity-factor": { "term": "Capacity factor", "short": "Energy a plant actually produces in a year divided by what it would produce running flat out all year." },
+  "lcoe": { "term": "Levelized cost of energy (LCOE)", "short": "The average price per unit of energy a plant must earn over its life to pay back its building, running and financing costs.", "see": ["capacity-factor"] }
+}

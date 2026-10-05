@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Check your understanding: The frontier",
+    "sources": [
+      "shockley-queisser-1961",
+      "de-vos-1980",
+      "cuevas-1982"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "frontier",
+    "minutes": 30,
+    "objectives": [
+      "Explain why a single-junction cell cannot turn much more than a third of sunlight into electricity",
+      "Use the tandem designer to predict which cell sets the current in a two-terminal stack",
+      "Compare perovskites, tandems and bifacial modules by what each gains and what still holds it back"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Why can no single-material solar cell beat about 33 % in ordinary sunlight (the Shockley–Queisser limit)?",
+        "choices": [
+          "Only photons with exactly the band-gap energy are absorbed; all the others are reflected",
+          "Photons below the band gap pass through, and photons above it lose their extra energy as heat",
+          "The photoelectric effect frees electrons from metals, not from semiconductors like silicon",
+          "Electrons and holes recombine before the built-in field can pull them apart"
+        ],
+        "answer": 1,
+        "explain": "One band gap is a compromise: light with less energy than the gap is not absorbed at all, and light with more gives up the excess as heat. Photons above the gap are absorbed, not reflected; the trouble is that each one only keeps the gap's worth of energy.",
+        "source": "shockley-queisser-1961"
+      },
+      {
+        "id": "q2",
+        "prompt": "In the tandem designer, silicon (1.12 eV) is the bottom cell and you set the top cell's band gap to 2.0 eV. What happens in the two-terminal stack?",
+        "choices": [
+          "The bottom cell is starved of light, and the stack falls to about 24.5 %",
+          "The two cells' currents add up, so the stack reaches about 42 %",
+          "The bottom cell sets the current, and the stack reaches about 35 %",
+          "The top cell makes too little current and sets it for both; the stack reaches about 35 %"
+        ],
+        "answer": 3,
+        "explain": "A 2.0 eV top cell lets most of the light through, so it makes less current than the silicon (about 20 against 33 mA/cm² in the model), and in series the smaller current flows through both: about 35 %. Currents in series do not add; only a four-terminal design, with its own contacts for each cell, avoids the mismatch."
+      },
+      {
+        "id": "q3",
+        "prompt": "A student argues that a 1.50 eV top cell on silicon must beat a 1.77 eV one, because a narrower gap absorbs more of the light. What does the page's model show?",
+        "choices": [
+          "The 1.50 eV stack falls to about 24.5 %, below silicon alone, because silicon gets too little light",
+          "The 1.50 eV stack wins, at about 41 %, because its top cell makes more current",
+          "Both stacks reach 41.2 %, because the two cells together absorb the same light",
+          "The 1.50 eV stack reaches about 30 %, exactly the same as silicon on its own"
+        ],
+        "answer": 0,
+        "explain": "Absorbing more in the top cell leaves silicon only the thin slice between 1.12 and 1.50 eV, so it makes about half the current and, in series, drags the stack down to 24.5 %, against 30.0 % for silicon alone. The 1.77 eV top cell wins because its current matches the silicon's, giving 41.2 % in this model.",
+        "source": "de-vos-1980"
+      },
+      {
+        "id": "q4",
+        "prompt": "Where would a bifacial module gain the most extra energy compared with an ordinary panel?",
+        "choices": [
+          "Lying flat on a dark roof, with its back face against the roof",
+          "Under a cloudy sky, where diffuse light reaches the front from every direction",
+          "Raised well above white gravel or snow, with the rows spaced apart",
+          "Anywhere at all, since the back face adds a fixed 50 % whatever lies below it"
+        ],
+        "answer": 2,
+        "explain": "The back face catches light reflected from the ground, so the gain depends on how bright the ground is (its albedo), how high the panel stands and how the rows are spaced. The 50 % from the 1982 Spanish experiment was a best case, not a fixed bonus; a panel lying flat on a roof gains almost nothing.",
+        "source": "cuevas-1982"
+      }
+    ]
+  }
+}

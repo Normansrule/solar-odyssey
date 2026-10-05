@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>The band gap – Solar Odyssey</title>
+<meta name="description" content="Why silicon eats some colours of sunlight and wastes others.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="band-gap.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="band-gap.js"></script>
+</head>
+<body data-page="band-gap">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">How a cell works, lesson 2</span>
+    <h1>The band gap</h1>
+    <p class="lede">Why silicon eats some colours of sunlight and wastes others.</p>
+  </header>
+
+  <p>
+    Think of the <dfn data-term="band-gap">band gap</dfn> as a step that an electron must climb before it can carry
+    current. A <dfn data-term="photon">photon</dfn> gives the electron one push, all at once. If the push is too small,
+    the electron stays put and the photon passes through. If the push is bigger than the step, the electron climbs
+    it, but the extra height is lost as heat a moment later. Either way, the height of the step decides how much of
+    each photon's energy the cell can keep.
+  </p>
+  <p>
+    Sunlight is a mix of photons of every size. So every choice of step height wastes some of it. Choose a low step
+    and almost every photon gets in, but most of each big photon's energy turns to heat. Choose a high step and each
+    absorbed photon keeps a lot, but most photons are too small to climb it. Somewhere in between is a best height.
+  </p>
+
+  <section class="widget bg-lab" aria-labelledby="bg-lab-h">
+    <h2 id="bg-lab-h">Split sunlight with a band gap</h2>
+    <div class="bg-grid">
+      <figure class="bg-panel bg-spectrum">
+        <figcaption class="bg-panel-h">Where the Sun's energy goes</figcaption>
+        <canvas id="bg-spectrum" class="bg-canvas" tabindex="-1" role="img"
+          aria-label="Filled curve of the Sun's power against photon energy, split at the chosen band gap into three shaded parts: not absorbed, lost as heat, and usable. The same three percentages are given in text below."></canvas>
+        <p class="caption">
+          Drag across the curve, or use the slider. The Sun is drawn as a perfect glowing body
+          (<dfn data-term="blackbody">blackbody</dfn>) at 5772 K<sup class="cite" data-src="prsa-2016"></sup>, seen from
+          above the atmosphere. This is an approximation: the real sea-level reference spectrum (AM1.5G) has dips
+          where ozone, water vapour and carbon dioxide absorb light.<sup class="cite" data-src="pveducation-atmosphere,pveducation-standard-spectra"></sup>
+        </p>
+      </figure>
+      <figure class="bg-panel bg-sq">
+        <figcaption class="bg-panel-h">Best possible efficiency for each gap <span class="data-badge" id="bg-badge">Loading data</span></figcaption>
+        <div id="bg-sq" class="chart bg-chart" role="img"
+          aria-label="Line chart of the detailed-balance efficiency limit against band gap for the blackbody sun, peaking near 30.5 percent at about 1.26 electronvolts, with common solar materials marked. The table below lists each material's value."></div>
+        <p class="caption">Detailed-balance limit for one junction in the same blackbody sunlight. The vertical line is your chosen gap; click a material to jump to it. Wider gaps keep falling: 15.5 % at 2.5 eV.</p>
+      </figure>
+    </div>
+
+    <div class="bg-controls">
+      <div class="control bg-slider">
+        <label for="bg-gap"><span>Band gap</span><output id="bg-gap-out" for="bg-gap">1.12 eV</output></label>
+        <input type="range" id="bg-gap" min="0.5" max="2.5" step="0.01" value="1.12" aria-describedby="bg-gap-help">
+        <small class="muted" id="bg-gap-help">Absorbs light with wavelength shorter than 1107 nm.</small>
+        <div class="btn-row bg-jumps" id="bg-jumps" role="group" aria-label="Jump to a material"></div>
+      </div>
+      <dl class="readout bg-readout" aria-live="polite">
+        <div class="bg-r-below"><dt><span class="swatch" aria-hidden="true"></span>Not absorbed</dt><dd><output id="bg-below">23</output> <small>%</small></dd></div>
+        <div class="bg-r-heat"><dt><span class="swatch" aria-hidden="true"></span>Lost as heat</dt><dd><output id="bg-heat">33</output> <small>%</small></dd></div>
+        <div class="bg-r-use"><dt><span class="swatch" aria-hidden="true"></span>Usable (gap × photons)</dt><dd><output id="bg-use">44</output> <small>%</small></dd></div>
+        <div class="bg-r-sq"><dt>Detailed-balance limit</dt><dd><output id="bg-eff">30.0</output> <small>%</small></dd></div>
+      </dl>
+    </div>
+    <p class="caption bg-explain" id="bg-explain"></p>
+  </section>
+
+  <h2 id="bands">Why there is a gap at all</h2>
+  <p>
+    An electron alone in space can have any energy. Inside a crystal it cannot. Billions of atoms sit in a regular
+    pattern, and the electron waves bouncing among them only fit at certain energies. Those allowed energies crowd
+    together into broad bands, with forbidden stretches between them.
+  </p>
+  <p>
+    In a <dfn data-term="semiconductor">semiconductor</dfn> at room temperature the
+    <dfn data-term="valence-band">valence band</dfn> is almost completely full: its electrons are holding the crystal
+    together. The <dfn data-term="conduction-band">conduction band</dfn> above it is almost empty. The band gap is the
+    distance between the top of the one and the bottom of the other.<sup class="cite" data-src="pveducation-band-gap"></sup>
+    Lifting an electron across it creates an <dfn data-term="electron-hole-pair">electron–hole pair</dfn>; any energy
+    the photon brought beyond the gap is lost to <dfn data-term="thermalisation">thermalisation</dfn>, as you saw in
+    the <a href="photovoltaic-effect.html">previous lesson</a>. In metals there is no gap, which is why they conduct;
+    in insulators such as glass the gap is so wide that sunlight cannot bridge it.
+  </p>
+
+  <div class="expert expert-note">
+    <p>
+      The bands come from the periodic potential of the lattice. Plotting allowed energy <span class="tex">E</span>
+      against crystal momentum <span class="tex">\hbar k</span> gives the band structure. If the conduction-band minimum
+      sits at the same <span class="tex">k</span> as the valence-band maximum, the gap is
+      <dfn data-term="direct-band-gap">direct</dfn> and a photon alone can drive the transition. GaAs, CdTe, CIGS and
+      halide perovskites are direct.
+    </p>
+    <p>
+      In silicon and germanium the minimum is displaced in <span class="tex">k</span>: the gap is
+      <dfn data-term="indirect-band-gap">indirect</dfn>, and absorption near the edge also needs a
+      <dfn data-term="phonon">phonon</dfn> to supply momentum. That second-order process makes the
+      <dfn data-term="absorption-coefficient">absorption coefficient</dfn> small just above the gap, with a long weak
+      tail into the infrared.<sup class="cite" data-src="pveducation-si-optical"></sup> In silicon, blue light is gone
+      within a few microns while deep-red and near-infrared light close to the gap needs a few hundred,<sup class="cite" data-src="pveducation-absorption-depth"></sup>
+      which is why silicon cells are cut from wafers of order a hundred microns thick and use textured surfaces to trap
+      light, while direct-gap thin films do the same job in a few microns.
+      <span class="claim claim--consensus">Current consensus</span>
+    </p>
+  </div>
+
+  <h2 id="materials">The gaps of real materials</h2>
+  <p>
+    Most absorbers in use today have a gap between about 0.7 and 1.7 eV. The table also gives the longest wavelength
+    each one can absorb and its blackbody detailed-balance limit from the chart above.
+  </p>
+  <div class="table-wrap">
+    <table id="bg-table">
+      <caption class="visually-hidden">Band gaps of common photovoltaic materials</caption>
+      <thead><tr><th scope="col">Material</th><th scope="col" class="num">Band gap (eV)</th><th scope="col">Type</th><th scope="col" class="num">Absorbs below (nm)</th><th scope="col" class="num">Limit, blackbody sun</th><th scope="col">Used for</th></tr></thead>
+      <tbody id="bg-tbody">
+        <tr><td colspan="6">Loading the materials dataset.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted bg-note">
+    Values near room temperature.<sup class="cite" data-src="sze-ng-2007,pveducation-silicon,zhang-2020,doe-cigs,street-1991"></sup>
+    CIGS has no single gap: replacing indium with gallium raises it from about 1.04 eV to about 1.68 eV, so the 1.15 eV
+    shown is a representative value we chose for a gallium-poor mix.<sup class="cite" data-src="doe-cigs"></sup>
+    Amorphous silicon has no sharp band edge, so its 1.7 eV is an optical gap.<sup class="cite" data-src="street-1991"></sup>
+  </p>
+
+  <section class="eq" aria-labelledby="eq1-h">
+    <h2 id="eq1-h">Which photons get in</h2>
+    <p>
+      A photon is absorbed when its energy reaches the gap. Photon energy grows as wavelength shrinks
+      (<span class="tex">E = hc/\lambda</span>), so this is the same as saying the wavelength is short enough.
+    </p>
+    <div class="tex">E_\text{photon} \ge E_g \quad\Longleftrightarrow\quad \lambda \le \lambda_g = \frac{h c}{E_g}</div>
+    <dl class="symbols">
+      <dt><span class="tex">E_g</span></dt><dd>band gap, in electronvolts (eV)</dd>
+      <dt><span class="tex">\lambda_g</span></dt><dd>cutoff wavelength: the longest wavelength the material absorbs, in nanometres (nm)</dd>
+      <dt><span class="tex">h c</span></dt><dd>Planck constant times the speed of light, ≈ 1240 eV·nm</dd>
+    </dl>
+    <div class="worked" data-check="pv:cutoffWavelengthNm" data-args="[1.42]" data-expect="873" data-tol="1">
+      Gallium arsenide (1.42 eV) absorbs light shorter than 1240 ÷ 1.42 ≈ <span class="answer">873 nm</span>.
+    </div>
+    <div class="worked" data-check="pv:cutoffWavelengthNm" data-args="[1.34]" data-expect="925" data-tol="1">
+      A 1.34 eV absorber, the best gap for standard sea-level sunlight, stops at 1240 ÷ 1.34 ≈ <span class="answer">925 nm</span>.
+    </div>
+    <div class="worked" data-check="pv:spectrumBudget" data-args="[1.12]" data-pick="belowGap" data-expect="0.232" data-tol="0.002">
+      For silicon in the blackbody sun, the photons below 1.12 eV carry <span class="answer">23 %</span> of the
+      Sun's power, and all of it passes through.
+    </div>
+    <div class="worked" data-check="pv:spectrumBudget" data-args="[1.12]" data-pick="thermalisation" data-expect="0.330" data-tol="0.002">
+      Another <span class="answer">33 %</span> arrives in photons that are absorbed but then lose their surplus above
+      1.12 eV as heat.
+    </div>
+    <div class="worked" data-check="pv:spectrumBudget" data-args="[1.12]" data-pick="ultimate" data-expect="0.438" data-tol="0.002">
+      That leaves <span class="answer">44 %</span>: the band gap times the number of absorbed photons. Physicists call
+      this the ultimate efficiency. The real limit is lower still, as the next section shows.
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq2-h">
+    <h2 id="eq2-h">The Shockley–Queisser limit</h2>
+    <p>
+      In 1961 William Shockley and Hans Queisser asked how efficient a perfect single-gap solar cell could be. Their
+      answer rests on <dfn data-term="detailed-balance">detailed balance</dfn>: anything that absorbs light well must also
+      give light off. A warm cell glows faintly, and once it builds up a voltage it glows more, sending part of its
+      captured energy back out. Add that unavoidable loss to the two you have just seen, and the best possible single
+      cell in sunlight is limited to about 30 %.<sup class="cite" data-src="shockley-queisser-1961"></sup>
+      <span class="claim claim--settled">Settled physics</span> This ceiling is now called the
+      <dfn data-term="shockley-queisser-limit">Shockley–Queisser limit</dfn>.
+    </p>
+    <div class="tex">\eta_\text{max}(E_g) = \max_V \frac{V\,J(V)}{P_\text{in}}</div>
+    <dl class="symbols">
+      <dt><span class="tex">\eta_\text{max}</span></dt><dd>highest possible conversion efficiency for band gap <span class="tex">E_g</span> (a fraction; × 100 for %)</dd>
+      <dt><span class="tex">J(V)</span></dt><dd>current density the ideal cell delivers at voltage <span class="tex">V</span>, in A/m²</dd>
+      <dt><span class="tex">V</span></dt><dd>cell voltage, in volts (V)</dd>
+      <dt><span class="tex">P_\text{in}</span></dt><dd>incoming sunlight power, in W/m² (1361 W/m² for our blackbody sun)</dd>
+    </dl>
+    <div class="worked" data-check="pv:shockleyQueisser" data-args="[1.34]" data-pick="efficiency" data-expect="0.304" data-tol="0.002">
+      In our blackbody sunlight a 1.34 eV cell can reach at most <span class="answer">30.4 %</span>.
+    </div>
+    <div class="worked" data-check="photons:sqPeak" data-pick="efficiency" data-expect="0.305" data-tol="0.002">
+      The blackbody curve peaks at <span class="answer">30.5 %</span>, for a gap near 1.26 eV.
+    </div>
+    <div class="worked" data-check="pv:shockleyQueisser" data-args="[1.12]" data-pick="efficiency" data-expect="0.300" data-tol="0.002">
+      Silicon's 1.12 eV gap sits close to the top: <span class="answer">30.0 %</span> in the same model.
+    </div>
+
+    <h3 id="two-numbers">Why our 30.5 % is not the 33 % you will see quoted</h3>
+    <p>
+      The number usually quoted for the Shockley–Queisser limit uses the standard sea-level spectrum, AM1.5G, instead of
+      a blackbody. Tabulated detailed-balance results for AM1.5G give a maximum of
+      <strong>33.16 % at 1.34 eV</strong>.<sup class="cite" data-src="ruhle-2016"></sup> You will also often see
+      33.7 % repeated; we could not trace that figure to a primary calculation, so we quote the tabulated one.
+    </p>
+    <p>
+      Our curve is lower because it describes different light. The blackbody sun above the atmosphere delivers about
+      1361 W/m², including ultraviolet and far-infrared power that no single gap can use well. The atmosphere strips much
+      of that out before sunlight reaches the ground,<sup class="cite" data-src="pveducation-atmosphere"></sup> and AM1.5G
+      is scaled to 1000 W/m²,<sup class="cite" data-src="pveducation-standard-spectra"></sup> so a larger share of what
+      is left falls where a cell can use it. Its absorption dips also make the AM1.5G curve bumpy, which pulls the best
+      gap to 1.34 eV. Shockley and Queisser themselves used a 6000 K blackbody and found 30 % near 1.1 eV.<sup class="cite" data-src="shockley-queisser-1961"></sup>
+    </p>
+
+    <div class="expert expert-note">
+      <p>
+        For an ideal cell with only radiative recombination, every above-gap photon makes one electron–hole pair that is
+        collected, and the cell emits like a blackbody at its own temperature <span class="tex">T_c</span> boosted by
+        <span class="tex">e^{qV/kT_c}</span>:
+      </p>
+      <div class="tex">J(V) = J_{sc} - J_0\left(e^{qV/kT_c} - 1\right)</div>
+      <div class="tex">J_{sc} = q\int_{E_g}^{\infty} \Phi_\odot(E)\,dE, \qquad J_0 = q\int_{E_g}^{\infty} \Phi_{bb}(E, T_c)\,dE</div>
+      <div class="tex">\Phi_{bb}(E, T) = \frac{2\pi}{h^3 c^2}\,\frac{E^2}{e^{E/kT} - 1}, \qquad \Phi_\odot(E) = f_\omega\,\Phi_{bb}(E, T_\odot)</div>
+      <p>
+        Here <span class="tex">\Phi</span> are photon fluxes per unit energy (photons m⁻² s⁻¹ J⁻¹),
+        <span class="tex">f_\omega = (R_\odot / 1\,\text{au})^2 \approx 2.16 \times 10^{-5}</span> dilutes the sun to
+        Earth's distance, <span class="tex">T_\odot = 5772</span> K and <span class="tex">T_c = 300</span> K. <span class="tex">J_{sc}</span> is the
+        short-circuit current and <span class="tex">J_0</span> the radiative dark current. The efficiency is the maximum of <span class="tex">VJ(V)</span> divided by
+        <span class="tex">f_\omega \sigma T_\odot^4</span>. This is exactly what the chart computes
+        (<code>shockleyQueisser()</code> in <code>physics/pv.js</code>). Real cells fall short through non-radiative
+        recombination, reflection, incomplete absorption and resistance; for how close today's record cells come, see
+        <a href="../state-of-the-field.html">state of the field</a>.
+      </p>
+    </div>
+  </section>
+
+  <h2 id="beyond">Beating the single-gap limit</h2>
+  <p>
+    The limit applies to one gap in ordinary sunlight. Stack two or more cells with different gaps, wide on top and
+    narrow underneath, and each colour is caught by a gap that wastes little of it. Detailed balance gives about 42 % for
+    two cells and 49 % for three in unconcentrated sunlight, rising towards 68 % for an endless stack. Concentrating the
+    sunlight with lenses or mirrors raises every one of these limits: to about 40 % for a single cell and 86 % for an
+    endless stack at maximum concentration.<sup class="cite" data-src="de-vos-1980"></sup>
+    <span class="claim claim--settled">Settled physics</span>
+  </p>
+  <p>
+    That is why <dfn data-term="tandem-cell">tandem cells</dfn>, such as a perovskite cell on top of a silicon one, are one
+    of the most active areas of solar research. <a href="../frontier.html">The frontier</a> picks up the story.
+  </p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

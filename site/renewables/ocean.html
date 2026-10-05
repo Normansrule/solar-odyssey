@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Tidal and wave – Solar Odyssey</title>
+<meta name="description" content="Barrages, tidal streams and wave energy converters.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="renewables-a-common.css">
+<link rel="stylesheet" href="ocean.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="ocean.js"></script>
+</head>
+<body data-page="ocean">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page ra-page" data-source="ocean">
+  <header class="page-head">
+    <span class="kicker"><a href="index.html">Renewables</a></span>
+    <h1>Tidal and wave</h1>
+    <p class="lede">The sea moves in two great ways. Tides are pulled by the Moon and Sun and arrive on a timetable you can print years ahead. Waves are wind energy gathered over thousands of kilometres of ocean. Both carry enormous power, and both have proved hard and costly to harvest.</p>
+  </header>
+
+  <section class="today-figure" aria-label="Share of world electricity from ocean energy">
+    <div>
+      <span class="tf-num tf-num--small">&lt; 0.3 %</span>
+      <p class="tf-what">Tidal and wave power are too small to appear on their own in world electricity statistics. They are counted with geothermal, and all three together made <span data-slot="pct">0.28 %</span> of the world's electricity in <span data-slot="year">2025</span> (<span data-slot="twh">89 TWh</span>), almost all of it geothermal.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> <span class="verified">2026-09-30</span></p>
+    </div>
+    <div class="tf-side">
+      <div data-slot="spark"></div>
+      <p class="tf-note">Installed at the end of 2025: about 0.5 GW of marine energy, against 16 GW of geothermal and 1,291 GW of wind.<sup class="cite" data-src="irena-capacity-2026"></sup></p>
+      <span class="data-badge"></span>
+    </div>
+  </section>
+
+  <p>Ocean energy is a story of a few landmark plants and many prototypes. Two tidal barrages, in France and South Korea, make most of it; the rest comes from small arrays of tidal-stream turbines and a handful of wave devices. The resource is predictable and plentiful,<sup class="cite" data-src="doe-marine-basics"></sup> but the sea is a brutal place for machinery, and costs remain well above those of wind and solar. <span class="claim claim--consensus">Current consensus</span></p>
+
+  <h2 id="history">Six landmarks</h2>
+  <ol class="mini-timeline">
+    <li><time datetime="1966">1966</time><p><span class="mt-what">La Rance, France.</span> A 240 MW barrage across the Rance estuary in Brittany, with 24 bulb turbines that generate in both directions. It still makes roughly 500–600 GWh a year.<sup class="cite" data-src="edf-rance-2026,tethys-la-rance,delaleu-2009-rance"></sup></p></li>
+    <li><time datetime="2008">2008</time><p><span class="mt-what">Aguçadoura, Portugal.</span> The first wave farm: three snake-like Pelamis machines, 2.25 MW in all. Technical problems sent them back to port within months, and the project closed.<sup class="cite" data-src="guinness-first-wave-farm,powertech-pelamis"></sup></p></li>
+    <li><time datetime="2011">2011</time><p><span class="mt-what">Mutriku, Spain.</span> A wave plant built into a harbour breakwater: 16 chambers where waves pump air in and out through air turbines, 296 kW as designed (14 turbines, 259 kW, in regular use). It passed 3 GWh in total in 2023.<sup class="cite" data-src="pena-2025-mutriku"></sup></p></li>
+    <li><time datetime="2011">2011</time><p><span class="mt-what">Sihwa Lake, South Korea.</span> Ten 25.4 MW turbines make the 254 MW Sihwa plant the largest tidal power station, at about 550 GWh a year. It generates on the incoming tide and helped clean up a polluted lake.<sup class="cite" data-src="tethys-sihwa,iha-sihwa"></sup></p></li>
+    <li><time datetime="2018">2018</time><p><span class="mt-what">MeyGen, Scotland.</span> Four 1.5 MW tidal-stream turbines in the Pentland Firth enter commercial operation, one of the first tidal-stream arrays; they have since delivered more than 50 GWh.<sup class="cite" data-src="powermag-meygen-2018,ampeak-meygen"></sup></p></li>
+    <li><time datetime="2025">2025</time><p><span class="mt-what">Still small.</span> About 0.5 GW of marine energy is installed worldwide, mostly the two big barrages.<sup class="cite" data-src="irena-capacity-2026"></sup> <span class="verified">2026-09-30</span></p></li>
+  </ol>
+
+  <h2 id="barrage">Tidal barrages</h2>
+  <p>A <dfn data-term="tidal-barrage">tidal barrage</dfn> is a low dam across a bay or estuary. It works like a hydro plant whose reservoir is refilled by the sea twice a day. The simplest scheme is <dfn data-term="ebb-generation">ebb generation</dfn>: let the rising tide in through sluices, shut the gates at high water, wait while the sea falls away outside, then run the trapped water out through turbines across the height difference. The <dfn data-term="tidal-range">tidal range</dfn> is everything: a barrage needs several metres, which only a few coasts have.</p>
+
+  <section class="widget" id="tide" aria-labelledby="tide-h">
+    <h2 id="tide-h">A tide in the life of a barrage</h2>
+    <p class="caption lead">One tide, about 12.4 hours, in a basin the size of La Rance's (22 km²). Watch the sea rise and fall on the left and the basin on the right. Drag the time slider to step through by hand. It is a simplified time-step model, not EDF's operating data.</p>
+    <div class="widget-body split">
+      <div>
+        <canvas id="tide-canvas" class="ra-canvas" role="img" aria-label="Cross-section of a tidal barrage: sea on the left, the barrage with a sluice gate and a turbine in the middle, the basin on the right. Water levels change through the tide."></canvas>
+        <div class="ra-toolbar">
+          <button type="button" class="btn ghost" id="tide-play">Pause</button>
+          <div class="control tide-time">
+            <label for="t-time">Time <output id="t-time-out" for="t-time">0.0 h</output></label>
+            <input type="range" id="t-time" min="0" max="1000" step="1" value="0">
+          </div>
+        </div>
+        <p class="chart-title" id="lv-title">Water levels through the tide (metres; shaded: generating)</p>
+        <div class="chart short" id="lv-chart" role="img" aria-labelledby="lv-title" aria-describedby="lv-desc"></div>
+        <p class="chart-title" id="pw-title">Power output (MW)</p>
+        <div class="chart mini" id="pw-chart" role="img" aria-labelledby="pw-title" aria-describedby="lv-desc"></div>
+        <p class="muted" id="lv-desc">The sea follows a smooth tide. The basin rises with it while the sluices are open, holds level after high water, then falls as the turbines run once the head reaches the start value. Power flows only in that generating window.</p>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="t-range">Tidal range <output id="t-range-out" for="t-range">8 m</output></label>
+          <input type="range" id="t-range" min="3" max="13" step="0.5" value="8">
+          <p class="hint">La Rance: 8.2 m on average, up to 13.5 m.</p>
+        </div>
+        <div class="control">
+          <label for="t-start">Start generating at a head of <output id="t-start-out" for="t-start">3.5 m</output></label>
+          <input type="range" id="t-start" min="1" max="6" step="0.25" value="3.5">
+        </div>
+        <div class="readout" aria-live="polite">
+          <div><span class="k">Phase</span><span class="v" id="o-phase">Sluicing</span></div>
+          <div><span class="k">Head now</span><span class="v" id="o-head">0 m</span></div>
+          <div><span class="k">Power now</span><span class="v" id="o-mw">0 MW</span></div>
+          <div><span class="k">Energy per tide</span><span class="v" id="o-tide">1.04 GWh</span></div>
+          <div><span class="k">Energy per year</span><span class="v" id="o-year">733 GWh</span></div>
+          <div><span class="k">Share of ideal</span><span class="v" id="o-ideal">53 %</span></div>
+        </div>
+        <p class="ra-status" id="tide-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-basin">
+    <h3 id="eq-basin">The energy in a full basin</h3>
+    <p>When a basin of area A drains through a range R, the water's centre of mass falls by R/2. So the most energy one emptying could give is the weight of the water, ρgAR, times R/2. Range enters squared: double the range and you get four times the energy.</p>
+    <div class="tex">E_{\max} = \tfrac12\,\rho\,g\,A\,R^{2}</div>
+    <dl class="symbols">
+      <dt><span class="tex">E_{\max}</span></dt><dd>energy released by one full emptying, joules</dd>
+      <dt><span class="tex">\rho</span></dt><dd>density of seawater, about 1,025 kg/m³</dd>
+      <dt><span class="tex">A</span></dt><dd>basin area, square metres</dd>
+      <dt><span class="tex">R</span></dt><dd>tidal range, metres</dd>
+    </dl>
+    <div class="worked" data-check="renewables:tidalBasinEnergyJ" data-args="[22000000, 8.2]" data-expect="7.435e12" data-tol="0.001e12">
+      La Rance's 22 km² basin with its 8.2 m mean range holds at most ½ × 1,025 × 9.81 × 22 × 10⁶ × 8.2² = <span class="answer">7.4 × 10¹² J</span>, about 2.1 GWh per tide.<sup class="cite" data-src="tethys-la-rance"></sup> Its real output, roughly 500–600 GWh a year over about 705 tides, is 0.7–0.85 GWh per tide: some 35–40 % of this ideal, since the turbines can only run while there is enough head.<sup class="cite" data-src="delaleu-2009-rance"></sup>
+    </div>
+    <div class="expert expert-note">
+      <p>The model above is a time-step simulation: the sea follows a cosine of period 12.42 h (the main lunar tide), flow through sluices and turbines follows the orifice law Q = C<sub>d</sub>A√(2gh), and electrical power is ηρgQh with η = 0.85. Turbine and sluice areas are chosen so the peak output is close to La Rance's 240 MW. Real plants squeeze out more by generating on both ebb and flood (as La Rance does), by pumping extra water into the basin near high tide when the head is small, and by timing generation to prices.<sup class="cite" data-src="edf-rance-2026"></sup> Sihwa generates only on the flood, letting the sea run into the basin.<sup class="cite" data-src="tethys-sihwa"></sup></p>
+    </div>
+  </section>
+
+  <h2 id="stream">Tidal stream: a wind turbine under water</h2>
+  <p>Where the tide squeezes through a narrow channel, the water can run at several metres per second. A <dfn data-term="tidal-stream">tidal-stream turbine</dfn> stands on the sea floor in that current and works exactly like a wind turbine, with the same physics, P = ½ρAv³C<sub>p</sub>, and the same Betz limit (see <a href="wind.html#eq-betz">wind</a>). The difference is density: seawater is about 840 times denser than air, so a slow current carries as much power per square metre as a gale.</p>
+
+  <section class="widget widget--compact" id="stream-widget" aria-labelledby="stream-h">
+    <h3 id="stream-h">Water versus air</h3>
+    <div class="widget-body split">
+      <div class="controls">
+        <div class="control">
+          <label for="s-v">Tidal current <output id="s-v-out" for="s-v">2.5 m/s</output></label>
+          <input type="range" id="s-v" min="0.5" max="4" step="0.1" value="2.5">
+        </div>
+        <div class="readout" aria-live="polite">
+          <div><span class="k">Power per m² of water</span><span class="v" id="s-pd">8.0 kW</span></div>
+          <div><span class="k">Wind speed with the same power</span><span class="v" id="s-eq">23.6 m/s</span></div>
+          <div><span class="k">18 m rotor, C<sub>p</sub> 0.43</span><span class="v" id="s-p">0.88 MW</span></div>
+        </div>
+      </div>
+      <div class="ladder" aria-label="Power per square metre compared">
+        <p class="ladder-title">Power carried through each square metre</p>
+        <div class="rung"><span class="rung-k" id="s-k1">Water at 2.5 m/s</span><span class="bar"><span class="fill fill-water" id="s-b1"></span></span><span class="rung-v" id="s-v1">8.0 kW</span></div>
+        <div class="rung"><span class="rung-k">Wind at 10 m/s</span><span class="bar"><span class="fill fill-air" id="s-b2"></span></span><span class="rung-v" id="s-v2">0.61 kW</span></div>
+        <div class="rung"><span class="rung-k">Wind at 25 m/s (storm)</span><span class="bar"><span class="fill fill-air" id="s-b3"></span></span><span class="rung-v" id="s-v3">9.6 kW</span></div>
+        <p class="ra-status" id="s-status"></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="worked" data-check="fluids:equivalentWindSpeed" data-args="[2.5]" data-expect="23.56" data-tol="0.01">
+    Power density goes as ρv³, so equal power needs v<sub>air</sub> = v<sub>water</sub> × ∛(1025/1.225). A 2.5 m/s current matches a <span class="answer">23.6 m/s</span> wind, close to a turbine's cut-out speed.
+  </div>
+  <div class="worked" data-check="renewables:rotorPower" data-args="[1025, 18, 3, 0.43]" data-expect="1.514e6" data-tol="0.002e6">
+    An 18 m rotor in a 3 m/s current, capturing 43 % of the flow's power, delivers <span class="answer">1.51 MW</span>: the rating of each MeyGen turbine, from a rotor less than a tenth the diameter of a large offshore wind turbine.<sup class="cite" data-src="ampeak-meygen"></sup>
+  </div>
+
+  <h2 id="waves">Wave energy</h2>
+  <p>Wind blowing over the ocean builds waves, and waves carry that energy for thousands of kilometres with little loss. Engineers describe a real, messy sea with two numbers: the <dfn data-term="significant-wave-height">significant wave height</dfn> H<sub>s</sub> and the <dfn data-term="energy-period">energy period</dfn> T<sub>e</sub>. From them comes the <dfn data-term="wave-energy-flux">wave energy flux</dfn>, the power arriving across each metre of wave crest.<sup class="cite" data-src="falnes-2007"></sup></p>
+
+  <section class="widget" id="wave" aria-labelledby="wave-h">
+    <h2 id="wave-h">Power in a wave</h2>
+    <div class="widget-body split">
+      <div>
+        <canvas id="wave-canvas" class="ra-canvas wave-canvas" role="img" aria-label="A train of ocean waves with a floating buoy, showing wave height and wavelength."></canvas>
+        <div class="ra-toolbar"><button type="button" class="btn ghost" id="wave-play">Pause</button><span class="muted wave-note">Drawn as a regular wave of height H<sub>s</sub>; the vertical scale is exaggerated.</span></div>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="w-hs"><span>Significant wave height H<sub>s</sub></span> <output id="w-hs-out" for="w-hs">2 m</output></label>
+          <input type="range" id="w-hs" min="0.5" max="8" step="0.1" value="2">
+        </div>
+        <div class="control">
+          <label for="w-te"><span>Energy period T<sub>e</sub></span> <output id="w-te-out" for="w-te">8 s</output></label>
+          <input type="range" id="w-te" min="4" max="16" step="0.5" value="8">
+        </div>
+        <div class="readout" aria-live="polite">
+          <div><span class="k">Power per metre of crest</span><span class="v" id="w-p">15.7 kW/m</span></div>
+          <div><span class="k">Wavelength</span><span class="v" id="w-l">100 m</span></div>
+          <div><span class="k">Energy travels at</span><span class="v" id="w-cg">6.2 m/s</span></div>
+          <div><span class="k">Energy per m² of sea</span><span class="v" id="w-e">2.5 kJ</span></div>
+        </div>
+        <p class="ra-status" id="w-status"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-wave">
+    <h3 id="eq-wave">Wave energy flux</h3>
+    <p>A wave's energy per square metre of sea grows with the square of its height. That energy travels at the wave group's speed, which grows with the period. Multiply the two and you get the power per metre of crest: doubling the wave height quadruples it.</p>
+    <div class="tex">P = \frac{\rho\,g^{2}\,H_s^{2}\,T_e}{64\pi}</div>
+    <dl class="symbols">
+      <dt><span class="tex">P</span></dt><dd>power per metre of wave crest, watts per metre (W/m)</dd>
+      <dt><span class="tex">H_s</span></dt><dd>significant wave height, metres</dd>
+      <dt><span class="tex">T_e</span></dt><dd>energy period, seconds</dd>
+      <dt><span class="tex">\rho,\ g</span></dt><dd>seawater density (1,025 kg/m³) and gravity (9.81 m/s²)</dd>
+    </dl>
+    <div class="worked" data-check="renewables:waveEnergyFlux" data-args="[2, 8]" data-expect="15689" data-tol="1">
+      A moderate sea with H<sub>s</sub> = 2 m and T<sub>e</sub> = 8 s carries <span class="answer">15.7 kW</span> across every metre of crest. A 1 km stretch of such sea brings in about 16 MW.
+    </div>
+    <div class="expert expert-note">
+      <p>In deep water the energy per unit area of an irregular sea is E = ρgH<sub>s</sub>²/16 and it travels at the group velocity c<sub>g</sub> = gT/(4π), half the phase speed; their product gives the formula above. It holds where the depth exceeds about half a wavelength; in shallow water waves slow, steepen and lose energy to the sea bed. Devices absorb power by moving out of phase with the wave so that they radiate a wave that cancels part of the incoming one; a heaving axisymmetric body can at best absorb the power arriving across a crest width of λ/2π.<sup class="cite" data-src="falnes-2007"></sup></p>
+    </div>
+  </section>
+  <p>Many designs have been tried: floating snakes that flex at their joints, buoys that bob against a sea-bed anchor, flaps hinged at the sea floor, and <dfn data-term="oscillating-water-column">oscillating water columns</dfn> like Mutriku, where waves pump air through a turbine.<sup class="cite" data-src="pena-2025-mutriku"></sup> None has yet settled into a standard design the way three-bladed wind turbines did. <span class="claim claim--research">Active research</span></p>
+
+  <h2 id="fit">Strengths, limits and where ocean energy fits</h2>
+  <div class="fit-grid">
+    <div>
+      <h3>Strengths</h3>
+      <ul class="plus">
+        <li>Tides are predictable years ahead, so tidal output can be planned exactly.<sup class="cite" data-src="doe-marine-basics"></sup></li>
+        <li>Water's density packs a lot of power into a small, mostly hidden machine.</li>
+        <li>A large untapped resource.<sup class="cite" data-src="doe-marine-basics"></sup></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Limits</h3>
+      <ul class="minus">
+        <li>Tiny today: about 0.5 GW installed, against more than 1,000 GW each of wind and hydro.<sup class="cite" data-src="irena-capacity-2026"></sup></li>
+        <li>Expensive: few machines are built, each is nearly custom, and installing and maintaining them at sea is costly. <span class="claim claim--consensus">Current consensus</span></li>
+        <li>Storms, corrosion and fouling have ended many projects early, as at Aguçadoura.<sup class="cite" data-src="powertech-pelamis"></sup></li>
+        <li>Barrages change estuaries: tides, sediments and habitats behind the wall.</li>
+        <li>Tides still vary through the day and the fortnightly spring–neap cycle, so output comes in pulses.</li>
+      </ul>
+    </div>
+  </div>
+  <p>For now, ocean energy matters most for remote coasts and islands that pay a lot for imported fuel. Its predictable pulses are easier for a <a href="grid.html">grid</a> to plan around than wind's, but still need <a href="storage.html">storage</a> or other sources between tides. See how it compares with the other sources on the <a href="compare.html">comparison dashboard</a>.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

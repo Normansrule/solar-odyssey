@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>About, privacy and download – Solar Odyssey</title>
+<meta name="description" content="How the site works, what it stores, and the offline desktop app.">
+<link rel="icon" href="assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/odyssey.css">
+<link rel="stylesheet" href="about.css">
+<script type="module" src="assets/js/core.js"></script>
+<script type="module" src="about.js"></script>
+</head>
+<body data-page="about">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page about-page">
+  <header class="page-head">
+    <h1>About, privacy and download</h1>
+    <p class="lede">Solar Odyssey is a free, open-source course on solar power: how a sunbeam becomes electricity, how that idea grew from a laboratory curiosity in 1839 into some of the cheapest electricity in history, and how solar fits with wind, water, heat, storage and the grid.</p>
+  </header>
+
+  <nav class="about-toc" aria-label="On this page">
+    <ul>
+      <li><a href="#who">Who it is for</a></li>
+      <li><a href="#using">Depth and progress</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#offline">Offline and desktop app</a></li>
+      <li><a href="#licences">Licences</a></li>
+      <li><a href="#contribute">Contribute</a></li>
+    </ul>
+  </nav>
+
+  <section id="who" aria-labelledby="who-h">
+    <h2 id="who-h">Who it is for</h2>
+    <p>Curious learners, students and teachers, from high school up. You don't need any physics: every term is defined where it first appears (hover or focus a <dfn data-term="photon">dotted word</dfn> to see its definition), and the <a href="glossary.html">glossary</a> collects them all. Each lesson builds on the one before; the <a href="index.html">home page</a> shows the learning path.</p>
+    <p>Everything is backed by sources you can check. Numbers that change quickly, such as efficiency records, prices and installed capacity, carry the date they were last verified. The <a href="sources.html">sources page</a> lists every reference, and the <a href="equations.html">equation atlas</a> shows every formula with a worked example that our tests recompute.</p>
+  </section>
+
+  <section id="using" aria-labelledby="using-h">
+    <h2 id="using-h">Depth and progress</h2>
+    <div class="about-two">
+      <div>
+        <h3>Intro or Expert</h3>
+        <p>The switch in the header sets how deep the lessons go. <strong>Intro</strong> keeps to plain language and the key ideas. <strong>Expert</strong> adds derivations, assumptions and extra detail in blue-edged notes. You can change it at any time; the choice is remembered in this browser.</p>
+      </div>
+      <div>
+        <h3>Your progress</h3>
+        <p>Pages you visit and lessons you mark complete get a tick in the menus. Each lesson ends with check-your-understanding questions, and your answers are remembered the same way. That record lives only in this browser. It does not follow you to another device, and nobody else can see it. Press <kbd>/</kbd> on any page to search the whole course.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" aria-labelledby="privacy-h" class="about-privacy">
+    <h2 id="privacy-h">Privacy</h2>
+    <ul class="plain-facts">
+      <li><strong>No accounts.</strong> There is nothing to sign up for.</li>
+      <li><strong>No analytics and no tracking.</strong> The site sends nothing about you anywhere. It loads files only from its own address.</li>
+      <li><strong>No cookies.</strong></li>
+      <li><strong>Only local storage, only on your device.</strong> Your depth setting, colour theme, progress and quiz answers are saved in this browser's <code>localStorage</code> under names that start with <code>so.</code>. Nothing else is stored.</li>
+    </ul>
+    <div class="clear-box">
+      <h3 id="clear-h">What this browser has stored</h3>
+      <div id="stored" class="stored" aria-live="polite" tabindex="-1"><p class="muted">Checking…</p></div>
+      <div class="btn-row">
+        <button type="button" class="btn ghost" id="clear-btn">Clear my progress and settings</button>
+      </div>
+      <p class="muted clear-note">This removes only the site's own <code>so.</code> entries in this browser and switches this page back to the default settings. Browsing on will start a fresh record.</p>
+    </div>
+  </section>
+
+  <section id="security" aria-labelledby="security-h">
+    <h2 id="security-h">Security in brief</h2>
+    <ul class="plain-facts">
+      <li><strong>A strict Content Security Policy.</strong> Every page tells the browser to run only scripts, styles, fonts and images from this site, and never inline code. That blocks most script-injection attacks.</li>
+      <li><strong>No third-party code at run time.</strong> The chart, maths and 3D libraries and the fonts are copied into the site at pinned versions and checked by hash. Nothing is loaded from a content-delivery network.</li>
+      <li><strong>Signed, hashed data.</strong> Every dataset is listed with its SHA-256 hash in a manifest signed with an Ed25519 key. Pages show a badge with the check result and refuse data that fails it.</li>
+      <li><strong>No HTML from data.</strong> Text from data files and from anything you type is inserted as plain text. Formulas you type in the equation playground are read by a small calculator that only understands arithmetic; nothing you type is ever run as code.</li>
+      <li><strong>The desktop app is fenced in.</strong> It serves the same files from inside the app under the same policy, with an allowlist that limits what it may load and do.</li>
+    </ul>
+    <p>The full threat model and design are in <span id="security-doc"><code>docs/SECURITY_MODEL.md</code> in the project's repository</span>.</p>
+  </section>
+
+  <section id="offline" aria-labelledby="offline-h">
+    <h2 id="offline-h">Use it offline</h2>
+    <div class="about-two">
+      <div>
+        <h3>The desktop app</h3>
+        <p>Download builds for Windows, macOS and Linux from the <span id="releases-link">Releases page of this repository</span>. The app contains the whole course and works with no internet connection.</p>
+        <p>Each download is listed with its SHA-256 checksum and a signature. To check a download, compare its checksum with the one on the release page, for example with <code>sha256sum</code> on Linux, <code>shasum -a 256</code> on macOS, or <code>Get-FileHash</code> in Windows PowerShell.</p>
+      </div>
+      <div>
+        <h3>Without installing anything</h3>
+        <p>Download or clone the repository, then serve the <code>site</code> folder with any static web server. With Python 3:</p>
+        <pre class="cmd"><code>python3 -m http.server --directory site</code></pre>
+        <p>Then open <code>http://localhost:8000</code>. A local server is needed because browsers block the data checks on pages opened straight from disk.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="licences" aria-labelledby="licences-h">
+    <h2 id="licences-h">Licences</h2>
+    <table class="licence-table">
+      <caption class="visually-hidden">Licences for each part of the course</caption>
+      <tbody>
+        <tr><th scope="row">Code</th><td>MIT licence</td></tr>
+        <tr><th scope="row">Text and drawings</th><td>Creative Commons Attribution 4.0 (CC BY 4.0): reuse them in your own teaching, with credit to Solar Odyssey</td></tr>
+        <tr><th scope="row">Data</th><td>The licence of each source, shown on its <a href="sources.html">source record</a></td></tr>
+        <tr><th scope="row">Bundled libraries and fonts</th><td>Their own licences, listed on the <a href="sources.html#lic-h">sources page</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="contribute" aria-labelledby="contribute-h">
+    <h2 id="contribute-h">Contribute</h2>
+    <p>Spotted an error, a dead link or a clearer way to explain something? Open an issue on the project's GitHub repository<span id="issues-link"></span> saying which page, what is wrong, and a source if you have one. Corrections backed by a primary source are the most welcome contribution of all.</p>
+    <p>To change code or content, fork the repository and open a pull request. <code>docs/DEVELOPING.md</code> explains how pages are built; run <code>npm test</code> before you send it, so the static checks, the physics tests and every worked example still pass.</p>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

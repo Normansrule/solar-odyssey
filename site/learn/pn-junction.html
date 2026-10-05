@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>The p-n junction – Solar Odyssey</title>
+<meta name="description" content="The built-in field that pushes electrons and holes apart.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="pn-junction.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="pn-junction.js"></script>
+</head>
+<body data-page="pn-junction">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">How a cell works</span>
+    <h1>The p-n junction</h1>
+    <p class="lede">Light can free an electron in silicon, but a freed electron alone makes no current. A solar cell needs a built-in push that sends electrons one way and holes the other. That push lives in a layer thinner than a soap bubble, where two kinds of silicon meet.</p>
+  </header>
+
+  <p>In <a href="photovoltaic-effect.html">the photovoltaic effect</a> lesson, a photon with enough energy lifted an electron out of its bond. It left behind a <dfn data-term="hole">hole</dfn>, a missing electron that moves through the crystal like a positive charge. Together they form an <dfn data-term="electron-hole-pair">electron–hole pair</dfn>. In a plain lump of silicon the pair wanders about for a few millionths of a second and then the electron drops back into a hole. That is <dfn data-term="recombination">recombination</dfn>, and the energy ends up as a little heat. To get electricity out, something has to pull the pair apart and steer each half to a different wire.</p>
+
+  <h2 id="doping">Two kinds of silicon</h2>
+  <p>Pure silicon has four outer electrons per atom, and every one of them is locked in a bond with a neighbour. Engineers change that by <dfn data-term="doping">doping</dfn>: mixing in a tiny, controlled amount of another element.<sup class="cite" data-src="sze-ng-2007"></sup></p>
+  <ul>
+    <li><strong>Phosphorus</strong> has five outer electrons. Four fit into bonds; the fifth is barely held and wanders off at room temperature. Silicon doped this way is <dfn data-term="n-type">n-type</dfn> (n for the negative electrons it adds).</li>
+    <li><strong>Boron</strong> has only three. One bond around each boron atom is missing an electron: a hole. Silicon doped this way is <dfn data-term="p-type">p-type</dfn> (p for positive).</li>
+  </ul>
+  <p>Either way the crystal stays electrically neutral. Each phosphorus atom that gives away an electron becomes a fixed positive ion; each boron atom that accepts one becomes a fixed negative ion. The ions cannot move. Only the electrons and holes can.</p>
+
+  <div class="worked" data-check="junction:atomsPerDopant" data-args="[1e16]" data-expect="4.99e6" data-tol="2e4">
+    Silicon packs about 5.0 × 10²² atoms into each cubic centimetre. A typical solar-cell base is doped with 10¹⁶ boron atoms per cm³, which is one boron atom for every <span class="answer">5 million</span> silicon atoms. A pinch of salt in a swimming pool changes how the whole pool conducts.
+  </div>
+
+  <h2 id="meeting">When p meets n</h2>
+  <p>Now make one crystal that is p-type on one side and n-type on the other. The boundary is the <dfn data-term="pn-junction">p-n junction</dfn>. Three things happen within a fraction of a second.</p>
+  <ol>
+    <li><strong>Diffusion.</strong> The n side is crowded with free electrons and the p side with holes. Carriers spread out from where they are crowded, as a drop of ink spreads in water. This is <dfn data-term="diffusion">diffusion</dfn>. Electrons cross into the p side, holes into the n side, and there they meet and cancel.<sup class="cite" data-src="pveducation"></sup></li>
+    <li><strong>A depleted layer.</strong> Near the boundary almost no free carriers remain. What is left are the fixed ions: negative boron ions on the p side, positive phosphorus ions on the n side. This thin strip is the <dfn data-term="depletion-region">depletion region</dfn>.</li>
+    <li><strong>A built-in field.</strong> Positive charge on one side and negative on the other make an electric field that points from n to p. It pushes electrons back toward the n side and holes back toward the p side. This push is called <dfn data-term="drift">drift</dfn>. Diffusion and drift soon balance, and the flow stops. The voltage step the field creates is the <dfn data-term="built-in-potential">built-in potential</dfn>, about 0.9 volts for the doping used in this lesson.</li>
+  </ol>
+  <p>Nothing leaves the junction in the dark: the built-in voltage cannot be measured with a voltmeter, because the contacts cancel it. Light is what turns the junction into a source.</p>
+
+  <section class="widget" id="explorer" aria-labelledby="explorer-h">
+    <h2 id="explorer-h">P-n junction explorer</h2>
+    <p class="caption intro-lead">A slice through a cell, drawn much wider than life. Turn up the light, then move the load from short circuit to open circuit and watch where the carriers go.</p>
+    <div class="widget-body split">
+      <div class="pnj-stage">
+        <canvas id="pnj-canvas" role="img" aria-label="Cross-section of a p-n junction solar cell with a band-energy diagram below it."></canvas>
+        <ul class="legend pnj-legend" aria-label="Key">
+          <li><span class="pnj-key pnj-key--electron" aria-hidden="true"></span>Electron (filled)</li>
+          <li><span class="pnj-key pnj-key--hole" aria-hidden="true"></span>Hole (ring)</li>
+          <li><span class="pnj-key pnj-key--ion" aria-hidden="true"></span>Fixed ion (− boron, + phosphorus)</li>
+          <li><span class="pnj-key pnj-key--photon" aria-hidden="true"></span>Photon absorbed</li>
+          <li><span class="pnj-key pnj-key--recomb" aria-hidden="true"></span>Recombination</li>
+        </ul>
+        <div class="btn-row pnj-play">
+          <button type="button" class="btn ghost" id="pnj-toggle">Pause</button>
+          <button type="button" class="btn ghost" id="pnj-step">Step</button>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="pnj-light">Light intensity <output id="pnj-light-out" for="pnj-light">1.00 sun</output></label>
+          <input type="range" id="pnj-light" min="0" max="1.2" step="0.01" value="1">
+        </div>
+        <div class="control">
+          <label for="pnj-load">Load resistance <output id="pnj-load-out" for="pnj-load">0.065 Ω</output></label>
+          <input type="range" id="pnj-load" min="0" max="100" step="0.1" value="46" aria-describedby="pnj-load-hint">
+          <p class="pnj-hint" id="pnj-load-hint"><span>Short circuit</span><span>Open circuit</span></p>
+          <div class="btn-row pnj-presets" role="group" aria-label="Load presets">
+            <button type="button" class="btn ghost" data-load="short">Short circuit</button>
+            <button type="button" class="btn ghost" data-load="mpp">Maximum power</button>
+            <button type="button" class="btn ghost" data-load="open">Open circuit</button>
+          </div>
+        </div>
+        <div class="expert pnj-doping">
+          <div class="control">
+            <label for="pnj-na">p side: boron <output id="pnj-na-out" for="pnj-na">1.0e16 cm⁻³</output></label>
+            <input type="range" id="pnj-na" min="15" max="17" step="0.1" value="16">
+          </div>
+          <div class="control">
+            <label for="pnj-nd">n side: phosphorus <output id="pnj-nd-out" for="pnj-nd">1.0e19 cm⁻³</output></label>
+            <input type="range" id="pnj-nd" min="17" max="20" step="0.1" value="19">
+          </div>
+        </div>
+        <dl class="readout" aria-live="polite">
+          <div><dt>Current</dt><dd id="pnj-i">—</dd></div>
+          <div><dt>Voltage</dt><dd id="pnj-v">—</dd></div>
+          <div><dt>Power</dt><dd id="pnj-p">—</dd></div>
+          <div><dt>Share of maximum</dt><dd id="pnj-share">—</dd></div>
+        </dl>
+        <dl class="readout expert">
+          <div><dt>Built-in potential</dt><dd id="pnj-vbi">—</dd></div>
+          <div><dt>Depletion width</dt><dd id="pnj-w">—</dd></div>
+          <div><dt>Peak field</dt><dd id="pnj-e">—</dd></div>
+          <div><dt>Width on p / n side</dt><dd id="pnj-split">—</dd></div>
+        </dl>
+        <figure class="pnj-iv">
+          <canvas id="pnj-iv" role="img" aria-label="Current against voltage for this cell, with the operating point and the maximum power point."></canvas>
+          <figcaption>Current against voltage. The shaded rectangle is the power (current × voltage); the ring marks the maximum power point. Drag on the chart to choose a point.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="caption" id="pnj-summary"></p>
+    <p class="caption">A cartoon, not a simulation of every carrier: a real cell holds around 10¹⁶ free carriers per cubic centimetre and the depletion region is about a third of a micrometre wide, a few hundred times thinner than the wafer. The numbers are computed from the single-diode model of the illustrative 243 cm² silicon cell used throughout this course.</p>
+  </section>
+
+  <h2 id="light">How light makes a current</h2>
+  <p>Follow one photon in the explorer.</p>
+  <ol>
+    <li><strong>Generation.</strong> It is absorbed and makes an electron–hole pair, usually somewhere in the thick p-type base.</li>
+    <li><strong>A random walk.</strong> The electron is a rare visitor there (a minority carrier). It diffuses about at random. If it recombines before finding the junction, its energy is lost as heat.</li>
+    <li><strong>Separation.</strong> If it reaches the edge of the depletion region, the built-in field grabs it and sweeps it across to the n side. Holes that reach the junction from the n side are swept the other way. The field sorts the charges: electrons to n, holes to p.<sup class="cite" data-src="pveducation"></sup></li>
+    <li><strong>Collection.</strong> Electrons pile up on the n side and holes on the p side. Connect a wire through a load and the extra electrons flow around the circuit, do work in the load, and arrive at the p side to fill holes.</li>
+  </ol>
+  <p>The load decides how much of that current escapes. With a <strong>short circuit</strong> (zero resistance) every collected electron leaves at once. Current is at its highest and voltage is zero, so no power is delivered. With an <strong>open circuit</strong> (no path at all) the separated charges build up, pushing back against the built-in field. The barrier drops until as many carriers leak back across the junction and recombine as the light creates. Voltage is at its highest but the current is zero. Somewhere between lies the load that takes the most power, the <a href="iv-curve.html">maximum power point</a> of the next lesson.</p>
+  <p>You can see the voltage in the band diagram. Energy is drawn upward, and electrons roll downhill while holes float upward. In short circuit the Fermi levels at the two contacts sit at the same height. Under load it splits: the electrons' level on the n side rises above the holes' level on the p side by exactly the cell voltage times the electron's charge.</p>
+
+  <section class="eq" id="eq-vbi" aria-labelledby="eq-vbi-h">
+    <h3 id="eq-vbi-h">How tall is the barrier?</h3>
+    <p>The more heavily each side is doped, the bigger the difference in carrier crowding, and the taller the step that holds the carriers apart. The height grows only with the logarithm of the doping: ten times more doping on one side adds about 60 millivolts.<sup class="cite" data-src="sze-ng-2007"></sup></p>
+    <div class="tex">V_{bi} = \frac{kT}{q}\,\ln\!\left(\frac{N_A N_D}{n_i^{2}}\right)</div>
+    <dl class="symbols">
+      <dt><span class="tex">V_{bi}</span></dt><dd>built-in potential, volts (V)</dd>
+      <dt><span class="tex">kT/q</span></dt><dd>thermal voltage: Boltzmann constant × temperature ÷ electron charge, 25.9 mV at 300 K</dd>
+      <dt><span class="tex">N_A</span></dt><dd>acceptor (boron) density on the p side, per cm³</dd>
+      <dt><span class="tex">N_D</span></dt><dd>donor (phosphorus) density on the n side, per cm³</dd>
+      <dt><span class="tex">n_i</span></dt><dd><dfn data-term="intrinsic-carrier-density">intrinsic carrier density</dfn> of pure silicon: 9.65 × 10⁹ per cm³ at 300 K<sup class="cite" data-src="altermatt-2003"></sup></dd>
+    </dl>
+    <div class="worked" data-check="junction:builtInPotential" data-args="[1e16, 1e19]" data-expect="0.895" data-tol="0.002">
+      A base with <span class="tex">N_A = 10^{16}\ \text{cm}^{-3}</span> and an emitter with <span class="tex">N_D = 10^{19}\ \text{cm}^{-3}</span> at 300 K: <span class="tex">V_{bi} = 0.02585 \times \ln(10^{35} / 9.31\times10^{19}) \approx 0.02585 \times 34.6</span> = <span class="answer">0.895 V</span>.
+    </div>
+    <p>In the explorer's band diagram this is the height of the step in the band edges when the cell is short-circuited. Under load the step shrinks to <span class="tex">V_{bi} - V</span>.</p>
+    <div class="expert expert-note">
+      <p>The value of <span class="tex">n_i</span> has been revised as measurements improved. Older textbooks quote noticeably higher values; Sproul and Green measured 1.00 × 10¹⁰ cm⁻³ at 300 K<sup class="cite" data-src="sproul-green-1991"></sup>; Altermatt and colleagues, correcting for band-gap narrowing, gave 9.65 × 10⁹ cm⁻³.<sup class="cite" data-src="altermatt-2003"></sup> This page uses the last. Because <span class="tex">V_{bi}</span> depends on <span class="tex">\ln n_i^2</span>, switching from 10¹⁰ to 9.65 × 10⁹ moves it by only 2 mV.</p>
+      <p>The formula assumes non-degenerate doping (Boltzmann statistics) and an abrupt step from p to n. Real diffused emitters have graded profiles and doping above about 10¹⁹ cm⁻³ narrows the band gap, so treat the numbers as textbook estimates.</p>
+    </div>
+  </section>
+
+  <section class="eq" id="eq-w" aria-labelledby="eq-w-h">
+    <h3 id="eq-w-h">How wide is the depletion region?</h3>
+    <p>The field has to be made of uncovered ions. Lightly doped silicon has few ions per cubic centimetre, so it must uncover a thicker layer to build the same barrier. That is why the depletion region reaches mostly into the lightly doped base. Forward voltage, as under load, lowers the barrier and thins the layer.<sup class="cite" data-src="sze-ng-2007"></sup></p>
+    <div class="tex">W = \sqrt{\frac{2\varepsilon\,(V_{bi} - V)}{q}\,\frac{N_A + N_D}{N_A N_D}}</div>
+    <dl class="symbols">
+      <dt><span class="tex">W</span></dt><dd>depletion width, metres (quoted here in micrometres, µm)</dd>
+      <dt><span class="tex">\varepsilon</span></dt><dd>permittivity of silicon, 11.7 × 8.854 × 10⁻¹² F/m<sup class="cite" data-src="pveducation-silicon"></sup></dd>
+      <dt><span class="tex">V</span></dt><dd>voltage across the junction, positive for forward bias, volts</dd>
+      <dt><span class="tex">q</span></dt><dd>elementary charge, 1.602 × 10⁻¹⁹ C</dd>
+    </dl>
+    <div class="worked" data-check="junction:junction" data-args="[1e16, 1e19]" data-pick="W_um" data-expect="0.340" data-tol="0.002">
+      For the same junction in the dark, <span class="tex">W \approx</span> <span class="answer">0.34 µm</span>, hundreds of times thinner than the wafer, which is well over a hundred micrometres thick. Almost all of it lies on the lightly doped p side.
+    </div>
+    <div class="expert">
+      <p>Charge neutrality fixes the split: the uncovered charge is equal on both sides, <span class="tex">N_A x_p = N_D x_n</span>, so <span class="tex">x_n = W N_A/(N_A+N_D)</span> and <span class="tex">x_p = W N_D/(N_A+N_D)</span>. The field rises linearly through each side and peaks at the metallurgical junction:</p>
+      <div class="tex">E_{max} = \frac{q N_D x_n}{\varepsilon} = \frac{2\,(V_{bi} - V)}{W}</div>
+      <div class="worked" data-check="junction:junction" data-args="[1e16, 1e19]" data-pick="Emax_Vcm" data-expect="52600" data-tol="150">
+        With <span class="tex">x_p = 0.340\ \mu\text{m}</span> and <span class="tex">x_n = 0.34\ \text{nm}</span>, the peak field is <span class="answer">5.3 × 10⁴ V/cm</span>: over five million volts per metre, across a layer a few hundred times thinner than a hair.
+      </div>
+      <p>The explorer computes all of these live (<code>physics/junction.js</code>). Its band diagram uses the parabolic potential of the depletion approximation, with a share <span class="tex">x_p/W</span> of the step on the p side, and shows the quasi-Fermi levels split by <span class="tex">qV</span>.</p>
+    </div>
+  </section>
+
+  <h2 id="history">A seam in a silicon slab</h2>
+  <p><span class="claim claim--settled">Settled history</span></p>
+  <ol class="mini-timeline">
+    <li><time datetime="1940-02-23">1940</time>At Bell Labs, Russell Ohl was testing samples of purified silicon. On 23 February he found that light falling on one rod, which had a visible seam across it, produced a surprisingly large voltage. With his colleague Jack Scaff he traced the effect to impurities that had separated as the melt froze: phosphorus on one side, boron on the other. They named the regions n-type and p-type, and the boundary the p-n junction.<sup class="cite" data-src="chm-pn-junction-1940,riordan-hoddeson-1997"></sup></li>
+    <li><time datetime="1946-06-25">1941–1946</time>Ohl filed a patent for a “light-sensitive electric device” in May 1941; it was granted in June 1946 as US 2,402,662. It describes a silicon cell with an internal barrier that makes a voltage when lit.<sup class="cite" data-src="ohl-patent-1946"></sup></li>
+    <li><time datetime="1954-04-25">1954</time>Daryl Chapin, Calvin Fuller and Gerald Pearson, also at Bell Labs, made a p-n junction just under the surface of a silicon wafer. It turned about 6 % of sunlight into electricity, far better than anything before. Bell Labs announced the cell on 25 April 1954.<sup class="cite" data-src="chapin-1954,aps-news-2009"></sup></li>
+  </ol>
+  <p>Every silicon cell sold today still works on the same principle. What changed is how thin, clean and well passivated the layers are, which you can compare in <a href="../today/technologies.html">cell technologies today</a>. The whole story is on <a href="../timeline.html">the timeline</a>.</p>
+
+  <h2 id="next">Where next</h2>
+  <p>The junction explains why a cell has a current and a voltage. The next lesson, <a href="iv-curve.html">current, voltage and power</a>, measures them: how much power a cell can deliver, what limits it, and why a hot cell makes less.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

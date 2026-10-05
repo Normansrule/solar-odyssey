@@ -1,0 +1,119 @@
+/* Home: the sun-arc hero, then a quiet learning-path map. */
+
+.home { padding-top: 0; }
+
+/* ---------- hero ---------- */
+.page > .hero {
+  max-width: none; margin: 0 calc(-1 * var(--gutter)); position: relative;
+  height: clamp(30rem, calc(100svh - var(--header-h)), 46rem);
+  border-bottom: 1px solid var(--rule); overflow: hidden;
+}
+.hero-arc { position: absolute; inset: 0; height: 100%; }
+.hero::after { /* ground */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: var(--hero-ground, 4.5rem);
+  background: var(--paper); border-top: 1px solid var(--rule); z-index: 0;
+}
+.hero .arc-svg { z-index: 1; }
+.hero .arc-horizon { opacity: 0; }
+.hero .arc-era-label { font-family: var(--body); font-size: 13px; font-weight: 650; fill: var(--ink-2); }
+.hero .arc-era-label.is-current { fill: var(--sun-ink); }
+.hero .arc-sun-year {
+  font-family: var(--display); font-weight: 600; font-size: 17px; fill: var(--ink);
+  font-variant-numeric: lining-nums tabular-nums; paint-order: stroke; stroke: var(--sky-now, var(--paper)); stroke-width: 4px;
+}
+.hero[data-done] .arc-sun-year { opacity: 0; transition: opacity 600ms ease; }
+.hero .arc-label { opacity: 0; transition: opacity 500ms ease; }
+.hero .arc-label.is-shown { opacity: 1; }
+.hero .arc-label, .hero .arc-label-year { paint-order: stroke; stroke: var(--sky-now, var(--paper)); stroke-width: 4px; stroke-linejoin: round; }
+.hero .arc-callout { opacity: 0; transition: opacity 500ms ease; }
+.hero .arc-callout.is-shown { opacity: 0.6; }
+.hero[data-era="dawn"] { --sky-now: var(--sky-dawn); }
+.hero[data-era="morning"] { --sky-now: var(--sky-morning); }
+.hero[data-era="midday"] { --sky-now: var(--sky-midday); }
+
+.hero-copy {
+  position: absolute; z-index: 2; left: 50%; transform: translateX(-50%);
+  bottom: calc(var(--hero-ground, 4.5rem) + clamp(2.5rem, 9vh, 5.5rem));
+  width: min(36rem, calc(100% - 2 * var(--gutter))); text-align: center;
+}
+.hero-copy h1 {
+  font-size: clamp(3rem, 7.4vw, 5.6rem); font-weight: 480; letter-spacing: -0.03em; line-height: 0.95; margin: 0 0 1.1rem;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+.hero-promise { font-size: var(--s1); line-height: 1.45; color: var(--ink-2); margin: 0 auto 1.6rem; max-width: 30rem; text-wrap: balance; }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin: 0; }
+.hero-actions .btn { font-size: var(--s0); padding: 0.65rem 1.2rem; }
+.hero-actions .btn.ghost { background: color-mix(in srgb, var(--paper) 55%, transparent); }
+.hero-key {
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: var(--hero-ground, 4.5rem); margin: 0;
+  display: flex; align-items: flex-end; justify-content: center; padding: 0 var(--gutter) 0.85rem;
+  font-size: var(--s-1); color: var(--ink-2); text-align: center;
+}
+
+@media (max-width: 40rem) {
+  .page > .hero { height: auto; --hero-ground: 2rem; display: flex; flex-direction: column; padding-bottom: 1.25rem; }
+  .page > .hero::after { display: none; }
+  .hero-arc { position: relative; inset: auto; height: 15.5rem; flex: none; margin-top: 0.75rem; }
+  .hero .arc-horizon { opacity: 0.55; }
+  .hero-copy { position: static; transform: none; width: auto; margin: 1.4rem var(--gutter) 0; }
+  .hero-copy h1 { font-size: 3rem; margin-bottom: 0.8rem; }
+  .hero-promise { font-size: var(--s0); margin-bottom: 1.25rem; }
+  .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
+  .hero-key { position: static; height: auto; display: block; padding: 0 var(--gutter); margin-top: 1.25rem; }
+  .hero .arc-label { font-size: 11.5px; }
+  .hero .arc-label-year { font-size: 13px; }
+}
+
+/* ---------- continue ---------- */
+.page > .resume { max-width: var(--wide); margin-top: 2.5rem; }
+.resume-inner {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.5rem;
+  border-left: 3px solid var(--sun); padding: 0.4rem 0 0.4rem 1rem;
+}
+.resume-inner h2 { font-size: var(--s1); margin: 0; }
+.resume-inner p { margin: 0; color: var(--ink-2); font-size: var(--s-1); }
+.resume-inner .btn { margin-left: auto; }
+
+/* ---------- learning path ---------- */
+.page > .journey { margin-top: 4.5rem; }
+.journey-head { max-width: var(--measure); }
+.journey-head h2 { margin-top: 0; }
+.journey-head p { color: var(--ink-2); }
+.journey-map { position: relative; margin-top: 2.5rem; --dot: 2.5rem; }
+.journey-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.journey-line .jl-track { fill: none; stroke: var(--rule); stroke-width: 2.5; }
+.journey-line .jl-done { fill: none; stroke: var(--sun); stroke-width: 3.5; stroke-linecap: round; }
+.stations { list-style: none; margin: 0; padding: 0; counter-reset: stop; display: grid; gap: 2.2rem 1.25rem; grid-template-columns: repeat(6, minmax(0, 1fr)); position: relative; }
+.station { margin: 0; counter-increment: stop; position: relative; padding-top: calc(var(--dot) + 0.9rem); }
+.station:nth-child(even) { margin-top: 3rem; }
+.station::before {
+  content: counter(stop); position: absolute; top: 0; left: 0; width: var(--dot); height: var(--dot); border-radius: 50%;
+  display: grid; place-items: center; font-family: var(--display); font-weight: 620; font-size: var(--s1);
+  background: var(--paper); border: 2px solid var(--ink-2); color: var(--ink); z-index: 1;
+}
+.station.is-started::before { border-color: var(--sun-ink); background: var(--sun-wash); }
+.station.is-done::before { background: var(--sun); border-color: var(--sun); color: #1b1300; }
+.station h3 { margin: 0 0 0.35rem; font-size: var(--s1); }
+.station h3 a { color: var(--ink); text-decoration: none; }
+.station h3 a:hover { text-decoration: underline; }
+.station > p { margin: 0 0 0.6rem; font-size: var(--s-1); color: var(--ink-2); }
+.stop-pages { list-style: none; padding: 0; margin: 0; font-size: var(--s-1); }
+.stop-pages li { margin: 0; padding: 0.15rem 0 0.15rem 1.1em; position: relative; break-inside: avoid; }
+.stop-pages a { text-decoration: none; }
+.stop-pages a:hover { text-decoration: underline; }
+.stop-pages .mark { position: absolute; left: 0; color: var(--good); font-weight: 700; }
+.stop-pages .is-visited a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-2); } /* still reads as a link once visited */
+.stop-status { display: block; font-size: var(--s-2); color: var(--ink-2); margin-top: 0.5rem; }
+
+@media (max-width: 60rem) {
+  .stations { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; }
+  .station, .station:nth-child(even) { margin-top: 0; padding-top: 0.2rem; padding-left: calc(var(--dot) + 1rem); }
+  .stop-pages { columns: 2 12rem; column-gap: 1.5rem; }
+}
+
+/* ---------- what is different ---------- */
+.page > .differences { margin-top: 5rem; }
+.diff-list { margin: 0; }
+.diff-list dt { font-family: var(--display); font-weight: 600; font-size: var(--s1); margin-top: 1.4rem; }
+.diff-list dt:first-child { margin-top: 0; }
+.diff-list dd { margin: 0.25rem 0 0; color: var(--ink-2); }

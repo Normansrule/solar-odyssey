@@ -1,0 +1,31 @@
+/* State of the field: dated tables of fast-moving numbers */
+.sf-groups { display: grid; gap: 0.4rem; }
+.sf-group { margin: 1.2rem 0 0.4rem; font-size: var(--s1); }
+.sf-group:first-child { margin-top: 0; }
+.sf-table { table-layout: fixed; }
+.sf-c1 { width: 40%; } .sf-c2 { width: 16%; } .sf-c3 { width: 11%; } .sf-c4 { width: 20%; } .sf-c5 { width: 13%; }
+.sf-table th[scope="row"] { background: none; font-weight: 400; }
+.sf-table td, .sf-table th { overflow-wrap: anywhere; }
+.sf-label { display: block; font-weight: 650; color: var(--ink); }
+.sf-detail { display: block; color: var(--ink-2); font-size: var(--s-2); margin-top: 0.15rem; max-width: 30rem; }
+.sf-stale { display: block; color: var(--hole); font-size: var(--s-2); font-weight: 650; margin-top: 0.2rem; }
+.sf-value { white-space: nowrap; }
+.sf-num { display: block; font-family: var(--display); font-weight: 600; font-size: var(--s2); line-height: 1.1; font-variant-numeric: lining-nums; }
+.sf-unit { display: block; color: var(--ink-2); font-size: var(--s-2); white-space: normal; max-width: 10rem; margin-left: auto; }
+.sf-asof { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sf-rec { font-size: var(--s-2); display: inline-block; margin-top: 0.3rem; } /* keeps two stacked links 24 px apart (WCAG 2.5.8) */
+.sf-table .verified::before { content: ""; }
+.sf-cmd { background: var(--paper-2); border-radius: var(--radius); padding: 0.7rem 0.9rem; overflow-x: auto; font-size: var(--s-1); margin: 0.5rem 0; }
+.sf-cmd code { background: none; padding: 0; }
+
+/* phones: each row becomes a stacked block so nothing scrolls sideways */
+@media (max-width: 40rem) {
+  .sf-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .sf-table, .sf-table tbody, .sf-table tr, .sf-table th, .sf-table td { display: block; width: 100%; }
+  .sf-table tr { border-bottom: 1px solid var(--rule); padding: 0.6rem 0; }
+  .sf-table th, .sf-table td { border: 0; padding: 0.15rem 0; text-align: left; min-width: 0; }
+  .sf-table td.num { text-align: left; }
+  .sf-unit { margin-left: 0; }
+  .sf-asof::before { content: "As of "; color: var(--ink-2); }
+  .sf-table td:last-child::before { content: "Last verified "; color: var(--ink-2); font-size: var(--s-2); }
+}

@@ -1,0 +1,40 @@
+/* Glossary: a dictionary column with a sticky letter rail. */
+
+.gl-tools { display: flex; flex-wrap: wrap; align-items: end; gap: 0.6rem 1.5rem; margin-bottom: 0.4rem; }
+.gl-filter { flex: 1 1 18rem; max-width: 28rem; }
+.gl-filter input { font-size: var(--s0); padding: 0.55rem 0.7rem; }
+.gl-meta { margin: 0 0 0.5rem; font-size: var(--s-1); color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; align-items: center; }
+
+.gl-letters {
+  position: sticky; top: var(--header-h); z-index: 5; background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(6px); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; gap: 0.1rem; padding: 0.35rem 0; margin: 0.6rem auto 1.5rem;
+}
+.gl-letters a, .gl-letters span {
+  font-family: var(--display); font-weight: 600; font-size: var(--s0); min-width: 1.9rem; min-height: 1.9rem;
+  display: inline-grid; place-items: center; border-radius: var(--radius); text-decoration: none;
+}
+.gl-letters a:hover { background: var(--paper-2); }
+.gl-letters span { color: var(--rule); }
+.gl-letters a.dim { color: var(--ink-2); opacity: 0.45; }
+
+.gl-list { display: grid; gap: 0; }
+.gl-letter { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 2.5rem; border-top: 1px solid var(--rule); padding: 1.2rem 0 0.8rem; scroll-margin-top: calc(var(--header-h) + 3.4rem); }
+.gl-letter[hidden] { display: none; }
+@media (min-width: 48rem) { .gl-letter { grid-template-columns: 4rem minmax(0, var(--measure)); } }
+.gl-letter-h { margin: 0 0 0.6rem; font-size: var(--s4); font-weight: 500; line-height: 1; color: var(--sun-ink); }
+.gl-entries { margin: 0; }
+.gl-entries dt { font-family: var(--display); font-weight: 620; font-size: var(--s1); line-height: 1.25; margin-top: 1rem; scroll-margin-top: calc(var(--header-h) + 3.8rem); border-radius: var(--radius); }
+.gl-entries dt:first-child { margin-top: 0; }
+.gl-entries dt a.gl-self { color: var(--ink); text-decoration: none; }
+.gl-entries dt a.gl-self:hover { text-decoration: underline; }
+.gl-entries dt[hidden], .gl-entries dd[hidden] { display: none; }
+.gl-entries dd { margin: 0.25rem 0 0; }
+.gl-entries dd p { margin: 0 0 0.3rem; }
+.gl-see { font-size: var(--s-1); color: var(--ink-2); }
+.gl-missing { font-family: var(--mono); font-size: 0.9em; }
+.gl-entries dt:target, .gl-entries dt.flash { background: var(--sun-wash); box-shadow: -0.5rem 0 0 var(--sun-wash), 0.5rem 0 0 var(--sun-wash); }
+.gl-entries dt:target + dd { border-left: 3px solid var(--sun); padding-left: 0.7rem; }
+
+.gl-none { display: none; padding: 1.5rem 0; }
+.gl-list.empty .gl-none { display: block; }

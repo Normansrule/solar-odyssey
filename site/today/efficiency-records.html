@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Efficiency over time – Solar Odyssey</title>
+<meta name="description" content="Record lab efficiencies by technology, decade by decade.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="efficiency-records.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="efficiency-records.js"></script>
+</head>
+<body data-page="efficiency-records">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">Solar today</span>
+    <h1>Efficiency over time</h1>
+    <p class="lede">In 1954 the best solar cell turned about one-sixteenth of the sunlight on it into electricity. The best cells today turn more than a third of ordinary sunlight into electricity, and stacked cells under concentrated light nearly half. Here is how each kind of cell climbed, record by record.</p>
+  </header>
+
+  <p>Efficiency is the share of the sunlight's power that comes out as electricity. The records on this page are for <dfn data-term="research-cell">research cells</dfn>: small, carefully made laboratory devices, often smaller than a fingernail, built to find out how far a technology can go. A record only counts once an independent lab has measured it under the same standard light; that is a <dfn data-term="certified-efficiency">certified efficiency</dfn>.<sup class="cite" data-src="nrel-cell-efficiency-chart,green-tables-67"></sup></p>
+
+  <section class="widget er-widget" id="records" aria-labelledby="records-h">
+    <h2 id="records-h">Record efficiencies, 1954 to today</h2>
+    <p class="caption">Each line steps up when a new record is set. Press play to watch the decades go by, or drag the year. Switch technologies on and off with the buttons.</p>
+    <div class="er-filters" role="group" aria-label="Technologies shown" id="er-filters"></div>
+    <div class="er-chart chart tall" id="er-chart" aria-label="Line chart of record research-cell efficiencies by technology from 1954 to 2026, with the single-junction limit near 33 percent drawn as a reference line."></div>
+    <div class="er-time">
+      <div class="btn-row">
+        <button type="button" class="btn" id="er-play">Play</button>
+        <button type="button" class="btn ghost" id="er-back">Back a decade</button>
+        <button type="button" class="btn ghost" id="er-fwd">Forward a decade</button>
+      </div>
+      <div class="control er-year">
+        <label for="er-year">Year <output id="er-year-out" for="er-year">2026</output></label>
+        <input type="range" id="er-year" min="1954" max="2026" step="1" value="2026">
+      </div>
+    </div>
+    <p class="caption er-summary" id="er-summary" aria-live="polite"></p>
+    <p class="caption">Lines in the same colour belong to the same family; shapes and labels tell them apart. The dashed III-V line is measured under sunlight concentrated hundreds of times, so it is not a fair comparison with the one-sun lines. <span class="data-badge" id="er-badge">Loading data</span></p>
+    <details class="er-table">
+      <summary>All records in the chart, as a table</summary>
+      <div class="table-wrap" id="er-table"></div>
+    </details>
+  </section>
+
+  <h2 id="reading">What the lines say</h2>
+  <p><strong>Silicon climbed slowly, then flattened.</strong> <span class="claim claim--settled">Settled history</span> Bell Labs' first cell reached about 6 % in 1954.<sup class="cite" data-src="chapin-1954"></sup> Better surfaces and contacts took it to 22.8 % at the University of New South Wales in 1989,<sup class="cite" data-src="blakers-1989"></sup> and putting every contact on the back pushed past 26 % in 2017.<sup class="cite" data-src="yoshikawa-2017"></sup> The record now stands at 28.29 % (LONGi, certified by the ISFH institute in Germany, September 2026).<sup class="cite" data-src="pv-magazine-longi-hibc-2026"></sup> <span class="verified">2026-09-30</span> That is close to the roughly 29.4 % that silicon can reach at best, once its own unavoidable losses are counted.<sup class="cite" data-src="richter-2013"></sup></p>
+  <p><strong>Perovskites shot up.</strong> <span class="claim claim--research">Active research</span> The first <dfn data-term="perovskite">perovskite</dfn> cell, in 2009, managed 3.8 % and did not last long.<sup class="cite" data-src="kojima-2009"></sup> Within four years cells passed 15 %,<sup class="cite" data-src="burschka-2013"></sup> and in 2026 a 0.05 cm² cell from Hainan University entered the efficiency tables at 28.0 %, after the company SolaEon had announced 27.87 % in January.<sup class="cite" data-src="green-tables-68,pv-magazine-tables-68,solaeon-2026"></sup> <span class="verified">2026-10-02</span> Silicon needed about seventy years to cover the same ground. Lasting outdoors for decades is the open problem; see <a href="../frontier.html">the frontier</a>.</p>
+  <p><strong>Stacks win.</strong> Every line above the dotted single-junction limit is a stack of two or more cells. A perovskite layer on silicon reached 35.5 % in 2026,<sup class="cite" data-src="longi-tandem-2026"></sup> and a four-cell stack of III-V semiconductors under 665 suns of concentrated light holds the overall record of 47.6 %, set by Fraunhofer ISE in 2022.<sup class="cite" data-src="fraunhofer-ise-47-6"></sup> <span class="verified">2026-09-30</span></p>
+
+  <h2 id="limit">The ceiling for one junction</h2>
+  <p>A cell with a single <dfn data-term="band-gap">band gap</dfn> wastes photons below the gap and turns the extra energy of the others into heat. The best it can do in ordinary sunlight is the <dfn data-term="shockley-queisser-limit">Shockley–Queisser limit</dfn>: about 33 %, reached at a gap near 1.34 eV.<sup class="cite" data-src="shockley-queisser-1961,ruhle-2016"></sup> Silicon's gap (1.12 eV) is a little narrower than the ideal, and its indirect gap adds extra losses, which is why its own ceiling is lower.</p>
+  <div class="expert expert-note">
+    <p>Rühle's tabulation gives 33.16 % at 1.34 eV for the AM1.5G reference spectrum at 25 °C;<sup class="cite" data-src="ruhle-2016"></sup> figures of up to about 33.7 % that you will often see come from calculations with slightly different spectra and assumptions. The chart draws Rühle's value. The silicon figure of 29.4 % adds Auger recombination and free-carrier absorption for an undoped 110 µm wafer.<sup class="cite" data-src="richter-2013"></sup></p>
+  </div>
+
+  <h2 id="modules">Records are not what goes on your roof</h2>
+  <p>A record cell is a best case: tiny, hand-made and measured once. A <dfn data-term="module-efficiency">module</dfn> joins dozens of full-size cells behind glass, with gaps, wiring and a frame that make no power. The average crystalline-silicon module sold in late 2024 was 22.7 % efficient, against 28 % for the best silicon cell;<sup class="cite" data-src="fraunhofer-pv-report-2026"></sup> the best certified full-size silicon module reached 26.4 % in 2026.<sup class="cite" data-src="green-tables-68"></sup> <span class="verified">2026-10-02</span> Ten years earlier, typical modules were around 17 %.<sup class="cite" data-src="fraunhofer-pv-report-2026"></sup> Record cells point the way; factories follow a few years behind.</p>
+
+  <div class="expert expert-note">
+    <p>How a record is set. The cell is sent to an accredited test centre (NREL, Fraunhofer ISE CalLab, ISFH, ESTI, AIST, NPVM and a few others) and measured under <dfn data-term="standard-test-conditions">standard test conditions</dfn>: 1000 W/m² of the AM1.5 global spectrum at 25 °C, over a stated area.<sup class="cite" data-src="green-tables-67"></sup> The Solar cell efficiency tables, published twice a year (in Progress in Photovoltaics until Version 67, in Joule from Version 68), list results above 1 cm² as main entries and smaller devices as notable exceptions; NREL's chart shows the best result for each technology regardless of size.<sup class="cite" data-src="green-tables-66,green-tables-68,nrel-cell-efficiency-chart"></sup></p>
+    <p>What we left out. We plot only milestones we could check against the original paper, the certifying lab or the institution's own release. Several families are missing for that reason: multicrystalline and amorphous silicon, cadmium telluride and single-junction gallium arsenide. NREL's chart has all of them. Company announcements (SolaEon 2026, LONGi 2023–2026) are marked as such in the table and may be revised when the next efficiency tables appear.</p>
+  </div>
+
+  <p class="changes-note">These numbers move several times a year. Every current record, with its date and source, is on the <a href="../state-of-the-field.html">state of the field</a> page.</p>
+
+  <h2 id="next">Where next</h2>
+  <p>Efficiency is only half of why solar took over. The other half is price: <a href="cost-decline.html">the cost collapse</a>.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

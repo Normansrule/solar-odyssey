@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "title": "Check your understanding: The band gap",
+    "sources": [
+      "pveducation-band-gap",
+      "shockley-queisser-1961",
+      "ruhle-2016",
+      "de-vos-1980"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "band-gap",
+    "minutes": 30,
+    "objectives": [
+      "Explain why any single band gap wastes part of sunlight, both below and above the gap",
+      "Calculate the longest wavelength a material can absorb from its band gap",
+      "Describe what the Shockley–Queisser limit is and how stacking gaps gets past it"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Germanium's band gap (0.66 eV) lets almost every photon in sunlight be absorbed. Why is its single-junction limit still well below silicon's?",
+        "choices": [
+          "It lets too many photons pass straight through unabsorbed",
+          "Most of each absorbed photon's energy is lost as heat above the low gap",
+          "Its gap is direct, so it needs a much thicker absorber",
+          "Germanium reflects most of the sunlight that reaches it"
+        ],
+        "answer": 1,
+        "explain": "A low step lets nearly every photon in, but each one keeps only 0.66 eV and loses the rest as heat; set the widget to 0.66 eV and more than half of the Sun's power lands in the heat slice. Photons passing straight through is the problem of a high gap, the opposite case.",
+        "source": "pveducation-band-gap"
+      },
+      {
+        "id": "q2",
+        "prompt": "The perovskite methylammonium lead iodide (MAPbI₃) has a band gap of about 1.61 eV. Using λ_g = hc ÷ E_g with hc ≈ 1240 eV·nm, what is the longest wavelength it can absorb?",
+        "choices": [
+          "About 1997 nm",
+          "About 1107 nm",
+          "About 770 nm",
+          "About 1240 nm"
+        ],
+        "answer": 2,
+        "explain": "1240 ÷ 1.61 ≈ 770 nm, at the red edge of visible light, so this perovskite misses the near-infrared that silicon (cutoff 1107 nm) still catches. Multiplying instead of dividing gives 1997 nm; a wider gap always means a shorter cutoff wavelength.",
+        "source": "zhang-2020"
+      },
+      {
+        "id": "q3",
+        "prompt": "This page's chart peaks at about 30.5 %, yet the Shockley–Queisser limit is usually quoted as about 33 %. Why the difference?",
+        "choices": [
+          "The chart includes real-cell losses such as reflection and resistance",
+          "The 33 % is for a stack of two cells, not a single one",
+          "The chart is for silicon only, and 33 % is for gallium arsenide",
+          "They use different light: a blackbody sun above the atmosphere, or the sea-level AM1.5G spectrum"
+        ],
+        "answer": 3,
+        "explain": "Both are ideal single-junction limits; only the sunlight differs. The blackbody sun above the atmosphere includes ultraviolet and far-infrared power no single gap uses well, while the standard sea-level spectrum (AM1.5G) has much of that stripped out, so more of what is left is usable. Neither number includes real-cell losses.",
+        "source": "ruhle-2016"
+      },
+      {
+        "id": "q4",
+        "prompt": "To beat the single-gap limit, a tandem stacks two cells with different band gaps. How should they be arranged?",
+        "choices": [
+          "Wide gap on top to take the high-energy photons, narrow gap underneath for the rest",
+          "Narrow gap on top, so that it absorbs the most photons first",
+          "Two cells with the same gap, so that the voltage doubles",
+          "Either way round, as long as the two gaps add up to about 1.34 eV"
+        ],
+        "answer": 0,
+        "explain": "Each colour should meet a gap that wastes little of it. A wide-gap top cell takes the blue end and lets lower-energy light through to the narrow-gap cell below. With the narrow gap on top it would absorb almost everything and lose the surplus as heat, leaving the wide-gap cell nothing it can use.",
+        "source": "de-vos-1980"
+      }
+    ]
+  }
+}

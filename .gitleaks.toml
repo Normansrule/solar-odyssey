@@ -1,0 +1,16 @@
+# gitleaks configuration: the default rules, plus one narrow exception.
+# Bibliography source ids such as "shockley-queisser-1961" (author-author-year slugs)
+# in the dataset JSON trip the entropy-based generic-api-key rule. The exception covers
+# only that rule, only dataset JSON files, and only strings of that exact slug shape.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Bibliography source ids (author-year slugs) in dataset JSON"
+condition = "AND"
+paths = ['''(^|/)(site/data|data-src)/.*\.json$''']
+regexTarget = "secret"
+regexes = ['''^[a-z]+(-[a-z0-9]+)*-(1[6-9]|20)\d\d[a-z]?$''']

@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "title": "Check your understanding: The cost collapse",
+    "sources": [
+      "owid-solar-pv-prices",
+      "wright-1936",
+      "kavlak-2018",
+      "nemet-2019"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "cost-decline",
+    "minutes": 25,
+    "objectives": [
+      "Describe how the price of a solar module fell between 1975 and 2024",
+      "Use Wright's law to estimate cost after a number of doublings of cumulative capacity",
+      "Explain why a steady percentage fall is a straight line on a logarithmic axis, and what drove the decline"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "In Wright's law, known for solar modules as Swanson's law, what has to double for the cost to fall by one learning rate?",
+        "choices": [
+          "Calendar time: the cost drops by that share every couple of years",
+          "The efficiency of the best laboratory cell",
+          "The number of factories making panels",
+          "The total capacity ever built, the cumulative capacity"
+        ],
+        "answer": 3,
+        "explain": "The learning rate is the share of cost removed each time everything ever built doubles. Solar got cheap fast because the world kept doubling its cumulative capacity quickly, not because a fixed amount of time passed.",
+        "source": "wright-1936"
+      },
+      {
+        "id": "q2",
+        "prompt": "A module costs $1.00 per watt when the world has built 100 GW in total. With a 20 % learning rate, what does Wright's law predict once 800 GW have been built?",
+        "choices": [
+          "$0.40",
+          "$0.51",
+          "$0.17",
+          "$0.80"
+        ],
+        "answer": 1,
+        "explain": "800 ÷ 100 = 8 = 2³, so n = 3 doublings and C = 1.00 × 0.8³ ≈ $0.51. Taking 20 % off three times is not 60 % off ($0.40), because each cut applies to the already lower price. Using 8 as the number of doublings gives 0.8⁸ ≈ $0.17.",
+        "source": "wright-1936"
+      },
+      {
+        "id": "q3",
+        "prompt": "On the price chart each step down the vertical axis is ten times cheaper. What does a straight downward line on this chart mean?",
+        "choices": [
+          "The price falls by the same percentage each year",
+          "The price falls by the same number of dollars each year",
+          "The price has stopped falling",
+          "The price becomes ten times cheaper every year"
+        ],
+        "answer": 0,
+        "explain": "On a logarithmic axis equal distances are equal ratios, so a steady percentage fall plots as a straight line. A fixed dollar drop each year would instead bend ever more steeply downward on these axes as the price neared zero.",
+        "source": "owid-solar-pv-prices"
+      },
+      {
+        "id": "q4",
+        "prompt": "According to the studies the page cites, what drove the solar cost collapse?",
+        "choices": [
+          "One breakthrough, the invention of the PERC cell in 1989",
+          "Cheaper silicon from new mines, with cell designs unchanged",
+          "Many causes adding up, with markets created by policy paying for factory scale",
+          "Research funding alone, rising steadily since the 1970s"
+        ],
+        "answer": 2,
+        "explain": "No single invention did it: more efficient cells, thinner wafers and less silicon per watt, much bigger factories and steady research all added up. Public research mattered most early on; after about 2001, economies of scale in ever-larger factories became a bigger driver than research.",
+        "source": "kavlak-2018"
+      }
+    ]
+  }
+}

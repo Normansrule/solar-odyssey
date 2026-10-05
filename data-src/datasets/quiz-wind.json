@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Check your understanding: Wind",
+    "sources": [
+      "manwell-2009",
+      "van-kuik-2007",
+      "vestas-v172"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "wind",
+    "minutes": 35,
+    "objectives": [
+      "Explain how the apparent wind and lift make a blade turn the rotor",
+      "Calculate the power in the wind with the cube law and a rotor's tip-speed ratio",
+      "Explain the Betz limit and how a power coefficient differs from a capacity factor"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Two sites have identical turbines, but at one of them the wind blows 20 % faster. How much more power is in the wind there?",
+        "choices": [
+          "About 20 % more",
+          "About 44 % more",
+          "About 73 % more",
+          "About 20 % less, as fast air spends less time in the rotor"
+        ],
+        "answer": 2,
+        "explain": "Power goes with the cube of the wind speed: 1.2 × 1.2 × 1.2 ≈ 1.73, so about 73 % more. 44 % comes from squaring the speed, as for kinetic energy alone, and forgets that faster wind also brings more air through the rotor each second."
+      },
+      {
+        "id": "q2",
+        "prompt": "Why can no rotor capture more than about 59.3 % of the power in the wind passing through it?",
+        "choices": [
+          "Blade drag and gearbox friction waste the other 40 % or so",
+          "The air must keep flowing away behind the rotor, so it cannot be stopped dead",
+          "The generator's rated power caps the output in strong winds",
+          "Three blades cover only about 59 % of the area the rotor sweeps"
+        ],
+        "answer": 1,
+        "explain": "If the rotor stopped the air, no more could arrive; the best compromise slows the wind by one third at the rotor and catches 16/27 of its power. Drag and friction are real extra losses on top of that, which is why good rotors reach about 45 %, but they do not set the 59.3 % ceiling.",
+        "source": "van-kuik-2007"
+      },
+      {
+        "id": "q3",
+        "prompt": "A Vestas V172 has a 172 m rotor (radius 86 m). Turning at 8 rpm in a 9 m/s wind, what is its tip-speed ratio?",
+        "choices": [
+          "0.89",
+          "72",
+          "16",
+          "8.0"
+        ],
+        "answer": 3,
+        "explain": "The tips move at 2π × 86 × 8 ÷ 60 ≈ 72 m/s, and 72 ÷ 9 ≈ 8.0, inside the seven-to-nine range where three-bladed rotors work best. 72 is the tip speed in m/s rather than the ratio, and 16 comes from using the diameter instead of the radius.",
+        "source": "manwell-2009"
+      },
+      {
+        "id": "q4",
+        "prompt": "The page's 15 MW turbine at a site with 9 m/s average winds has a capacity factor of 52 %. What does that number mean?",
+        "choices": [
+          "Over a year it makes 52 % of the energy it would make at full rated power every hour",
+          "It captures 52 % of the power in the wind that passes through its rotor",
+          "It turns for 52 % of the year and stands still for the rest",
+          "Its generator turns 52 % of the rotor's mechanical power into electricity"
+        ],
+        "answer": 0,
+        "explain": "Capacity factor is the year's energy divided by what the turbine would make at full power for all 8,760 hours. The share of the wind's power the rotor catches is the power coefficient (Cp), capped by the Betz limit at 59.3 %, and a turbine spends much of the year running at part power rather than simply on or off.",
+        "source": "manwell-2009"
+      }
+    ]
+  }
+}

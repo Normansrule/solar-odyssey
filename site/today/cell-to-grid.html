@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>From cell to grid – Solar Odyssey</title>
+<meta name="description" content="Modules, arrays, inverters, MPPT and the balance of system.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="cell-to-grid.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="cell-to-grid.js"></script>
+</head>
+<body data-page="cell-to-grid">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">Solar today</span>
+    <h1>From cell to grid</h1>
+    <p class="lede">One silicon cell gives you about half a volt. The grid wants hundreds of volts of alternating current, around the clock. Here is everything that sits in between.</p>
+  </header>
+
+  <h2 id="module">Cells into a module</h2>
+  <p>A single silicon cell in full sun produces about 0.7 V with no load (its <dfn data-term="open-circuit-voltage">open-circuit voltage</dfn>) and about 0.6 V at its best working point, whatever its size. A bigger cell gives more current, not more voltage.<sup class="cite" data-src="pveducation-voc"></sup> To reach useful voltages, cells are wired in series, the front of one to the back of the next, so their voltages add while the same current flows through all of them. Laminated between glass and a back sheet, with a frame and a junction box, that chain is a <dfn data-term="solar-module">solar module</dfn>.</p>
+
+  <div class="eq">
+    <p>Voltages of cells in series add; currents of chains in parallel add.</p>
+    <div class="tex">V_\text{module} = N_\text{s}\, V_\text{cell}, \qquad I_\text{module} = N_\text{p}\, I_\text{chain}</div>
+    <dl class="symbols">
+      <dt><span class="tex">N_\text{s}</span></dt><dd>number of cells in series in one chain</dd>
+      <dt><span class="tex">N_\text{p}</span></dt><dd>number of chains in parallel (1 for full cells, 2 for half-cut cells)</dd>
+      <dt><span class="tex">V_\text{cell}, I_\text{chain}</span></dt><dd>voltage of one cell (V), current of one chain (A)</dd>
+    </dl>
+    <div class="worked" data-check="system:seriesVoltage" data-args="[72, 0.70]" data-expect="50.4" data-tol="0.01">
+      A 144-half-cell module is wired as two chains of 72 half cells. Each chain gives 72 × 0.70 V = <span class="answer">50.4 V</span> open-circuit, the same as a module of 72 full cells.
+    </div>
+    <div class="worked" data-check="system:moduleStc" data-args="[{&quot;cells&quot;: 144, &quot;halfCut&quot;: true}]" data-pick="Voc" data-expect="50.7" data-tol="0.1">
+      The site's diode model of that module gives <span class="answer">50.7 V</span> open-circuit and about 13 A short-circuit current, close to a real module of this size.
+    </div>
+  </div>
+
+  <h3 id="counts">Why 60, 72, 120 or 144 cells?</h3>
+  <p>The cell count sets the module's voltage and size. For many years modules held 60 or 72 full square cells, which at about 0.6 V each gives a working voltage in the mid-30s or low-40s of volts. Today's modules usually hold 120 or 144 <dfn data-term="half-cut-cells">half-cut cells</dfn>: each full cell is cut in two by a laser, and the halves are wired as two chains in parallel. The voltage stays the same as 60 or 72 full cells, but each chain carries only half the current.</p>
+  <p>That matters because the power wasted as heat in a wire grows with the square of the current. Halve the current and the loss in the same wire drops to a quarter.</p>
+  <div class="eq">
+    <div class="tex">P_\text{loss} = I^2 R</div>
+    <dl class="symbols">
+      <dt><span class="tex">I</span></dt><dd>current in the wire (A)</dd>
+      <dt><span class="tex">R</span></dt><dd>resistance of the wire (Ω)</dd>
+    </dl>
+    <div class="worked" data-check="system:ohmicLossW" data-args="[6.6, 0.01]" data-expect="0.436" data-tol="0.001">
+      Through a ribbon of 0.01 Ω, a full cell's 13.2 A wastes 13.2² × 0.01 = 1.74 W. Half a cell's 6.6 A wastes only 6.6² × 0.01 = <span class="answer">0.436 W</span>, a quarter as much.
+    </div>
+  </div>
+
+  <h2 id="shading">Shade and the bypass diode</h2>
+  <p>Series wiring has a weakness. The same current must flow through every cell, so one shaded cell, which can only make a little current, throttles the whole chain like a kink in a hose. Worse, the other cells force it into reverse, so instead of making power it absorbs some and turns it into heat: a <dfn data-term="hot-spot">hot spot</dfn> that can crack glass or scorch the back sheet.</p>
+  <p>The fix is a <dfn data-term="bypass-diode">bypass diode</dfn>, a one-way valve wired across a group of cells. While the group works normally the diode does nothing. When a cell in the group is shaded and the group's voltage swings negative, the diode starts to conduct and the string current flows around the group instead of through it. The module loses that group's share of power but keeps the rest.<sup class="cite" data-src="pveducation-bypass"></sup></p>
+
+  <section class="widget bp-widget" id="bypass" aria-labelledby="bypass-h">
+    <h2 id="bypass-h">Shade a cell, follow the current</h2>
+    <p class="caption">A 72-cell module split into three groups of 24, each with its own bypass diode. Select cells to shade them, or use the controls. The module runs at its best power point; line thickness shows current.</p>
+    <svg class="stage bp-stage" id="bp-svg" viewBox="0 0 760 340" role="img" aria-labelledby="bp-title"><title id="bp-title">Module with three cell groups and bypass diodes</title></svg>
+    <div class="bp-controls">
+      <fieldset class="bp-groups">
+        <legend>Shaded cells in each group</legend>
+        <div class="bp-group-inputs" id="bp-group-inputs"></div>
+      </fieldset>
+      <div class="control">
+        <label for="bp-shade">Light lost by a shaded cell <output id="bp-shade-out" for="bp-shade">75 %</output></label>
+        <input type="range" id="bp-shade" min="0" max="100" step="5" value="75">
+      </div>
+      <div class="control bp-check">
+        <input type="checkbox" id="bp-diodes" checked>
+        <label for="bp-diodes">Bypass diodes fitted</label>
+      </div>
+    </div>
+    <dl class="readout" id="bp-readout"></dl>
+    <p class="caption" id="bp-explain" aria-live="polite"></p>
+  </section>
+
+  <div class="expert expert-note">
+    <p>The model solves each group separately. At the string current <span class="tex">I</span> it finds every cell's voltage on its own I-V curve, including reverse bias through the shunt resistance, and adds them. If the group total would fall below minus one diode drop (taken as 0.5 V), the diode conducts, clamping the group there, and the cells carry only the current that leaves their sum at that clamp. Notice that even with a diode the shaded cell still dissipates some heat: it is reverse-biased by the sum of the other 23 cells' voltages. PVEducation suggests no more than about 15 silicon cells per diode to keep a shaded cell safe; the widget's groups of 24 are larger than that, which is why the shaded cell still warms.<sup class="cite" data-src="pveducation-bypass"></sup> The model's shunt is idealised and real cells break down in reverse in ways it does not capture.</p>
+  </div>
+
+  <h2 id="strings">Modules into strings and arrays</h2>
+  <p>An inverter works best at a few hundred volts or more, far above one module's 40-odd. So modules are wired in series again, into a <dfn data-term="string">string</dfn>. To collect more current, several strings are connected in parallel, all at the same voltage, into an array. The rule is the same as for cells: series adds voltage, parallel adds current.</p>
+  <div class="eq">
+    <div class="worked" data-check="system:parallelCurrent" data-args="[3, 13.2]" data-expect="39.6" data-tol="0.01">
+      Three strings of 13.2 A modules in parallel deliver 3 × 13.2 A = <span class="answer">39.6 A</span> at the voltage of one string.
+    </div>
+  </div>
+
+  <h3 id="cold">The cold-morning limit</h3>
+  <p>A cell's voltage rises as it gets colder, by about 2 mV for every degree.<sup class="cite" data-src="pveducation-temperature"></sup> The highest voltage a string ever reaches is therefore on a bright, freezing morning, before the sun has warmed the modules. Electrical codes ask designers to size strings for that moment: in the United States, the National Electrical Code (NEC) asks for the open-circuit voltage corrected to the lowest expected temperature, using the maker's temperature coefficient.<sup class="cite" data-src="holt-nec-690-2016"></sup></p>
+  <div class="eq">
+    <div class="tex">V_\text{oc,cold} = N \cdot V_\text{oc,STC}\,\bigl(1 + \beta\,(T_\text{min} - 25\,^\circ\text{C})\bigr)</div>
+    <dl class="symbols">
+      <dt><span class="tex">N</span></dt><dd>modules in series</dd>
+      <dt><span class="tex">V_\text{oc,STC}</span></dt><dd>module open-circuit voltage at 25 °C (V)</dd>
+      <dt><span class="tex">\beta</span></dt><dd>voltage temperature coefficient, as a fraction per °C (negative; −0.27 %/°C is −0.0027 per °C)</dd>
+      <dt><span class="tex">T_\text{min}</span></dt><dd>lowest expected temperature (°C)</dd>
+    </dl>
+    <div class="worked" data-check="system:coldStringVoc" data-args="[50.7, 18, -0.27, -10]" data-expect="998.8" data-tol="0.2">
+      Eighteen 50.7 V modules with β = −0.27 %/°C at −10 °C reach 18 × 50.7 × (1 + 0.0027 × 35) = <span class="answer">998.8 V</span>, just inside a 1000 V limit.
+    </div>
+    <div class="worked" data-check="system:maxModulesInSeries" data-args="[1000, 50.7, -0.27, -10]" data-expect="18" data-tol="0">
+      A nineteenth module would push the string to about 1054 V, so the longest safe string here is <span class="answer">18</span> modules.
+    </div>
+  </div>
+
+  <h3 id="hot">And the hot afternoon</h3>
+  <p>The opposite happens in summer: hot modules give less voltage and less power. A module's datasheet rating is at 25 °C, but in sunshine its cells run far hotter than the air. A simple estimate uses the <dfn data-term="noct">nominal operating cell temperature</dfn> (NOCT), measured at 800 W/m², 20 °C air and a light breeze; most modules sit around 40–45 °C.<sup class="cite" data-src="pveducation-noct"></sup></p>
+  <div class="eq">
+    <div class="tex">T_\text{cell} \approx T_\text{air} + \frac{\text{NOCT} - 20\,^\circ\text{C}}{800\ \text{W/m}^2}\,G</div>
+    <dl class="symbols">
+      <dt><span class="tex">T_\text{air}</span></dt><dd>air temperature (°C)</dd>
+      <dt><span class="tex">G</span></dt><dd>sunlight on the module (W/m²)</dd>
+    </dl>
+    <div class="worked" data-check="system:cellTempC" data-args="[25, 1000, 45]" data-expect="56.25" data-tol="0.01">
+      On a 25 °C day in full 1000 W/m² sun, a module with a NOCT of 45 °C runs at about 25 + 25 × 1000 / 800 = <span class="answer">56 °C</span>.
+    </div>
+    <div class="worked" data-check="system:atTemperature" data-args="[550, -0.3, 56.25]" data-expect="498.4" data-tol="0.1">
+      With a power coefficient of −0.30 %/°C, a 550 W module then gives 550 × (1 − 0.003 × 31.25) = <span class="answer">498 W</span>, about 9 % below its rating.
+    </div>
+  </div>
+
+  <h2 id="inverter">The inverter and maximum power point tracking</h2>
+  <p>Modules make direct current (DC). Homes and the grid run on alternating current (AC), which swings back and forth 50 or 60 times a second. The <dfn data-term="inverter">inverter</dfn> converts one into the other by switching transistors on and off thousands of times a second and smoothing the result into a sine wave locked to the grid's.</p>
+  <p>Its second job is just as important. The power a string delivers depends on the voltage the inverter holds it at. Too low and the voltage is wasted; too high and the current collapses. In between lies the <dfn data-term="maximum-power-point">maximum power point</dfn>, and it moves every time a cloud passes or the modules warm up. Following it is called <dfn data-term="mppt">maximum power point tracking</dfn> (MPPT).</p>
+  <p>The simplest tracker, <dfn data-term="perturb-and-observe">perturb and observe</dfn>, nudges the voltage a little, checks whether the power went up, and keeps going if it did or turns back if it did not. It is cheap and works well on a curve with a single hump.<sup class="cite" data-src="esram-chapman-2007"></sup> But <dfn data-term="partial-shading">partial shading</dfn>, with bypass diodes doing their job, gives the curve two or more humps. A tracker that only looks at its neighbourhood can settle happily on a lower one. That is why trackers also run an occasional global scan across the whole voltage range.<sup class="cite" data-src="patel-agarwal-2008"></sup></p>
+
+  <section class="widget mppt-widget" id="mppt" aria-labelledby="mppt-h">
+    <h2 id="mppt-h">MPPT in action</h2>
+    <p class="caption">The power-voltage curve of the 72-cell module above. The tracker starts near open circuit, as an inverter does when it wakes, and climbs. Shade a cell to give the curve a second hump, then watch what perturb and observe does, and what a global scan finds.</p>
+    <div class="widget-body split">
+      <div>
+        <svg class="stage mppt-stage" id="mppt-svg" viewBox="0 0 640 360" role="img" aria-labelledby="mppt-title"><title id="mppt-title">Power against voltage for one module, with the tracker's operating point</title></svg>
+        <ul class="legend mppt-legend">
+          <li><span class="key key-curve" aria-hidden="true"></span>Module power curve</li>
+          <li><span class="key key-trail" aria-hidden="true"></span>Tracker's recent steps</li>
+          <li><span class="key key-op" aria-hidden="true"></span>Operating point</li>
+          <li><span class="key key-peak" aria-hidden="true"></span>Highest peak (global)</li>
+        </ul>
+      </div>
+      <div class="controls">
+        <div class="btn-row">
+          <button type="button" class="btn" id="mppt-run">Run tracker</button>
+          <button type="button" class="btn ghost" id="mppt-step">One step</button>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn ghost" id="mppt-scan">Global scan</button>
+          <button type="button" class="btn ghost" id="mppt-reset">Restart at open circuit</button>
+        </div>
+        <div class="control bp-check">
+          <input type="checkbox" id="mppt-shade">
+          <label for="mppt-shade">Shade one cell</label>
+        </div>
+        <div class="control">
+          <label for="mppt-depth">Light lost by the shaded cell <output id="mppt-depth-out" for="mppt-depth">75 %</output></label>
+          <input type="range" id="mppt-depth" min="10" max="100" step="5" value="75">
+        </div>
+        <div class="control">
+          <label for="mppt-dv">Step size <output id="mppt-dv-out" for="mppt-dv">0.6 V</output></label>
+          <input type="range" id="mppt-dv" min="0.2" max="3" step="0.1" value="0.6">
+        </div>
+        <dl class="readout" id="mppt-readout"></dl>
+      </div>
+    </div>
+    <p class="caption" id="mppt-status" aria-live="polite"></p>
+  </section>
+
+  <div class="expert expert-note">
+    <p>Perturb and observe compares <span class="tex">P_k</span> with <span class="tex">P_{k-1}</span> after each voltage step <span class="tex">\pm\Delta V</span> and reverses when power falls. At steady state it oscillates around the peak by about one step, so a larger step tracks fast changes quickly but wastes more power in steady sun. It can also be fooled when irradiance changes during a step, mistaking a brighter sky for a better voltage; incremental-conductance methods compare <span class="tex">dI/dV</span> with <span class="tex">-I/V</span> instead.<sup class="cite" data-src="esram-chapman-2007"></sup> Under partial shading each bypassed group adds a local maximum, roughly at multiples of a group's voltage, which global methods exploit to scan only a few candidate voltages.<sup class="cite" data-src="patel-agarwal-2008"></sup></p>
+  </div>
+
+  <h2 id="bos">Balance of system</h2>
+  <p>Everything except the modules is called the <dfn data-term="balance-of-system">balance of system</dfn>. Most of it is unglamorous and all of it matters.</p>
+  <ul>
+    <li><strong>Mounting.</strong> Roof rails and clamps on homes; steel racks driven into the ground on plants. Fixed racks tilt the modules toward the equator.</li>
+    <li><strong>Trackers.</strong> On many large plants each row of modules sits on a motorised <dfn data-term="solar-tracker">tracker</dfn> that turns it east in the morning and west in the afternoon, catching more of the day's light. The <a href="sun-path.html">sun path</a> lesson shows why.</li>
+    <li><strong>Wiring and connectors.</strong> Sunlight-resistant DC cable, matched plug-in connectors, and combiner boxes that join strings.</li>
+    <li><strong>Protection.</strong> Fuses for strings in parallel (so one faulty string cannot swallow the current of the others), DC and AC disconnect switches, surge protection and grounding.</li>
+    <li><strong>Monitoring.</strong> Meters and data loggers that spot a failed string or a dirty array.</li>
+  </ul>
+
+  <h2 id="grid">Connecting to the grid, and the rules</h2>
+  <p>A system that feeds the public grid is not just plugged in. The inverter must hold its output within the grid's voltage and frequency limits, ride through brief disturbances, and, above all, stop exporting if the grid goes down, so that it never energises a line a repair crew believes is dead. That safety function is called <dfn data-term="anti-islanding">anti-islanding</dfn>. Four standards come up again and again.</p>
+  <div class="table-wrap">
+    <table>
+      <caption class="visually-hidden">Key standards for solar modules and grid connection</caption>
+      <thead><tr><th scope="col">Standard</th><th scope="col">Full title</th><th scope="col">What it covers</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">IEC 61215</th><td>Terrestrial photovoltaic (PV) modules – Design qualification and type approval (Part 1: Test requirements, 2021)</td><td>A battery of stress tests (heat, cold, damp, hail, load, light) a module design must pass to show it will survive long-term outdoor use.<sup class="cite" data-src="iec-61215-1-2021"></sup></td></tr>
+        <tr><th scope="row">IEC 61730</th><td>Photovoltaic (PV) module safety qualification (Part 1: Requirements for construction, 2023)</td><td>Construction and testing that keep a module from causing electric shock, fire or injury over its life.<sup class="cite" data-src="iec-61730-1-2023"></sup></td></tr>
+        <tr><th scope="row">IEEE 1547</th><td>Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces (2018)</td><td>How inverters and other distributed generators must behave on the grid: voltage and frequency response, ride-through, communications, and stopping when the grid is lost.<sup class="cite" data-src="ieee-1547-2018"></sup></td></tr>
+        <tr><th scope="row">UL 1741</th><td>Inverters, Converters, Controllers and Interconnection System Equipment for Use With Distributed Energy Resources</td><td>North American safety standard for inverters and related equipment; for grid-connected units it supplements IEEE 1547.<sup class="cite" data-src="ul-1741"></sup></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Grids with a lot of solar are now asking inverters to do more than follow: to support voltage, ride through faults and even set the grid's rhythm themselves.<sup class="cite" data-src="lin-2020-grid-forming"></sup> The <a href="../renewables/grid.html">smart grid</a> lesson picks up that story. To try the design rules on this page yourself, open the <a href="system-builder.html">system builder</a>.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

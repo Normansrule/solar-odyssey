@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Check your understanding: The smart grid",
+    "sources": [
+      "dorfler-gross-2023",
+      "caiso-duck-2016",
+      "lin-2020-grid-forming"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "grid",
+    "minutes": 35,
+    "objectives": [
+      "Explain how inertia slows the fall in frequency after a power station trips",
+      "Calculate the rate of change of frequency (RoCoF) with the swing equation",
+      "Explain the duck curve and the tools a smart grid uses to balance it"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "As inverter-connected solar and wind replace coal and gas plants, why does the frequency fall faster after a power station trips?",
+        "choices": [
+          "Inverters draw extra power from the grid whenever the frequency drops",
+          "There is less spinning mass whose stored energy can cover the shortfall",
+          "Solar and wind run at 60 Hz while the rest of the grid runs at 50 Hz",
+          "Operators lower the grid's nominal frequency to make room for renewables"
+        ],
+        "answer": 1,
+        "explain": "In the first instant after a trip, the missing energy comes from spinning turbines and generators, which slow down; that spinning mass is the grid's inertia. Solar panels and most wind turbines connect through inverters with no spinning mass coupled to the grid, so as they replace fuel-burning plants the frequency falls faster.",
+        "source": "dorfler-gross-2023"
+      },
+      {
+        "id": "q2",
+        "prompt": "A 60 Hz grid with 30,000 MVA of spinning machines and an inertia constant H of 3 s suddenly loses 900 MW. What is the initial rate of change of frequency (RoCoF)?",
+        "choices": [
+          "0.6 Hz/s, falling",
+          "0.25 Hz/s, falling",
+          "3.3 Hz/s, falling",
+          "0.3 Hz/s, falling"
+        ],
+        "answer": 3,
+        "explain": "df/dt = 900 × 60 ÷ (2 × 3 × 30,000) = 0.3 Hz/s, falling. Leaving out the factor of 2 gives 0.6 Hz/s, and 0.25 Hz/s uses 50 Hz instead of this grid's 60 Hz."
+      },
+      {
+        "id": "q3",
+        "prompt": "On the duck curve, what makes the \"belly\" sag in the middle of a spring day?",
+        "choices": [
+          "People use much less electricity at midday than at night",
+          "Power stations are taken offline at midday for maintenance",
+          "The curve is demand minus solar and wind, and midday solar output is large",
+          "Wind farms produce most of their power around midday"
+        ],
+        "answer": 2,
+        "explain": "The duck is a plot of net load: the demand other sources must still supply after wind and solar. Demand itself does not collapse at midday; solar output is subtracted from it, and as solar grows the belly deepens while the evening peak stays.",
+        "source": "caiso-duck-2016"
+      },
+      {
+        "id": "q4",
+        "prompt": "A grid has very little inertia (H = 1 s). In the trip widget, which change does most to stop the frequency dipping deep after a power station trips?",
+        "choices": [
+          "Reserves, such as batteries, that take over within about a second",
+          "Larger reserves that take about 20 seconds to respond",
+          "More solar farms, to make up the lost energy over the day",
+          "Raising the grid's nominal frequency from 50 to 60 Hz"
+        ],
+        "answer": 0,
+        "explain": "Speed can stand in for inertia: with H = 1 s, reserves that take over within a second hold the dip to about 49.8 Hz, while reserves that need 20 seconds let it fall to about 49.2 Hz. Batteries can respond in about a second, which is why low-inertia grids buy fast frequency response from them.",
+        "source": "lin-2020-grid-forming"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Glossary – Solar Odyssey</title>
+<meta name="description" content="Every term, defined in plain language.">
+<link rel="icon" href="assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/odyssey.css">
+<link rel="stylesheet" href="glossary.css">
+<script type="module" src="assets/js/core.js"></script>
+<script type="module" src="glossary.js"></script>
+</head>
+<body data-page="glossary">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page glossary-page">
+  <header class="page-head">
+    <h1>Glossary</h1>
+    <p class="lede">Every term used on this site, in plain language. Terms marked with a dotted underline in the lessons link here.</p>
+  </header>
+  <div class="gl-tools wide">
+    <div class="control gl-filter">
+      <label for="gl-q">Filter terms</label>
+      <input type="text" id="gl-q" autocomplete="off" spellcheck="false" placeholder="Type part of a word, for example “gap”" aria-describedby="gl-count">
+    </div>
+    <p class="gl-meta"><span id="gl-count" aria-live="polite">Loading the glossary…</span> <span class="data-badge" id="gl-badge"></span></p>
+  </div>
+  <nav class="gl-letters wide" id="gl-letters" aria-label="Jump to a letter"></nav>
+  <div id="gl-list" class="gl-list wide">
+    <noscript><p class="noscript-note">The glossary is loaded from a signed data file and needs JavaScript.</p></noscript>
+  </div>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

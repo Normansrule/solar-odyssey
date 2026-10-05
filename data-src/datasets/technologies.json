@@ -1,0 +1,165 @@
+{
+ "meta": {
+  "title": "Solar cell technologies today: production shares and typical module figures",
+  "description": "production_2025: global module production by wafer type in 2025 (Fraunhofer ISE). cell_architectures_2025: share of crystalline-silicon cell production by cell architecture in 2025 (ITRPV 17th edition). comparison: one row per technology with mass-production module efficiency, an example datasheet power temperature coefficient and degradation figure, each with its own source.",
+  "units": "GWp and % as labelled; efficiency %, temperature coefficient %/°C, degradation %/year",
+  "sources": [
+   "fraunhofer-pv-report-2026",
+   "itrpv-2026",
+   "taiyangnews-itrpv-2026",
+   "pv-tech-itrpv-2026",
+   "first-solar-series-7",
+   "jinko-tiger-neo",
+   "paudyal-imenes-2021",
+   "jordan-kurtz-2013"
+  ],
+  "license": "CC BY 4.0 (Solar Odyssey compilation; figures from the cited sources)",
+  "last_verified": "2026-09-30"
+ },
+ "data": {
+  "production_2025": {
+   "as_of": "2025",
+   "source": "fraunhofer-pv-report-2026",
+   "total_gwp": 706,
+   "note": "Thin film counts First Solar only.",
+   "rows": [
+    {
+     "id": "mono",
+     "label": "Monocrystalline silicon",
+     "gwp": 690,
+     "share": 97.7
+    },
+    {
+     "id": "thin",
+     "label": "Thin film (CdTe)",
+     "gwp": 16,
+     "share": 2.3
+    },
+    {
+     "id": "multi",
+     "label": "Multicrystalline silicon",
+     "gwp": 0,
+     "share": 0
+    }
+   ]
+  },
+  "cell_architectures_2025": {
+   "as_of": "2025",
+   "source": [
+    "taiyangnews-itrpv-2026",
+    "itrpv-2026"
+   ],
+   "basis": "share of crystalline-silicon cell production",
+   "rows": [
+    {
+     "id": "topcon",
+     "label": "TOPCon",
+     "share": 75
+    },
+    {
+     "id": "perc",
+     "label": "PERC",
+     "share": 14
+    },
+    {
+     "id": "hjt",
+     "label": "Heterojunction (HJT)",
+     "share": 5
+    },
+    {
+     "id": "tbc",
+     "label": "Back contact (TOPCon-based)",
+     "share": 5
+    },
+    {
+     "id": "hbc",
+     "label": "Back contact (HJT-based)",
+     "share": 0.1
+    }
+   ]
+  },
+  "comparison": [
+   {
+    "id": "perc",
+    "label": "PERC (p-type mono)",
+    "module_eff": 21.7,
+    "eff_source": "pv-tech-itrpv-2026",
+    "tc_pmax": -0.35,
+    "tc_source": "jinko-tiger-neo",
+    "tc_note": "p-type figure quoted by a TOPCon maker",
+    "degradation": 0.5,
+    "deg_source": "jordan-kurtz-2013",
+    "deg_note": "field median, all types",
+    "as_of": "2025"
+   },
+   {
+    "id": "topcon",
+    "label": "TOPCon (n-type mono)",
+    "module_eff": 23.5,
+    "eff_source": "pv-tech-itrpv-2026",
+    "tc_pmax": -0.29,
+    "tc_source": "jinko-tiger-neo",
+    "tc_note": "manufacturer datasheet",
+    "degradation": 0.4,
+    "deg_source": "jinko-tiger-neo",
+    "deg_note": "warranted, after year one",
+    "as_of": "2025"
+   },
+   {
+    "id": "hjt",
+    "label": "Heterojunction (n-type mono)",
+    "module_eff": 23.5,
+    "eff_source": "pv-tech-itrpv-2026",
+    "tc_pmax": -0.29,
+    "tc_source": "paudyal-imenes-2021",
+    "tc_note": "datasheet value of a tested module",
+    "degradation": 0.5,
+    "deg_source": "jordan-kurtz-2013",
+    "deg_note": "field median, all types",
+    "as_of": "2025"
+   },
+   {
+    "id": "tbc",
+    "label": "Back contact (TOPCon-based)",
+    "module_eff": 24.1,
+    "eff_source": "pv-tech-itrpv-2026",
+    "tc_pmax": null,
+    "tc_source": null,
+    "tc_note": "no primary figure found",
+    "degradation": 0.5,
+    "deg_source": "jordan-kurtz-2013",
+    "deg_note": "field median, all types",
+    "as_of": "2025"
+   },
+   {
+    "id": "cdte",
+    "label": "Cadmium telluride (thin film)",
+    "module_eff_range": [
+     18.1,
+     19.7
+    ],
+    "eff_source": "first-solar-series-7",
+    "tc_pmax": -0.32,
+    "tc_source": "first-solar-series-7",
+    "tc_note": "manufacturer datasheet",
+    "degradation": 0.3,
+    "deg_source": "first-solar-series-7",
+    "deg_note": "warranted",
+    "as_of": "2024"
+   },
+   {
+    "id": "cigs",
+    "label": "CIGS (thin film)",
+    "module_eff": null,
+    "eff_source": null,
+    "tc_pmax": -0.38,
+    "tc_source": "paudyal-imenes-2021",
+    "tc_note": "datasheet value of a tested module",
+    "degradation": 0.5,
+    "deg_source": "jordan-kurtz-2013",
+    "deg_note": "field median, all types",
+    "as_of": "2021"
+   }
+  ]
+ }
+}

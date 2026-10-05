@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "title": "Check your understanding: System builder",
+    "sources": [
+      "holt-nec-690-2016",
+      "paudyal-imenes-2021"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "system-builder",
+    "minutes": 30,
+    "objectives": [
+      "Use the builder to design an array that passes the inverter's voltage, MPPT window and current checks",
+      "Calculate an array's DC/AC ratio and its design short-circuit current",
+      "Explain why a DC/AC ratio above 1, with a little clipping, usually pays"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Why do designers often connect more panel power than the inverter can pass, a DC/AC ratio above 1?",
+        "choices": [
+          "Panels lose about half their rating in the wiring before the inverter",
+          "So the inverter can store the extra energy for the evening",
+          "Panels rarely reach full rating, so a smaller inverter runs nearer its rating and clips only a thin slice at noon",
+          "An inverter's AC rating is always higher than the DC power it takes in"
+        ],
+        "answer": 2,
+        "explain": "Panels deliver their full rated power only in rare cool, bright moments. A slightly smaller inverter is cheaper and works nearer its rating for more hours; the price is clipping at midday on the sunniest days, a thin slice of the day's energy. An inverter does not store energy."
+      },
+      {
+        "id": "q2",
+        "prompt": "Fourteen 430 W modules feed a 5 kW inverter. What is the DC/AC ratio?",
+        "choices": [
+          "1.20",
+          "0.83",
+          "6.02",
+          "1.08"
+        ],
+        "answer": 0,
+        "explain": "The array is 14 × 0.43 kW = 6.02 kWp, and 6.02 ÷ 5 = 1.20. Dividing the other way round (5 ÷ 6.02 = 0.83) inverts the ratio, and the ratio uses the array's rating at standard test conditions, before any losses are taken off."
+      },
+      {
+        "id": "q3",
+        "prompt": "When does a string come closest to the inverter's maximum voltage?",
+        "choices": [
+          "At noon on a hot summer day, when the light is strongest",
+          "Late on a hot afternoon, when the modules are warmest",
+          "Whenever the inverter is clipping power at midday",
+          "On a bright, freezing morning, before current flows and the modules warm up"
+        ],
+        "answer": 3,
+        "explain": "Silicon's voltage rises as it cools, about 0.27 % per °C, and the open-circuit voltage is highest when no current flows. So the risk peaks at sunrise on the coldest day. Hot afternoons do the opposite: the voltage drops, which can push a string below the MPPT window.",
+        "source": "holt-nec-690-2016"
+      },
+      {
+        "id": "q4",
+        "prompt": "An array has three strings in parallel, built from modules with a short-circuit current of 13.2 A. With the builder's 25 % safety margin, what design current must the inverter input accept?",
+        "choices": [
+          "39.6 A",
+          "49.5 A",
+          "16.5 A",
+          "13.2 A"
+        ],
+        "answer": 1,
+        "explain": "Strings in parallel add their currents: 3 × 13.2 A = 39.6 A, and the builder adds 25 % for moments brighter than the rating: 39.6 × 1.25 = 49.5 A. 16.5 A is the margin on one string only, and 13.2 A forgets that parallel strings add current."
+      }
+    ]
+  }
+}

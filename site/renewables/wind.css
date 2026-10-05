@@ -1,0 +1,8 @@
+/* Wind page */
+.ra-key .k-wind { border-top-color: var(--r-wind); }
+.ra-key .k-motion { border-top-color: var(--ink-2); }
+.ra-key .k-app { border-top-color: var(--silicon); }
+.ra-key .k-lift { border-top-color: var(--good); }
+.ra-key .k-drag { border-top-color: var(--hole); }
+#blade-canvas { aspect-ratio: 16 / 9.5; }
+@media (max-width: 40rem) { #blade-canvas { aspect-ratio: 3 / 4; } }

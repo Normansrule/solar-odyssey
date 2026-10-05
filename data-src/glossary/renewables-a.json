@@ -1,0 +1,189 @@
+{
+  "apparent-wind": {
+    "term": "Apparent wind",
+    "short": "The wind a moving blade actually feels: the real wind combined with the headwind from the blade's own motion. Near the tips it is mostly the blade's own speed.",
+    "see": [
+      "angle-of-attack"
+    ]
+  },
+  "angle-of-attack": {
+    "term": "Angle of attack",
+    "short": "The angle between a blade's chord line and the air flowing past it. A few degrees gives strong lift; too many and the flow separates and the blade stalls.",
+    "see": [
+      "apparent-wind",
+      "aerodynamic-stall"
+    ]
+  },
+  "aerodynamic-lift": {
+    "term": "Lift (aerodynamic)",
+    "short": "The force on a wing or blade at right angles to the air flowing past it. On a wind turbine blade the lift points mostly downwind, but it leans slightly forward along the rotation, and that small forward part turns the rotor.",
+    "see": [
+      "angle-of-attack"
+    ]
+  },
+  "aerodynamic-stall": {
+    "term": "Stall",
+    "short": "When the angle of attack gets too large, air peels away from the top of the blade: lift collapses and drag soars.",
+    "see": [
+      "angle-of-attack"
+    ]
+  },
+  "blade-pitch": {
+    "term": "Blade pitch",
+    "short": "Twisting a whole blade about its long axis. Turbines pitch their blades to catch the most power in light winds and to shed power in strong winds.",
+    "see": [
+      "angle-of-attack",
+      "rated-wind-speed"
+    ]
+  },
+  "tip-speed-ratio": {
+    "term": "Tip-speed ratio",
+    "short": "How fast the blade tips move compared with the wind. Large modern rotors run with their tips several times faster than the wind."
+  },
+  "cut-in-speed": {
+    "term": "Cut-in speed",
+    "short": "The wind speed at which a turbine starts producing power, typically about 3 m/s.",
+    "see": [
+      "rated-wind-speed",
+      "cut-out-speed"
+    ]
+  },
+  "rated-wind-speed": {
+    "term": "Rated wind speed",
+    "short": "The wind speed at which a turbine first reaches its full (rated) power. Above it the blades pitch to hold power steady.",
+    "see": [
+      "cut-in-speed",
+      "cut-out-speed"
+    ]
+  },
+  "cut-out-speed": {
+    "term": "Cut-out speed",
+    "short": "The wind speed at which a turbine stops to protect itself, typically 25 m/s or more.",
+    "see": [
+      "rated-wind-speed"
+    ]
+  },
+  "rayleigh-distribution": {
+    "term": "Rayleigh distribution",
+    "short": "A simple bell-with-a-long-tail curve for how often each wind speed occurs at a site, set by one number: the mean wind speed."
+  },
+  "induction-factor": {
+    "term": "Axial induction factor",
+    "short": "How much a rotor slows the wind as it passes through, as a fraction of the free wind speed. The ideal rotor slows it by one third.",
+    "see": [
+      "betz-limit"
+    ]
+  },
+  "actuator-disc": {
+    "term": "Actuator disc",
+    "short": "An idealised rotor treated as a thin, permeable disc that takes energy from the flow. The simplest model that gives the Betz limit.",
+    "see": [
+      "betz-limit",
+      "induction-factor"
+    ]
+  },
+  "penstock": {
+    "term": "Penstock",
+    "short": "The large pipe that carries water from a reservoir's intake down to the turbines.",
+    "see": [
+      "hydraulic-head"
+    ]
+  },
+  "tailrace": {
+    "term": "Tailrace",
+    "short": "The channel that carries water away from a turbine back to the river."
+  },
+  "francis-turbine": {
+    "term": "Francis turbine",
+    "short": "A reaction turbine in which water spirals inward through a spinning runner whose curved blades are fixed in shape (not adjustable). The workhorse of medium- to high-head hydropower.",
+    "see": [
+      "hydraulic-head"
+    ]
+  },
+  "kaplan-turbine": {
+    "term": "Kaplan turbine",
+    "short": "A propeller-shaped reaction turbine with adjustable blades, suited to low heads and large flows.",
+    "see": [
+      "hydraulic-head"
+    ]
+  },
+  "pelton-turbine": {
+    "term": "Pelton wheel",
+    "short": "An impulse turbine: jets of water hit a ring of split cups. Suited to very high heads and small flows.",
+    "see": [
+      "hydraulic-head"
+    ]
+  },
+  "run-of-river": {
+    "term": "Run-of-river hydropower",
+    "short": "A plant that uses a river's flow as it comes, with little or no reservoir, so its output follows the river."
+  },
+  "flash-steam-plant": {
+    "term": "Flash steam plant",
+    "short": "A geothermal plant that drops the pressure of very hot water from the well so part of it boils (flashes) into steam, which drives a turbine. Needs fluid above about 182 °C."
+  },
+  "binary-cycle-plant": {
+    "term": "Binary-cycle plant",
+    "short": "A geothermal plant in which hot brine heats a second fluid with a low boiling point; that fluid's vapour drives the turbine. Works with cooler resources."
+  },
+  "dry-steam-plant": {
+    "term": "Dry steam plant",
+    "short": "A geothermal plant fed directly by natural steam from the ground, the oldest kind (Larderello, The Geysers)."
+  },
+  "reinjection-well": {
+    "term": "Reinjection well",
+    "short": "A well that returns cooled geothermal water to the reservoir, keeping up pressure and disposing of the brine."
+  },
+  "enhanced-geothermal-system": {
+    "term": "Enhanced geothermal system (EGS)",
+    "short": "Man-made geothermal: fluid is pumped into hot, dry rock to open fractures, so water can be circulated through the rock and heated.",
+    "see": [
+      "reinjection-well"
+    ]
+  },
+  "district-heating": {
+    "term": "District heating",
+    "short": "Heating many buildings from one central source through a network of insulated hot-water pipes."
+  },
+  "tidal-range": {
+    "term": "Tidal range",
+    "short": "The height difference between high and low water. Barrages need large ranges, several metres or more."
+  },
+  "tidal-barrage": {
+    "term": "Tidal barrage",
+    "short": "A dam across an estuary or bay with sluices and turbines. It traps the tide and generates as water runs through the turbines across the height difference.",
+    "see": [
+      "tidal-range"
+    ]
+  },
+  "tidal-stream": {
+    "term": "Tidal stream turbine",
+    "short": "An underwater turbine placed in a fast tidal current, working like a wind turbine in water."
+  },
+  "ebb-generation": {
+    "term": "Ebb generation",
+    "short": "Running a tidal barrage's turbines as the basin empties towards a falling sea, after trapping water at high tide.",
+    "see": [
+      "tidal-barrage"
+    ]
+  },
+  "energy-period": {
+    "term": "Energy period",
+    "short": "The wave period that, in a sea of mixed waves, gives the same energy flux as a regular wave with that period. Used with significant wave height to size wave power.",
+    "see": [
+      "significant-wave-height"
+    ]
+  },
+  "wave-energy-flux": {
+    "term": "Wave energy flux",
+    "short": "Power carried by waves across each metre of wave crest, in kilowatts per metre. Exposed Atlantic coasts often average several tens of kW/m.",
+    "see": [
+      "significant-wave-height",
+      "energy-period"
+    ]
+  },
+  "oscillating-water-column": {
+    "term": "Oscillating water column",
+    "short": "A wave device with an air chamber open to the sea below: waves push the trapped air back and forth through a turbine."
+  }
+}

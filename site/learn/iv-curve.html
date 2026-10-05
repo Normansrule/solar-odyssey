@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Current, voltage and power – Solar Odyssey</title>
+<meta name="description" content="The I-V curve, fill factor, efficiency and the maximum power point.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="iv-curve.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="iv-curve.js"></script>
+</head>
+<body data-page="iv-curve">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">How a cell works</span>
+    <h1>Current, voltage and power</h1>
+    <p class="lede">A solar cell is not a battery with a fixed voltage. How much current and voltage it gives depends on what you connect to it. One curve sums up everything it can do, and one point on that curve is the one worth chasing.</p>
+  </header>
+
+  <p>In <a href="pn-junction.html">the p-n junction</a> lesson you moved a load from short circuit to open circuit and watched the current and voltage trade off. Plot every one of those operating points, current against voltage, and you get the cell's <dfn data-term="iv-curve">I-V curve</dfn>. Engineers measure it for every cell and every module that leaves a factory.</p>
+
+  <h2 id="three-points">Three points on the curve</h2>
+  <ul>
+    <li><strong>Short circuit.</strong> Wire the terminals together. Voltage is zero and the current is the most the cell can push: the <dfn data-term="short-circuit-current">short-circuit current</dfn>, <span class="tex">I_{sc}</span>. It is set by how many photons make electron–hole pairs that reach the junction, so it rises in step with the light.</li>
+    <li><strong>Open circuit.</strong> Connect nothing. No current flows and the voltage climbs to the <dfn data-term="open-circuit-voltage">open-circuit voltage</dfn>, <span class="tex">V_{oc}</span>, where carriers leak back across the junction as fast as light makes them. For silicon that is about 0.7 V.</li>
+    <li><strong>The knee.</strong> Power is current × voltage, and both ends give zero power. In between, the curve bends sharply at a knee, and near that knee is the <dfn data-term="maximum-power-point">maximum power point</dfn> (MPP), where the rectangle under the curve is as big as it can be. The electronics behind a solar panel, maximum power point trackers (MPPT), spend their whole lives hunting for it; see <a href="../today/cell-to-grid.html">from cell to grid</a>.</li>
+  </ul>
+
+  <section class="widget" id="iv-lab" aria-labelledby="iv-lab-h">
+    <h2 id="iv-lab-h">I-V lab</h2>
+    <p class="caption iv-lead">The illustrative 243 cm² silicon cell used throughout this course (a 156 mm square wafer). The faint curve is the same cell at standard test conditions. Change one thing at a time and watch which part of the curve moves.</p>
+    <div class="iv-grid">
+      <div class="iv-plot">
+        <div id="iv-chart" class="chart iv-chart" aria-label="Current against voltage (top) and power against voltage (bottom) for the cell, with the standard-test-condition curve for comparison."></div>
+        <ul class="legend iv-legend" aria-label="Key">
+          <li><span class="iv-key iv-key--now" aria-hidden="true"></span>This cell now</li>
+          <li><span class="iv-key iv-key--ghost" aria-hidden="true"></span>At standard test conditions</li>
+          <li><span class="iv-key iv-key--box" aria-hidden="true"></span><span>V<sub>oc</sub> × I<sub>sc</sub> (the ideal box)</span></li>
+          <li><span class="iv-key iv-key--mpp" aria-hidden="true"></span><span>V<sub>mp</sub> × I<sub>mp</sub> (the power you get)</span></li>
+        </ul>
+      </div>
+      <div class="iv-side">
+        <dl class="readout iv-readout" aria-live="polite">
+          <div><dt>I<sub>sc</sub></dt><dd id="iv-isc">—</dd></div>
+          <div><dt>V<sub>oc</sub></dt><dd id="iv-voc">—</dd></div>
+          <div><dt>I<sub>mp</sub></dt><dd id="iv-imp">—</dd></div>
+          <div><dt>V<sub>mp</sub></dt><dd id="iv-vmp">—</dd></div>
+          <div><dt>P<sub>max</sub></dt><dd id="iv-pmax">—</dd></div>
+          <div><dt>Fill factor</dt><dd id="iv-ff">—</dd></div>
+          <div class="iv-eta"><dt>Efficiency η</dt><dd id="iv-eta">—</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="controls iv-controls">
+      <div class="control">
+        <label for="iv-g">Irradiance <output id="iv-g-out" for="iv-g">1000 W/m²</output></label>
+        <input type="range" id="iv-g" min="0" max="1200" step="10" value="1000">
+      </div>
+      <div class="control">
+        <label for="iv-t">Cell temperature <output id="iv-t-out" for="iv-t">25 °C</output></label>
+        <input type="range" id="iv-t" min="-10" max="85" step="1" value="25">
+      </div>
+      <div class="control">
+        <label for="iv-rs">Series resistance <output id="iv-rs-out" for="iv-rs">0.50 Ω·cm²</output></label>
+        <input type="range" id="iv-rs" min="0" max="4" step="0.05" value="0.5">
+      </div>
+      <div class="control">
+        <label for="iv-rsh">Shunt resistance <output id="iv-rsh-out" for="iv-rsh">5000 Ω·cm²</output></label>
+        <input type="range" id="iv-rsh" min="1" max="5" step="0.05" value="3.7">
+      </div>
+      <div class="control">
+        <label for="iv-n">Ideality factor <output id="iv-n-out" for="iv-n">1.00</output></label>
+        <input type="range" id="iv-n" min="1" max="2" step="0.05" value="1">
+      </div>
+      <div class="btn-row iv-buttons">
+        <button type="button" class="btn ghost" id="iv-reset">Back to standard test conditions</button>
+        <button type="button" class="btn ghost" id="iv-hot">A hot summer roof (65 °C, 900 W/m²)</button>
+      </div>
+    </div>
+    <p class="caption" id="iv-summary"></p>
+    <p class="caption">Computed live with the single-diode model in <code>physics/pv.js</code> and the temperature laws in <code>physics/junction.js</code>. Per-area resistances are divided by the cell area, so 0.5 Ω·cm² is 2 mΩ for this cell. Illustrative values for a modern cell, not a specific product.</p>
+  </section>
+
+  <h2 id="diode">Why the curve has that shape</h2>
+  <p>A lit cell is two things in parallel: a current source made by the light, and a diode, the junction itself. At low voltage the diode barely conducts and almost all the light-made current goes out to the load, so the top of the curve is flat. As the voltage rises toward the junction's turn-on point, the diode starts to pass current internally, each extra tenth of a volt multiplying that leak about fifty times. The curve falls off a cliff.</p>
+
+  <section class="eq" id="eq-diode" aria-labelledby="eq-diode-h">
+    <h3 id="eq-diode-h">The single-diode equation</h3>
+    <p>The light current minus what leaks back through the diode minus what leaks around the junction gives the current you get.<sup class="cite" data-src="shockley-1949,pveducation"></sup></p>
+    <div class="tex">I = I_{ph} - I_0\left[\exp\!\left(\frac{V + I R_s}{n\,kT/q}\right) - 1\right] - \frac{V + I R_s}{R_{sh}}</div>
+    <dl class="symbols">
+      <dt><span class="tex">I,\ V</span></dt><dd>current out of the cell (A) and voltage across its terminals (V)</dd>
+      <dt><span class="tex">I_{ph}</span></dt><dd>photocurrent made by the light (A), proportional to irradiance</dd>
+      <dt><span class="tex">I_0</span></dt><dd><dfn data-term="saturation-current">dark saturation current</dfn> (A): the junction's leakage, set by recombination; about 10⁻¹¹ A here</dd>
+      <dt><span class="tex">n</span></dt><dd><dfn data-term="ideality-factor">ideality factor</dfn>, 1 for an ideal diode, up to about 2</dd>
+      <dt><span class="tex">kT/q</span></dt><dd>thermal voltage, 25.7 mV at 25 °C</dd>
+      <dt><span class="tex">R_s,\ R_{sh}</span></dt><dd><dfn data-term="series-resistance">series</dfn> and <dfn data-term="shunt-resistance">shunt</dfn> resistance (Ω)</dd>
+    </dl>
+    <p>Set <span class="tex">I = 0</span>, ignore the resistances, and solve for the voltage:</p>
+    <div class="tex">V_{oc} = \frac{n kT}{q}\,\ln\!\left(\frac{I_{ph}}{I_0} + 1\right)</div>
+    <div class="worked" data-check="pv:idealVoc" data-args="[{&quot;Iph&quot;: 9.72, &quot;I0&quot;: 1.215e-11, &quot;n&quot;: 1, &quot;T&quot;: 298.15}]" data-expect="0.704" data-tol="0.001">
+      Our cell makes <span class="tex">I_{ph} = 9.72</span> A at one sun and leaks <span class="tex">I_0 = 1.2\times10^{-11}</span> A. Then <span class="tex">V_{oc} = 0.02569 \times \ln(8.0\times10^{11}) = 0.02569 \times 27.4</span> = <span class="answer">0.704 V</span>.
+    </div>
+    <p>The logarithm explains two everyday facts. Halving the light halves <span class="tex">I_{sc}</span> but costs only 18 mV of <span class="tex">V_{oc}</span> (<span class="tex">kT/q \cdot \ln 2</span>), so cells still give a useful voltage on cloudy days. And cutting the leakage <span class="tex">I_0</span> tenfold, by making cleaner silicon and better surfaces, buys about 59 mV. That is the main story of the <a href="../today/technologies.html">cell technologies</a> that followed.</p>
+  </section>
+
+  <section class="eq" id="eq-ff" aria-labelledby="eq-ff-h">
+    <h3 id="eq-ff-h">Fill factor: how square is the curve?</h3>
+    <p>Draw the rectangle <span class="tex">V_{oc} \times I_{sc}</span>. No cell can deliver that much power, because the two never happen at once. The <dfn data-term="fill-factor">fill factor</dfn> says how much of that box the maximum-power rectangle fills. In the lab it is the amber box inside the dashed outline.</p>
+    <div class="tex">FF = \frac{P_{max}}{V_{oc}\,I_{sc}} = \frac{V_{mp}\,I_{mp}}{V_{oc}\,I_{sc}}</div>
+    <dl class="symbols">
+      <dt><span class="tex">P_{max}</span></dt><dd>maximum power (W), at <span class="tex">V_{mp}</span> (V) and <span class="tex">I_{mp}</span> (A)</dd>
+      <dt><span class="tex">FF</span></dt><dd>fill factor, a pure number between 0 and 1</dd>
+    </dl>
+    <div class="worked" data-check="junction:fillFactorFrom" data-args="[5.60, 0.704, 9.72]" data-expect="0.818" data-tol="0.001">
+      Our cell at standard test conditions: <span class="tex">P_{max} = 5.60</span> W, <span class="tex">V_{oc} = 0.704</span> V, <span class="tex">I_{sc} = 9.72</span> A. <span class="tex">FF = 5.60 / (0.704 \times 9.72)</span> = <span class="answer">0.818</span>.
+    </div>
+    <div class="expert expert-note">
+      <p>Even a perfect diode cannot reach FF = 1, because the exponential knee has a finite sharpness set by <span class="tex">kT/q</span>. Green's empirical expression gives the loss-free limit in terms of the normalised voltage <span class="tex">v_{oc} = V_{oc}/(nkT/q)</span>:<sup class="cite" data-src="green-1981-ff"></sup></p>
+      <div class="tex">FF_0 = \frac{v_{oc} - \ln(v_{oc} + 0.72)}{v_{oc} + 1}</div>
+      <div class="worked" data-check="junction:fillFactorEmpirical" data-args="[0.704]" data-expect="0.847" data-tol="0.001">
+        For <span class="tex">V_{oc} = 0.704</span> V at 25 °C, <span class="tex">v_{oc} = 27.4</span> and <span class="tex">FF_0 =</span> <span class="answer">0.847</span>. The lab cell reaches 0.818: its 0.5 Ω·cm² series resistance and 5000 Ω·cm² shunt cost about three points of fill factor.
+      </div>
+      <p>A rough rule from the same source: <span class="tex">FF \approx FF_0 (1 - r_s)</span> with <span class="tex">r_s = R_s I_{sc}/V_{oc}</span>, valid for small <span class="tex">r_s</span>.</p>
+    </div>
+  </section>
+
+  <section class="eq" id="eq-eta" aria-labelledby="eq-eta-h">
+    <h3 id="eq-eta-h">Efficiency</h3>
+    <p>The number on every datasheet is the <dfn data-term="conversion-efficiency">conversion efficiency</dfn>: electrical power out divided by sunlight power in. To make it comparable, cells are measured at <dfn data-term="standard-test-conditions">standard test conditions</dfn> (STC): 1000 W/m² of light with the AM1.5 global reference spectrum defined in IEC 60904-3, and a cell temperature of 25 °C.<sup class="cite" data-src="iec-60904-3-2019,pveducation-efficiency"></sup></p>
+    <div class="tex">\eta = \frac{P_{max}}{G \cdot A} = \frac{V_{oc}\,I_{sc}\,FF}{G \cdot A}</div>
+    <dl class="symbols">
+      <dt><span class="tex">\eta</span></dt><dd>efficiency, a fraction (or %)</dd>
+      <dt><span class="tex">G</span></dt><dd><dfn data-term="irradiance">irradiance</dfn> on the cell (W/m²)</dd>
+      <dt><span class="tex">A</span></dt><dd>cell area (m²)</dd>
+    </dl>
+    <div class="worked" data-check="pv:efficiency" data-args="[5.6, 1000, 0.0243]" data-expect="0.2305" data-tol="0.0005">
+      A 243 cm² cell (0.0243 m²) under 1000 W/m² receives 24.3 W of sunlight. If it delivers 5.6 W at its maximum power point, <span class="tex">\eta = 5.6 / 24.3</span> = <span class="answer">23.0 %</span>.
+    </div>
+    <p>The lab cell is a solid commercial-grade cell, a little below the best cells in mass production today. The best certified laboratory silicon cell reported so far reached 28.3 %<sup class="cite" data-src="pv-magazine-longi-hibc-2026"></sup> <span class="verified">2026-09-30</span>, against a calculated ceiling of about 29.4 % for a single silicon junction.<sup class="cite" data-src="richter-2013"></sup> Records move; the <a href="../state-of-the-field.html">state of the field</a> page keeps the latest. You can follow the records in <a href="../today/efficiency-records.html">efficiency over time</a>, and see why there is a ceiling at all in <a href="band-gap.html">the band gap</a>.</p>
+  </section>
+
+  <h2 id="losses">What the resistances do</h2>
+  <p>Real cells lose a little power to the wires inside them.</p>
+  <ul>
+    <li><strong>Series resistance</strong> sits in the path every electron must take: the silicon, the thin metal fingers printed on the front, the contacts. It eats voltage in proportion to the current, so it tilts the steep right-hand side of the curve and drags the knee down and to the left. Try 3 Ω·cm² in the lab: the fill factor drops from 0.82 to 0.69.</li>
+    <li><strong>Shunt resistance</strong> is a leak around the junction, from defects or cell edges. It steals current in proportion to the voltage, tilting the flat top. A healthy cell has thousands of Ω·cm²; at 50 Ω·cm² the fill factor collapses below 0.6.</li>
+    <li><strong>The ideality factor</strong> rounds the knee. Values above 1 mean more recombination inside the depletion region. The lab keeps the one-sun, 25 °C voltage fixed as you change it, so you see only the change in shape.</li>
+  </ul>
+  <div class="worked" data-check="junction:cellSummary" data-args="[{&quot;RsOhmCm2&quot;: 3}]" data-pick="FF" data-expect="0.692" data-tol="0.002">
+    The lab cell with its series resistance raised from 0.5 to 3 Ω·cm² (12 mΩ for 243 cm²): fill factor <span class="answer">0.692</span>, and maximum power down from 5.60 W to 4.73 W.
+  </div>
+
+  <h2 id="temperature">Why heat lowers the voltage</h2>
+  <p>On a sunny roof a cell runs much hotter than the air around it. Heat shakes more electrons loose from their bonds all by themselves, so the junction leaks much more: <span class="tex">I_0</span> rises steeply. A bigger leak means the voltage at which leakage balances the light-made current is lower. The current rises a little (hot silicon absorbs slightly more of the red end of the spectrum), but far less than the voltage falls.<sup class="cite" data-src="green-2003-temperature,pveducation-temperature"></sup></p>
+  <div class="worked" data-check="junction:vocAt" data-args="[{&quot;tempC&quot;: 50}]" data-expect="0.656" data-tol="0.002">
+    Warm the lab cell from 25 °C to 50 °C at one sun: <span class="tex">V_{oc}</span> falls from 0.704 V to <span class="answer">0.656 V</span>, about 1.9 mV per degree.
+  </div>
+  <div class="worked" data-check="junction:vocCoefficientPercent" data-args="[]" data-expect="-0.271" data-tol="0.005">
+    As a percentage that is <span class="answer">−0.27 % per °C</span> of the voltage. PVEducation quotes about −2.2 mV/°C for typical silicon cells; cells with higher voltage, like this one, are a little less sensitive.<sup class="cite" data-src="pveducation-temperature"></sup> The cell's maximum power falls about 0.3 % per °C.
+  </div>
+  <p>This is why panels make the most power on cold, bright days, and why datasheets list temperature coefficients next to the efficiency.</p>
+
+  <div class="expert">
+    <h3 id="temperature-expert">The temperature law in the lab</h3>
+    <p>For an ideal diode the dark current is proportional to <span class="tex">n_i^2</span>, which scales as <span class="tex">T^3 \exp(-E_{g0}/kT)</span>. Green writes the general form with an exponent <span class="tex">\gamma</span> that absorbs the temperature dependence of diffusion constants and lifetimes:<sup class="cite" data-src="green-2003-temperature"></sup></p>
+    <div class="tex">I_0(T) = B\,T^{\gamma} \exp\!\left(-\frac{E_{g0}}{kT}\right)</div>
+    <p>Here <span class="tex">E_{g0} \approx 1.2</span> eV is silicon's band gap extrapolated linearly to 0 K, and <span class="tex">\gamma \approx 3</span>.<sup class="cite" data-src="pveducation-temperature"></sup> The lab scales the 25 °C value with this law, divides the exponent by <span class="tex">n</span> for non-ideal diodes, and lets the photocurrent rise by 0.06 % per °C.<sup class="cite" data-src="pveducation-temperature"></sup> Differentiating <span class="tex">V_{oc}</span> gives</p>
+    <div class="tex">\frac{dV_{oc}}{dT} = -\frac{E_{g0}/q - V_{oc} + \gamma kT/q}{T}</div>
+    <div class="worked" data-check="junction:vocTemperatureCoefficient" data-args="[0.704]" data-expect="-0.00192" data-tol="0.00002">
+      With <span class="tex">V_{oc} = 0.704</span> V at 298 K: <span class="tex">-(1.2 - 0.704 + 3 \times 0.0257)/298.15</span> = <span class="answer">−1.92 mV/K</span>, matching the lab's finite-difference slope. The unit tests check both.
+    </div>
+    <div class="worked" data-check="junction:saturationCurrentAt" data-args="[1, 308.15]" data-expect="5.03" data-tol="0.02">
+      Ten degrees of warming multiplies the ideal-diode <span class="tex">I_0</span> by <span class="answer">5.0</span>, which costs <span class="tex">kT/q \cdot \ln 5 \approx 41</span> mV, partly offset by the higher <span class="tex">kT/q</span> in front of the logarithm.
+    </div>
+    <p>The model leaves out the slight narrowing of the band gap with temperature and any change in the resistances, both of which matter in precise module modelling.</p>
+  </div>
+
+  <h2 id="next">Where next</h2>
+  <p>You have now seen a single cell from photon to watt. <a href="../today/technologies.html">Cell technologies today</a> shows how industry raised <span class="tex">V_{oc}</span> and the fill factor year after year, and <a href="../today/cell-to-grid.html">from cell to grid</a> wires sixty or more cells into a module and tracks its maximum power point.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

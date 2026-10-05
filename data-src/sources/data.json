@@ -1,0 +1,99 @@
+{
+  "owid-solar-pv-prices": {
+    "type": "dataset",
+    "authors": "Our World in Data",
+    "title": "Solar (photovoltaic) panel prices",
+    "container": "Our World in Data grapher, indicator \"Solar PV module cost\", constant 2025 US$ per watt",
+    "year": 2026,
+    "url": "https://ourworldindata.org/grapher/solar-pv-prices",
+    "license": "CC BY 4.0",
+    "verified": "2026-09-30",
+    "note": "OWID metadata: IRENA (2025); Nemet (2009); Farmer and Lafond (2016), with major processing by Our World in Data. Metadata last updated 2026-07-28."
+  },
+  "nemet-2009": {
+    "type": "article",
+    "authors": "Nemet, G. F.",
+    "title": "Interim monitoring of cost dynamics for publicly supported energy technologies",
+    "container": "Energy Policy 37(3), 825–835",
+    "year": 2009,
+    "doi": "10.1016/j.enpol.2008.10.031",
+    "verified": "2026-09-30"
+  },
+  "farmer-lafond-2016": {
+    "type": "article",
+    "authors": "Farmer, J. D.; Lafond, F.",
+    "title": "How predictable is technological progress?",
+    "container": "Research Policy 45(3), 647–665",
+    "year": 2016,
+    "doi": "10.1016/j.respol.2015.11.001",
+    "verified": "2026-09-30"
+  },
+  "irena-costs-2025": {
+    "type": "report",
+    "authors": "International Renewable Energy Agency (IRENA)",
+    "title": "Renewable Power Generation Costs in 2024",
+    "container": "IRENA, Abu Dhabi",
+    "year": 2025,
+    "url": "https://www.irena.org/Digital-Report/Renewable-Power-Generation-Costs-in-2024",
+    "license": "© IRENA; may be freely used and shared with attribution to IRENA (IRENA terms)",
+    "verified": "2026-09-30"
+  },
+  "owid-energy-data": {
+    "type": "dataset",
+    "authors": "Our World in Data",
+    "title": "Data on energy by Our World in Data (owid/energy-data)",
+    "container": "GitHub repository, commit 7e387a16f70a510e433f8aac7efeac6faa1e5059",
+    "year": 2026,
+    "url": "https://github.com/owid/energy-data",
+    "license": "CC BY 4.0",
+    "verified": "2026-09-30"
+  },
+  "ember-yearly-electricity": {
+    "type": "dataset",
+    "authors": "Ember",
+    "title": "Yearly Electricity Data",
+    "year": 2026,
+    "url": "https://ember-energy.org/data/yearly-electricity-data/",
+    "license": "CC BY 4.0",
+    "verified": "2026-09-30",
+    "note": "Upstream of the OWID electricity-by-source series."
+  },
+  "ei-statistical-review": {
+    "type": "report",
+    "authors": "Energy Institute",
+    "title": "Statistical Review of World Energy",
+    "year": 2026,
+    "url": "https://www.energyinst.org/statistical-review",
+    "verified": "2026-09-30",
+    "note": "Upstream of the OWID long-run energy series."
+  },
+  "pvlib-2023": {
+    "type": "article",
+    "authors": "Anderson, K. S.; Hansen, C. W.; Holmgren, W. F.; Jensen, A. R.; Mikofski, M. A.; Driesse, A.",
+    "title": "pvlib python: 2023 project update",
+    "container": "Journal of Open Source Software 8(92), 5994",
+    "year": 2023,
+    "doi": "10.21105/joss.05994",
+    "url": "https://github.com/pvlib/pvlib-python",
+    "verified": "2026-10-02",
+    "note": "Used in tests/py to cross-check this site's solar-position and irradiance code."
+  },
+  "nrel-cell-efficiency-chart": {
+    "type": "chart",
+    "authors": "National Renewable Energy Laboratory (NREL)",
+    "title": "Best Research-Cell Efficiency Chart",
+    "year": 2026,
+    "url": "https://www.nrel.gov/pv/cell-efficiency",
+    "license": "Not copyrighted; reuse with the lab's credit line",
+    "verified": "2026-09-30",
+    "note": "The page (now at nlr.gov after NREL was renamed the National Laboratory of the Rockies) says the plot is not copyrighted and may be reused with the credit line 'This plot is courtesy of the National Laboratory of the Rockies, Golden, CO.'; this site redraws the records it cites from primary announcements and the Solar cell efficiency tables."
+  },
+  "pveducation": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Photovoltaics Education Website (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/",
+    "verified": "2026-09-30"
+  }
+}

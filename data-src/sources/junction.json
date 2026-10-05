@@ -1,0 +1,113 @@
+{
+  "chapin-1954": {
+    "type": "article",
+    "authors": "Chapin, D. M.; Fuller, C. S.; Pearson, G. L.",
+    "title": "A new silicon p-n junction photocell for converting solar radiation into electrical power",
+    "container": "Journal of Applied Physics 25(5), 676–677",
+    "year": 1954,
+    "doi": "10.1063/1.1721711",
+    "verified": "2026-09-30"
+  },
+  "riordan-hoddeson-1997": {
+    "type": "article",
+    "authors": "Riordan, M.; Hoddeson, L.",
+    "title": "The origins of the pn junction",
+    "container": "IEEE Spectrum 34(6), 46–51",
+    "year": 1997,
+    "doi": "10.1109/6.591664",
+    "verified": "2026-10-02"
+  },
+  "sze-ng-2007": {
+    "type": "book",
+    "authors": "Sze, S. M.; Ng, K. K.",
+    "title": "Physics of Semiconductor Devices, 3rd edition",
+    "container": "Wiley-Interscience, Hoboken NJ (chapter 2: p-n junctions, depletion approximation)",
+    "year": 2007,
+    "doi": "10.1002/0470068329",
+    "verified": "2026-10-02"
+  },
+  "altermatt-2003": {
+    "type": "article",
+    "authors": "Altermatt, P. P.; Schenk, A.; Geelhaar, F.; Heiser, G.",
+    "title": "Reassessment of the intrinsic carrier density in crystalline silicon in view of band-gap narrowing",
+    "container": "Journal of Applied Physics 93(3), 1598–1604",
+    "year": 2003,
+    "doi": "10.1063/1.1529297",
+    "verified": "2026-10-02",
+    "note": "ni = 9.65 × 10⁹ cm⁻³ at 300 K (as quoted by PVEducation)."
+  },
+  "sproul-green-1991": {
+    "type": "article",
+    "authors": "Sproul, A. B.; Green, M. A.",
+    "title": "Improved value for the silicon intrinsic carrier concentration from 275 to 375 K",
+    "container": "Journal of Applied Physics 70(2), 846–854",
+    "year": 1991,
+    "doi": "10.1063/1.349645",
+    "verified": "2026-10-02"
+  },
+  "green-2003-temperature": {
+    "type": "article",
+    "authors": "Green, M. A.",
+    "title": "General temperature dependence of solar cell performance and implications for device modelling",
+    "container": "Progress in Photovoltaics: Research and Applications 11(5), 333–340",
+    "year": 2003,
+    "doi": "10.1002/pip.496",
+    "verified": "2026-10-02"
+  },
+  "green-1981-ff": {
+    "type": "article",
+    "authors": "Green, M. A.",
+    "title": "Solar cell fill factors: general graph and empirical expressions",
+    "container": "Solid-State Electronics 24(8), 788–789",
+    "year": 1981,
+    "doi": "10.1016/0038-1101(81)90062-9",
+    "verified": "2026-10-02"
+  },
+  "iec-60904-3-2019": {
+    "type": "standard",
+    "authors": "International Electrotechnical Commission (IEC)",
+    "title": "IEC 60904-3:2019 Photovoltaic devices – Part 3: Measurement principles for terrestrial photovoltaic (PV) solar devices with reference spectral irradiance data",
+    "container": "Edition 4.0, IEC, Geneva",
+    "year": 2019,
+    "url": "https://webstore.iec.ch/en/publication/61084",
+    "verified": "2026-09-30",
+    "note": "Defines the AM1.5 global reference spectrum, integrated to 1000 W/m² on a 37° tilted plane."
+  },
+  "pveducation-temperature": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Effect of temperature (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/solar-cell-operation/effect-of-temperature",
+    "verified": "2026-09-30",
+    "note": "Silicon: Voc falls about 2.2 mV/°C; Isc rises about 0.06 %/°C; I0 follows B'·T^γ·exp(−Eg0/kT) with Eg0 ≈ 1.2 eV and γ ≈ 3."
+  },
+  "pveducation-silicon": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "General properties of silicon (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/materials/general-properties-of-silicon",
+    "verified": "2026-09-30",
+    "note": "εr = 11.7, Eg = 1.124 eV, ni = 1e10 cm⁻³, Nc = 3e19 cm⁻³, Nv = 1e19 cm⁻³ at 300 K."
+  },
+  "pveducation-efficiency": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Solar cell efficiency (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/solar-cell-operation/solar-cell-efficiency",
+    "verified": "2026-09-30",
+    "note": "Terrestrial cells are measured under AM1.5 at 25 °C and 1 kW/m²."
+  },
+  "aps-news-2009": {
+    "type": "web",
+    "authors": "American Physical Society",
+    "title": "This month in physics history: April 25, 1954: Bell Labs demonstrates the first practical silicon solar cell",
+    "container": "APS News 18(4), April 2009",
+    "year": 2009,
+    "url": "https://www.aps.org/publications/apsnews/200904/physicshistory.cfm",
+    "verified": "2026-09-30",
+    "note": "Announcement date 25 April 1954; first cells about 6 % efficient; arsenic and boron dopants; notes Ohl's earlier accidental p-n junction."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Check your understanding: Sun path and energy yield",
+    "sources": [
+      "pveducation-declination",
+      "pveducation-tilted-surface",
+      "pveducation-average-radiation"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "sun-path",
+    "minutes": 40,
+    "objectives": [
+      "Describe how latitude and season change the Sun's path, and use the noon elevation rule",
+      "Explain why the best fixed tilt is usually a little flatter than the latitude",
+      "Calculate a day's energy from peak sun hours, array size and performance ratio"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "The rule of thumb tilts a fixed panel at the site's latitude, but for Los Angeles (34° N) the clear-sky model finds a best tilt of about 30°. Which reason does the page give?",
+        "choices": [
+          "A flatter panel runs cooler and so makes more power",
+          "Summer days are longer with a higher Sun, so a flatter panel serves more of the year's energy",
+          "The low winter Sun crosses less air, so winter light is the strongest",
+          "A steeper panel sees more of the diffuse sky"
+        ],
+        "answer": 1,
+        "explain": "More of the year's sunlight arrives in long, high-Sun summer days, and the low winter beam is thinned by crossing more air, so tilting steeply for winter gains less than it seems. A flatter panel also sees more of the sky, not less: flat sees all of it, vertical only half.",
+        "source": "pveducation-tilted-surface"
+      },
+      {
+        "id": "q2",
+        "prompt": "The Sun's declination on the December solstice is about −23.44°. How high does the noon Sun stand in Los Angeles (latitude 34.05° N) that day?",
+        "choices": [
+          "About 79.4°",
+          "About 56.0°",
+          "About 57.5°",
+          "About 32.5°"
+        ],
+        "answer": 3,
+        "explain": "At noon the elevation is 90° − |φ − δ| = 90° − |34.05 − (−23.44)| = 90° − 57.49° ≈ 32.5°. 57.5° is the zenith angle, measured from straight overhead, not the elevation; 79.4° is the June answer and 56.0° the equinox one.",
+        "source": "pveducation-declination"
+      },
+      {
+        "id": "q3",
+        "prompt": "A clear June day gives flat ground in Los Angeles 8.56 kWh/m², which is 8.56 peak sun hours. What does that mean?",
+        "choices": [
+          "The day delivers as much energy as 8.56 hours of full 1000 W/m² sunlight",
+          "The Sun is above the horizon for 8.56 hours",
+          "The sunlight peaks at 8.56 kW per square metre at noon",
+          "Panels run at full rated power for 8.56 hours and make nothing the rest of the day"
+        ],
+        "answer": 0,
+        "explain": "Peak sun hours count energy: the day's insolation in kWh/m², which equals the hours of 1000 W/m² light that would deliver it. That June day really has more than 14 hours of daylight, mostly weaker than one sun. It is energy per square metre, not a peak power.",
+        "source": "pveducation-average-radiation"
+      },
+      {
+        "id": "q4",
+        "prompt": "A 4 kWp array gets 6 peak sun hours on its panels in a day, with a performance ratio of 0.8. How much energy does it deliver?",
+        "choices": [
+          "About 30 kWh",
+          "About 4.8 kWh",
+          "About 19 kWh",
+          "About 24 kWh"
+        ],
+        "answer": 2,
+        "explain": "E = P_STC × PSH × PR = 4 × 6 × 0.8 = 19.2 kWh. Leaving out the performance ratio gives 24 kWh, which ignores losses from hot cells, wiring, the inverter and dirt; dividing by 0.8 instead of multiplying gives 30 kWh."
+      }
+    ]
+  }
+}

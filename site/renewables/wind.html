@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Wind – Solar Odyssey</title>
+<meta name="description" content="Blades, the cube of wind speed, and the Betz limit.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="renewables-a-common.css">
+<link rel="stylesheet" href="wind.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="wind.js"></script>
+</head>
+<body data-page="wind">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page ra-page" data-source="wind">
+  <header class="page-head">
+    <span class="kicker"><a href="index.html">Renewables</a></span>
+    <h1>Wind</h1>
+    <p class="lede">Wind is sunlight once removed: the Sun heats the ground unevenly, air moves to even things out, and a turbine borrows some of that motion. Its blades are wings, not paddles, and the power they can catch grows with the cube of the wind speed.</p>
+  </header>
+
+  <section class="today-figure" aria-label="Wind's share of world electricity">
+    <div>
+      <span class="tf-num" data-slot="pct">8.5 %</span>
+      <p class="tf-what">of the world's electricity came from <strong>wind</strong> in <span data-slot="year">2025</span>: <span data-slot="twh">2,713 TWh</span>.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> <span class="verified">2026-09-30</span></p>
+    </div>
+    <div class="tf-side">
+      <div data-slot="spark"></div>
+      <p class="tf-note">Highest shares among the countries in this course's dataset:</p>
+      <ul class="tf-leaders" data-slot="leaders"><li>Denmark 57.7 % (2025)</li></ul>
+      <span class="data-badge"></span>
+    </div>
+  </section>
+
+  <p>A wind farm turns moving air into electricity with no fuel and no exhaust. By the end of 2025 the world had about 1,290 gigawatts of wind turbines, roughly 7 % of them at sea.<sup class="cite" data-src="irena-capacity-2026"></sup> Onshore wind was the cheapest new source of electricity in IRENA's 2024 cost survey, at a global average of about 3.4 US cents per kilowatt-hour.<sup class="cite" data-src="irena-press-2025-costs"></sup> The current numbers live on the <a href="../state-of-the-field.html">State of the field</a> page.</p>
+
+  <h2 id="history">From a Scottish garden to 300-metre rotors</h2>
+  <ol class="mini-timeline">
+    <li><time datetime="1887">1887</time><p><span class="mt-what">James Blyth lights his cottage.</span> The Glasgow professor builds a cloth-sailed turbine about 8 m across that charges batteries for his lights, probably the first wind turbine to make electricity in Britain.<sup class="cite" data-src="price-2005-blyth,mollerstrom-2025"></sup></p></li>
+    <li><time datetime="1888">1888</time><p><span class="mt-what">Charles Brush's giant.</span> In Cleveland, Ohio, a 17 m rotor with 144 thin blades drives a 12 kW dynamo for twenty years. Many slow blades turn out to be the wrong idea for electricity.<sup class="cite" data-src="mollerstrom-2025,sciam-brush-1890"></sup></p></li>
+    <li><time datetime="1891">1891</time><p><span class="mt-what">Poul la Cour's test turbine.</span> The Danish teacher builds an electricity-making wind turbine at Askov. From 1896 he tests blade shapes in small wind tunnels and finds that a few fast, well-shaped blades beat many slow ones.<sup class="cite" data-src="mollerstrom-2025,plct-la-cour"></sup></p></li>
+    <li><time datetime="1941">1941</time><p><span class="mt-what">The first megawatt.</span> The Smith–Putnam turbine on Grandpa's Knob, Vermont, has a two-bladed rotor 53 m across and a 1.25 MW generator. It feeds the grid from October 1941 until a blade breaks off, and wartime shortages stop it being rebuilt.<sup class="cite" data-src="ethw-smith-putnam,mollerstrom-2025"></sup></p></li>
+    <li><time datetime="1957">1957</time><p><span class="mt-what">The Gedser design.</span> Johannes Juul's 200 kW, 24 m, three-bladed turbine in Denmark sets the pattern that commercial turbines follow from the 1980s.<sup class="cite" data-src="mollerstrom-2025"></sup></p></li>
+    <li><time datetime="1991">1991</time><p><span class="mt-what">Wind goes to sea.</span> Vindeby, off Denmark, is the first offshore wind farm: eleven 0.45 MW turbines. In 25 years it makes 243 GWh, about what one modern offshore turbine now makes in a few years.<sup class="cite" data-src="orsted-vindeby-2017"></sup></p></li>
+    <li><time datetime="2021">2021</time><p><span class="mt-what">15 MW on one tower.</span> Vestas launches the V236-15.0 MW, with a rotor 236 m across that sweeps more than four football pitches of air.<sup class="cite" data-src="vestas-v236"></sup></p></li>
+    <li><time datetime="2025">2025</time><p><span class="mt-what">26 MW test turbine.</span> Dongfang Electric installs a 26 MW prototype with a 310 m rotor at a test site in Shandong, China, according to trade press reports.<sup class="cite" data-src="offshorewind-dongfang-2025,windtech-dongfang-2025"></sup> <span class="claim claim--research">Prototype</span> <span class="verified">2026-10-02</span></p></li>
+  </ol>
+
+  <h2 id="how">How a blade turns wind into torque</h2>
+  <p>A turbine blade works like an aeroplane wing turned on its side. Air flowing past a wing at a slight angle, the <dfn data-term="angle-of-attack">angle of attack</dfn>, produces <dfn data-term="aerodynamic-lift">lift</dfn>: a push at right angles to the flow. On a turbine, the trick is that the flow the blade feels is not the wind itself.</p>
+  <p>As the blade sweeps round, it rushes through the air, and that motion makes a headwind of its own, just as a cyclist feels wind on a still day. The blade feels the real wind and its own headwind together: the <dfn data-term="apparent-wind">apparent wind</dfn>. Near the tips the blade moves several times faster than the wind, so the apparent wind comes almost side-on. Lift, at right angles to that, then points mostly downwind, but with a small forward lean, and that lean is what turns the rotor.</p>
+
+  <section class="widget" id="blade" aria-labelledby="blade-h">
+    <h2 id="blade-h">Inside the rotor</h2>
+    <p class="caption lead">Left: the rotor seen from upwind, with one slice of blade marked. Right: that slice cut open, seen from the tip. Speed up the rotor, change the wind, twist the blade with the pitch control, and watch the arrows.</p>
+    <div class="widget-body split">
+      <div>
+        <canvas id="blade-canvas" class="ra-canvas" role="img" aria-label="A three-bladed rotor seen from upwind, beside a cross-section of one blade showing the wind, the headwind from the blade's motion, the apparent wind, and the lift and drag forces."></canvas>
+        <ul class="ra-key" aria-label="Key">
+          <li><span class="k k-wind" aria-hidden="true"></span>Wind at the rotor</li>
+          <li><span class="k k-motion dash" aria-hidden="true"></span>Headwind from blade motion</li>
+          <li><span class="k k-app" aria-hidden="true"></span>Apparent wind</li>
+          <li><span class="k k-lift" aria-hidden="true"></span>Lift</li>
+          <li><span class="k k-drag" aria-hidden="true"></span>Drag</li>
+        </ul>
+        <div class="ra-toolbar">
+          <button type="button" class="btn ghost" id="blade-play">Pause</button>
+          <button type="button" class="btn ghost" id="blade-step">Step</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn ghost" id="blade-best">Best angle</button>
+          <button type="button" class="btn ghost" id="blade-feather">Feather (storm)</button>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="b-wind">Wind speed <output id="b-wind-out" for="b-wind">10 m/s</output></label>
+          <input type="range" id="b-wind" min="2" max="25" step="0.5" value="10">
+        </div>
+        <div class="control">
+          <label for="b-rpm">Rotor speed <output id="b-rpm-out" for="b-rpm">6.5 rpm</output></label>
+          <input type="range" id="b-rpm" min="0" max="14" step="0.1" value="6.5">
+          <p class="hint">A rotor 236 m across; its tips move at 2π × radius × rpm ÷ 60.</p>
+        </div>
+        <div class="control">
+          <label for="b-pitch">Blade pitch <output id="b-pitch-out" for="b-pitch">0°</output></label>
+          <input type="range" id="b-pitch" min="-5" max="35" step="0.5" value="0">
+        </div>
+        <div class="control">
+          <label for="b-r">Slice position <output id="b-r-out" for="b-r">50 % of the way to the tip</output></label>
+          <input type="range" id="b-r" min="20" max="100" step="1" value="50">
+        </div>
+        <div class="readout" aria-live="polite">
+          <div><span class="k">Tip-speed ratio</span><span class="v" id="r-tsr">8.0</span></div>
+          <div><span class="k">Apparent wind</span><span class="v" id="r-w">40.7 <small>m/s</small></span></div>
+          <div><span class="k">Angle of attack</span><span class="v" id="r-alpha">6°</span></div>
+          <div><span class="k">Lift-to-drag</span><span class="v" id="r-ld">40</span></div>
+        </div>
+        <p class="ra-status" id="b-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <p>Three things to try. First, stop the rotor: the apparent wind is just the wind, hitting the blade almost face-on, and the blade stalls. A parked rotor gets little torque, which is why big turbines are nudged up to speed. Second, raise the wind without changing rotor speed: the angle of attack grows until the blade <dfn data-term="aerodynamic-stall">stalls</dfn>. Third, press Feather: the blade turns edge-on to the apparent wind and the force that drives the rotor almost vanishes. Modern turbines use <dfn data-term="blade-pitch">blade pitch</dfn> exactly like this, every second, to hold power steady in strong winds and to stop in storms.<sup class="cite" data-src="manwell-2009"></sup></p>
+
+  <div class="expert expert-note">
+    <p>Each slice of blade sees an inflow angle φ from the rotor plane with tan φ = v(1 − a)/(ω r), where a is the axial <dfn data-term="induction-factor">induction factor</dfn>. The chord sits at θ = twist + pitch, so α = φ − θ. Because φ shrinks towards the tip, blades are built with twist: steep at the root, nearly flat at the tip. The drawing uses a twist that gives α = 6° along the whole blade at a <dfn data-term="tip-speed-ratio">tip-speed ratio</dfn> of 8 with a = 1/3, and a thin-aerofoil lift slope of 2π per radian up to a stall near 14°. Resolving lift L and drag D into the rotor plane gives the driving force per unit span, L sin φ − D cos φ; the thrust is L cos φ + D sin φ. This is the blade-element model; real design adds the momentum balance on each annulus and tip-loss corrections.<sup class="cite" data-src="manwell-2009"></sup></p>
+  </div>
+
+  <h2 id="equations">How much power is in the wind</h2>
+
+  <section class="eq" aria-labelledby="eq-cube">
+    <h3 id="eq-cube">The cube law</h3>
+    <p>The energy of moving air is its kinetic energy, ½mv². The faster the wind, the more air arrives each second as well: the mass flow through the rotor is ρAv. Multiply the two and the speed appears three times. Double the wind speed and the power in it rises eight-fold. This is why turbines climb ever taller, into faster wind, and why a site with a 20 % higher average wind is worth far more than 20 % more.</p>
+    <div class="tex">P_{\text{wind}} = \tfrac{1}{2}\,\rho\,A\,v^{3}, \qquad P_{\text{turbine}} = C_p\,P_{\text{wind}}</div>
+    <dl class="symbols">
+      <dt><span class="tex">P</span></dt><dd>power, watts (W)</dd>
+      <dt><span class="tex">\rho</span></dt><dd>air density, about 1.225 kg/m³ at sea level and 15 °C</dd>
+      <dt><span class="tex">A</span></dt><dd>area swept by the rotor, π(D/2)², square metres</dd>
+      <dt><span class="tex">v</span></dt><dd>wind speed, metres per second</dd>
+      <dt><span class="tex">C_p</span></dt><dd><dfn data-term="power-coefficient">power coefficient</dfn>: the share the rotor captures (no units)</dd>
+    </dl>
+    <div class="worked" data-check="renewables:kineticPower" data-args="[1.225, 43742, 10]" data-expect="26.79e6" data-tol="0.01e6">
+      A Vestas V236 sweeps 43,742 m².<sup class="cite" data-src="vestas-v236"></sup> In a 10 m/s wind, ½ × 1.225 × 43,742 × 10³ = <span class="answer">26.8 MW</span> of air power passes through its rotor.
+    </div>
+    <div class="worked" data-check="renewables:rotorPower" data-args="[1.225, 236, 10, 0.45]" data-expect="12.06e6" data-tol="0.01e6">
+      A good modern rotor captures about 45 % of that (C<sub>p</sub> ≈ 0.45), giving <span class="answer">12.1 MW</span>. At 5 m/s it would be one eighth of that, 1.5 MW.
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-betz">
+    <h3 id="eq-betz">The Betz limit</h3>
+    <p>Why only 45 %? A rotor cannot stop the wind dead: the air has to flow away behind it, or no more could arrive. Slow it too little and most of the energy passes straight through; slow it too much and air piles up and spills round the rotor. The best compromise is to slow the wind by one third at the rotor. Then the turbine catches 16/27 of the power, about 59.3 %. This is the <dfn data-term="betz-limit">Betz limit</dfn>, found independently by Lanchester, Betz and Joukowsky around 1915–1920.<sup class="cite" data-src="van-kuik-2007,okulov-van-kuik-2012"></sup> <span class="claim claim--settled">Settled physics</span></p>
+    <div class="tex">C_p(a) = 4a(1-a)^2 \;\le\; C_p\!\left(\tfrac13\right) = \tfrac{16}{27} \approx 0.593</div>
+    <dl class="symbols">
+      <dt><span class="tex">a</span></dt><dd>axial induction factor: the fraction by which the rotor slows the wind at the disc (no units)</dd>
+      <dt><span class="tex">C_p</span></dt><dd>power coefficient (no units)</dd>
+    </dl>
+    <div class="worked" data-check="renewables:actuatorDiscCp" data-args="[0.3333333333333333]" data-expect="0.5926" data-tol="0.0001">
+      With the wind slowed by one third at the rotor (a = 1/3), C<sub>p</sub> = 4 × ⅓ × (⅔)² = 16/27 = <span class="answer">0.593</span>. Real rotors lose a little more to blade drag, tip vortices and the swirl left in the wake.
+    </div>
+    <div class="expert">
+      <h4>Deriving it from the <dfn data-term="actuator-disc">actuator disc</dfn></h4>
+      <p>Treat the rotor as a thin disc of area A in a stream tube. Far upstream the wind is v; at the disc it is v(1 − a); far downstream, v(1 − 2a) (Bernoulli on each side of the disc plus a momentum balance gives the factor 2). The mass flow is ṁ = ρAv(1 − a). The thrust is the momentum lost, T = ṁ[v − v(1 − 2a)] = 2ρAv²a(1 − a). The power is thrust times the speed at the disc:</p>
+      <div class="tex">P = T\,v(1-a) = 2\rho A v^{3} a(1-a)^{2} = \tfrac12\rho A v^{3}\,\underbrace{4a(1-a)^{2}}_{C_p}</div>
+      <p>Setting dC<sub>p</sub>/da = 4(1 − a)(1 − 3a) = 0 gives a = 1/3 and C<sub>p</sub> = 16/27. The model ignores wake rotation and blade count; including rotation lowers the ceiling slightly at low tip-speed ratios.<sup class="cite" data-src="manwell-2009"></sup></p>
+      <p class="chart-title" id="cp-title">Power coefficient against induction factor</p>
+      <div class="chart short" id="cp-chart" role="img" aria-labelledby="cp-title" aria-describedby="cp-desc"></div>
+      <p class="muted" id="cp-desc">C<sub>p</sub> rises from 0 at a = 0 to its peak of 0.593 at a = 1/3, then falls to 0.5 at a = 0.5. Beyond a = 0.5 the simple model breaks down (the wake would have to flow backwards).</p>
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-tsr">
+    <h3 id="eq-tsr">Tip-speed ratio</h3>
+    <p>How fast should the rotor spin? Too slow and wind slips between the blades; too fast and each blade churns air the one before has already slowed. Three-bladed rotors do best when the tips move about seven to nine times faster than the wind.<sup class="cite" data-src="manwell-2009"></sup></p>
+    <div class="tex">\lambda = \frac{\omega R}{v} = \frac{2\pi\,N R}{60\,v}</div>
+    <dl class="symbols">
+      <dt><span class="tex">\lambda</span></dt><dd>tip-speed ratio (no units)</dd>
+      <dt><span class="tex">\omega,\ N</span></dt><dd>rotor speed, radians per second, or N revolutions per minute</dd>
+      <dt><span class="tex">R</span></dt><dd>rotor radius, metres</dd>
+    </dl>
+    <div class="worked" data-check="fluids:tipSpeedRatio" data-args="[7, 118, 10]" data-expect="8.65" data-tol="0.01">
+      A 236 m rotor (R = 118 m) turning at a stately 7 rpm moves its tips at 86 m/s, over 300 km/h. In a 10 m/s wind that is λ = <span class="answer">8.65</span>.
+    </div>
+  </section>
+
+  <section class="widget" id="curve" aria-labelledby="curve-h">
+    <h2 id="curve-h">Power curve and capacity factor</h2>
+    <p class="caption lead">Pick a turbine and a site. The curve shows what the turbine makes at each wind speed; the bars below show how much of a year's energy comes from each wind speed when the wind follows a Rayleigh distribution.</p>
+    <div class="widget-body split">
+      <div>
+        <p class="chart-title" id="pc-title">Power at each wind speed</p>
+        <div class="chart" id="pc-chart" role="img" aria-labelledby="pc-title" aria-describedby="pc-desc"></div>
+        <p class="muted" id="pc-desc">Three lines: the power in the wind through the rotor, the Betz ceiling (59.3 % of it), and the turbine's model power curve, which starts at cut-in, follows the cube to rated power, stays flat, and drops to zero at cut-out.</p>
+        <p class="chart-title" id="en-title">Where a year's energy comes from</p>
+        <div class="chart short" id="en-chart" role="img" aria-labelledby="en-title" aria-describedby="en-desc"></div>
+        <p class="muted" id="en-desc">Energy produced in a year in each 1 m/s band of wind speed.</p>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="t-model">Turbine</label>
+          <select id="t-model">
+            <option value="gedser">Gedser, 1957: 24 m, 0.2 MW</option>
+            <option value="putnam">Smith–Putnam, 1941: 53 m, 1.25 MW</option>
+            <option value="v172">Vestas V172, onshore: 172 m, 7.2 MW</option>
+            <option value="v236" selected>Vestas V236, offshore: 236 m, 15 MW</option>
+            <option value="iea15">IEA 15 MW reference: 240 m, 15 MW</option>
+            <option value="dec26">Dongfang 26 MW prototype: 310 m</option>
+            <option value="custom">Custom rotor</option>
+          </select>
+          <p class="hint" id="t-note"></p>
+        </div>
+        <div class="control">
+          <label for="t-d">Rotor diameter <output id="t-d-out" for="t-d">236 m</output></label>
+          <input type="range" id="t-d" min="10" max="320" step="1" value="236">
+        </div>
+        <div class="control">
+          <label for="t-p">Rated power <output id="t-p-out" for="t-p">15 MW</output></label>
+          <input type="range" id="t-p" min="0.1" max="30" step="0.1" value="15">
+        </div>
+        <div class="control">
+          <label for="t-v">Wind speed now <output id="t-v-out" for="t-v">10 m/s</output></label>
+          <input type="range" id="t-v" min="0" max="35" step="0.5" value="10">
+        </div>
+        <div class="control">
+          <label for="t-mean">Site mean wind speed <output id="t-mean-out" for="t-mean">9 m/s</output></label>
+          <input type="range" id="t-mean" min="4" max="12" step="0.1" value="9">
+          <p class="hint">Good onshore sites average 6–8 m/s at hub height; North Sea sites 9–10 m/s.</p>
+        </div>
+        <div class="control expert">
+          <label for="t-temp">Air temperature <output id="t-temp-out" for="t-temp">15 °C</output></label>
+          <input type="range" id="t-temp" min="-20" max="40" step="1" value="15">
+          <p class="hint">Cold air is denser, so it carries more power at the same speed.</p>
+        </div>
+        <div class="readout" aria-live="polite">
+          <div><span class="k">Output now</span><span class="v" id="o-now">12.1 <small>MW</small></span></div>
+          <div><span class="k">Power in the wind</span><span class="v" id="o-wind">26.8 <small>MW</small></span></div>
+          <div><span class="k">Capacity factor</span><span class="v" id="o-cf">52 %</span></div>
+          <div><span class="k">Energy per year</span><span class="v" id="o-e">68 <small>GWh</small></span></div>
+        </div>
+        <p class="ra-status" id="t-status"></p>
+      </div>
+    </div>
+  </section>
+
+  <p>The flat top of the curve is deliberate. Strong winds are rare, so a generator big enough to use them would sit idle most of the year. Designers pick a rated power that the turbine reaches around 10–12 m/s and pitch the blades to spill the rest. The <dfn data-term="capacity-factor">capacity factor</dfn>, the year's energy divided by what the turbine would make at full power all year, comes from combining this curve with how often each wind speed blows. A <dfn data-term="rayleigh-distribution">Rayleigh distribution</dfn> is a common first guess for that.<sup class="cite" data-src="manwell-2009"></sup></p>
+  <div class="worked" data-check="renewables:turbineCapacityFactor" data-args="[9, {&quot;ratedW&quot;: 15000000, &quot;cutIn&quot;: 3, &quot;rated&quot;: 10.8, &quot;cutOut&quot;: 31}]" data-expect="0.521" data-tol="0.002">
+    A 15 MW turbine with cut-in at 3 m/s, rated power from 10.8 m/s and cut-out at 31 m/s, at a site with Rayleigh winds averaging 9 m/s, has a capacity factor of <span class="answer">52 %</span>: about 68 GWh a year. Vestas quotes capacity factors above 60 % for the V236 at the best sites.<sup class="cite" data-src="vestas-v236"></sup>
+  </div>
+  <p class="muted">The turbine presets use the published rotor diameter and rating; cut-in and cut-out are from the manufacturer where given (V172: 3 and 25 m/s; V236: 3 and 31 m/s) and otherwise assumed at 3 and 25 m/s. The rated wind speed in the model is where a rotor with C<sub>p</sub> = 0.45 first reaches its rating, so these curves are illustrations, not certified power curves.<sup class="cite" data-src="vestas-v172,vestas-v236,gaertner-2020-iea15"></sup></p>
+
+  <h2 id="fit">Strengths, limits and where wind fits</h2>
+  <div class="fit-grid">
+    <div>
+      <h3>Strengths</h3>
+      <ul class="plus">
+        <li>No fuel and no combustion: once built, the energy is free.</li>
+        <li>Among the cheapest new sources of electricity on good sites.<sup class="cite" data-src="irena-press-2025-costs"></sup></li>
+        <li>Often blows hardest in winter and at night, when solar is weak, so the two complement each other in many climates.</li>
+        <li>Offshore turbines reach steadier, stronger winds and can be very large.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Limits</h3>
+      <ul class="minus">
+        <li>Variable: output follows the weather, and calm spells can last days. <span class="claim claim--consensus">Current consensus</span></li>
+        <li>The cube law makes output very sensitive to site and to forecasting errors.</li>
+        <li>Large structures: visual impact, noise near homes, effects on birds, bats and sea life must be planned around.</li>
+        <li>Good sites are often far from cities, so new transmission lines are needed.</li>
+      </ul>
+    </div>
+  </div>
+  <p>Wind does its best work as part of a system: spread over a wide area so local lulls cancel out, paired with solar, and backed by <a href="storage.html">storage</a>, hydro and flexible demand on a well-connected <a href="grid.html">grid</a>. Compare its capacity factor, cost and growth with other sources on the <a href="compare.html">comparison dashboard</a>, or see how falling water does the same job on the <a href="hydro.html">hydropower</a> page.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

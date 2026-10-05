@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>System builder – Solar Odyssey</title>
+<meta name="description" content="Wire cells into modules, strings and an inverter, and watch power flow.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="system-builder.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="system-builder.js"></script>
+</head>
+<body data-page="system-builder">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">Solar today</span>
+    <h1>System builder</h1>
+    <p class="lede">Choose how many cells go in a module, how many modules in a string, how many strings, and which inverter. Plug it into the grid and watch a clear day's power flow through it.</p>
+  </header>
+
+  <p>Every number here comes from the same cell model used in the lessons on <a href="../learn/iv-curve.html">current and voltage</a> and <a href="cell-to-grid.html">from cell to grid</a>: cells in series add voltage, strings in parallel add current, and the sunlight for each hour comes from the clear-sky model on the <a href="sun-path.html">sun path</a> page. Drag the handles on the drawing, or use the controls underneath; they do the same thing.</p>
+
+  <section class="widget sb-widget" id="builder" aria-labelledby="builder-h">
+    <h2 id="builder-h">Build a system</h2>
+    <svg class="stage sb-stage" id="sb-svg" viewBox="0 0 1000 470" role="img" aria-labelledby="sb-title"><title id="sb-title">Solar system diagram</title></svg>
+    <p class="caption sb-hint">Drag the round handles: down on the module for more cells, right along a string for more modules, down below the array for more strings, up or down on the inverter to change its size, and the plug onto the grid socket to connect. Wire thickness shows power; the moving dashes show it flowing.</p>
+
+    <div class="sb-time">
+      <button type="button" class="btn" id="sb-play">Play a clear day</button>
+      <div class="control">
+        <label for="sb-hour">Time of day (local solar time) <output id="sb-hour-out" for="sb-hour">12:00</output></label>
+        <input type="range" id="sb-hour" min="4" max="20" step="0.25" value="12">
+      </div>
+    </div>
+
+    <div class="sb-panels">
+      <fieldset class="sb-panel">
+        <legend>Module</legend>
+        <div class="stepper" data-key="cells">
+          <span class="stepper-label" id="lbl-cells">Cells in series per module</span>
+          <button type="button" class="step-btn" data-d="-1" aria-label="Fewer cells">−</button>
+          <input type="number" id="sb-cells" aria-labelledby="lbl-cells" min="36" max="78" step="6">
+          <button type="button" class="step-btn" data-d="1" aria-label="More cells">+</button>
+        </div>
+        <div class="control bp-check"><input type="checkbox" id="sb-half" checked><label for="sb-half">Half-cut cells (two chains in parallel)</label></div>
+      </fieldset>
+      <fieldset class="sb-panel">
+        <legend>Array</legend>
+        <div class="stepper" data-key="series">
+          <span class="stepper-label" id="lbl-series">Modules per string</span>
+          <button type="button" class="step-btn" data-d="-1" aria-label="Fewer modules per string">−</button>
+          <input type="number" id="sb-series" aria-labelledby="lbl-series" min="1" max="24" step="1">
+          <button type="button" class="step-btn" data-d="1" aria-label="More modules per string">+</button>
+        </div>
+        <div class="stepper" data-key="parallel">
+          <span class="stepper-label" id="lbl-parallel">Strings in parallel</span>
+          <button type="button" class="step-btn" data-d="-1" aria-label="Fewer strings">−</button>
+          <input type="number" id="sb-parallel" aria-labelledby="lbl-parallel" min="1" max="8" step="1">
+          <button type="button" class="step-btn" data-d="1" aria-label="More strings">+</button>
+        </div>
+      </fieldset>
+      <fieldset class="sb-panel">
+        <legend>Inverter and grid</legend>
+        <div class="control"><label for="sb-inverter">Inverter</label><select id="sb-inverter"></select></div>
+        <p class="sb-inv-spec" id="sb-inv-spec"></p>
+        <button type="button" class="btn ghost" id="sb-connect">Connect to the grid</button>
+      </fieldset>
+      <fieldset class="sb-panel">
+        <legend>Site</legend>
+        <div class="control"><label for="sb-place">Place</label><select id="sb-place"></select></div>
+        <div class="control"><label for="sb-day">Day</label><select id="sb-day"></select></div>
+        <div class="control">
+          <label for="sb-air">Daytime air temperature <output id="sb-air-out" for="sb-air">25 °C</output></label>
+          <input type="range" id="sb-air" min="-10" max="45" step="1" value="25">
+        </div>
+        <div class="control">
+          <label for="sb-tmin">Coldest morning of the year <output id="sb-tmin-out" for="sb-tmin">−10 °C</output></label>
+          <input type="range" id="sb-tmin" min="-40" max="15" step="1" value="-10">
+        </div>
+      </fieldset>
+    </div>
+
+    <h3 class="sb-sub">Design checks</h3>
+    <ul class="sb-checks" id="sb-checks" aria-live="polite"></ul>
+
+    <h3 class="sb-sub">Numbers</h3>
+    <div class="sb-readouts" id="sb-readouts"></div>
+
+    <h3 class="sb-sub">The chosen day</h3>
+    <svg class="stage sb-day" id="sb-daychart" viewBox="0 0 900 260" role="img" aria-labelledby="sb-day-title"><title id="sb-day-title">Power over the day</title></svg>
+    <ul class="legend">
+      <li><span class="key key-dc" aria-hidden="true"></span>Power the array could deliver (after the inverter's own losses)</li>
+      <li><span class="key key-ac" aria-hidden="true"></span>Power sent to the grid</li>
+      <li><span class="key key-clip" aria-hidden="true"></span>Clipped: more than the inverter can pass</li>
+    </ul>
+  </section>
+
+  <h2 id="rules">The four design rules</h2>
+  <p>Real installers juggle these same limits. Try breaking each one on purpose.</p>
+
+  <h3 id="rule-voltage">1. Never exceed the inverter's maximum voltage, even on the coldest morning</h3>
+  <p>Silicon's voltage rises as it cools. A string that is comfortably under the limit at noon in July can exceed it at sunrise in January, when the modules are cold and no current is flowing yet. That can destroy an inverter, so codes require the open-circuit voltage to be corrected to the lowest expected temperature.<sup class="cite" data-src="holt-nec-690-2016"></sup> The builder uses the open-circuit voltage coefficient of its own cell model, about −0.27 % per °C, which is close to what datasheets for silicon modules show.<sup class="cite" data-src="paudyal-imenes-2021"></sup></p>
+
+  <h3 id="rule-window">2. Stay inside the tracking window</h3>
+  <p>An inverter can only track the <dfn data-term="maximum-power-point">maximum power point</dfn> over a range of voltages, its MPPT window. On a hot afternoon the string's working voltage drops; if it falls below the window, the inverter cannot hold the best point and power is lost. The builder checks the working voltage with cells at 70 °C.</p>
+
+  <h3 id="rule-current">3. Respect the current limit</h3>
+  <p>Strings in parallel add their currents. Inverter inputs have a maximum short-circuit current they can safely take. The builder adds a 25 % safety margin to the array's short-circuit current, for moments when sunlight is brighter than the rating conditions.</p>
+
+  <h3 id="rule-ratio">4. Choose the DC/AC ratio, and accept a little clipping</h3>
+  <p>It sounds wasteful to fit more panel power than the inverter can pass, but it usually pays. Panels deliver their full rated power only on rare cool, bright moments; most of the day they make far less. An inverter a bit smaller than the array is cheaper and works nearer its rating for more hours. The price is <dfn data-term="clipping">clipping</dfn> around noon on the sunniest days, when output is capped at the inverter's rating. The <dfn data-term="dc-ac-ratio">DC/AC ratio</dfn> measures the trade.</p>
+  <div class="eq">
+    <div class="tex">\text{DC/AC} = \frac{P_\text{array, STC}}{P_\text{inverter, AC}}, \qquad P_\text{AC}(t) = \min\bigl(\eta\,P_\text{DC}(t),\ P_\text{inverter}\bigr)</div>
+    <dl class="symbols">
+      <dt><span class="tex">P_\text{array, STC}</span></dt><dd>array rating at standard test conditions (kWp)</dd>
+      <dt><span class="tex">P_\text{inverter}</span></dt><dd>inverter's AC rating (kW)</dd>
+      <dt><span class="tex">P_\text{DC}(t)</span></dt><dd>power the array delivers at time t (kW)</dd>
+      <dt><span class="tex">\eta</span></dt><dd>inverter conversion efficiency (the builder assumes 0.97)</dd>
+    </dl>
+    <div class="worked" data-check="system:dcAcRatio" data-args="[6.58, 5]" data-expect="1.316" data-tol="0.001">
+      Twelve 548 W modules make a 6.58 kWp array. On a 5 kW inverter the DC/AC ratio is 6.58 ÷ 5 = <span class="answer">1.32</span>.
+    </div>
+    <div class="worked" data-check="system:sineDayClipping" data-args="[10, 8, 12]" data-pick="clippedFraction" data-expect="0.0852" data-tol="0.0005">
+      If a day's power rose and fell like half a sine wave peaking at 10 kW over 12 hours, an 8 kW inverter would clip off only <span class="answer">8.5 %</span> of the day's energy, although it is 20 % smaller than the peak. The flat top is a thin slice of the day.
+    </div>
+  </div>
+  <div class="expert expert-note">
+    <p>For the half-sine day <span class="tex">P(t) = P_\text{pk}\sin(\pi t/D)</span> with cap <span class="tex">P_\text{ac} &lt; P_\text{pk}</span>, the day's energy is <span class="tex">2P_\text{pk}D/\pi</span> and the clipped energy is <span class="tex">\tfrac{2D}{\pi}\bigl(P_\text{pk}\cos\theta - P_\text{ac}(\tfrac{\pi}{2}-\theta)\bigr)</span> with <span class="tex">\theta = \arcsin(P_\text{ac}/P_\text{pk})</span>. The builder does not assume a sine: it integrates the clear-sky plane-of-array trace in 10-minute steps, with cell temperature from the NOCT model and the power coefficient of the diode model, and its unit tests check the numerical integral against this closed form.</p>
+  </div>
+
+  <h2 id="limits">What the builder leaves out</h2>
+  <p>It is a teaching model, not design software. The sky is always clear, so the daily and yearly energies are upper bounds; real weather lowers them, by how much depends on the place. Wiring, dirt and mismatch losses are lumped into a flat 10 %, and the inverter converts at a flat 97 %. The inverters are illustrative, not real products, though their limits are typical of string inverters on the market. Real projects use tools such as pvlib that model weather data, shading and component datasheets in detail.<sup class="cite" data-src="pvlib-2023"></sup> The <a href="cell-to-grid.html">from cell to grid</a> lesson explains the physics behind each rule.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

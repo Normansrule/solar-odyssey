@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Cell technologies today – Solar Odyssey</title>
+<meta name="description" content="Monocrystalline, polycrystalline and thin-film: how they are made and how they differ.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="technologies.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="technologies.js"></script>
+</head>
+<body data-page="technologies">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">Solar today</span>
+    <h1>Cell technologies today</h1>
+    <p class="lede">Almost every solar panel sold today starts as a single crystal of silicon pulled from a melt. What changed in the last decade is what happens on its two surfaces.</p>
+  </header>
+
+  <p>A solar cell has one job: let light in, turn as many <dfn data-term="photon">photons</dfn> as possible into free electrons and holes, and get those carriers out through metal wires before they find each other again. Every technology on this page is a different answer to the same three questions: what absorbs the light, how are the two kinds of carrier separated, and how do they reach the wires without being lost on the way?</p>
+
+  <h2 id="wafers">From sand to wafer</h2>
+  <p>Crystalline silicon cells start as quartz. An arc furnace strips the oxygen away with carbon and leaves silicon that is about 98 % pure, nowhere near clean enough for a solar cell. The Siemens process turns it into a liquid, trichlorosilane, distils out the impurities, and deposits pure silicon back onto hot rods over more than a week. The result is <dfn data-term="polysilicon">polysilicon</dfn>.<sup class="cite" data-src="pveducation-refining"></sup></p>
+  <p>Polysilicon is then melted and made into an <dfn data-term="ingot">ingot</dfn> in one of two ways.</p>
+  <ul>
+    <li><strong>Pulling one crystal (Czochralski).</strong> A small seed crystal is dipped into the melt and drawn slowly upward while it turns. Silicon freezes onto it atom by atom in the same orientation, growing a single cylindrical crystal. Jan Czochralski published the method in 1918, having found it while measuring how fast metals crystallise.<sup class="cite" data-src="czochralski-1918,pveducation-czochralski"></sup> The result is <dfn data-term="monocrystalline-silicon">monocrystalline silicon</dfn>.</li>
+    <li><strong>Casting a block.</strong> The melt is left to freeze in a square crucible. It is quicker and cheaper, but the block freezes into many grains, each a crystal pointing a different way: <dfn data-term="multicrystalline-silicon">multicrystalline silicon</dfn>, the speckled blue panels that were common until a few years ago.<sup class="cite" data-src="pveducation-multicrystalline"></sup></li>
+  </ul>
+  <p>Diamond-coated wire saws then slice the ingot into <dfn data-term="wafer">wafers</dfn> about 140 µm thick. Thinner wafers, less waste and better cells cut the silicon needed per watt from about 16 grams in 2004 to about 2 grams in 2024.<sup class="cite" data-src="fraunhofer-pv-report-2026"></sup></p>
+
+  <h3 id="mono-won">Why single crystals won</h3>
+  <p><span class="claim claim--settled">Settled history</span> The edges between grains in multicrystalline silicon are traps where electrons and holes <dfn data-term="recombination">recombine</dfn>, and they can short-circuit the junction.<sup class="cite" data-src="pveducation-multicrystalline"></sup> For decades the lower cost of casting made up for it. What tipped the balance was better cell design: PERC and its successors gain much more on a single-crystal wafer than on a cast one. Monocrystalline silicon became dominant from about 2018, and by 2020 multicrystalline cells were hard to buy.<sup class="cite" data-src="pveducation-multicrystalline"></sup> In 2025 single-crystal silicon made about 690 of the roughly 706 gigawatts of modules produced worldwide; multicrystalline has in practice disappeared.<sup class="cite" data-src="fraunhofer-pv-report-2026"></sup> <span class="verified">2026-09-30</span></p>
+  <div class="expert expert-note">
+    <p>Czochralski crystals grow inside a quartz crucible, which dissolves slowly and leaves around 10<sup>18</sup> oxygen atoms per cm³ in the ingot. In boron-doped (p-type) silicon, boron and oxygen form defects under light that cut carrier lifetime: light-induced degradation. Phosphorus-doped (n-type) wafers do not suffer it, and neither do gallium-doped p-type wafers.<sup class="cite" data-src="pveducation-czochralski"></sup> That is one reason the industry moved to n-type wafers along with TOPCon and heterojunction cells; ITRPV and Fraunhofer ISE both put the n-type share above 80 % in 2025.<sup class="cite" data-src="pv-tech-itrpv-2026,fraunhofer-pv-report-2026"></sup></p>
+  </div>
+
+  <section class="widget tech-widget" id="explorer" aria-labelledby="explorer-h">
+    <h2 id="explorer-h">Inside the cell: a cross-section explorer</h2>
+    <p class="caption">Pick a technology. The drawing slices through one cell from the sunny side down. Select a layer, in the drawing or the list, to see what it does.</p>
+    <div class="tech-picker" role="group" aria-label="Cell technology" id="tech-picker"></div>
+    <div class="tech-body">
+      <figure class="tech-figure">
+        <svg class="stage tech-stage" id="tech-svg" viewBox="0 0 560 420" role="img" aria-labelledby="tech-svg-title"><title id="tech-svg-title">Cross-section of the selected solar cell</title></svg>
+        <figcaption class="caption">Layer thicknesses are drawn on a compressed scale: a layer a nanometre thick and a wafer 140 µm thick could not otherwise share one picture. Glass is drawn cut short. Colour shows each layer's role, and the numbers match the list. In the absorber, light makes electron (−) and hole (+) pairs; the arrows show which contact each one heads for.</figcaption>
+      </figure>
+      <div class="tech-side">
+        <p class="tech-summary" id="tech-summary"></p>
+        <ol class="tech-layers" id="tech-layers" aria-label="Layers, from the sunny side down"></ol>
+        <div class="tech-detail" id="tech-detail" aria-live="polite"></div>
+      </div>
+    </div>
+    <ul class="legend tech-legend" id="tech-legend" aria-label="Layer roles"></ul>
+  </section>
+
+  <h2 id="architectures">Four ways to build a silicon cell</h2>
+  <p>All four modern silicon designs use the same wafer. They differ in how they treat its surfaces, because that is where most of the remaining losses are. A bare silicon surface is full of broken chemical bonds that swallow carriers. Covering it with a layer that ties those bonds up is called <dfn data-term="passivation">passivation</dfn>, and better passivation is the story of the last fifteen years.</p>
+  <p><strong><dfn data-term="perc">PERC</dfn></strong> (passivated emitter and rear cell) coats the back of the wafer with a passivating film and lets the aluminium contact touch the silicon only through small laser-cut openings. The design was demonstrated at the University of New South Wales in 1989, at 22.8 %,<sup class="cite" data-src="blakers-1989"></sup> and decades later became the industry's standard cell.</p>
+  <p><strong><dfn data-term="topcon">TOPCon</dfn></strong> (tunnel oxide passivated contact) goes further: the whole back is covered by an oxide only a nanometre or two thick, topped with doped polysilicon. Carriers tunnel through the oxide to the contact, but the surface stays passivated everywhere, even under the metal. Fraunhofer ISE published the idea in 2014.<sup class="cite" data-src="feldmann-2014"></sup> It overtook PERC in 2024.<sup class="cite" data-src="pv-tech-itrpv-2026"></sup></p>
+  <p><strong><dfn data-term="heterojunction-cell">Heterojunction</dfn></strong> (HJT) cells wrap the crystal wafer on both sides in layers of <dfn data-term="amorphous-silicon">amorphous silicon</dfn> a few nanometres thick, which passivate the surfaces extremely well and form the junction. A <dfn data-term="transparent-conductive-oxide">transparent conductive oxide</dfn> carries the current sideways to the metal fingers. Their high voltage also makes them lose less power when hot.<sup class="cite" data-src="haschke-2017"></sup></p>
+  <p><strong><dfn data-term="back-contact-cell">Back-contact</dfn></strong> cells move every contact to the back, in interleaved positive and negative fingers, so no metal shades the front. A back-contact heterojunction cell passed 26 % in 2017,<sup class="cite" data-src="yoshikawa-2017"></sup> and back-contact designs hold the silicon record today (see the <a href="../state-of-the-field.html">state of the field</a>).<sup class="cite" data-src="pv-magazine-longi-hibc-2026"></sup> <span class="verified">2026-09-30</span></p>
+
+  <h3 id="arc">The blue colour is a coating</h3>
+  <p>Bare polished silicon reflects over 30 % of the light that hits it.<sup class="cite" data-src="pveducation-arc"></sup> Cells fight this twice: the wafer surface is etched into tiny pyramids that bounce reflected light back into the cell, and a transparent <dfn data-term="anti-reflection-coating">anti-reflection coating</dfn> is laid on top. If the coating is a quarter of a wavelength thick, light reflected from its top and from its bottom cancels out.</p>
+  <div class="eq">
+    <p>The coating's refractive index should sit halfway (in the geometric sense) between air and silicon, and its thickness should be a quarter of the wavelength measured inside it.<sup class="cite" data-src="pveducation-arc"></sup></p>
+    <div class="tex">n_1 = \sqrt{n_0\, n_2}, \qquad d_1 = \frac{\lambda_0}{4\, n_1}</div>
+    <dl class="symbols">
+      <dt><span class="tex">n_0, n_2</span></dt><dd>refractive index of the medium above (air: 1) and of silicon (about 3.5)</dd>
+      <dt><span class="tex">n_1</span></dt><dd>refractive index of the coating (no unit)</dd>
+      <dt><span class="tex">\lambda_0</span></dt><dd>wavelength in vacuum that should reflect least (nm)</dd>
+      <dt><span class="tex">d_1</span></dt><dd>coating thickness (nm)</dd>
+    </dl>
+    <div class="worked" data-check="system:idealArcIndex" data-args="[1, 3.5]" data-expect="1.87" data-tol="0.01">
+      Between air (n = 1) and silicon (n = 3.5) the ideal coating index is √3.5 = <span class="answer">1.87</span>.
+    </div>
+    <div class="worked" data-check="system:quarterWaveThicknessNm" data-args="[600, 1.87]" data-expect="80.2" data-tol="0.1">
+      To cancel reflection at 600 nm, near the peak of sunlight, the coating is 600 ÷ (4 × 1.87) = <span class="answer">80.2 nm</span> thick: about a thousandth of the wafer's thickness. Blue light is reflected a little, which is why cells look dark blue.
+    </div>
+  </div>
+
+  <h2 id="thin-film">Thin films</h2>
+  <p>A <dfn data-term="thin-film">thin-film</dfn> cell is not sliced from a crystal. Its semiconductor is deposited a few micrometres thick straight onto a sheet of glass or foil, which needs far less material and fewer steps. The catch so far has been lower efficiency.</p>
+  <p><strong><dfn data-term="cadmium-telluride">Cadmium telluride</dfn> (CdTe)</strong> is the thin film that made it to scale. Light enters through the glass, passes a transparent contact and a thin window layer, and is absorbed in the CdTe.<sup class="cite" data-src="kumar-rao-2014"></sup> Its main maker, First Solar, sells modules of 18 to 20 % efficiency;<sup class="cite" data-src="first-solar-series-7"></sup> thin film was about 2 % of world production in 2025.<sup class="cite" data-src="fraunhofer-pv-report-2026"></sup> <span class="verified">2026-09-30</span></p>
+  <p><strong><dfn data-term="cigs">CIGS</dfn></strong> (copper indium gallium selenide) has a band gap that can be tuned by swapping gallium for indium, and it can be grown on flexible foil.<sup class="cite" data-src="doe-cigs,ramanujam-singh-2017"></sup> Lab cells reached 19.9 % in 2008,<sup class="cite" data-src="repins-2008"></sup> but its production has stayed small next to silicon and CdTe.<sup class="cite" data-src="fraunhofer-pv-report-2026"></sup></p>
+  <p><strong>Amorphous silicon</strong> was the first thin film, demonstrated at RCA in 1976.<sup class="cite" data-src="carlson-wronski-1976"></sup> It absorbs light strongly but converts it poorly. Today it matters most as the few-nanometre coating inside heterojunction cells.</p>
+
+  <section class="widget shares" id="shares" aria-labelledby="shares-h">
+    <h2 id="shares-h">What the world made in 2025</h2>
+    <div class="cols shares-cols">
+      <div>
+        <h3 class="shares-sub">Modules by material</h3>
+        <div class="bars" id="bars-material" role="img" aria-label="Bar chart of 2025 module production by material, values listed beside each bar."></div>
+        <p class="caption">Share of about 706 GW of modules produced worldwide. Thin film counts First Solar's CdTe only. Source: Fraunhofer ISE, Photovoltaics Report, July 2026.<sup class="cite" data-src="fraunhofer-pv-report-2026"></sup></p>
+      </div>
+      <div>
+        <h3 class="shares-sub">Silicon cells by design</h3>
+        <div class="bars" id="bars-arch" role="img" aria-label="Bar chart of 2025 crystalline silicon cell production by design, values listed beside each bar."></div>
+        <p class="caption">Share of crystalline-silicon cell production. Source: ITRPV 17th edition, as presented in September 2026.<sup class="cite" data-src="itrpv-2026,taiyangnews-itrpv-2026"></sup></p>
+      </div>
+    </div>
+    <p class="caption">Data year 2025. <span class="verified">2026-09-30</span> These shares move every year; the <a href="../state-of-the-field.html">state of the field</a> page keeps the latest. <span class="data-badge" id="shares-badge">Loading data</span></p>
+  </section>
+
+  <h2 id="compare">Side by side</h2>
+  <p>The table compares what you would find on a datasheet. Three numbers matter most for a buyer: <dfn data-term="module-efficiency">module efficiency</dfn> (how much roof a kilowatt needs), the <dfn data-term="temperature-coefficient">temperature coefficient</dfn> (how much power is lost for every degree the panel runs above 25 °C) and the <dfn data-term="degradation-rate">degradation rate</dfn> (how fast output fades with age). Each cell has its own source, because no single study measures them all the same way.</p>
+  <div class="table-wrap wide" id="compare-table"><p class="muted">Loading the comparison table…</p></div>
+  <p class="caption">Efficiencies are typical mass-production values for 2025 from the ITRPV roadmap, except CdTe (one maker's datasheet range).<sup class="cite" data-src="pv-tech-itrpv-2026,first-solar-series-7"></sup> Temperature coefficients are datasheet examples, not averages.<sup class="cite" data-src="jinko-tiger-neo,paudyal-imenes-2021"></sup> Where no technology-specific degradation figure was found, the table gives the long-term field median of about 0.5 % per year across nearly 2000 measurements.<sup class="cite" data-src="jordan-kurtz-2013,jordan-2016"></sup></p>
+
+  <div class="eq">
+    <p>Module efficiency is simply the power out at standard test conditions divided by the sunlight landing on the whole module, frame included.</p>
+    <div class="tex">\eta_\text{module} = \frac{P_\text{max}}{G \cdot A}</div>
+    <dl class="symbols">
+      <dt><span class="tex">P_\text{max}</span></dt><dd>rated power at <dfn data-term="standard-test-conditions">standard test conditions</dfn> (W)</dd>
+      <dt><span class="tex">G</span></dt><dd>irradiance, 1000 W/m² for the rating</dd>
+      <dt><span class="tex">A</span></dt><dd>module area (m²)</dd>
+    </dl>
+    <div class="worked" data-check="pv:efficiency" data-args="[580, 1000, 2.58]" data-expect="0.2248" data-tol="0.0005">
+      A 580 W module measuring 2.28 m × 1.13 m (2.58 m²) has an efficiency of 580 ÷ (1000 × 2.58) = <span class="answer">22.5 %</span>.
+    </div>
+  </div>
+
+  <div class="expert expert-note">
+    <p>Why does a heterojunction module lose less power when hot? Open-circuit voltage falls with temperature because the diode's saturation current rises steeply. The relative fall is smaller the closer the cell's voltage already sits to the band-gap voltage, so a cell with better passivation (higher V<sub>oc</sub>) has a smaller coefficient.<sup class="cite" data-src="dupre-2015,green-2003-temperature"></sup> Measurements on Al-BSF, PERC, PERT and heterojunction cells show this ordering, and also that the series resistance added by stringing cells into a module makes a module's coefficient worse than its cells'.<sup class="cite" data-src="haschke-2017"></sup></p>
+  </div>
+
+  <p>Next, the cells leave the factory: <a href="cell-to-grid.html">from cell to grid</a> follows them into modules, strings and inverters.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

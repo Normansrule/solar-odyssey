@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>The cost collapse – Solar Odyssey</title>
+<meta name="description" content="How a watt of solar went from over a hundred dollars to a few dimes.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="cost-decline.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="cost-decline.js"></script>
+</head>
+<body data-page="cost-decline">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">Solar today</span>
+    <h1>The cost collapse</h1>
+    <p class="lede">In 1975 one watt of solar panel cost about $132 in today's money. In 2024 it cost about 27 cents. Few things people make have ever become five hundred times cheaper.</p>
+  </header>
+
+  <p>The price on this page is the average selling price of a crystalline-silicon module, per watt of peak power, corrected for inflation to 2025 US dollars.<sup class="cite" data-src="owid-solar-pv-prices,nemet-2009,farmer-lafond-2016"></sup> A module is only part of what a solar plant costs. Inverters, racks, wiring, land and labour are the rest, and further down the page we look at the cost of the electricity itself.</p>
+
+  <section class="widget cd-widget" id="price" aria-labelledby="price-h">
+    <h2 id="price-h">The price of a watt, 1975 to 2024</h2>
+    <p class="caption">Each step down the vertical axis is ten times cheaper, so a steady percentage fall looks like a straight line. Hover or tap a year for its price. The numbered rings are explained under the chart.</p>
+    <div class="chart tall cd-chart" id="cd-price" aria-label="Line chart of average solar module prices from 132 dollars per watt in 1975 to 0.27 dollars per watt in 2024 on a logarithmic axis, with four labelled events."></div>
+    <div class="btn-row cd-replay"><button type="button" class="btn ghost" id="cd-replay">Draw it again</button> <span class="data-badge" id="cd-badge">Loading data</span></div>
+    <ol class="cd-notes" id="cd-notes">
+      <li data-year="1975"><span class="cd-y">1975</span> <span class="cd-t">Oil shock money. After the 1973–74 oil embargo, governments began paying for solar research and the first ground-based markets.<sup class="cite" data-src="state-dept-oil-embargo"></sup> Panels still cost over $100 per watt, so buyers were mostly satellites and remote equipment.</span></li>
+      <li data-year="2000"><span class="cd-y">2000</span> <span class="cd-t">Germany's Renewable Energy Sources Act guaranteed a fixed price for 20 years for solar power fed into the grid, creating a large, reliable market.<sup class="cite" data-src="bmwk-eeg-15-years"></sup></span></li>
+      <li data-year="2008"><span class="cd-y">2008–2012</span> <span class="cd-t">The steepest fall in the record: from $4.75 to $1.11 per watt in four years, more than three-quarters off. Studies of the long decline find that after about 2001, economies of scale in ever-larger factories became a bigger driver of cost cuts than research.<sup class="cite" data-src="kavlak-2018"></sup></span></li>
+      <li data-year="2011"><span class="cd-y">2011 on</span> <span class="cd-t">Manufacturing moved to China. China invested over $50 billion in new solar factories from 2011, and by 2022 held over 80 % of every manufacturing step, from purified silicon to finished panels.<sup class="cite" data-src="iea-pv-supply-chains-2022"></sup></span></li>
+    </ol>
+    <details class="cd-table"><summary>The prices as a table</summary><div class="table-wrap" id="cd-price-table"></div></details>
+  </section>
+
+  <div class="worked" data-check="learning:fractionalFall" data-args="[132.3757, 0.2652]" data-expect="0.998" data-tol="0.0005">
+    From $132.38 per watt in 1975 to $0.2652 in 2024 is a fall of <span class="answer">99.8 %</span>: today's panel costs one five-hundredth of what it did. A 400-watt panel would have cost about $53 000 in 1975, in today's money.
+  </div>
+
+  <h2 id="why">Why it fell: learning by doing</h2>
+  <p>In 1936 the aircraft engineer Theodore Wright noticed a pattern in aircraft factories: each time the total number of planes built doubled, the labour to build one fell by a steady share.<sup class="cite" data-src="wright-1936"></sup> The pattern is now called <dfn data-term="wrights-law">Wright's law</dfn>, and the share is the <dfn data-term="learning-rate">learning rate</dfn>. For solar modules it is known as <dfn data-term="swansons-law">Swanson's law</dfn>, after the founder of the solar company SunPower, Richard Swanson.</p>
+  <p>The doubling is of the total ever made, the <dfn data-term="cumulative-capacity">cumulative capacity</dfn>, not of time. Solar got cheap fast because the world kept doubling how much it had built: from about 1.2 gigawatts in 2000 to about 2 400 gigawatts by the end of 2025.<sup class="cite" data-src="owid-solar-capacity"></sup> <span class="verified">2026-09-30</span></p>
+  <p><span class="claim claim--consensus">Current consensus</span> No single invention did it. Studies of the decline point to many causes adding up: more efficient cells, thinner wafers and less silicon per watt, much bigger factories, and steady research. Public research money mattered most early on; markets created by policy, as in Germany, Japan and later China, paid for the scale.<sup class="cite" data-src="kavlak-2018,nemet-2019"></sup></p>
+
+  <section class="eq" id="eq-wright" aria-labelledby="eq-wright-h">
+    <h3 id="eq-wright-h">Wright's law</h3>
+    <p>If every doubling of the total ever built takes off the same share of the cost, then after <em>n</em> doublings the cost has been multiplied by that remainder <em>n</em> times.</p>
+    <div class="tex">C_n = C_0\,(1 - LR)^{\,n}, \qquad n = \log_2\!\frac{Q}{Q_0}</div>
+    <dl class="symbols">
+      <dt><span class="tex">C_0,\ C_n</span></dt><dd>cost at the start and after <span class="tex">n</span> doublings, US$ per watt</dd>
+      <dt><span class="tex">LR</span></dt><dd>learning rate: the fraction of cost removed per doubling (0.2 means 20 %)</dd>
+      <dt><span class="tex">Q_0,\ Q</span></dt><dd>cumulative capacity at the start and now, gigawatts (GW)</dd>
+      <dt><span class="tex">n</span></dt><dd>number of doublings, a plain number</dd>
+    </dl>
+    <div class="worked" data-check="econ:wrightsLaw" data-args="[1, 0.2, 10]" data-expect="0.107" data-tol="0.001">
+      With a 20 % learning rate, ten doublings (a 1 024-fold increase in everything ever built) leave <span class="tex">0.8^{10}</span> = <span class="answer">0.107</span> of the starting cost: about nine-tenths off.
+    </div>
+    <div class="worked" data-check="learning:doublings" data-args="[41.488, 1883.178]" data-expect="5.50" data-tol="0.01">
+      The world had 41.5 GW of solar at the end of 2010 and 1 883 GW at the end of 2024. That is <span class="tex">\log_2(1883 / 41.5)</span> = <span class="answer">5.50</span> doublings in fourteen years.
+    </div>
+    <div class="worked" data-check="econ:impliedLearningRate" data-args="[41.488, 2.5118, 1883.178, 0.2652]" data-expect="0.335" data-tol="0.002">
+      Over those 5.50 doublings the module price fell from $2.51 to $0.265 per watt. The learning rate that fits both ends is <span class="tex">1 - 2^{\ln(0.2652/2.5118)/\ln(1883/41.5)}</span> = <span class="answer">33.5 %</span> per doubling, faster than the long-run average.
+    </div>
+  </section>
+
+  <section class="widget cd-widget" id="curve" aria-labelledby="curve-h">
+    <h2 id="curve-h">Price against everything ever installed</h2>
+    <p class="caption">The same prices, now plotted against cumulative installed capacity, with both axes logarithmic. Wright's law predicts a straight line. Change the learning rate to see how the line would bend away from history.</p>
+    <div class="widget-body split">
+      <div class="chart cd-chart" id="cd-curve" aria-label="Log-log scatter of module price against cumulative installed solar capacity from 2000 to 2024, with a fitted straight learning curve."></div>
+      <div class="controls">
+        <div class="control">
+          <label for="cd-lr">Your learning rate <output id="cd-lr-out" for="cd-lr">20 %</output></label>
+          <input type="range" id="cd-lr" min="5" max="45" step="1" value="20">
+        </div>
+        <div class="btn-row"><button type="button" class="btn ghost" id="cd-fit">Use the fitted rate</button></div>
+        <dl class="readout" aria-live="polite">
+          <div><dt>Fitted learning rate</dt><dd id="cd-fit-lr">—</dd></div>
+          <div><dt>Fit quality (R²)</dt><dd id="cd-r2">—</dd></div>
+          <div><dt>Your line predicts for 2024</dt><dd id="cd-pred">—</dd></div>
+          <div><dt>Actual 2024 price</dt><dd id="cd-actual">—</dd></div>
+        </dl>
+        <p class="caption">Both lines start from the year-2000 point. <span class="data-badge" id="cd-badge2">Loading data</span></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="worked" data-check="learning:sampleLearningRate" data-args="[]" data-expect="0.277" data-tol="0.002">
+    A least-squares straight line through all 25 points from 2000 to 2024 on log–log axes gives a learning rate of <span class="answer">27.7 %</span> per doubling. Fraunhofer ISE's fit over the past 45 years gives about 26.6 % (Photovoltaics Report, 14 July 2026; its executive summary rounds this to 26.7 %).<sup class="cite" data-src="fraunhofer-pv-report-2026"></sup>
+  </div>
+
+  <div class="expert expert-note">
+    <p>Fitting caveats. The price series joins several sources (Nemet to 2003, Farmer and Lafond for 2004–2009, then IRENA's benchmark prices for modules sold in Europe, with OWID's inflation adjustment), and prices are not costs: in boom years margins swell, in gluts manufacturers sell below cost. A log-log fit is dominated by where the points are dense, so the fitted rate depends on the window: 2000–2024 gives about 28 %, 2010–2024 end to end about 34 %. The x axis here is installed capacity, a proxy for cumulative production (shipments run slightly ahead of installations). Farmer and Lafond, forecasting costs for 53 technologies with a Moore's-law-style time trend, note that an earlier test on very similar data found Wright's law and time trends roughly tied; the two agree whenever production grows exponentially.<sup class="cite" data-src="farmer-lafond-2016"></sup></p>
+  </div>
+
+  <h2 id="lcoe">The price of solar electricity</h2>
+  <p>What a household or grid pays for is electricity, not panels. The <dfn data-term="lcoe">levelised cost of electricity</dfn> spreads everything a plant costs over all the energy it makes in its life. For new large solar farms worldwide it fell from about 41 cents per kilowatt-hour in 2010 to about 4.3 cents in 2024, in 2025 dollars.<sup class="cite" data-src="owid-lcoe,irena-costs-2025"></sup> <span class="verified">2026-09-30</span></p>
+  <section class="widget cd-widget cd-lcoe" id="lcoe-chart" aria-labelledby="lcoe-h">
+    <h3 id="lcoe-h">Cost of electricity from new solar farms</h3>
+    <div class="chart short cd-chart" id="cd-lcoe" aria-label="Line chart of the global weighted-average levelised cost of electricity from new utility-scale solar PV, from 0.41 dollars per kilowatt-hour in 2010 to 0.043 in 2024 and 2025."></div>
+    <p class="caption">Global weighted average for projects commissioned each year, IRENA data via Our World in Data, constant 2025 US$. <span class="data-badge" id="cd-badge3">Loading data</span></p>
+  </section>
+  <div class="worked" data-check="learning:fractionalFall" data-args="[0.4077, 0.043]" data-expect="0.895" data-tol="0.001">
+    From $0.4077 to $0.043 per kWh is a fall of <span class="answer">89.5 %</span> in fourteen years. The fall flattened after 2023: the 2025 figure, $0.0435, is no lower.
+  </div>
+  <p>Cheaper panels are only part of that. Plants also got bigger, sun-tracking racks and <a href="../frontier.html#bifacial">two-sided modules</a> squeezed out more energy per panel, and finance got cheaper as investors learned the risks were low. You can try the LCOE formula yourself in the <a href="../renewables/compare.html">comparison dashboard</a>.</p>
+
+  <p class="changes-note">Prices, capacity and costs here run to 2024 or 2025, the latest years the sources cover. The newest values, with their dates, are on the <a href="../state-of-the-field.html">state of the field</a> page.</p>
+
+  <h2 id="next">Where next</h2>
+  <p>Cheap silicon is the base. What could beat it is on <a href="../frontier.html">the frontier</a>.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+  "solar-elevation": {
+    "term": "Solar elevation",
+    "short": "How high the Sun stands above the horizon, in degrees: 0° at sunrise and sunset, 90° straight overhead.",
+    "see": ["solar-zenith-angle", "solar-azimuth"]
+  },
+  "solar-zenith-angle": {
+    "term": "Solar zenith angle",
+    "short": "The angle between the Sun and the point straight overhead. It is 90° minus the solar elevation.",
+    "see": ["solar-elevation"]
+  },
+  "solar-azimuth": {
+    "term": "Solar azimuth",
+    "short": "The compass direction of the Sun, in degrees clockwise from north: 90° east, 180° south, 270° west.",
+    "see": ["solar-elevation"]
+  },
+  "solar-declination": {
+    "term": "Solar declination",
+    "short": "The latitude where the Sun is directly overhead at noon. Because Earth's axis is tilted, it swings between about +23.4° in June and −23.4° in December, passing 0° at the equinoxes.",
+    "see": ["solar-elevation"]
+  },
+  "solar-time": {
+    "term": "Solar time",
+    "short": "Time set by the Sun rather than by time zones: the Sun crosses due north or south at about 12:00 solar time. Clocks can differ from it by an hour or more.",
+    "see": ["equation-of-time"]
+  },
+  "equation-of-time": {
+    "term": "Equation of time",
+    "short": "How far a sundial runs ahead of or behind an even clock, up to about 16 minutes, because Earth's orbit is an ellipse and its axis is tilted.",
+    "see": ["solar-time"]
+  },
+  "direct-normal-irradiance": {
+    "term": "Direct normal irradiance (DNI)",
+    "short": "Sunlight coming straight from the Sun's disc, measured on a surface turned to face the Sun square on, in W/m².",
+    "see": ["diffuse-horizontal-irradiance", "global-horizontal-irradiance"]
+  },
+  "diffuse-horizontal-irradiance": {
+    "term": "Diffuse horizontal irradiance (DHI)",
+    "short": "Sunlight scattered by air, haze and clouds that arrives from the rest of the sky, measured on a flat horizontal surface, in W/m².",
+    "see": ["direct-normal-irradiance", "global-horizontal-irradiance"]
+  },
+  "global-horizontal-irradiance": {
+    "term": "Global horizontal irradiance (GHI)",
+    "short": "All the sunlight reaching flat, level ground: the direct beam times the cosine of the zenith angle, plus the diffuse light. Weather stations usually measure this.",
+    "see": ["direct-normal-irradiance", "diffuse-horizontal-irradiance"]
+  },
+  "plane-of-array-irradiance": {
+    "term": "Plane-of-array irradiance (POA)",
+    "short": "The sunlight landing on the face of a tilted panel, in W/m²: the direct beam plus the share of sky light and ground reflection the panel can see.",
+    "see": ["irradiance", "angle-of-incidence"]
+  },
+  "insolation": {
+    "term": "Insolation",
+    "short": "Sunlight energy collected over a period, usually in kWh/m² per day or per year. Daily insolation in kWh/m² equals peak sun hours.",
+    "see": ["peak-sun-hours", "irradiance"]
+  },
+  "clear-sky-model": {
+    "term": "Clear-sky model",
+    "short": "A formula for how much sunlight reaches the ground on a cloudless day. It gives a ceiling: real days with clouds and haze bring less.",
+    "see": ["typical-meteorological-year"]
+  },
+  "isotropic-sky-model": {
+    "term": "Isotropic sky model",
+    "short": "The simplifying assumption that diffuse sky light is equally bright from every part of the sky, so a tilted panel collects it in proportion to how much sky it can see.",
+    "see": ["plane-of-array-irradiance"]
+  },
+  "typical-meteorological-year": {
+    "term": "Typical meteorological year (TMY)",
+    "short": "A year of hourly weather stitched together from real months that are typical for a site, used to estimate long-run solar output.",
+    "see": ["clear-sky-model"]
+  }
+}

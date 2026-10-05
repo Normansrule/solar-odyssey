@@ -1,0 +1,30 @@
+/* Efficiency over time: filter chips double as the legend (colour + shape + name). */
+.er-filters { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.4rem 0 1rem; }
+.er-chip {
+  --c: var(--silicon);
+  font: inherit; font-size: var(--s-1); color: var(--ink); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.55rem; border-radius: 999px;
+  border: 1px solid var(--rule); background: var(--paper);
+}
+.er-chip:hover { border-color: var(--c); }
+.er-chip[aria-pressed="false"] { color: var(--ink-2); background: none; border-style: dashed; }
+.er-chip[aria-pressed="false"] .er-mark { background: none; box-shadow: inset 0 0 0 1.5px var(--c); }
+.er-mark { width: 0.7rem; height: 0.7rem; background: var(--c); flex: none; display: inline-block; }
+.er-mark--circle { border-radius: 50%; }
+.er-mark--rect { border-radius: 1px; }
+.er-mark--roundRect { border-radius: 3px; width: 0.85rem; height: 0.55rem; }
+.er-mark--diamond { transform: rotate(45deg) scale(0.85); }
+.er-mark--triangle { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.er-chip[aria-pressed="false"] .er-mark--triangle { opacity: 0.35; background: var(--c); }
+
+.er-chart { min-height: 22rem; }
+@media (max-width: 40rem) { .er-chart.chart.tall { height: 26rem; } }
+
+.er-time { display: grid; gap: 0.8rem 1.5rem; margin-top: 1rem; align-items: end; }
+@media (min-width: 44rem) { .er-time { grid-template-columns: auto minmax(0, 1fr); } }
+.er-year label output { font-size: var(--s1); }
+.er-summary { min-height: 3em; color: var(--ink); }
+.er-table { margin-top: 1rem; font-size: var(--s-1); }
+.er-table summary { cursor: pointer; font-weight: 650; color: var(--silicon); padding: 0.3rem 0; }
+.er-table table { margin-top: 0.6rem; }

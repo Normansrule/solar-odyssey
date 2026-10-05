@@ -1,0 +1,116 @@
+{
+  "lenard-1902": {
+    "type": "article",
+    "authors": "Lenard, P.",
+    "title": "Ueber die lichtelektrische Wirkung",
+    "container": "Annalen der Physik 313(5), 149–198",
+    "year": 1902,
+    "doi": "10.1002/andp.19023130510",
+    "verified": "2026-09-30",
+    "note": "Measurements showing that the energy of electrons freed by light depends on the light's colour, not its intensity."
+  },
+  "prsa-2016": {
+    "type": "article",
+    "authors": "Prša, A.; Harmanec, P.; Torres, G.; Mamajek, E.; Asplund, M.; et al.",
+    "title": "Nominal values for selected solar and planetary quantities: IAU 2015 Resolution B3",
+    "container": "The Astronomical Journal 152(2), 41",
+    "year": 2016,
+    "doi": "10.3847/0004-6256/152/2/41",
+    "verified": "2026-10-02",
+    "note": "Defines the nominal solar effective temperature, 5772 K, used for the blackbody sun on these pages."
+  },
+  "zhang-2020": {
+    "type": "article",
+    "authors": "Zhang, F.; Castaneda, J. F.; Chen, S.; Wu, W.; DiNezza, M. J.; et al.",
+    "title": "Comparative studies of optoelectrical properties of prominent PV materials: Halide perovskite, CdTe, and GaAs",
+    "container": "Materials Today 36, 18–29",
+    "year": 2020,
+    "doi": "10.1016/j.mattod.2020.01.001",
+    "verified": "2026-10-02",
+    "note": "Room-temperature band gaps: GaAs about 1.42 eV, single-crystal CdTe about 1.51 eV, MAPbI3 about 1.61–1.63 eV (arXiv:1907.03434)."
+  },
+  "doe-cigs": {
+    "type": "web",
+    "authors": "U.S. Department of Energy",
+    "title": "Copper indium gallium diselenide",
+    "year": 2025,
+    "url": "https://www.energy.gov/cmei/systems/copper-indium-gallium-diselenide",
+    "verified": "2026-10-02",
+    "note": "CuInSe2 band gap about 1.04 eV, CuGaSe2 about 1.68 eV; the best devices use a partial substitution of Ga for In. Page first published 24 January 2014 by the Solar Energy Technologies Office and last modified 29 September 2025; the old /eere/solar/ address now leads here (Integrated Energy Systems Office)."
+  },
+  "street-1991": {
+    "type": "book",
+    "authors": "Street, R. A.",
+    "title": "Hydrogenated Amorphous Silicon",
+    "container": "Cambridge University Press (Cambridge Solid State Science Series)",
+    "year": 1991,
+    "doi": "10.1017/CBO9780511525247",
+    "verified": "2026-10-02",
+    "note": "Standard monograph on a-Si:H, including its optical gap of about 1.7 eV and the absence of a sharp band edge."
+  },
+  "de-vos-1980": {
+    "type": "article",
+    "authors": "De Vos, A.",
+    "title": "Detailed balance limit of the efficiency of tandem solar cells",
+    "container": "Journal of Physics D: Applied Physics 13(5), 839–846",
+    "year": 1980,
+    "doi": "10.1088/0022-3727/13/5/018",
+    "verified": "2026-10-02",
+    "note": "Unconcentrated sunlight: about 30 % for one cell, 42 % for two, 49 % for three, 68 % for an infinite stack; 40 %, 55 %, 63 % and 86 % at maximum concentration."
+  },
+  "polman-2016": {
+    "type": "article",
+    "authors": "Polman, A.; Knight, M. W.; Garnett, E. C.; Ehrler, B.; Sinke, W. C.",
+    "title": "Photovoltaic materials: Present efficiencies and future challenges",
+    "container": "Science 352(6283), aad4424",
+    "year": 2016,
+    "doi": "10.1126/science.aad4424",
+    "verified": "2026-10-02",
+    "note": "Compares 16 photovoltaic materials against their Shockley–Queisser detailed-balance limits."
+  },
+  "pveducation-si-optical": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Optical properties of silicon (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/materials/optical-properties-of-silicon",
+    "verified": "2026-09-30",
+    "note": "Silicon is an indirect band gap semiconductor with a long, weak absorption tail near the band edge; tabulated absorption coefficients."
+  },
+  "pveducation-absorption-depth": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Absorption depth (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/pn-junctions/absorption-depth",
+    "verified": "2026-09-30",
+    "note": "In silicon, blue light is absorbed within a few microns while red light needs a few hundred microns."
+  },
+  "pveducation-band-gap": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Band gap (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/pn-junctions/band-gap",
+    "verified": "2026-09-30",
+    "note": "The band gap as the minimum energy to free a bound electron into the conduction band, leaving a hole in the valence band."
+  },
+  "pveducation-atmosphere": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Atmospheric effects (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/properties-of-sunlight/atmospheric-effects",
+    "verified": "2026-09-30",
+    "note": "Ozone removes most ultraviolet below 0.3 µm; water vapour and CO2 cut deep troughs in the infrared."
+  },
+  "pveducation-standard-spectra": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Standard solar spectra (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/appendices/standard-solar-spectra",
+    "verified": "2026-09-30",
+    "note": "AM1.5 global spectrum (ASTM G173-03) normalised to 1000 W/m²."
+  }
+}

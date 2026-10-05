@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Check your understanding: From cell to grid",
+    "sources": [
+      "pveducation-voc",
+      "pveducation-bypass",
+      "holt-nec-690-2016",
+      "patel-agarwal-2008"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "cell-to-grid",
+    "minutes": 35,
+    "objectives": [
+      "Calculate module, string and array voltages and currents from series and parallel wiring",
+      "Explain why modules use half-cut cells and bypass diodes, and why inverters track the maximum power point (MPPT)",
+      "Use a temperature coefficient to check a string against an inverter's voltage limit on the coldest morning"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Modern modules cut each cell in half and wire the halves as two chains in parallel. Why does this reduce losses?",
+        "choices": [
+          "Each chain carries half the current, so I²R heating in the same wire falls to a quarter",
+          "Half cells have twice the voltage, so less current is needed",
+          "Each chain carries half the current, so the heat lost in the wires halves",
+          "Smaller cells have a wider band gap and waste less light as heat"
+        ],
+        "answer": 0,
+        "explain": "Loss in a wire is P = I²R, so halving the current cuts it to a quarter: 13.2 A wastes 1.74 W in a 0.01 Ω ribbon, 6.6 A only 0.44 W. It is not a half, because the current is squared. A cell's voltage does not depend on its size."
+      },
+      {
+        "id": "q2",
+        "prompt": "A string of sixteen 50.7 V modules has a voltage temperature coefficient β = −0.27 %/°C. What is its open-circuit voltage on a −20 °C morning?",
+        "choices": [
+          "About 811 V",
+          "About 713 V",
+          "About 910 V",
+          "About 855 V"
+        ],
+        "answer": 2,
+        "explain": "V_oc,cold = 16 × 50.7 × (1 + (−0.0027) × (−20 − 25)) = 811.2 × 1.1215 ≈ 910 V. Cold raises the voltage, so the answer must be above the 811 V rating; 713 V comes from a sign slip, and 855 V from using −20 instead of the 45-degree difference from 25 °C.",
+        "source": "holt-nec-690-2016"
+      },
+      {
+        "id": "q3",
+        "prompt": "In a module without bypass diodes, one cell in the series chain is heavily shaded. What happens?",
+        "choices": [
+          "Only that cell's share is lost, about 1/72 of the module's power",
+          "The whole chain's current is throttled, and the shaded cell can heat into a hot spot",
+          "The current flows around the shaded cell, which simply switches off",
+          "The other cells push extra current to make up for it"
+        ],
+        "answer": 1,
+        "explain": "The same current must flow through every cell in series, so one weak cell limits them all, like a kink in a hose, and the others force it into reverse, where it turns power into heat. Current flowing around a shaded group is what a bypass diode adds; without one there is no way around.",
+        "source": "pveducation-bypass"
+      },
+      {
+        "id": "q4",
+        "prompt": "Partial shading gives a module's power–voltage curve two humps. Why might a perturb-and-observe tracker then lose power?",
+        "choices": [
+          "It needs a bypass diode on every single cell to work at all",
+          "It always jumps back to open circuit when shade appears",
+          "It follows the current rather than the power, so the humps confuse it",
+          "It only compares nearby points, so it can settle on the lower hump"
+        ],
+        "answer": 3,
+        "explain": "Perturb and observe nudges the voltage and keeps going while the power rises, which finds a peak but not necessarily the highest one. That is why trackers also run an occasional global scan across the whole voltage range.",
+        "source": "patel-agarwal-2008"
+      }
+    ]
+  }
+}

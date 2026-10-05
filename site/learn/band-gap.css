@@ -1,0 +1,39 @@
+/* The band gap: page-local styles for the spectrum splitter and SQ chart. */
+
+.bg-grid { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 56rem) {
+  .bg-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+}
+.bg-panel { margin: 0; min-width: 0; }
+.bg-panel-h {
+  font-weight: 700; font-size: var(--s-1); color: var(--ink); margin: 0 0 0.5rem;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.3rem 1rem; align-items: baseline;
+}
+.widget figure.bg-panel figcaption.bg-panel-h { margin-top: 0; color: var(--ink); }
+.widget canvas.bg-canvas { height: 340px; background: none; touch-action: none; cursor: ew-resize; }
+.bg-chart.chart { height: 340px; }
+.widget .bg-chart canvas { background: none; border-radius: 0; }
+
+.bg-controls {
+  display: grid; gap: 1rem 1.5rem; margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid var(--rule);
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 56rem) {
+  .bg-controls { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; }
+}
+.bg-slider small { display: block; margin-top: 0.15rem; }
+.bg-jumps { margin-top: 0.7rem; gap: 0.35rem; }
+.bg-jump { padding: 0.3rem 0.65rem; font-size: var(--s-2); }
+.bg-jump[aria-pressed="true"] { background: var(--silicon); color: var(--paper); }
+
+.bg-readout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bg-readout dt { display: flex; align-items: center; gap: 0.35rem; }
+.bg-readout dd output { color: var(--ink); }
+.bg-r-below .swatch {
+  background: repeating-linear-gradient(135deg, var(--ink-2) 0 1.5px, transparent 1.5px 4px); border: 1px solid var(--ink-2);
+}
+.bg-r-heat .swatch { background: var(--sun); }
+.bg-r-use .swatch { background: var(--electron); }
+.bg-r-sq { background: var(--sun-wash) !important; }
+.bg-explain { max-width: 48rem; }
+.bg-note { font-size: var(--s-1); }

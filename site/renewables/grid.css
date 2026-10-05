@@ -1,0 +1,11 @@
+/* The smart grid page (also loads storage.css for the shared day charts) */
+.toolbox { display: grid; gap: 0 2rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 48rem) { .page > .toolbox { max-width: var(--wide); } .toolbox { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.toolbox section { border-top: 2px solid var(--silicon); }
+.toolbox h3 { margin-top: 0.8rem; }
+.small-note { font-size: var(--s-1); }
+.duck-fig { margin-top: 1.2rem; }
+.duck-fig figcaption { font-size: var(--s-1); color: var(--ink-2); }
+.game-verdict { font-weight: 650; margin: 1rem 0 0.4rem; padding-left: 0.9rem; border-left: 3px solid var(--rule); min-height: 1.6em; }
+.game-verdict[data-ok="true"] { border-left-color: var(--good); }
+.game-verdict[data-ok="false"] { border-left-color: var(--warn); }

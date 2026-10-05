@@ -1,0 +1,28 @@
+/* The p-n junction: page-local styles for the junction explorer. */
+
+.pnj-stage { min-width: 0; }
+.widget canvas#pnj-canvas { background: var(--paper-2); }
+.pnj-legend { margin: 0.7rem 0 0; }
+.pnj-key { width: 0.8rem; height: 0.8rem; border-radius: 50%; display: inline-block; flex: none; }
+.pnj-key--electron { background: var(--electron); }
+.pnj-key--hole { border: 2px solid var(--hole); background: var(--panel); }
+.pnj-key--ion { border-radius: 2px; background: none; position: relative; width: 1.6rem; }
+.pnj-key--ion::before { content: "− +"; position: absolute; inset: -0.35rem 0 0; font-weight: 700; font-size: 0.95rem; color: var(--ink-2); line-height: 1.2; }
+.pnj-key--photon { border-radius: 1px; width: 0.25rem; height: 1rem; background: var(--sun); }
+.pnj-key--recomb { border: 1.5px solid var(--ink-2); background: none; }
+.pnj-play { margin-top: 0.8rem; }
+
+.pnj-hint { display: flex; justify-content: space-between; font-size: var(--s-2); color: var(--ink-2); margin: 0.1rem 0 0.4rem; }
+.pnj-presets .btn { padding: 0.3rem 0.6rem; font-size: var(--s-2); }
+.pnj-doping { display: grid; gap: 0.9rem; padding: 0.8rem 0 0.2rem; border-top: 1px solid var(--rule); }
+.pnj-doping::before { content: "Doping (expert)"; font-size: var(--s-2); font-weight: 700; color: var(--silicon); }
+
+.widget .readout dd { font-size: var(--s0); }
+.pnj-iv { margin: 0.4rem 0 0; }
+.widget canvas#pnj-iv { background: none; touch-action: none; cursor: crosshair; }
+.widget .pnj-iv figcaption { margin-top: 0.3rem; }
+.widget .intro-lead { margin-top: -0.2rem; margin-bottom: 1rem; }
+
+/* keep the history list in the reading column */
+.page > ol.mini-timeline { margin-left: auto; padding-left: 0.4rem; }
+.page > ol.mini-timeline::before { left: 0.7rem; }

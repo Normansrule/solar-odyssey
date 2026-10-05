@@ -1,0 +1,472 @@
+{
+  "zhu-long-ort-2008": {
+    "type": "article",
+    "authors": "Zhu, X.-G.; Long, S. P.; Ort, D. R.",
+    "title": "What is the maximum efficiency with which photosynthesis can convert solar energy into biomass?",
+    "container": "Current Opinion in Biotechnology 19(2), 153–159",
+    "year": 2008,
+    "doi": "10.1016/j.copbio.2008.02.004",
+    "verified": "2026-09-30",
+    "note": "Theoretical maxima: 4.6 % for C3 plants (30 °C, 380 ppm CO2) and 6 % for C4 plants."
+  },
+  "blankenship-2011": {
+    "type": "article",
+    "authors": "Blankenship, R. E.; Tiede, D. M.; Barber, J.; et al.",
+    "title": "Comparing photosynthetic and photovoltaic efficiencies and recognizing the potential for improvement",
+    "container": "Science 332(6031), 805–809",
+    "year": 2011,
+    "doi": "10.1126/science.1200165",
+    "verified": "2026-10-02",
+    "note": "Annually, PV-driven electrolysis beats photosynthesis; best short-term photosynthetic yields come within a factor of 2–3."
+  },
+  "ort-durham-2012": {
+    "type": "article",
+    "authors": "Ort, D. R.; Durham, S.",
+    "title": "Comparing light-conversion efficiency of plants and manmade solar cells",
+    "container": "Agricultural Research (USDA ARS magazine), January 2012",
+    "year": 2012,
+    "url": "https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1108&context=usdaagresmag",
+    "verified": "2026-09-30",
+    "note": "Plain-language summary of Blankenship et al. (2011): crop plants convert about 1 percent of solar energy; PV-driven electrolysis about 10 percent annually."
+  },
+  "fao-bioenergy-future": {
+    "type": "report",
+    "authors": "Food and Agriculture Organization of the United Nations (FAO)",
+    "title": "Chapter 7: The future of renewable biological energy systems",
+    "container": "FAO, Renewable biological systems for alternative sustainable energy production (Agricultural Services Bulletin 128)",
+    "year": 1997,
+    "url": "https://www.fao.org/4/W7241E/w7241e0i.htm",
+    "verified": "2026-09-30",
+    "note": "States that agricultural and forestry efficiencies seldom exceed 1 % of solar input converted to a recoverable product."
+  },
+  "nobel-chemistry-1961": {
+    "type": "web",
+    "authors": "Nobel Prize Outreach",
+    "title": "The Nobel Prize in Chemistry 1961: Melvin Calvin",
+    "year": 1961,
+    "url": "https://www.nobelprize.org/prizes/chemistry/1961/summary/",
+    "verified": "2026-09-30"
+  },
+  "fargione-2008": {
+    "type": "article",
+    "authors": "Fargione, J.; Hill, J.; Tilman, D.; Polasky, S.; Hawthorne, P.",
+    "title": "Land clearing and the biofuel carbon debt",
+    "container": "Science 319(5867), 1235–1238",
+    "year": 2008,
+    "doi": "10.1126/science.1152747",
+    "verified": "2026-10-02"
+  },
+  "ipcc-ar6-wg3-ch7": {
+    "type": "report",
+    "authors": "Nabuurs, G.-J.; Mrabet, R.; Abu Hatab, A.; et al. (IPCC)",
+    "title": "Agriculture, Forestry and Other Land Uses (AFOLU). In: Climate Change 2022: Mitigation of Climate Change, Working Group III contribution to the IPCC Sixth Assessment Report, Chapter 7",
+    "container": "Cambridge University Press",
+    "year": 2022,
+    "doi": "10.1017/9781009157926.009",
+    "url": "https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-7/",
+    "verified": "2026-10-02",
+    "note": "BECCS technical CDR potential 5.9 (0.5–11.3) GtCO2/yr, medium confidence; poorly planned biomass deployment may conflict with sustainability, high confidence."
+  },
+  "wiki-ethanol-brazil": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "Ethanol fuel in Brazil",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/Ethanol_fuel_in_Brazil",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia used as a last resort for the 1975 Pró-Álcool start date and the 2003 flex-fuel launch."
+  },
+  "wiki-beccs": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "Bioenergy with carbon capture and storage",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/Bioenergy_with_carbon_capture_and_storage",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia used as a last resort for the Illinois Industrial CCS dates (pilot from 2011, commercial phase from 2017) and the count of operating large-scale BECCS projects (Global CCS Institute 2024)."
+  },
+  "kalogirou-2004": {
+    "type": "article",
+    "authors": "Kalogirou, S. A.",
+    "title": "Solar thermal collectors and applications",
+    "container": "Progress in Energy and Combustion Science 30(3), 231–295",
+    "year": 2004,
+    "doi": "10.1016/j.pecs.2004.02.001",
+    "verified": "2026-09-30",
+    "note": "History section: Shuman and Boys' Meadi (Egypt) pumping plant, operating 1913, 62 m parabolic cylinders, 1200 m², 37–45 kW, shut down 1915."
+  },
+  "doe-csp-mirrors-2001": {
+    "type": "report",
+    "authors": "U.S. Department of Energy; National Renewable Energy Laboratory",
+    "title": "Concentrating Solar Power: Energy from Mirrors",
+    "container": "DOE/GO-102001-1147, FS 128",
+    "year": 2001,
+    "url": "https://www.nrel.gov/docs/fy01osti/28751.pdf",
+    "verified": "2026-09-30",
+    "note": "Solar One (10 MW) operated 1982–1988; Solar Two (10 MW) 1996–1999 with molten nitrate salt at about 565 °C and 3 h storage."
+  },
+  "solarpaces-segs-i": {
+    "type": "dataset",
+    "authors": "NREL / SolarPACES",
+    "title": "CSP Projects database: Solar Electric Generating Station I",
+    "year": 2026,
+    "url": "https://solarpaces.nlr.gov/project/solar-electric-generating-station-i",
+    "verified": "2026-09-30",
+    "note": "13.8 MW parabolic trough, Daggett CA, start 1984; decommissioned."
+  },
+  "solarpaces-csp-db": {
+    "type": "dataset",
+    "authors": "NREL / SolarPACES",
+    "title": "Concentrating Solar Power Projects database (all projects, CSV export)",
+    "year": 2026,
+    "url": "https://solarpaces.nlr.gov/download-project-all?_format=csv",
+    "verified": "2026-09-30",
+    "note": "SEGS I–IX capacities (13.8 + 6 × 30 + 2 × 80 MW ≈ 354 MW); tower, trough and Fresnel projects worldwide. SolarPACES states the database has not been updated since October 2023."
+  },
+  "solarpaces-gemasolar": {
+    "type": "dataset",
+    "authors": "NREL / SolarPACES",
+    "title": "CSP Projects database: Gemasolar Thermosolar Plant / Solar TRES",
+    "year": 2026,
+    "url": "https://solarpaces.nrel.gov/project/gemasolar-thermosolar-plant-solar-tres",
+    "verified": "2026-09-30",
+    "note": "20 MW tower, 2011, two-tank direct molten salt storage of 15 h, 2650 heliostats of 120 m², 140 m tower, salt 290 °C cold / 565 °C hot."
+  },
+  "solarpaces-noor-iii": {
+    "type": "dataset",
+    "authors": "NREL / SolarPACES",
+    "title": "CSP Projects database: NOOR III",
+    "year": 2026,
+    "url": "https://solarpaces.nrel.gov/project/noor-iii",
+    "verified": "2026-09-30",
+    "note": "150 MW molten-salt tower, Ouarzazate, Morocco, start 2018, 7 h storage, 247 m tower."
+  },
+  "pge-ivanpah-2025": {
+    "type": "web",
+    "authors": "Pacific Gas and Electric Company",
+    "title": "PG&E agrees to end power purchases from Ivanpah solar project to save customers money",
+    "year": 2025,
+    "url": "https://www.pge.com/en/newsroom/currents/energy-savings/pg-e-agrees-to-end-power-purchases-from-ivanpah-solar-project.html",
+    "verified": "2026-09-30",
+    "note": "Announced 17 January 2025, pending CPUC approval; plant began generating in 2014; PG&E contracted units 1 and 3; deliveries end from 2026."
+  },
+  "iha-outlook-2026": {
+    "type": "report",
+    "authors": "International Hydropower Association (IHA)",
+    "title": "2026 World Hydropower Outlook",
+    "year": 2026,
+    "url": "https://www.hydropower.org/news/year-of-the-water-battery-global-pumped-storage-capacity-surpasses-200-gw",
+    "verified": "2026-10-02",
+    "note": "Launch release, 24 June 2026: pumped storage 201 GW at the end of 2025 after a record 11.7 GW added in 2025; 243 GW under construction and a 621 GW pipeline; total hydropower 1,469 GW; generation 4,495 TWh; 'the world's dominant form of large-scale energy storage'."
+  },
+  "iha-outlook-2025": {
+    "type": "report",
+    "authors": "International Hydropower Association (IHA)",
+    "title": "2025 World Hydropower Outlook",
+    "year": 2025,
+    "url": "https://www.hydropower.org/resources/publications",
+    "verified": "2026-09-30",
+    "note": "States that pumped storage accounts for more than 90 % of the world's energy storage; 189 GW installed at the end of 2024."
+  },
+  "ren21-gsr-2024-storage": {
+    "type": "report",
+    "authors": "REN21",
+    "title": "Renewables 2024 Global Status Report: Energy Systems and Infrastructure, Energy storage",
+    "year": 2024,
+    "url": "https://www.ren21.net/gsr-2024/modules/energy_systems_infrastructure/02_energy_storage/",
+    "verified": "2026-09-30",
+    "note": "2023: pumped storage 179 GW; battery storage 55.7 GW after 120 % growth; batteries were 83 % of utility-scale storage capacity additions."
+  },
+  "umich-css-storage-2026": {
+    "type": "report",
+    "authors": "Center for Sustainable Systems, University of Michigan",
+    "title": "U.S. Grid Energy Storage Factsheet (Pub. No. CSS15-17)",
+    "year": 2026,
+    "url": "https://css.umich.edu/publications/factsheets/energy/us-grid-energy-storage-factsheet",
+    "verified": "2026-09-30",
+    "note": "The Rocky River pumped storage plant (1929) was the first large-scale US energy store; pumped hydro round-trip efficiency 70–85 %."
+  },
+  "pnnl-storage-2019": {
+    "type": "report",
+    "authors": "Mongird, K.; Viswanathan, V.; Balducci, P.; Alam, J.; Fotedar, V.; Koritarov, V.; Hadjerioua, B.",
+    "title": "Energy Storage Technology and Cost Characterization Report (PNNL-28866)",
+    "container": "Pacific Northwest National Laboratory, July 2019",
+    "year": 2019,
+    "url": "https://www.pnnl.gov/publications/energy-storage-technology-and-cost-characterization-report",
+    "verified": "2026-09-30",
+    "note": "Round-trip efficiency: pumped hydro 0.80, CAES 0.52, vanadium flow 0.675 (2018) to 0.70; lithium-ion 0.83 (2025 estimate). Response time: batteries about 1 s; pumped hydro 5–70 s up to minutes depending on mode."
+  },
+  "pnnl-storage-2022": {
+    "type": "report",
+    "authors": "Viswanathan, V.; Mongird, K.; Franks, R.; Li, X.; Sprenkle, V.; Baxter, R.",
+    "title": "2022 Grid Energy Storage Technology Cost and Performance Assessment (PNNL-33283)",
+    "container": "Pacific Northwest National Laboratory for the U.S. DOE, August 2022",
+    "year": 2022,
+    "url": "https://www.energy.gov/eere/analysis/2022-grid-energy-storage-technology-cost-and-performance-assessment",
+    "verified": "2026-10-02",
+    "note": "Installed cost of 100 MW systems in 2021 US$/kWh: Li-ion LFP 4 h ≈ 385; vanadium flow 10 h ≈ 385; pumped hydro 10 h ≈ 263; CAES 10 h ≈ 122."
+  },
+  "nrel-battery-cost-2025": {
+    "type": "report",
+    "authors": "Cole, W.; Ramasamy, V.; Turan, M.",
+    "title": "Cost Projections for Utility-Scale Battery Storage: 2025 Update (NREL/TP-6A40-93281)",
+    "container": "National Renewable Energy Laboratory, June 2025",
+    "year": 2025,
+    "url": "https://docs.nrel.gov/docs/fy25osti/93281.pdf",
+    "verified": "2026-10-02",
+    "note": "4-hour utility-scale battery about 334 US$/kWh in 2024 (2025 projections 295–350); round-trip efficiency taken as 85 %. Projected 2025 cost: low 295, mid 321, high 350 US$/kWh; 15-year life."
+  },
+  "inl-hydrogen-2023": {
+    "type": "report",
+    "authors": "Balliet, W. H.; Casteel, M. (Idaho National Laboratory)",
+    "title": "Bidirectional Hydrogen Storage: Technology Strategy Assessment (Storage Innovations 2030)",
+    "container": "U.S. Department of Energy, July 2023",
+    "year": 2023,
+    "url": "https://www.energy.gov/sites/default/files/2023-07/Technology%20Strategy%20Assessment%20-%20Bidirectional%20Hydrogen%20Storage_0.pdf",
+    "verified": "2026-10-02",
+    "note": "Baseline round-trip efficiency 31 % for a system with a 73 % electrolyser and a 51 % fuel cell."
+  },
+  "nobel-chemistry-2019": {
+    "type": "web",
+    "authors": "Nobel Prize Outreach",
+    "title": "The Nobel Prize in Chemistry 2019: Goodenough, Whittingham and Yoshino, for the development of lithium-ion batteries",
+    "year": 2019,
+    "url": "https://www.nobelprize.org/prizes/chemistry/2019/summary/",
+    "verified": "2026-09-30"
+  },
+  "caiso-duck-2016": {
+    "type": "report",
+    "authors": "California Independent System Operator (CAISO)",
+    "title": "What the duck curve tells us about managing a green grid (Fast Facts)",
+    "year": 2016,
+    "url": "https://www.caiso.com/documents/flexibleresourceshelprenewables_fastfacts.pdf",
+    "verified": "2026-10-02",
+    "note": "Projected spring net-load ramp: an additional 13,000 MW within approximately three hours (by 2020)."
+  },
+  "nrel-duck-2015": {
+    "type": "report",
+    "authors": "Denholm, P.; Brinkman, G.; Jorgenson, J. (National Renewable Energy Laboratory)",
+    "title": "Overgeneration from Solar Energy in California: A Field Guide to the Duck Chart (NREL/TP-6A20-65023)",
+    "year": 2015,
+    "url": "https://research-hub.nrel.gov/en/publications/overgeneration-from-solar-energy-in-california-a-field-guide-to-t",
+    "verified": "2026-10-02",
+    "note": "Without more flexibility, solar at about 20 % of annual energy could push marginal curtailment above 30 %."
+  },
+  "eia-duck-2023": {
+    "type": "web",
+    "authors": "U.S. Energy Information Administration",
+    "title": "As solar capacity grows, duck curves are getting deeper in California (Today in Energy, 21 June 2023)",
+    "year": 2023,
+    "url": "https://www.eia.gov/todayinenergy/detail.php?id=61103",
+    "verified": "2026-10-02",
+    "note": "CAISO battery capacity grew from 0.2 GW (2018) to 4.9 GW (April 2023)."
+  },
+  "doe-duck-2017": {
+    "type": "web",
+    "authors": "Jones-Albertus, B. (U.S. Department of Energy)",
+    "title": "Confronting the duck curve: how to address over-generation of solar energy",
+    "year": 2017,
+    "url": "https://www.energy.gov/cmei/articles/confronting-duck-curve-how-address-over-generation-solar-energy",
+    "verified": "2026-10-02"
+  },
+  "kroposki-2017": {
+    "type": "article",
+    "authors": "Kroposki, B.; Johnson, B.; Zhang, Y.; et al.",
+    "title": "Achieving a 100% renewable grid: operating electric power systems with extremely high levels of variable renewable energy",
+    "container": "IEEE Power and Energy Magazine 15(2), 61–73 (NREL/JA-5D00-67437)",
+    "year": 2017,
+    "url": "https://research-hub.nrel.gov/en/publications/achieving-a-100-renewable-grid-operating-electric-power-systems-w-4",
+    "verified": "2026-09-30"
+  },
+  "lin-2020-grid-forming": {
+    "type": "report",
+    "authors": "Lin, Y.; Eto, J.; Johnson, B.; Flicker, J.; Lasseter, R.; Villegas Pico, H.; Seo, G.; Pierre, B.; Ellis, A.",
+    "title": "Research Roadmap on Grid-Forming Inverters (NREL/TP-5D00-73476)",
+    "container": "National Renewable Energy Laboratory, November 2020",
+    "year": 2020,
+    "url": "https://research-hub.nrel.gov/en/publications/research-roadmap-on-grid-forming-inverters/",
+    "verified": "2026-09-30",
+    "note": "Inverter controls today are predominantly grid-following; the transition to grid-forming will be gradual."
+  },
+  "dorfler-gross-2023": {
+    "type": "article",
+    "authors": "Dörfler, F.; Groß, D.",
+    "title": "Control of low-inertia power systems",
+    "container": "Annual Review of Control, Robotics, and Autonomous Systems 6, 415–445",
+    "year": 2023,
+    "doi": "10.1146/annurev-control-052622-032657",
+    "verified": "2026-10-02"
+  },
+  "wiki-hvdc": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "High-voltage direct current",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/High-voltage_direct_current",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia used as a last resort: Gotland link 1954 (100 kV, 20 MW, citing Hingorani 1996, IEEE Spectrum); 1,100 kV, 3,300 km, 12 GW link in China completed 2019; HVDC losses about 3.5 % per 1000 km (citing EU JRC 2017)."
+  },
+  "wiki-utility-frequency": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "Utility frequency",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/Utility_frequency",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia used as a last resort: grid codes (2017) asked equipment to ride through a RoCoF of 1–4 Hz/s."
+  },
+  "wiki-pumped-storage": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "Pumped-storage hydroelectricity",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/Pumped-storage_hydroelectricity",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia used as a last resort: first pumped storage at Engeweiher near Schaffhausen, Switzerland, 1907; first US use 1930 near New Milford, Connecticut (Rocky River)."
+  },
+  "wiki-li-ion": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "Lithium-ion battery",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/Lithium-ion_battery",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia used as a last resort for dates: Whittingham 1974, Goodenough LiCoO2 1980, Yoshino 1985, Sony commercial cells 1991."
+  },
+  "wiki-hornsdale": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "Hornsdale Power Reserve",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/Hornsdale_Power_Reserve",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia used as a last resort: commissioned 1 December 2017 at 100 MW / 129 MWh, the largest lithium-ion battery in the world at the time; expanded to 150 MW / 193.5 MWh in 2020."
+  },
+  "wiki-segs": {
+    "type": "web",
+    "authors": "Wikipedia contributors",
+    "title": "Solar Energy Generating Systems",
+    "year": 2026,
+    "url": "https://en.wikipedia.org/wiki/Solar_Energy_Generating_Systems",
+    "verified": "2026-09-30",
+    "note": "Encyclopedia used as a last resort: nine trough plants totalling 354 MW in the Mojave, the first commissioned in 1984; the world's largest solar thermal facility until Ivanpah (2014); most units retired by 2021."
+  },
+  "shn-engeweiher-2026": {
+    "type": "web",
+    "authors": "Schaffhauser Nachrichten",
+    "title": "Stromversorgung unter Druck: Die Batterie von 1909 zeigt den Weg in die Zukunft",
+    "year": 2026,
+    "url": "https://www.shn.ch/region/kanton/2026-09-02/stromversorgung-unter-druck-die-batterie-von-1909-zeigt-den-weg-in-die",
+    "verified": "2026-10-02",
+    "note": "Local newspaper, 2 September 2026, quoting the operator SH Power: the Engeweiher above Schaffhausen was built in 1909 and is the oldest storage plant still operating in Switzerland. (German Wikipedia gives construction 1907–1909.)"
+  },
+  "asme-rocky-river": {
+    "type": "report",
+    "authors": "American Society of Mechanical Engineers (ASME)",
+    "title": "Rocky River Hydroelectric Station: a National Historic Mechanical Engineering Landmark (landmark brochure)",
+    "year": 1980,
+    "url": "https://www.asme.org/wwwasmeorg/media/resourcefiles/aboutasme/who%20we%20are/engineering%20history/landmarks/56-rocky-river-hydroelectric-station.pdf",
+    "verified": "2026-10-02",
+    "note": "Construction began 1926 and was completed in 1928; 'the first large-scale pumped-storage development in the United States'; 'the first known pumped-storage development was in Zurich, Switzerland, in 1882, which was hydro-mechanical until 1891'. Designated 13 September 1980."
+  },
+  "nobel-chemistry-2019-popular": {
+    "type": "web",
+    "authors": "Royal Swedish Academy of Sciences / Nobel Prize Outreach",
+    "title": "The Nobel Prize in Chemistry 2019: popular information",
+    "year": 2019,
+    "url": "https://www.nobelprize.org/prizes/chemistry/2019/popular-information/",
+    "verified": "2026-10-02",
+    "note": "Whittingham's first functional lithium battery in the early 1970s; Goodenough's cobalt oxide cathode published 1980; Yoshino's lithium-ion battery 1985; 'In 1991, a major Japanese electronics company started selling the first lithium-ion batteries' (the company, Sony, is not named)."
+  },
+  "arena-hornsdale-2019": {
+    "type": "web",
+    "authors": "Australian Renewable Energy Agency (ARENA)",
+    "title": "World's biggest battery grows and gains new powers",
+    "year": 2019,
+    "url": "https://arena.gov.au/blog/worlds-biggest-battery-grows-and-gains-new-powers/",
+    "verified": "2026-10-02",
+    "note": "Government agency, 29 November 2019: 'the world's biggest battery'; original 100 MW / 129 MWh commissioned December 2017; expansion of 50 MW / 64.5 MWh to 193.5 MWh."
+  },
+  "hpr-faq": {
+    "type": "web",
+    "authors": "Hornsdale Power Reserve (Neoen)",
+    "title": "Frequently asked questions",
+    "year": 2026,
+    "url": "https://hornsdalepowerreserve.com.au/faqs/",
+    "verified": "2026-10-02",
+    "note": "Operator: 100 MW / 129 MWh construction completed 1 December 2017; 50 MW / 64.5 MWh expansion completed in the first half of 2020."
+  },
+  "ieee-gotland-milestone": {
+    "type": "web",
+    "authors": "IEEE History Center",
+    "title": "Milestone-Proposal: Gotland HVDC Link (approved milestone, docket 2015-05)",
+    "year": 2017,
+    "url": "https://ieeemilestones.ethw.org/Milestone-Proposal:Gotland_HVDC_Link",
+    "verified": "2026-10-02",
+    "note": "World's first commercial HVDC transmission link and first submarine HVDC cable: commissioned March 1954, 100 kV, 20 MW, 96 km mass-impregnated cable from mainland Sweden to Gotland."
+  },
+  "hitachi-changji-guquan": {
+    "type": "web",
+    "authors": "Hitachi Energy",
+    "title": "Changji–Guquan UHVDC link (customer story)",
+    "year": 2019,
+    "url": "https://www.hitachienergy.com/news-and-events/customer-stories/changji-guquan-uhvdc-link",
+    "verified": "2026-10-02",
+    "note": "Supplier: ±1,100 kV, 12,000 MW, over 3,000 km from Xinjiang to Anhui, commissioned 2019; world records for voltage, capacity and distance."
+  },
+  "eia-icf-hvdc-2018": {
+    "type": "report",
+    "authors": "ICF Incorporated, for the U.S. Energy Information Administration",
+    "title": "Assessing HVDC Transmission for Impacts of Non-Dispatchable Generation",
+    "year": 2018,
+    "url": "https://www.eia.gov/analysis/studies/electricity/hvdctransmission/pdf/transmission.pdf",
+    "verified": "2026-10-02",
+    "note": "June 2018: HVDC line losses roughly 3.5 % per 1000 km against 6.7 % for comparable AC lines at similar voltage; converter stations lose 0.6–1 % of the power delivered; total HVDC losses typically 30–40 % lower than AC on long lines."
+  },
+  "ghd-aemc-rocof-2022": {
+    "type": "report",
+    "authors": "GHD Pty Ltd, for the Australian Energy Market Commission",
+    "title": "System Rate of Change of Frequency: a GHD survey of international views",
+    "year": 2022,
+    "url": "https://www.aemc.gov.au/sites/default/files/2022-12/GHD%20RoCoF%20report%20-%20survey%20of%20international%20views_21NOV2022%20(1).pdf",
+    "verified": "2026-10-02",
+    "note": "18 November 2022. Generator RoCoF withstand requirements: Ireland and Great Britain ±1 Hz/s (500 ms); ENTSO-E ±2 Hz/s (500 ms); Chile ±2 Hz/s; Australia NEM/WEM ideal ±4 Hz/s over 250 ms (minimum ±2 Hz/s)."
+  },
+  "fapesp-proalcool-2016": {
+    "type": "web",
+    "authors": "Alisson, E. (Agência FAPESP)",
+    "title": "Proálcool, one of Brazil's major science and technology based achievements",
+    "year": 2016,
+    "url": "https://agencia.fapesp.br/proalcool-one-of-brazils-major-science-and-technology-based-achievements/24521",
+    "verified": "2026-10-02",
+    "note": "News agency of the São Paulo Research Foundation, 21 December 2016: 'Proálcool, the National Fuel Alcohol Program created by government decree in November 1975'."
+  },
+  "goldemberg-2008": {
+    "type": "article",
+    "authors": "Goldemberg, J.",
+    "title": "The Brazilian biofuels industry",
+    "container": "Biotechnology for Biofuels 1, 6",
+    "year": 2008,
+    "doi": "10.1186/1754-6834-1-6",
+    "verified": "2026-10-02",
+    "note": "'The introduction of flex-fuel motors in Brazil, in 2003, ...'"
+  },
+  "adm-decatur-2021": {
+    "type": "web",
+    "authors": "Archer Daniels Midland (ADM)",
+    "title": "ADM announces successful completion of one million metric ton carbon capture and storage project (press release)",
+    "year": 2021,
+    "url": "https://investors.adm.com/news/news-details/2021/ADM-Announces-Successful-Completion-of-One-Million-Metric-Ton-Carbon-Capture-and-Storage-Project/default.aspx",
+    "verified": "2026-10-02",
+    "note": "Operator, 19 May 2021: the Illinois Basin–Decatur Project stored one million tonnes of CO2 from the Decatur ethanol plant over three years; the Illinois Industrial CCS project began injecting in April 2017; more than 3.4 million tonnes stored by the two projects together."
+  },
+  "bioenergyintl-iccs-2017": {
+    "type": "web",
+    "authors": "Bioenergy International",
+    "title": "ADM starts commercial-scale CCS at Decatur ethanol plant",
+    "year": 2017,
+    "url": "https://bioenergyinternational.com/adm-starts-commercial-scale-ccs-decatur-ethanol-plant/",
+    "verified": "2026-10-02",
+    "note": "Trade press, 20 April 2017: Illinois Industrial CCS began operations on 7 April 2017, able to handle up to 2,000 tonnes of CO2 a day; the earlier Illinois Basin–Decatur Project ran 2011–2014 and stored about a million tonnes over three years; DOE contributed US$141 million."
+  }
+}

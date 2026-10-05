@@ -1,0 +1,35 @@
+{
+  "name": "solar-odyssey",
+  "version": "1.1.0",
+  "private": true,
+  "description": "The history, physics and future of solar power and the wider renewable energy system, as interactive visuals.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs",
+    "data": "python3 scripts/build_data.py && python3 scripts/make_credits.py",
+    "sign": "node scripts/sign-manifest.mjs",
+    "check": "python3 scripts/check_site.py",
+    "test:unit": "node --test \"tests/unit/*.test.mjs\"",
+    "test:py": "python3 -m pytest -q tests/py",
+    "test:e2e": "python3 -m pytest -q tests/e2e",
+    "test:a11y": "python3 -m pytest -q tests/e2e/test_a11y.py",
+    "test": "npm run check && npm run test:unit && npm run test:py",
+    "build": "npm run vendor && npm run data && npm run sign -- --verify && npm test",
+    "serve": "python3 -m http.server 8000 --directory site",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build"
+  },
+  "devDependencies": {
+    "@fontsource-variable/atkinson-hyperlegible-next": "5.3.0",
+    "@fontsource-variable/fraunces": "5.3.0",
+    "@tauri-apps/cli": "2.12.0",
+    "axe-core": "4.13.0",
+    "echarts": "6.0.0",
+    "katex": "0.18.10",
+    "three": "0.186.1"
+  }
+}

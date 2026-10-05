@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>The clean-energy system – Solar Odyssey</title>
+<meta name="description" content="How solar, wind, water, heat, storage and the grid fit together.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="renewables-a-common.css">
+<link rel="stylesheet" href="renewables-b-common.css">
+<link rel="stylesheet" href="index.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="index.js"></script>
+</head>
+<body data-page="renewables">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page ra-page rb-page" data-source="system">
+  <header class="page-head">
+    <span class="kicker"><a href="../index.html">Solar Odyssey</a></span>
+    <h1>The clean-energy system</h1>
+    <p class="lede">A solar panel on its own is not an energy system. Sunshine, wind and falling water arrive when the weather says so; people want power when their day says so. Between the two sit wires, stores and some clever timing. This page is the map.</p>
+  </header>
+
+  <section class="today-figure share-figure" data-sources="solar,wind,hydro,biofuel,other_renewable_exc_biofuel" data-noun="renewable sources" aria-label="Renewables' share of world electricity">
+    <div>
+      <span class="tf-num" data-slot="pct">33.8 %</span>
+      <p class="tf-what">of the world's electricity came from <strong>renewable sources</strong> in <span data-slot="year">2025</span>: <span data-slot="twh">10,727 TWh</span> from hydro, wind, solar, bioenergy, geothermal and the sea.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> <span class="verified">2026-09-30</span></p>
+    </div>
+    <div class="tf-side">
+      <div data-slot="spark"></div>
+      <p class="tf-note">The rest came from coal, gas, oil and nuclear power. The latest figures are collected on the <a href="../state-of-the-field.html">State of the field</a> page.</p>
+      <span class="data-badge"></span>
+    </div>
+  </section>
+
+  <p>Every power system does the same three jobs. It <strong>makes</strong> electricity, it <strong>moves</strong> it, often hundreds of kilometres, and it <strong>matches</strong> supply to demand, second by second, because a grid holds almost no energy of its own. Coal and gas plants made the matching easy: burn more fuel when people switch on more lights. <dfn data-term="variable-renewable">Variable renewables</dfn> such as wind and solar make the first job cheap and clean, but they hand the third job to new players: <dfn data-term="energy-storage">storage</dfn>, flexible demand and a better-connected <a href="grid.html">grid</a>.<sup class="cite" data-src="kroposki-2017"></sup></p>
+
+  <section class="widget" id="map" aria-labelledby="map-h">
+    <h2 id="map-h">The map: from sources to sockets</h2>
+    <p class="caption lead">Point at, tap or tab to any part of the system to see what it does and how much of the world's electricity it makes. The thickness of each line from a source is proportional to its share of world generation in the latest year of the dataset.</p>
+    <div class="sys-wrap">
+      <div class="sys-stage" id="sys-stage">
+        <svg class="sys-svg" id="sys-svg" role="group" aria-label="System map. Sources on one side: solar photovoltaics, concentrated solar power, wind, hydropower, geothermal, ocean energy and biomass, plus today's fossil and nuclear plants. Their lines run into the transmission and distribution grid. Storage (batteries, pumped hydro, hydrogen) and flexibility (demand response, interconnectors) connect to the grid in both directions. The grid feeds demand: homes, industry, transport and heat. The same information is in the list below the map."></svg>
+      </div>
+      <aside class="sys-detail" id="sys-detail" aria-live="polite">
+        <p class="sys-kind" id="sys-kind">Start here</p>
+        <h3 id="sys-name">The grid in the middle</h3>
+        <p id="sys-what">Everything meets in the grid. Sources push power in, storage and flexible demand pull or push to keep the balance, and homes, industry, transport and heat draw power out. Choose a part of the map to learn more.</p>
+        <p class="sys-share" id="sys-share"></p>
+        <p id="sys-link-wrap"><a id="sys-link" href="grid.html">The smart grid lesson</a></p>
+      </aside>
+    </div>
+    <details class="sys-text">
+      <summary>The map as a list</summary>
+      <ul id="sys-list" class="sys-list">
+        <li data-node="pv" data-kind="source" data-sources="solar" data-href="../learn/photovoltaic-effect.html" data-link="How a solar cell works"><strong>Solar photovoltaics.</strong> <span>Cells turn light straight into electricity, with no moving parts. Output follows the Sun: zero at night, highest around noon, lower in winter and under cloud.</span></li>
+        <li data-node="csp" data-kind="source" data-sources="" data-href="csp.html" data-link="Concentrated solar power"><strong>Concentrated solar power.</strong> <span>Mirrors focus sunlight to heat molten salt or oil, which drives a steam turbine. Because heat is easy to store, the turbine can keep running after sunset. In this dataset its output is counted inside solar, and it is a small part of it.</span></li>
+        <li data-node="wind" data-kind="source" data-sources="wind" data-href="wind.html" data-link="Wind"><strong>Wind.</strong> <span>Turbines catch the kinetic energy of moving air. Output follows the weather and often peaks at night or in winter, which complements solar.</span></li>
+        <li data-node="hydro" data-kind="source" data-sources="hydro" data-href="hydro.html" data-link="Hydropower"><strong>Hydropower.</strong> <span>Water falling through turbines. Dams can hold water back and release it on demand, which makes hydro the largest and most flexible renewable source.</span></li>
+        <li data-node="geo" data-kind="source" data-sources="other_renewable_exc_biofuel" data-href="geothermal.html" data-link="Geothermal"><strong>Geothermal.</strong> <span>Heat from deep underground drives turbines around the clock. The dataset groups it with tidal and wave power as other renewables.</span></li>
+        <li data-node="ocean" data-kind="source" data-sources="" data-href="ocean.html" data-link="Tidal and wave"><strong>Ocean energy.</strong> <span>Tides and waves. Tides are predictable years ahead; today only a handful of plants run. Counted with geothermal in this dataset.</span></li>
+        <li data-node="bio" data-kind="source" data-sources="biofuel" data-href="biomass.html" data-link="Biomass"><strong>Biomass.</strong> <span>Wood, crop waste, biogas and other plant matter burned or digested for power. It can be run when needed, like a fuel, but its climate benefit depends on where the biomass comes from.</span></li>
+        <li data-node="fossil" data-kind="today" data-sources="coal,gas,oil,nuclear" data-href="compare.html" data-link="Comparison dashboard"><strong>Fossil and nuclear plants today.</strong> <span>Coal, gas and oil plants and nuclear reactors still make most of the world's electricity. Shown in grey so the renewable lines can be read against them.</span></li>
+        <li data-node="grid" data-kind="network" data-href="grid.html" data-link="The smart grid"><strong>The grid.</strong> <span>High-voltage transmission lines carry power long distances; local distribution lines bring it to streets and buildings. Operators keep supply and demand equal every second, which shows up as a steady frequency of 50 or 60 hertz.</span></li>
+        <li data-node="battery" data-kind="storage" data-href="storage.html" data-link="Energy storage"><strong>Batteries.</strong> <span>Grid batteries, mostly lithium-ion, respond in under a second and typically store a few hours of their full output: ideal for moving midday solar into the evening.</span></li>
+        <li data-node="pumped" data-kind="storage" data-href="storage.html" data-link="Energy storage"><strong>Pumped hydro.</strong> <span>Water pumped uphill when power is plentiful and released through turbines when it is needed. By far the largest store of electricity in the world today.</span></li>
+        <li data-node="h2" data-kind="storage" data-href="storage.html" data-link="Energy storage"><strong>Hydrogen.</strong> <span>Electricity splits water into hydrogen, which can be stored for weeks or months and turned back into power, at the cost of losing well over half the energy on the way.</span></li>
+        <li data-node="dr" data-kind="flex" data-href="grid.html" data-link="The smart grid"><strong>Demand response.</strong> <span>Shifting when electricity is used: charging cars and heating water at midday, trimming industrial loads at the evening peak.</span></li>
+        <li data-node="ic" data-kind="flex" data-href="grid.html" data-link="The smart grid"><strong>Interconnectors.</strong> <span>Long lines and cables, often high-voltage direct current, that link regions and countries so a calm, cloudy place can import from a windy or sunny one.</span></li>
+        <li data-node="homes" data-kind="demand" data-href="../today/cell-to-grid.html" data-link="From cell to grid"><strong>Homes and buildings.</strong> <span>Lighting, appliances, cooling and, more and more, heat pumps. Demand usually peaks in the early evening.</span></li>
+        <li data-node="industry" data-kind="demand" data-href="compare.html" data-link="Comparison dashboard"><strong>Industry.</strong> <span>Motors, furnaces, electrolysis and data centres. Some industrial loads can move in time for a price, which makes them a useful source of flexibility.</span></li>
+        <li data-node="transport" data-kind="demand" data-href="storage.html" data-link="Energy storage"><strong>Transport.</strong> <span>Electric trains and, increasingly, electric cars. A parked car's battery can charge when power is plentiful.</span></li>
+        <li data-node="heat" data-kind="demand" data-href="csp.html" data-link="Concentrated solar power"><strong>Heat.</strong> <span>Heat pumps and electric boilers turn electricity into warmth for buildings and factories. Hot water and heat stores are cheap ways to store energy.</span></li>
+      </ul>
+    </details>
+  </section>
+
+  <p>Three ideas make the map work. First, <strong>variety</strong>: wind often blows when the Sun is down, and a wide area averages out local weather. Second, <strong>time-shifting</strong>: storage and flexible demand move energy from hours of plenty to hours of need. Third, <strong>reach</strong>: long transmission lines and interconnectors move energy from where it is plentiful to where it is needed. None of these is new; what is new is how much of each a grid built on wind and solar needs.<sup class="cite" data-src="kroposki-2017"></sup> <span class="claim claim--consensus">Current consensus</span></p>
+
+  <section class="widget" id="mix" aria-labelledby="mix-h">
+    <h2 id="mix-h">Forty years of electricity, source by source</h2>
+    <p class="caption lead">Electricity generation by source from 1985 to the latest year, for the world or for any country or region in this course's dataset. Switch between terawatt-hours and shares of the total.</p>
+    <div class="filter-row">
+      <div class="control">
+        <label for="mix-entity">Country or region</label>
+        <select id="mix-entity"><option value="World" selected>World</option></select>
+      </div>
+      <div class="control">
+        <span class="label" id="mix-unit-label">Show as</span>
+        <div class="segmented" role="group" aria-labelledby="mix-unit-label" id="mix-unit">
+          <button type="button" value="twh" aria-pressed="true">Terawatt-hours</button>
+          <button type="button" value="share" aria-pressed="false">Share of total</button>
+        </div>
+      </div>
+    </div>
+    <p class="chart-title" id="mix-title" aria-live="polite">Electricity generation, World</p>
+    <div class="chart tall" id="mix-chart" role="img" aria-labelledby="mix-title" aria-describedby="mix-desc"></div>
+    <p class="muted mix-desc" id="mix-desc">Stacked areas from the bottom: fossil fuels, nuclear, bioenergy, hydropower, other renewables (mostly geothermal), wind and solar.</p>
+    <ul class="legend" id="mix-legend" aria-label="Legend"></ul>
+    <p class="caption">Where the dataset does not report bioenergy or other renewables separately (for the world, before 2000), those bands are drawn as zero, and each chart starts in the first year with a full breakdown. Data: Ember and the Energy Institute, compiled by Our World in Data.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity,ei-statistical-review"></sup> <span class="data-badge" id="mix-badge"></span></p>
+    <details class="table-details">
+      <summary>Table view</summary>
+      <div class="table-wrap"><table class="ra-table" id="mix-table"><caption class="visually-hidden">Electricity generation by source for selected years</caption></table></div>
+    </details>
+  </section>
+
+  <p>Reading the world chart from the top down tells the story of the last fifteen years. Hydropower was the only large renewable source for most of the period; it still makes about 4,400 TWh a year. Wind and solar were a sliver in 2010, about 1.8 % of world electricity together; by 2025 they made 17 %, and in 2025 solar's output passed wind's for the first time in this dataset.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> Coal is still the single largest source. Choose Denmark, Spain or China to see how differently countries have travelled, and Norway or Brazil to see grids built on hydropower decades ago.</p>
+
+  <h2 id="read">How to read this section</h2>
+  <p>The renewable lessons share one layout, so you can compare them: a share of world electricity, a short dated timeline, an animation of how the source works, the key equations (each with a worked example that this site's test suite recomputes), strengths and limits, and references. A suggested route:</p>
+  <ol class="path">
+    <li><div><h3><a href="wind.html">Wind</a>, <a href="hydro.html">hydropower</a>, <a href="geothermal.html">geothermal</a> and <a href="ocean.html">tidal and wave</a></h3><p>Moving air, falling water, the Earth's heat and the tides: four ways to spin a generator.</p></div></li>
+    <li><div><h3><a href="biomass.html">Biomass</a> and <a href="csp.html">concentrated solar power</a></h3><p>Two more routes from sunlight: through plants, and through mirrors and heat. Both can store energy before turning it into electricity.</p></div></li>
+    <li><div><h3><a href="storage.html">Energy storage</a></h3><p>Batteries, pumped hydro and hydrogen. Size a battery to carry a sunny day into the evening.</p></div></li>
+    <li><div><h3><a href="grid.html">The smart grid</a></h3><p>Frequency, inertia, the duck curve and a balancing game over a whole day.</p></div></li>
+    <li><div><h3><a href="compare.html">Comparison dashboard</a></h3><p>Capacity factor, land use, cost and growth side by side.</p></div></li>
+  </ol>
+  <p>Terms are underlined with dots: point at one, or tab to it, for a definition. Switch to <strong>Expert</strong> in the header for derivations and technical detail. Numbers that change from year to year carry a date and are gathered on the <a href="../state-of-the-field.html">State of the field</a> page.</p>
+
+  <div class="expert expert-note">
+    <p>Grid engineers describe the matching job with a few terms worth knowing before you go on. <dfn data-term="net-load">Net load</dfn> is demand minus wind and solar: the part everything else must supply. <dfn data-term="dispatch">Dispatch</dfn> is the minute-by-minute choice of which plants and stores run. <dfn data-term="curtailment">Curtailment</dfn> is wind or solar output thrown away because nothing can use or store it. The deeper argument of this section is that, as variable renewables pass a few tens of percent of annual energy, the cost of the system depends less on the cost of each kilowatt-hour generated and more on how well these three are managed.<sup class="cite" data-src="kroposki-2017,nrel-duck-2015"></sup></p>
+  </div>
+
+  <section class="references-block" data-auto aria-labelledby="refs-h"></section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

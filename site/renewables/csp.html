@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Concentrated solar power – Solar Odyssey</title>
+<meta name="description" content="Mirrors, heat and molten-salt storage.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="renewables-a-common.css">
+<link rel="stylesheet" href="renewables-b-common.css">
+<link rel="stylesheet" href="csp.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="csp.js"></script>
+</head>
+<body data-page="csp">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page ra-page rb-page" data-source="csp">
+  <header class="page-head">
+    <span class="kicker"><a href="index.html">Renewables</a></span>
+    <h1>Concentrated solar power</h1>
+    <p class="lede">A solar cell turns light straight into electricity. Concentrated solar power takes the long way round: thousands of mirrors focus sunlight into heat, the heat boils water, and the steam spins a turbine. The detour has one big reward. Heat is easy to store, so the turbine can keep running after sunset.</p>
+  </header>
+
+  <section class="today-figure share-figure" data-sources="solar" data-noun="solar power (photovoltaic and concentrated together)" aria-label="Solar's share of world electricity">
+    <div>
+      <span class="tf-num" data-slot="pct">8.7 %</span>
+      <p class="tf-what">of the world's electricity came from <strong>solar</strong> in <span data-slot="year">2025</span>, <span data-slot="twh">2,779 TWh</span>, almost all of it from photovoltaics. The dataset counts concentrated solar power inside this figure.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> <span class="verified">2026-09-30</span></p>
+    </div>
+    <div class="tf-side">
+      <div data-slot="spark"></div>
+      <p class="tf-note">NREL's SolarPACES database, last updated in 2023, lists dozens of concentrated solar plants in operation worldwide.<sup class="cite" data-src="solarpaces-csp-db"></sup> Current figures: <a href="../state-of-the-field.html">State of the field</a>.</p>
+      <span class="data-badge"></span>
+    </div>
+  </section>
+
+  <p><dfn data-term="concentrated-solar-power">Concentrated solar power</dfn> (CSP) is a power station whose boiler is heated by the Sun. It needs strong, direct sunshine: the beam that casts sharp shadows, not the diffuse glow of a cloudy sky, because only a direct beam can be focused. That restricts it to deserts and dry, sunny regions such as southern Spain, Morocco, South Africa, western China and the American Southwest.</p>
+
+  <h2 id="history">A century of mirrors</h2>
+  <ol class="mini-timeline">
+    <li><time datetime="1913">1913</time><p><span class="mt-what">Pumping the Nile with sunshine.</span> Frank Shuman and C. V. Boys run a solar steam plant at Meadi, near Cairo: rows of 62 m parabolic troughs, about 1,200 m² of mirror, driving an irrigation pump at 37–45 kW. The First World War and cheap fuel shut it down by 1915.<sup class="cite" data-src="kalogirou-2004"></sup></p></li>
+    <li><time datetime="1982">1982</time><p><span class="mt-what">Solar One.</span> A 10 MW power tower near Barstow, California, runs until 1988 and proves that a field of steerable mirrors can feed a utility grid.<sup class="cite" data-src="doe-csp-mirrors-2001"></sup></p></li>
+    <li><time datetime="1984">1984</time><p><span class="mt-what">SEGS, the trough era.</span> The first of nine Solar Energy Generating Systems opens at Daggett, California, a 13.8 MW parabolic-trough plant. The nine together reach 354 MW and remain the world's largest solar thermal facility until 2014.<sup class="cite" data-src="solarpaces-segs-i,wiki-segs"></sup></p></li>
+    <li><time datetime="1996">1996</time><p><span class="mt-what">Salt as a battery.</span> Solar One is rebuilt as Solar Two, using molten nitrate salt at about 565 °C both to collect heat and to store three hours of it.<sup class="cite" data-src="doe-csp-mirrors-2001"></sup></p></li>
+    <li><time datetime="2011">2011</time><p><span class="mt-what">Running through the night.</span> Gemasolar, near Seville, opens: a 20 MW tower with 2,650 heliostats and 15 hours of molten-salt storage, enough to run round the clock in summer.<sup class="cite" data-src="solarpaces-gemasolar"></sup></p></li>
+    <li><time datetime="2014">2014</time><p><span class="mt-what">Ivanpah.</span> Three power towers in the Mojave Desert begin generating and overtake SEGS as the world's largest solar thermal facility. They store no heat.<sup class="cite" data-src="pge-ivanpah-2025,wiki-segs"></sup></p></li>
+    <li><time datetime="2018">2018</time><p><span class="mt-what">Noor III.</span> A 150 MW molten-salt tower 247 m tall, with seven hours of storage, enters service at Ouarzazate, Morocco.<sup class="cite" data-src="solarpaces-noor-iii"></sup></p></li>
+    <li><time datetime="2025">2025</time><p><span class="mt-what">A warning from the desert.</span> California's largest utility agrees to end its Ivanpah contracts early, saying cheaper alternatives will save customers money.<sup class="cite" data-src="pge-ivanpah-2025"></sup> Photovoltaics with batteries now compete head-on with CSP's selling point, stored solar energy. <span class="verified">2026-09-30</span></p></li>
+  </ol>
+
+  <h2 id="how">Four ways to focus the Sun</h2>
+  <ul class="designs">
+    <li><strong><dfn data-term="parabolic-trough">Parabolic trough</dfn>.</strong> Long curved mirrors focus sunlight onto a pipe of oil running along the focal line, heating it. The whole row tilts during the day to follow the Sun. The most built design.</li>
+    <li><strong><dfn data-term="power-tower">Power tower</dfn>.</strong> A field of flat, steerable mirrors, <dfn data-term="heliostat">heliostats</dfn>, sends sunlight up to a receiver on a tower. Higher concentration means hotter salt (around 565 °C) and a more efficient turbine.</li>
+    <li><strong><dfn data-term="linear-fresnel">Linear Fresnel</dfn>.</strong> Rows of nearly flat mirror strips, each tilted a little differently, act like one big trough and focus onto a fixed pipe overhead. Cheaper to build, less efficient.</li>
+    <li><strong><dfn data-term="solar-dish">Dish</dfn>.</strong> A dish focuses onto a single point, reaching the highest concentrations, often with a small engine at the focus. Built only in small numbers.</li>
+  </ul>
+
+  <section class="widget" id="field" aria-labelledby="field-h">
+    <h2 id="field-h">A heliostat field through the day</h2>
+    <p class="caption lead">The field from above, with the tower in the middle. Every mirror turns so that it bisects the angle between the Sun and the receiver, which is what makes the reflected beam land on the tower. Mirrors are shaded by how much of their area faces the Sun. Move through the day, change the season, and follow one mirror.</p>
+    <div class="widget-body split">
+      <div>
+        <canvas id="field-canvas" class="rb-canvas field-canvas" role="img" aria-label="Plan view of a circular heliostat field around a central tower, with more mirrors to the north. The Sun's direction is marked on the compass ring. Each mirror is shaded by its cosine efficiency; the followed mirror shows the incoming sunlight and the reflected beam to the tower."></canvas>
+        <ul class="rb-key" aria-label="Key">
+          <li><span class="sw sw-hi" aria-hidden="true"></span>Mirror faces the Sun squarely</li>
+          <li><span class="sw sw-lo" aria-hidden="true"></span>Mirror meets the Sun at a slant</li>
+          <li><span class="ln ln-sun" aria-hidden="true"></span>Sunlight in</li>
+          <li><span class="ln ln-ref" aria-hidden="true"></span>Reflected to the tower</li>
+        </ul>
+        <div class="ra-toolbar">
+          <button type="button" class="btn ghost" id="field-play">Play the day</button>
+          <button type="button" class="btn ghost" id="field-back">Back an hour</button>
+          <button type="button" class="btn ghost" id="field-fwd">Forward an hour</button>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="f-time">Solar time <output id="f-time-out" for="f-time">10:00</output></label>
+          <input type="range" id="f-time" min="5" max="19" step="0.25" value="10">
+        </div>
+        <div class="control">
+          <span class="label" id="f-season-label">Day of the year</span>
+          <div class="segmented" role="group" aria-labelledby="f-season-label" id="f-season">
+            <button type="button" value="6" aria-pressed="true">June solstice</button>
+            <button type="button" value="3" aria-pressed="false">Equinox</button>
+            <button type="button" value="12" aria-pressed="false">December solstice</button>
+          </div>
+        </div>
+        <div class="control">
+          <label for="f-follow">Follow the mirror</label>
+          <select id="f-follow">
+            <option value="n" selected>North of the tower</option>
+            <option value="e">East of the tower</option>
+            <option value="s">South of the tower</option>
+            <option value="w">West of the tower</option>
+          </select>
+        </div>
+        <div class="readout rb-readout" aria-live="polite">
+          <div><span class="k">Sun elevation</span><span class="v" id="r-el">—</span></div>
+          <div><span class="k">Sun direction</span><span class="v" id="r-az">—</span></div>
+          <div><span class="k">Field cosine efficiency</span><span class="v" id="r-field">—</span></div>
+          <div><span class="k">This mirror</span><span class="v" id="r-mirror">—</span></div>
+          <div><span class="k">Mirror tilt</span><span class="v" id="r-tilt">—</span></div>
+          <div><span class="k">Mirror faces</span><span class="v" id="r-face">—</span></div>
+        </div>
+        <p class="ra-status" id="field-status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <p>Two things stand out. Mirrors on the side of the tower away from the Sun do best: in the northern hemisphere the Sun is mostly in the south, so a mirror north of the tower faces it almost squarely, while a mirror south of the tower must turn its back to the Sun at a slant to reach the tower. That is why the field is drawn, like real ones at this latitude, with more mirrors to the north. And at sunrise and sunset the whole field collects little, because the low Sun meets most mirrors obliquely and its light has crossed more atmosphere.</p>
+  <div class="expert expert-note">
+    <p>The drawing uses this site's solar-position model at 37.6° N, the latitude of Gemasolar near Seville, for a clear day; times are local solar time. For a mirror at position <span class="tex">\mathbf{m}</span> and a receiver at <span class="tex">\mathbf{r}</span>, the unit normal is <span class="tex">\hat{\mathbf{n}} = (\hat{\mathbf{s}} + \hat{\mathbf{t}})/|\hat{\mathbf{s}} + \hat{\mathbf{t}}|</span> with <span class="tex">\hat{\mathbf{t}} = (\mathbf{r}-\mathbf{m})/|\mathbf{r}-\mathbf{m}|</span>; the test suite checks that reflecting the incoming ray in this normal sends it exactly to the receiver. Cosine loss is only one of the field's losses. Real fields also lose light to mirror soiling and imperfect reflectivity, shading and blocking between neighbouring mirrors, atmospheric attenuation over hundreds of metres, and spillage around the receiver.</p>
+  </div>
+
+  <h2 id="equations">The equations of focused sunlight</h2>
+
+  <section class="eq" aria-labelledby="eq-c">
+    <h3 id="eq-c">Concentration ratio</h3>
+    <p>A magnifying glass can light paper because it gathers sunlight from a large area into a small spot. The concentration ratio says how many suns' worth of light land on the receiver: mirror area over receiver area. More concentration means a hotter receiver, and less of it, so it loses less heat.</p>
+    <div class="tex">C = \frac{A_{\text{aperture}}}{A_{\text{receiver}}}</div>
+    <dl class="symbols">
+      <dt><span class="tex">C</span></dt><dd><dfn data-term="concentration-ratio">geometric concentration ratio</dfn> (no units; "suns")</dd>
+      <dt><span class="tex">A_{\text{aperture}}</span></dt><dd>total mirror area facing the Sun, m²</dd>
+      <dt><span class="tex">A_{\text{receiver}}</span></dt><dd>area of the receiver the light lands on, m²</dd>
+    </dl>
+    <div class="worked" data-check="renewables:concentrationRatio" data-args="[120000, 150]" data-expect="800" data-tol="0.001">
+      An illustrative tower: 1,000 heliostats of 120 m² each (120,000 m² of mirror) aimed at a 150 m² receiver concentrate the light <span class="answer">800</span> times. A parabolic trough, focusing in only one direction, manages far less.
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-carnot">
+    <h3 id="eq-carnot">The Carnot ceiling</h3>
+    <p>Once sunlight has become heat, CSP is a heat engine, and every heat engine obeys the same rule: it can only turn part of its heat into work, and the hotter the heat compared with the surroundings, the larger that part. This is why towers, which run hotter, can beat troughs.</p>
+    <div class="tex">\eta_{\text{Carnot}} = 1 - \frac{T_{\text{cold}}}{T_{\text{hot}}}</div>
+    <dl class="symbols">
+      <dt><span class="tex">\eta_{\text{Carnot}}</span></dt><dd><dfn data-term="carnot-efficiency">Carnot efficiency</dfn>: the highest possible share of heat turned into work (no units)</dd>
+      <dt><span class="tex">T_{\text{hot}},\ T_{\text{cold}}</span></dt><dd>temperatures of the heat source and of the surroundings that take the waste heat, in kelvin (°C + 273.15)</dd>
+    </dl>
+    <div class="worked" data-check="renewables:carnotEfficiency" data-args="[838.15, 303.15]" data-expect="0.638" data-tol="0.001">
+      Salt at 565 °C (838 K), as at Gemasolar,<sup class="cite" data-src="solarpaces-gemasolar"></sup> with heat rejected at an assumed 30 °C (303 K): 1 − 303.15 ÷ 838.15 = <span class="answer">0.638</span>. No engine could turn more than 64 % of that heat into electricity; real steam cycles, with their own losses, get well under that.
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-store">
+    <h3 id="eq-store">Storing heat in molten salt</h3>
+    <p>CSP stores energy the simplest way possible: make something hot and keep it hot. A two-tank plant pumps salt from a "cold" tank (still around 290 °C) through the receiver into a hot tank at 565 °C; at night it pumps the hot salt through a steam generator and back. The heat stored is <dfn data-term="sensible-heat">sensible heat</dfn>: mass times specific heat times the temperature rise.</p>
+    <div class="tex">E = m\,c_p\,\Delta T</div>
+    <dl class="symbols">
+      <dt><span class="tex">E</span></dt><dd>heat stored, joules (J); divide by 3.6 × 10⁹ for megawatt-hours</dd>
+      <dt><span class="tex">m</span></dt><dd>mass of <dfn data-term="molten-salt">molten salt</dfn>, kg</dd>
+      <dt><span class="tex">c_p</span></dt><dd>specific heat capacity, J/(kg·K); about 1,500 for nitrate "solar salt" (the round value this site's model uses)</dd>
+      <dt><span class="tex">\Delta T</span></dt><dd>temperature difference between the hot and cold tanks, K</dd>
+    </dl>
+    <div class="worked" data-check="renewables:sensibleHeatJ" data-args="[1000000, 1500, 275]" data-expect="4.125e11" data-tol="1e6">
+      1,000 tonnes of salt (10⁶ kg) heated from 290 °C to 565 °C (ΔT = 275 K) store 10⁶ × 1,500 × 275 = <span class="answer">4.1 × 10¹¹ J</span>, or 115 MWh of heat. At an assumed 40 % steam-cycle efficiency that is 46 MWh of electricity: about 2.3 hours for a 20 MW turbine.
+    </div>
+  </section>
+
+  <section class="widget" id="night" aria-labelledby="night-h">
+    <h2 id="night-h">After sunset</h2>
+    <p class="caption lead">A plant like Gemasolar: 20 MW turbine, 2,650 heliostats of 120 m².<sup class="cite" data-src="solarpaces-gemasolar"></sup> Give it more or less storage and see when it can run. <span class="tag-illustrative">Teaching model</span></p>
+    <div class="filter-row">
+      <div class="control control-wide">
+        <label for="n-store">Hot-tank storage <output id="n-store-out" for="n-store">15 hours</output></label>
+        <input type="range" id="n-store" min="0" max="15" step="0.5" value="15">
+      </div>
+      <div class="control">
+        <span class="label" id="n-season-label">Clear day in</span>
+        <div class="segmented" role="group" aria-labelledby="n-season-label" id="n-season">
+          <button type="button" value="6" aria-pressed="true">June</button>
+          <button type="button" value="3" aria-pressed="false">March</button>
+          <button type="button" value="12" aria-pressed="false">December</button>
+        </div>
+      </div>
+    </div>
+    <p class="chart-title" id="nc-title">Heat collected and electricity generated over 24 hours</p>
+    <div class="chart short" id="night-chart" role="img" aria-labelledby="nc-title" aria-describedby="nc-desc"></div>
+    <p class="muted chart-note" id="nc-desc">Shaded: heat reaching the salt from the mirrors (megawatts thermal). Line: the turbine's electrical output (megawatts).</p>
+    <p class="chart-title" id="nl-title">Hot tank, percent full</p>
+    <div class="chart tank-chart" id="tank-chart" role="img" aria-labelledby="nl-title"></div>
+    <div class="readout rb-readout" aria-live="polite">
+      <div><span class="k">Turbine runs</span><span class="v" id="n-hours">—</span></div>
+      <div><span class="k">Electricity in the day</span><span class="v" id="n-mwh">—</span></div>
+      <div><span class="k">Heat spilled (tank full)</span><span class="v" id="n-spill">—</span></div>
+    </div>
+    <p class="caption">Assumptions: clear-sky direct sunlight from this site's solar model at 37.6° N; 55 % of the sunlight on the mirrors reaches the salt as heat; 40 % of that heat becomes electricity; the turbine runs at full power whenever the tank holds enough heat. A real plant forecasts the weather and schedules its output for the hours when electricity is worth most.</p>
+  </section>
+
+  <h2 id="fit">Strengths, limits and where CSP fits</h2>
+  <div class="fit-grid">
+    <div>
+      <h3>Strengths</h3>
+      <ul class="plus">
+        <li>Built-in, cheap storage: heat in a tank of salt, enough for many hours.</li>
+        <li>Spinning turbines give the grid inertia, like conventional plants.</li>
+        <li>High-temperature heat can also serve industry directly.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Limits</h3>
+      <ul class="minus">
+        <li>Needs strong direct sunlight; useless under cloud or haze.</li>
+        <li>Large, complex plants with many moving mirrors and hot fluids.</li>
+        <li>Costs have fallen more slowly than those of solar panels and batteries, which now compete with it for evening power.<sup class="cite" data-src="pge-ivanpah-2025"></sup> <span class="claim claim--consensus">Current consensus</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="compare-cta">Concentrated solar is solar power that behaves a little like a fuel-burning plant. Compare it with photovoltaics on the <a href="compare.html">comparison dashboard</a>, follow the electrons instead of the heat in <a href="../learn/photovoltaic-effect.html">the photovoltaic effect</a>, or see how batteries tackle the same evening problem on the <a href="storage.html">energy storage</a> page.</p>
+
+  <section class="references-block" data-auto aria-labelledby="refs-h"></section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

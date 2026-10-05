@@ -1,0 +1,70 @@
+/* Page-local styles shared by the clean-energy overview, biomass, CSP, storage and grid pages.
+   Builds on renewables-a-common.css (today figure, mini timeline, fit grid, segmented controls),
+   so the whole renewables section reads as one family. */
+
+.rb-page[data-source="system"] { --src: var(--good); }
+.rb-page[data-source="biomass"] { --src: var(--r-biomass); }
+.rb-page[data-source="csp"] { --src: var(--r-csp); }
+.rb-page[data-source="storage"] { --src: var(--r-storage); }
+.rb-page[data-source="grid"] { --src: var(--silicon); }
+
+/* the kicker link keeps its underline: in the kicker's colour it would otherwise read as plain text */
+
+/* filters sit in one row above what they scope */
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; align-items: end; margin-bottom: 0.6rem; }
+.filter-row .control { min-width: 0; }
+.filter-row select { min-width: 13rem; }
+.control .label { display: block; }
+
+/* chart tooltips: no inline styles allowed, so series keys are classes */
+.tt-head { font-weight: 700; margin-bottom: 0.25rem; }
+.tt-row { display: flex; justify-content: space-between; gap: 1.2rem; font-size: var(--s-1); line-height: 1.5; }
+.tt-name { color: var(--ink-2); display: inline-flex; align-items: center; gap: 0.45rem; }
+.tt-row strong { font-variant-numeric: tabular-nums; color: var(--ink); }
+.tt-k { display: inline-block; width: 0.9rem; height: 3px; border-radius: 2px; background: var(--ink-2); }
+.tt-k.k-solar { background: var(--r-solar); }
+.tt-k.k-wind { background: var(--r-wind); }
+.tt-k.k-hydro { background: var(--r-hydro); }
+.tt-k.k-bio { background: var(--r-biomass); }
+.tt-k.k-other { background: var(--r-geothermal); }
+.tt-k.k-nuclear { background: var(--t-perovskite); }
+.tt-k.k-fossil { background: var(--ink-2); opacity: 0.5; }
+.tt-k.k-store, .tt-k.k-discharge, .tt-k.k-charge { background: var(--r-storage); }
+.tt-k.k-unmet { background: var(--ink-2); }
+.tt-k.k-curtailed { background: var(--sun); opacity: 0.45; }
+.tt-k.k-demand { background: var(--ink); }
+.tt-k.k-flex { background: var(--good); }
+.tt-k.k-freq { background: var(--silicon); }
+
+details.table-details { margin-top: 0.8rem; }
+details.table-details summary, details.sys-text summary { cursor: pointer; font-weight: 650; font-size: var(--s-1); color: var(--silicon); }
+details.table-details[open] summary { margin-bottom: 0.5rem; }
+.table-wrap table caption { text-align: left; }
+
+/* labelled "illustrative" tags for model output */
+.tag-illustrative {
+  display: inline-block; font-size: var(--s-2); font-weight: 700; color: var(--warn); border: 1px solid currentColor;
+  border-radius: 999px; padding: 0.05rem 0.55rem; vertical-align: 0.15em; white-space: nowrap;
+}
+
+/* small stat row used under widgets: numbers in text, not only in drawings */
+.readout.rb-readout { grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); }
+.readout .v.good { color: var(--good); }
+.readout .v.bad { color: var(--hole); }
+
+/* canvas stages */
+.rb-canvas { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); background: var(--paper-2); }
+@media (max-width: 40rem) { .rb-canvas { aspect-ratio: 4 / 5; } }
+
+/* key under drawings */
+.rb-key { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; list-style: none; padding: 0; margin: 0.6rem 0 0; font-size: var(--s-1); color: var(--ink-2); }
+.rb-key li { margin: 0; display: inline-flex; align-items: center; gap: 0.45rem; }
+.rb-key .sw { width: 0.85rem; height: 0.85rem; border-radius: 3px; display: inline-block; background: var(--ink-2); }
+.rb-key .ln { width: 1.3rem; height: 0; border-top: 2.5px solid var(--ink); display: inline-block; }
+.rb-key .ln.dash { border-top-style: dashed; }
+
+.compare-cta { border-left: 3px solid var(--src); padding: 0.2rem 0 0.2rem 1rem; }
+
+/* tables of technologies */
+.tech-table th[scope="row"] { font-weight: 650; }
+.tech-table td small { color: var(--ink-2); }

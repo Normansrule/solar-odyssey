@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Energy storage – Solar Odyssey</title>
+<meta name="description" content="Batteries, pumped hydro and hydrogen.">
+<link rel="icon" href="../assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/odyssey.css">
+<link rel="stylesheet" href="renewables-a-common.css">
+<link rel="stylesheet" href="renewables-b-common.css">
+<link rel="stylesheet" href="storage.css">
+<script type="module" src="../assets/js/core.js"></script>
+<script type="module" src="storage.js"></script>
+</head>
+<body data-page="storage">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page ra-page rb-page" data-source="storage">
+  <header class="page-head">
+    <span class="kicker"><a href="index.html">Renewables</a></span>
+    <h1>Energy storage</h1>
+    <p class="lede">The Sun sets just as people get home and switch everything on. Storage is how a grid keeps the afternoon's sunshine for the evening, and a windy week for a calm one: pump water uphill, charge a battery, split water into hydrogen, or heat a tank of salt.</p>
+  </header>
+
+  <section class="today-figure share-figure" data-sources="solar,wind" data-noun="wind and solar" aria-label="Wind and solar's share of world electricity">
+    <div>
+      <span class="tf-num" data-slot="pct">17.3 %</span>
+      <p class="tf-what">of the world's electricity came from <strong>wind and solar</strong> in <span data-slot="year">2025</span>, <span data-slot="twh">5,492 TWh</span>: the weather-driven sources that storage helps fit to demand.<sup class="cite" data-src="owid-energy-data,ember-yearly-electricity"></sup> <span class="verified">2026-09-30</span></p>
+    </div>
+    <div class="tf-side">
+      <div data-slot="spark"></div>
+      <p class="tf-note">Pumped storage passed 200 GW worldwide in 2025.<sup class="cite" data-src="iha-outlook-2026"></sup> More dated figures on <a href="../state-of-the-field.html">State of the field</a>.</p>
+      <span class="data-badge"></span>
+    </div>
+  </section>
+
+  <p>Every store of electricity is described by two numbers, and confusing them is the most common mistake in talking about storage. <strong>Power</strong>, in megawatts (MW), is how fast it can charge or discharge: the width of the pipe. <strong>Energy</strong>, in megawatt-hours (MWh), is how much it holds: the size of the tank. Divide one by the other and you get its <dfn data-term="storage-duration">duration</dfn>. The third number is the <dfn data-term="round-trip-efficiency">round-trip efficiency</dfn>: how much of what you put in comes back out.</p>
+
+  <h2 id="history">From a Swiss reservoir to the water battery decade</h2>
+  <ol class="mini-timeline">
+    <li><time datetime="1909">1909</time><p><span class="mt-what">An early pumped store.</span> The Engeweiher plant above Schaffhausen, Switzerland, pumps water uphill to use it again later, and still does. The idea is older: a Zurich scheme pumped water for later use from 1882.<sup class="cite" data-src="shn-engeweiher-2026,asme-rocky-river"></sup></p></li>
+    <li><time datetime="1928">1928</time><p><span class="mt-what">America's first large store.</span> The Rocky River plant in Connecticut is completed: the first large-scale pumped-storage plant in the United States.<sup class="cite" data-src="asme-rocky-river,umich-css-storage-2026"></sup></p></li>
+    <li><time datetime="1991">1991</time><p><span class="mt-what">Lithium-ion goes on sale.</span> Sony sells the first commercial lithium-ion cells, built on work by Whittingham (1970s), Goodenough (1980) and Yoshino (1985).<sup class="cite" data-src="nobel-chemistry-2019-popular"></sup></p></li>
+    <li><time datetime="2017">2017</time><p><span class="mt-what">A battery for a state.</span> The Hornsdale Power Reserve in South Australia, 100 MW / 129 MWh, becomes the largest lithium-ion battery in the world.<sup class="cite" data-src="hpr-faq,arena-hornsdale-2019"></sup></p></li>
+    <li><time datetime="2019">2019</time><p><span class="mt-what">A Nobel for the battery.</span> Goodenough, Whittingham and Yoshino share the Nobel Prize in Chemistry for developing lithium-ion batteries.<sup class="cite" data-src="nobel-chemistry-2019"></sup></p></li>
+    <li><time datetime="2023">2023</time><p><span class="mt-what">Batteries take over new builds.</span> Global battery storage more than doubles to about 56 GW; batteries make up 83 % of new utility-scale storage capacity, while pumped hydro still holds about three quarters of the total.<sup class="cite" data-src="ren21-gsr-2024-storage"></sup></p></li>
+    <li><time datetime="2025">2025</time><p><span class="mt-what">The water battery passes 200 GW.</span> A record 11.7 GW of pumped storage is added, taking the world past 201 GW, with about 243 GW more under construction.<sup class="cite" data-src="iha-outlook-2026"></sup> <span class="verified">2026-09-30</span></p></li>
+  </ol>
+
+  <h2 id="how">Four ways to store electricity</h2>
+  <div class="techs">
+    <section aria-labelledby="t-bat">
+      <h3 id="t-bat">Batteries</h3>
+      <p>A <dfn data-term="lithium-ion">lithium-ion battery</dfn> stores energy chemically: charging pushes lithium ions into one electrode, discharging lets them flow back. Two chemistries dominate: LFP (lithium iron phosphate), widely used for stationary storage, and NMC (nickel manganese cobalt), common in electric cars. They answer within about a second<sup class="cite" data-src="pnnl-storage-2019"></sup> and return around 85 % of the energy put in.<sup class="cite" data-src="nrel-battery-cost-2025"></sup> A <dfn data-term="flow-battery">flow battery</dfn> keeps its energy in two tanks of liquid; bigger tanks mean more hours, which suits longer storage.</p>
+    </section>
+    <section aria-labelledby="t-ph">
+      <h3 id="t-ph">Pumped hydro</h3>
+      <p><dfn data-term="pumped-storage">Pumped-storage hydropower</dfn> uses two reservoirs at different heights. Surplus power pumps water up; when power is needed, the water runs back down through the same machines working as turbines. About 80 % of the energy comes back.<sup class="cite" data-src="pnnl-storage-2019"></sup> It needs the right hills and years to build, but it lasts for decades and holds far more energy than all the world's grid batteries: by the industry body's count, more than 90 % of the world's stored electricity.<sup class="cite" data-src="iha-outlook-2025"></sup> <span class="claim claim--consensus">Current consensus</span> <span class="verified">2026-09-30</span></p>
+    </section>
+    <section aria-labelledby="t-h2">
+      <h3 id="t-h2">Hydrogen</h3>
+      <p><dfn data-term="electrolysis">Electrolysis</dfn> splits water into hydrogen and oxygen; the hydrogen is compressed and stored, then a <dfn data-term="fuel-cell">fuel cell</dfn> or turbine turns it back into electricity. Every step loses energy, so only about 31 % comes back in a US Department of Energy baseline.<sup class="cite" data-src="inl-hydrogen-2023"></sup> Its strength is size: a salt cavern of hydrogen can store energy for weeks or seasons, which no battery can do cheaply. <span class="claim claim--research">Active research</span></p>
+    </section>
+    <section aria-labelledby="t-th">
+      <h3 id="t-th">Heat</h3>
+      <p>Heat is the cheapest thing to store. Concentrated solar plants keep many hours of heat in tanks of <a href="csp.html">molten salt</a>; hot-water tanks and heat pumps let homes and district-heating networks use electricity when it is plentiful and keep the warmth for later.</p>
+    </section>
+  </div>
+
+  <section class="widget" id="day" aria-labelledby="day-h">
+    <h2 id="day-h">A day on a solar grid</h2>
+    <p class="caption lead">A grid with a 1,000 MW evening peak and plenty of solar. Size the store, in MW and MWh, to move the midday surplus into the evening. Watch what is wasted, what is still missing and how full the store gets. <span class="tag-illustrative">Illustrative profiles</span></p>
+    <div class="day-grid">
+      <div class="controls day-controls">
+        <div class="control">
+          <label for="d-solar">Solar farms <output id="d-solar-out" for="d-solar">2,000 MW</output></label>
+          <input type="range" id="d-solar" min="0" max="5000" step="100" value="2000">
+        </div>
+        <div class="control">
+          <label for="d-power">Storage power <output id="d-power-out" for="d-power">500 MW</output></label>
+          <input type="range" id="d-power" min="0" max="1500" step="50" value="500">
+        </div>
+        <div class="control">
+          <label for="d-energy">Storage energy <output id="d-energy-out" for="d-energy">2,000 MWh</output></label>
+          <input type="range" id="d-energy" min="0" max="8000" step="100" value="2000">
+        </div>
+        <div class="control">
+          <label for="d-tech">Technology (round-trip efficiency)</label>
+          <select id="d-tech">
+            <option value="0.85" selected>Lithium-ion battery (85 %)</option>
+            <option value="0.80">Pumped hydro (80 %)</option>
+            <option value="0.70">Flow battery (70 %)</option>
+            <option value="0.31">Hydrogen (31 %)</option>
+          </select>
+        </div>
+        <div class="control">
+          <span class="label" id="d-season-label">Clear day in</span>
+          <div class="segmented" role="group" aria-labelledby="d-season-label" id="d-season">
+            <button type="button" value="6" aria-pressed="false">June</button>
+            <button type="button" value="4" aria-pressed="true">April</button>
+            <button type="button" value="12" aria-pressed="false">December</button>
+          </div>
+        </div>
+      </div>
+      <div class="day-charts">
+        <p class="chart-title" id="dp-title">Hour by hour: where the power comes from and goes</p>
+        <div class="chart" id="day-chart" role="img" aria-labelledby="dp-title" aria-describedby="dp-desc"></div>
+        <ul class="legend day-legend" aria-label="Legend">
+          <li><span class="swatch k-direct" aria-hidden="true"></span>Solar used directly</li>
+          <li><span class="swatch k-charge" aria-hidden="true"></span>Solar into storage</li>
+          <li><span class="swatch k-curt" aria-hidden="true"></span>Solar wasted (curtailed)</li>
+          <li><span class="swatch k-dis" aria-hidden="true"></span>From storage</li>
+          <li><span class="swatch k-unmet" aria-hidden="true"></span>Still needed from other sources</li>
+          <li><span class="lkey" aria-hidden="true"></span>Demand</li>
+        </ul>
+        <p class="muted chart-note" id="dp-desc">Bars stack to the larger of solar output and demand; the line is demand.</p>
+        <p class="chart-title" id="ds-title">How full the store is</p>
+        <div class="chart soc-chart" id="soc-chart" role="img" aria-labelledby="ds-title"></div>
+      </div>
+    </div>
+    <div class="readout rb-readout" aria-live="polite">
+      <div><span class="k">Demand met by solar</span><span class="v" id="o-share">—</span></div>
+      <div><span class="k">Solar wasted</span><span class="v" id="o-curt">—</span></div>
+      <div><span class="k">Still needed</span><span class="v" id="o-unmet">—</span></div>
+      <div><span class="k">Lost in the round trip</span><span class="v" id="o-loss">—</span></div>
+      <div><span class="k">Storage duration</span><span class="v" id="o-dur">—</span></div>
+    </div>
+    <p class="ra-status" id="day-status" aria-live="polite"></p>
+    <p class="caption">Model: demand and solar shapes are illustrative, not measured (solar from this site's clear-sky model at 35° N; demand with an evening peak near 19:00). The store charges only from solar surplus and discharges whenever demand exceeds solar, within its power and energy limits; losses are split evenly between charging and discharging; it starts and ends the day equally full. The code is in <code>physics/grid.js</code> and is unit-tested.</p>
+  </section>
+
+  <p>Try this. With no storage, the midday surplus is wasted and the evening is short. Add power without energy (say 1,000 MW and 500 MWh) and the store fills in an hour and empties in half an hour: a big pipe on a small tank. Add energy without power and the tank never fills. A good match for this day is a few hours' duration, which is why batteries of around four hours are a common partner for solar. Then switch to hydrogen: the same store returns barely a third of what it takes in, and the evening gap reopens.</p>
+
+  <h2 id="equations">The numbers of storage</h2>
+
+  <section class="eq" aria-labelledby="eq-dur">
+    <h3 id="eq-dur">Duration</h3>
+    <p>How long can a store keep going flat out? Divide the energy it holds by the power it can deliver.</p>
+    <div class="tex">t = \frac{E}{P}</div>
+    <dl class="symbols">
+      <dt><span class="tex">t</span></dt><dd>duration at full power, hours (h)</dd>
+      <dt><span class="tex">E</span></dt><dd>usable energy capacity, megawatt-hours (MWh)</dd>
+      <dt><span class="tex">P</span></dt><dd>power rating, megawatts (MW)</dd>
+    </dl>
+    <div class="worked" data-check="renewables:storageDurationH" data-args="[129, 100]" data-expect="1.29" data-tol="0.001">
+      Hornsdale as built in 2017, 129 MWh behind 100 MW:<sup class="cite" data-src="hpr-faq"></sup> 129 ÷ 100 = <span class="answer">1.29 hours</span>. A short-duration battery like this is better at fast jobs, such as steadying frequency, than at carrying a whole evening.
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-ph">
+    <h3 id="eq-ph">Energy in a raised lake</h3>
+    <p>Lifting water stores gravitational energy, exactly as lifting a book does. A cubic metre of water weighs a tonne, so a big reservoir high on a hill holds a lot.</p>
+    <div class="tex">E = \rho\,V\,g\,h</div>
+    <dl class="symbols">
+      <dt><span class="tex">\rho</span></dt><dd>density of water, 1,000 kg/m³</dd>
+      <dt><span class="tex">V</span></dt><dd>volume of water moved, m³</dd>
+      <dt><span class="tex">g</span></dt><dd>gravitational acceleration, 9.81 m/s²</dd>
+      <dt><span class="tex">h</span></dt><dd>height between the two reservoirs (the head), m</dd>
+    </dl>
+    <div class="worked" data-check="renewables:liftedWaterEnergyJ" data-args="[1000000, 300]" data-expect="2.942e12" data-tol="0.001e12">
+      An illustrative upper reservoir of one million cubic metres, 300 m above the lower one: 1,000 × 10⁶ × 9.81 × 300 = <span class="answer">2.94 × 10¹² J</span>, about 817 MWh. Recovered at around 80 %,<sup class="cite" data-src="pnnl-storage-2019"></sup> that is some 650 MWh, enough to run a 1,000 MW evening peak for about 40 minutes.
+    </div>
+  </section>
+
+  <section class="eq" aria-labelledby="eq-rt">
+    <h3 id="eq-rt">Round-trip efficiency: losses multiply</h3>
+    <p>A storage chain is only as good as the product of its steps. Each conversion keeps a fraction of the energy; multiply the fractions to see what survives the whole trip.</p>
+    <div class="tex">\eta_{\text{rt}} = \eta_1 \times \eta_2 \times \dots \times \eta_n</div>
+    <dl class="symbols">
+      <dt><span class="tex">\eta_{\text{rt}}</span></dt><dd>round-trip efficiency: energy out ÷ energy in (no units)</dd>
+      <dt><span class="tex">\eta_i</span></dt><dd>efficiency of each step (electrolysis, compression, fuel cell, inverter …)</dd>
+    </dl>
+    <div class="worked" data-check="renewables:roundTrip" data-args="[0.73, 0.51]" data-expect="0.3723" data-tol="0.0001">
+      With an electrolyser that keeps 73 % and a fuel cell that keeps 51 %,<sup class="cite" data-src="inl-hydrogen-2023"></sup> the two conversions alone leave 0.73 × 0.51 = <span class="answer">0.372</span>. Add compression, storage and the rest of the plant, and the Department of Energy's baseline falls to about 31 %.
+    </div>
+    <div class="worked" data-check="renewables:hydrogenEnergyJ" data-args="[1000]" data-expect="1.2e11" data-tol="1e6">
+      A tonne of hydrogen holds 1,000 × 120 MJ/kg = <span class="answer">1.2 × 10¹¹ J</span> (33 MWh, lower heating value). At 31 % round trip, every 33 MWh of electricity put into the chain gives back only about 10 MWh.
+    </div>
+    <div class="worked" data-check="grid:toyShare" data-args="[{&quot;demand&quot;:[100,100,100,100],&quot;renewable&quot;:[200,200,0,0],&quot;powerMW&quot;:100,&quot;energyMWh&quot;:200,&quot;rte&quot;:0.81}]" data-expect="0.905" data-tol="0.0005">
+      The widget's model, by hand: four hours of 100 MW demand, solar of 200 MW for the first two hours and none after, a 100 MW / 200 MWh store at 81 % round trip. The store takes in the 200 MWh surplus and returns 162 MWh, so 38 MWh of the last two hours must come from elsewhere: (400 − 38) ÷ 400 = <span class="answer">0.905</span> of demand met by solar.
+    </div>
+  </section>
+
+  <h2 id="table">The technologies side by side</h2>
+  <p>Representative figures from US national-laboratory assessments. Costs move fast and depend on duration and project size, so each carries its year; treat them as orders of magnitude.</p>
+  <div class="table-wrap">
+    <table class="tech-table ra-table">
+      <caption class="visually-hidden">Storage technologies compared: round-trip efficiency, typical duration, response time and installed cost</caption>
+      <thead><tr><th scope="col">Technology</th><th scope="col" class="num">Round trip</th><th scope="col">Typical duration</th><th scope="col">Response</th><th scope="col">Installed cost (system)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Lithium-ion (LFP)</th><td class="num">≈ 85 %<sup class="cite" data-src="nrel-battery-cost-2025"></sup></td><td>a few hours; 4 h is the standard case in cost studies<sup class="cite" data-src="nrel-battery-cost-2025"></sup></td><td>≈ 1 s<sup class="cite" data-src="pnnl-storage-2019"></sup></td><td>≈ $334/kWh for a 4-hour system <small>(2024)</small><sup class="cite" data-src="nrel-battery-cost-2025"></sup></td></tr>
+        <tr><th scope="row">Vanadium flow battery</th><td class="num">≈ 68–70 %<sup class="cite" data-src="pnnl-storage-2019"></sup></td><td>4–10 h and more: energy set by tank size</td><td>≈ 1 s<sup class="cite" data-src="pnnl-storage-2019"></sup></td><td>≈ $385/kWh for 10 hours <small>(2021)</small><sup class="cite" data-src="pnnl-storage-2022"></sup></td></tr>
+        <tr><th scope="row">Pumped hydro</th><td class="num">≈ 80 %<sup class="cite" data-src="pnnl-storage-2019"></sup></td><td>many hours; 10 h in cost studies</td><td>seconds to minutes, by mode<sup class="cite" data-src="pnnl-storage-2019"></sup></td><td>≈ $263/kWh for 10 hours <small>(2021)</small><sup class="cite" data-src="pnnl-storage-2022"></sup></td></tr>
+        <tr><th scope="row">Compressed air</th><td class="num">≈ 52 %<sup class="cite" data-src="pnnl-storage-2019"></sup></td><td>many hours</td><td>—</td><td>≈ $122/kWh for 10 hours <small>(2021)</small><sup class="cite" data-src="pnnl-storage-2022"></sup></td></tr>
+        <tr><th scope="row">Hydrogen (electrolyser, store, fuel cell)</th><td class="num">≈ 31 %<sup class="cite" data-src="inl-hydrogen-2023"></sup></td><td>days to seasons</td><td>depends on the converter</td><td>early stage; strongly site- and scale-dependent</td></tr>
+        <tr><th scope="row">Molten-salt heat (with CSP)</th><td class="num">stores heat, not electricity</td><td>up to about 15 h<sup class="cite" data-src="solarpaces-gemasolar"></sup></td><td>set by the steam turbine</td><td>part of the CSP plant</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted table-note">Costs are for complete systems in US dollars of the year shown; a cost per kWh of capacity is not the cost of each kWh delivered, which also depends on how often the store cycles.</p>
+
+  <h2 id="fit">Strengths, limits and where storage fits</h2>
+  <div class="fit-grid">
+    <div>
+      <h3>Strengths</h3>
+      <ul class="plus">
+        <li>Turns cheap midday solar and windy nights into power for the evening peak.</li>
+        <li>Batteries react in about a second, steadying frequency after a fault.<sup class="cite" data-src="pnnl-storage-2019"></sup></li>
+        <li>Can be built close to demand, easing congested power lines.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Limits</h3>
+      <ul class="minus">
+        <li>Every store loses energy; hydrogen loses most of it.</li>
+        <li>Batteries are economical for hours, not weeks; seasonal storage is still an open problem. <span class="claim claim--research">Active research</span></li>
+        <li>Pumped hydro needs suitable terrain and long construction times.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="compare-cta">Storage is one of three ways to balance a grid; the others are flexible demand and wide connections. See all three working together in the balancing game on <a href="grid.html">the smart grid</a>, or compare sources on the <a href="compare.html">comparison dashboard</a>.</p>
+
+  <section class="references-block" data-auto aria-labelledby="refs-h"></section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

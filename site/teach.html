@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>For teachers – Solar Odyssey</title>
+<meta name="description" content="Objectives, timings and a printable question bank for every lesson.">
+<link rel="icon" href="assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/odyssey.css">
+<link rel="stylesheet" href="teach.css">
+<script type="module" src="assets/js/core.js"></script>
+<script type="module" src="teach.js"></script>
+</head>
+<body data-page="teach">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">Reference</span>
+    <h1>For teachers</h1>
+    <p class="lede">Solar Odyssey is free to use in class and free to adapt. This page collects what you need to plan with it: what each lesson teaches, how long it takes, and a question bank you can print with or without answers.</p>
+  </header>
+
+  <h2 id="in-class">Using the course in class</h2>
+  <ul>
+    <li><strong>Order.</strong> The lessons build on each other: the story, how a cell works, solar today, the frontier, then the other renewables, storage and the grid. Every page also stands on its own, so you can pick single lessons.</li>
+    <li><strong>Two depths.</strong> Pages open at the Intro level, written for high-school students with no physics background. The Expert switch in the header adds derivations and detail for advanced or university students. Both levels sit on the same page, so a mixed class can work side by side.</li>
+    <li><strong>Each lesson ends with</strong> three to five check-your-understanding questions. They are checked in the student's browser and remembered only on that device.</li>
+    <li><strong>No accounts, no tracking.</strong> The site collects nothing about students, sets no cookies and loads nothing from other websites, so it fits strict school privacy rules.</li>
+    <li><strong>No internet in the room?</strong> Install the offline desktop app, or copy the site folder to a USB stick and open it with any browser (see <a href="about.html">About</a>).</li>
+    <li><strong>Reuse.</strong> Text and drawings are licensed CC BY 4.0: copy, translate, cut and adapt them for your class with a credit to Solar Odyssey. Numbers come with their sources on the <a href="sources.html">Sources</a> page, and fast-moving ones carry the date they were checked.</li>
+  </ul>
+
+  <section class="widget teach-tools" aria-labelledby="bank-h">
+    <h2 id="bank-h">Lessons and question bank</h2>
+    <p class="muted" id="teach-summary">Loading the lessons…</p>
+    <div class="btn-row">
+      <label class="teach-toggle"><input type="checkbox" id="show-answers"> Show answers</label>
+      <button type="button" class="btn ghost" id="print-student">Print student copy</button>
+      <button type="button" class="btn" id="print-teacher">Print with answers</button>
+    </div>
+    <p class="muted" id="print-status" aria-live="polite"></p>
+  </section>
+  <div id="teach-lessons" class="teach-lessons"></div>
+  <noscript><p class="noscript-note">The lesson list needs JavaScript. Every question also appears at the end of its lesson page.</p></noscript>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

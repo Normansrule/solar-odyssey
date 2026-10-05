@@ -1,0 +1,21 @@
+/* The frontier: tandem designer */
+.fr-stage { display: grid; gap: 0.9rem; }
+.fr-stage canvas { width: 100%; }
+.fr-legend { margin: 0; }
+.fr-sw--top { background: var(--t-perovskite); }
+.fr-sw--bottom { background: var(--t-silicon); }
+.fr-sw--heat { background: color-mix(in srgb, var(--hole) 30%, var(--paper-2)); }
+.fr-sw--lost { background: var(--rule); }
+
+.fr-currents { display: grid; gap: 0.35rem; font-size: var(--s-1); }
+.fr-cur { display: grid; grid-template-columns: 11.5rem minmax(0, 1fr); gap: 0.6rem; align-items: center; }
+@media (max-width: 30rem) { .fr-cur { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; } }
+.fr-cur-k { color: var(--ink-2); }
+.fr-bar { display: block; height: 0.8rem; background: var(--paper-2); border-radius: 3px; overflow: hidden; }
+.fr-fill { display: block; height: 100%; border-radius: 3px; transition: width 0.15s ease-out; }
+.fr-fill--top { background: var(--t-perovskite); }
+.fr-fill--bottom { background: var(--t-silicon); }
+.fr-fill--stack { background: var(--t-tandem); }
+#fr-summary { color: var(--ink); min-height: 4.5em; }
+.fr-who { font-size: var(--s-2); }
+#fr-limits th[scope="row"] { background: none; font-weight: 650; }

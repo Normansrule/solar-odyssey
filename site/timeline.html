@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>The Solar Odyssey timeline – Solar Odyssey</title>
+<meta name="description" content="Walk from Becquerel in 1839 to today’s records and tomorrow’s research.">
+<link rel="icon" href="assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/odyssey.css">
+<link rel="stylesheet" href="sun-arc.css">
+<link rel="stylesheet" href="timeline.css">
+<script type="module" src="assets/js/core.js"></script>
+<script type="module" src="timeline.js"></script>
+</head>
+<body data-page="timeline">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page tl-page">
+  <header class="page-head tl-head">
+    <h1>The Solar Odyssey timeline</h1>
+    <p class="lede">The story of solar power runs like a day. It dawns in 1839 with a flicker of current, the morning explains it, midday builds an industry, and the afternoon belongs to research still under way.</p>
+    <div class="tl-filter" role="group" aria-labelledby="tl-filter-label">
+      <span id="tl-filter-label" class="tl-filter-label">Show</span>
+      <button type="button" class="tl-chip" data-filter="solar" aria-pressed="false">Solar only</button>
+      <button type="button" class="tl-chip" data-filter="all" aria-pressed="true">All renewables</button>
+      <span class="data-badge" id="tl-badge"></span>
+    </div>
+  </header>
+
+  <div class="tl-walk full">
+    <div class="tl-band sky" id="tl-band" data-era="dawn">
+      <svg class="arc-svg" id="tl-arc" role="img" aria-label="The sun's path across a day, standing for the history of solar power. Dawn is 1839 to 1900, morning 1900 to 1970, midday 1970 to today, and the afternoon is the research frontier. Each dot is one event on this page; the sun marks the event you are reading."></svg>
+      <div class="tl-readout">
+        <button type="button" class="tl-step" id="tl-prev" aria-label="Previous event"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <p class="tl-now" aria-live="off"><span class="tl-now-year" id="tl-year">1839</span><span class="tl-now-title" id="tl-title">A glimmer of current</span></p>
+        <button type="button" class="tl-step" id="tl-next" aria-label="Next event"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <nav class="arc-eras-nav" aria-label="Eras">
+        <ol class="arc-eras" id="tl-eras">
+          <li data-era="dawn"><a href="#era-dawn">Dawn</a></li>
+          <li data-era="morning"><a href="#era-morning">Morning</a></li>
+          <li data-era="midday"><a href="#era-midday">Midday</a></li>
+          <li data-era="afternoon"><a href="#era-afternoon">Afternoon</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="tl-spine" id="tl-spine">
+      <p class="tl-how" id="tl-how">Scroll down, and the sun crosses the sky with you: its place on the arc is the year you are reading about. Each step names the people and the papers, and links to the lesson that explains the physics. Entries are settled history unless they carry a <span class="claim claim--consensus">Current consensus</span> or <span class="claim claim--research">Active research</span> tag.</p>
+
+      <section class="tl-era" id="era-dawn" aria-labelledby="era-dawn-h" data-era="dawn">
+        <header class="tl-era-head">
+          <h2 id="era-dawn-h">Dawn <span class="tl-era-span">1839 to 1900</span></h2>
+          <p>Scientists notice that light can change the electricity in a material, and even make it. Nobody can yet say why: the electron has not been discovered.</p>
+        </header>
+        <ol class="tl-events" data-era="dawn"></ol>
+      </section>
+      <section class="tl-era" id="era-morning" aria-labelledby="era-morning-h" data-era="morning">
+        <header class="tl-era-head">
+          <h2 id="era-morning-h">Morning <span class="tl-era-span">1900 to 1970</span></h2>
+          <p>Quantum physics explains the effect, chemists learn to grow perfect crystals, and Bell Labs builds the first solar cell good enough to power something useful, first in orbit.</p>
+        </header>
+        <ol class="tl-events" data-era="morning"></ol>
+      </section>
+      <section class="tl-era" id="era-midday" aria-labelledby="era-midday-h" data-era="midday">
+        <header class="tl-era-head">
+          <h2 id="era-midday-h">Midday <span class="tl-era-span">1970 to today</span></h2>
+          <p>Oil shocks, laws and factories turn a space technology into the cheapest electricity many countries have ever had.</p>
+        </header>
+        <ol class="tl-events" data-era="midday"></ol>
+      </section>
+      <section class="tl-era" id="era-afternoon" aria-labelledby="era-afternoon-h" data-era="afternoon">
+        <header class="tl-era-head">
+          <h2 id="era-afternoon-h">Afternoon <span class="tl-era-span">the research frontier</span></h2>
+          <p>The day is not over. Silicon is close to its limit, so the frontier is about stacking materials, and proving the new ones last.</p>
+        </header>
+        <ol class="tl-events" data-era="afternoon"></ol>
+      </section>
+      <noscript><p class="noscript-note">The events load from this site's signed data file, which needs JavaScript. The four eras above give the outline; the <a href="sources.html">sources page</a> lists every reference.</p></noscript>
+    </div>
+  </div>
+
+  <section class="references-block" id="tl-refs" aria-labelledby="tl-refs-h">
+    <h2 id="tl-refs-h">References</h2>
+    <p class="muted">The reference list is built from the same data as the events.</p>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

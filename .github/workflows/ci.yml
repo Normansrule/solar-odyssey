@@ -1,0 +1,47 @@
+# Checks every push and pull request: static page checks, data signature, unit
+# tests, pvlib cross-checks, browser tests of every page and accessibility tests.
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: npm ci --ignore-scripts
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Vendored libraries match the lockfile
+        run: |
+          npm run vendor
+          git diff --exit-code -- site/vendor || (echo "site/vendor is out of date: run npm run vendor and commit" && exit 1)
+      - name: Data rebuilds identically and the signed manifest verifies
+        run: |
+          python scripts/build_data.py
+          git diff --exit-code -- site/data ':!site/data/manifest.json' ':!site/data/manifest.sig' || (echo "site/data is out of date: run npm run data && npm run sign" && exit 1)
+          node scripts/sign-manifest.mjs --verify
+      - run: python scripts/check_site.py
+      - run: node --test "tests/unit/*.test.mjs"
+      - run: python -m pytest -q tests/py
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m pytest -q tests/e2e --ignore=tests/e2e/test_a11y.py
+      - name: Accessibility (axe-core WCAG 2.2 AA, keyboard, screen-reader names, reflow)
+        run: python -m pytest -q tests/e2e/test_a11y.py

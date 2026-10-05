@@ -1,0 +1,10 @@
+{
+  "nameplate-capacity": { "term": "Nameplate capacity", "short": "The most power a plant is built to deliver, in kilowatts (kW) or megawatts (MW). A 100 MW solar farm makes 100 MW only in full sun.", "see": ["capacity-factor"] },
+  "full-load-hours": { "term": "Full-load hours", "short": "A year's output expressed as hours at nameplate capacity: capacity factor × 8,760. A solar farm with a capacity factor of 0.17 makes as much as 1,489 hours at full power.", "see": ["capacity-factor", "nameplate-capacity"] },
+  "installed-cost": { "term": "Total installed cost", "short": "Everything it takes to build a power plant and connect it, divided by its nameplate capacity, in US dollars per kilowatt (US$/kW).", "see": ["lcoe"] },
+  "operations-and-maintenance": { "term": "Operations and maintenance (O&M)", "short": "The yearly cost of running a plant: staff, repairs, insurance, land lease. Fixed O&M is per kW per year; variable O&M is per MWh produced.", "see": ["lcoe"] },
+  "cost-of-capital": { "term": "Cost of capital (WACC)", "short": "The yearly return lenders and investors demand for financing a plant, usually a weighted average cost of capital (WACC) of debt and equity. It is the discount rate in an LCOE.", "see": ["discount-rate", "lcoe"] },
+  "land-use-intensity": { "term": "Land-use intensity", "short": "Land occupied per unit of electricity produced each year, for example square metres per MWh/yr. It can count only the direct footprint or the whole site and the mines that feed it.", "see": ["lifecycle-emissions"] },
+  "co2-equivalent": { "term": "CO2-equivalent (CO2e)", "short": "A way to add different greenhouse gases together: each gas is counted as the mass of carbon dioxide that would warm the planet as much over 100 years.", "see": ["lifecycle-emissions"] },
+  "dispatchable": { "term": "Dispatchable", "short": "A source that can raise or lower its output when the grid operator asks, such as hydro with a reservoir, geothermal, bioenergy or gas. Sun and wind are not, unless paired with storage.", "see": ["variable-renewable"] }
+}

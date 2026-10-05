@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "title": "Check your understanding: Tidal and wave",
+    "sources": [
+      "doe-marine-basics",
+      "delaleu-2009-rance",
+      "falnes-2007"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "ocean",
+    "minutes": 30,
+    "objectives": [
+      "Describe how a tidal barrage, a tidal-stream turbine and a wave energy converter collect energy",
+      "Calculate the power in a wave and explain how a barrage's output compares with the energy in its basin",
+      "Explain why water's density lets a slow current carry as much power as a strong wind"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Why can a 2.5 m/s tidal current carry as much power through each square metre as a wind of about 24 m/s?",
+        "choices": [
+          "Tidal currents keep the same speed all day, so their power adds up",
+          "Water flows both ways, so the turbine catches the power twice over",
+          "Underwater turbines can beat the Betz limit because water cannot be squeezed",
+          "Seawater is about 840 times denser than air, and power grows with density"
+        ],
+        "answer": 3,
+        "explain": "Power through each square metre goes as ½ρv³: the same physics as wind, with a far denser fluid. Tidal-stream turbines obey the same Betz limit as wind turbines; it is density, not a different limit, that packs the power in."
+      },
+      {
+        "id": "q2",
+        "prompt": "A storm doubles the significant wave height from 2 m to 4 m, with the energy period still 8 s. What is the wave energy flux now?",
+        "choices": [
+          "31 kW per metre of crest",
+          "16 kW per metre of crest",
+          "63 kW per metre of crest",
+          "125 kW per metre of crest"
+        ],
+        "answer": 2,
+        "explain": "Wave power grows with the square of the height, so the 15.7 kW/m of a 2 m sea becomes four times that, about 63 kW/m, at 4 m. 31 kW/m treats the power as rising in step with the height, and 125 kW/m would be the cube, as for wind speed.",
+        "source": "falnes-2007"
+      },
+      {
+        "id": "q3",
+        "prompt": "La Rance's basin could release about 2.1 GWh per tide in theory, yet the plant delivers about 0.7–0.85 GWh. What is the main reason the page gives?",
+        "choices": [
+          "Its turbines can only run while there is enough head between basin and sea",
+          "Most of the water leaks out through the sluices before high tide",
+          "Seawater is too dense for the turbines to pass at full flow",
+          "The sea refills the basin only once a day instead of twice"
+        ],
+        "answer": 0,
+        "explain": "The ideal figure assumes the whole basin drains through the full tidal range, but turbines need a working head, so they wait until the sea has fallen far enough and stop when the levels get close again. That leaves some 35–40 % of the ideal; the sea does refill the basin about twice a day.",
+        "source": "delaleu-2009-rance"
+      },
+      {
+        "id": "q4",
+        "prompt": "Tides are predictable years ahead. What does that mean for a tidal plant's output?",
+        "choices": [
+          "It produces a steady output around the clock, like a geothermal plant",
+          "Its pulses can be planned exactly, but output still varies through the day and the spring–neap cycle",
+          "It can supply a town on its own, because the timetable is known in advance",
+          "Its output follows the wind, so forecasts are needed a few hours ahead"
+        ],
+        "answer": 1,
+        "explain": "Knowing when the tide turns lets operators plan output exactly, but a tidal plant still delivers pulses, with gaps between tides and weaker output at neap tides, so it needs storage or other sources in between. Following the wind describes waves, which are wind energy gathered over the ocean.",
+        "source": "doe-marine-basics"
+      }
+    ]
+  }
+}

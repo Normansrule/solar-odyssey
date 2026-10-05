@@ -1,0 +1,16 @@
+{
+  "air-mass": { "term": "Air mass (AM)", "short": "How many atmospheres' worth of air sunlight crosses to reach you: 1 with the Sun overhead, about 1.5 at 48° from overhead, and more as the Sun sinks.", "see": ["irradiance", "standard-test-conditions"] },
+  "angle-of-incidence": { "term": "Angle of incidence", "short": "The angle between incoming sunlight and a line sticking straight out of a panel. At 0° the panel faces the Sun square on and catches the most light.", "see": ["irradiance"] },
+  "betz-limit": { "term": "Betz limit", "short": "No wind turbine can capture more than 16/27, about 59 %, of the power in the wind passing through its rotor.", "see": ["power-coefficient"] },
+  "capital-recovery-factor": { "term": "Capital recovery factor (CRF)", "short": "The share of an up-front cost that must be paid each year, like a mortgage payment, to repay it with interest over its lifetime.", "see": ["lcoe", "discount-rate"] },
+  "carnot-efficiency": { "term": "Carnot efficiency", "short": "The highest share of heat any engine could turn into work between a hot and a cold temperature: 1 minus cold over hot, in kelvin." },
+  "discount-rate": { "term": "Discount rate", "short": "How much less money in the future is worth than money today, in percent per year. It stands for interest and the return investors expect.", "see": ["capital-recovery-factor", "lcoe"] },
+  "hydraulic-head": { "term": "Head", "short": "The height that water falls between the intake and the turbine of a hydropower plant, in metres." },
+  "learning-rate": { "term": "Learning rate", "short": "The share by which a technology's cost falls each time the total amount ever produced doubles.", "see": ["wrights-law"] },
+  "wrights-law": { "term": "Wright's law", "short": "The observation that cost falls by a steady percentage every time cumulative production doubles.", "see": ["learning-rate"] },
+  "performance-ratio": { "term": "Performance ratio (PR)", "short": "The share of a solar array's ideal output that actually reaches the grid after losses to heat, wiring, the inverter, dirt and shading. Typically 0.75 to 0.85.", "see": ["peak-sun-hours"] },
+  "power-coefficient": { "term": "Power coefficient (Cp)", "short": "The share of the wind's power flowing through a rotor that the turbine captures. It can never exceed the Betz limit.", "see": ["betz-limit"] },
+  "round-trip-efficiency": { "term": "Round-trip efficiency", "short": "The share of energy you get back from a store after putting it in: the efficiencies of charging and discharging multiplied together." },
+  "shockley-queisser-limit": { "term": "Shockley–Queisser limit", "short": "The highest efficiency a single-junction solar cell can reach in ordinary sunlight, about 33 % at a band gap near 1.34 eV.", "see": ["band-gap", "conversion-efficiency"] },
+  "significant-wave-height": { "term": "Significant wave height", "short": "The average height of the tallest third of the waves, about what an observer would judge by eye. Used to size wave energy." }
+}

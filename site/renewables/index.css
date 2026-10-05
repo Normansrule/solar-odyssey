@@ -1,0 +1,62 @@
+/* The clean-energy system: the system map and the mix chart. */
+
+.sys-wrap { display: grid; gap: 1.2rem; grid-template-columns: minmax(0, 1fr); }
+.sys-stage { min-width: 0; }
+.sys-svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+.sys-link { fill: none; stroke: var(--rule); stroke-linecap: butt; transition: opacity 0.2s, stroke 0.2s; }
+.sys-link.src { opacity: 0.75; }
+.sys-link.muted { stroke: var(--ink-2) !important; opacity: 0.22; }
+.sys-link.out { stroke: var(--ink-2); opacity: 0.35; }
+.sys-link.two { stroke: var(--r-storage); opacity: 0.45; stroke-dasharray: 6 5; }
+.sys-link.dim { opacity: 0.12; }
+.sys-link.on { opacity: 1; }
+.sys-link.muted.on { opacity: 0.4; }
+
+.sys-flow { fill: none; stroke: var(--panel); stroke-width: 2; stroke-dasharray: 2 14; stroke-linecap: round; opacity: 0; pointer-events: none; }
+.sys-flow.on { opacity: 0.95; animation: sys-flow 1.4s linear infinite; }
+.sys-flow.two.on { stroke: var(--r-storage); stroke-width: 3; animation-direction: alternate; }
+.sys-flow.out.on { stroke: var(--panel); }
+@keyframes sys-flow { to { stroke-dashoffset: -32; } }
+
+.sys-node { cursor: pointer; outline: none; }
+.sys-box { fill: var(--panel); stroke: var(--rule); stroke-width: 1.2; transition: stroke 0.15s, fill 0.15s; }
+.sys-node:hover .sys-box { stroke: var(--ink-2); }
+.sys-node.on .sys-box { stroke: var(--ink); stroke-width: 2; fill: var(--paper); }
+.sys-node:focus-visible .sys-box { stroke: var(--focus); stroke-width: 3; }
+.sys-node.kind-network .sys-box { fill: var(--paper-2); stroke: var(--silicon); stroke-width: 1.5; }
+.sys-node.kind-network.on .sys-box { stroke-width: 2.5; }
+.sys-node.kind-storage .sys-box { stroke: var(--r-storage); }
+.sys-node.kind-flex .sys-box { stroke: var(--good); stroke-dasharray: 4 3; }
+.sys-node.kind-today .sys-box { fill: var(--paper-2); }
+.sys-node.on.kind-storage .sys-box, .sys-node.on.kind-flex .sys-box { stroke-width: 2.5; }
+.sys-name { fill: var(--ink); font-family: var(--body); font-weight: 650; font-size: 14px; }
+.sys-svg[data-layout="narrow"] .sys-name { font-size: 12.5px; }
+.sys-sub { fill: var(--ink-2); font-family: var(--body); font-size: 12px; font-variant-numeric: tabular-nums; }
+.sys-node.kind-network .sys-name { font-family: var(--display); font-size: 22px; font-weight: 600; }
+.sys-svg[data-layout="narrow"] .sys-node.kind-network .sys-name { font-size: 17px; }
+.sys-col { fill: var(--ink-2); font-family: var(--body); font-size: 13px; font-weight: 700; }
+.sys-wires path { fill: none; stroke: var(--silicon); stroke-width: 1.4; opacity: 0.45; }
+.sys-bar { pointer-events: none; }
+
+.sys-detail { border-left: 3px solid var(--src); padding: 0.1rem 0 0.1rem 1rem; min-height: 13rem; }
+@media (min-width: 48rem) {
+  .sys-detail { display: grid; grid-template-columns: 15rem minmax(0, 36rem); gap: 0 2rem; min-height: 9.5rem; align-content: start; }
+  .sys-detail .sys-kind, .sys-detail h3 { grid-column: 1; }
+  .sys-detail > p:not(.sys-kind) { grid-column: 2; margin: 0 0 0.5rem; }
+  .sys-detail #sys-what { grid-row: 1 / span 2; }
+}
+.sys-detail h3 { margin: 0.1rem 0 0.5rem; font-size: var(--s2); }
+.sys-kind { font-size: var(--s-1); font-weight: 650; color: var(--sun-ink); margin: 0; }
+.sys-share { font-family: var(--body); font-weight: 650; color: var(--ink); }
+.sys-share:empty { display: none; }
+
+details.sys-text { margin-top: 1.2rem; border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+.sys-list { margin-top: 0.8rem; padding-left: 1.1rem; font-size: var(--s-1); }
+.sys-list li + li { margin-top: 0.4rem; }
+
+.mix-desc { font-size: var(--s-2); margin: 0.2rem 0 0.4rem; }
+#mix-legend .swatch { width: 0.8rem; height: 0.8rem; }
+
+ol.path h3 a { color: var(--ink); }
+ol.path h3 a:hover { color: var(--silicon); }

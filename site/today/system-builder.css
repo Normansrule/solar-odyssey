@@ -1,0 +1,83 @@
+/* System builder: the drag-and-drop system diagram, controls and day chart. */
+
+.widget svg.sb-stage { background: var(--paper); border: 1px solid var(--rule); touch-action: none; }
+.sb-hint { margin-top: 0.5rem; }
+
+.sb-label { fill: var(--ink); font: 650 17px var(--display); }
+.sb-note { fill: var(--ink-2); font: 13px var(--body); }
+.sb-power { fill: var(--ink); font: 700 14px var(--body); font-variant-numeric: tabular-nums; paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; }
+
+.sb-frame { fill: var(--paper-2); stroke: var(--ink-2); stroke-width: 1.5; }
+.sb-cell { fill: var(--silicon); }
+.sb-copy { fill: none; stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 4 5; }
+.sb-mod { fill: var(--silicon); stroke: var(--panel); stroke-width: 1; }
+.sb-mod-line { stroke: var(--silicon-2); stroke-width: 1; opacity: 0.6; }
+.sb-wire { fill: none; stroke: var(--rule); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.sb-flow { fill: none; stroke-linejoin: round; stroke-linecap: round; opacity: 0.9; }
+.sb-flow.dc { stroke: var(--sun); }
+.sb-flow.ac { stroke: var(--r-wind); }
+.sb-dash { fill: none; stroke: var(--panel); stroke-dasharray: 3 15; stroke-linecap: round; opacity: 0.85; }
+
+.sb-inv { fill: var(--panel); stroke: var(--ink); stroke-width: 2; }
+.sb-inv.is-tripped { stroke: var(--hole); stroke-width: 3; }
+.sb-inv-kw { fill: var(--ink); font: 650 22px var(--display); }
+.sb-glyph { fill: none; stroke: var(--ink-2); stroke-width: 2; stroke-linecap: round; }
+.sb-load-track { fill: var(--paper-2); }
+.sb-load { fill: var(--sun); }
+
+.sb-pylon { fill: none; stroke: var(--ink-2); stroke-width: 2; stroke-linejoin: round; }
+.sb-socket { fill: var(--paper-2); stroke: var(--ink-2); stroke-width: 2; }
+.sb-socket.is-on { stroke: var(--good); }
+.sb-socket-holes { stroke: var(--ink); stroke-width: 3; stroke-linecap: round; }
+
+.sb-handle, .sb-plug { cursor: grab; }
+.sb-handle.is-dragging, .sb-plug.is-dragging { cursor: grabbing; }
+.sb-handle .hit, .sb-plug .hit { fill: transparent; }
+.sb-handle .knob { fill: var(--sun); stroke: var(--paper); stroke-width: 2.5; }
+.sb-handle .glyph { fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.sb-handle:hover .knob, .sb-handle.is-dragging .knob { stroke: var(--ink); }
+.sb-plug .body { fill: var(--r-wind); stroke: var(--ink); stroke-width: 1.5; }
+.sb-plug .pins { stroke: var(--ink); stroke-width: 3; stroke-linecap: round; }
+.sb-plug.is-on .body { stroke: var(--good); stroke-width: 2.5; }
+
+.sb-time { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: end; margin: 1rem 0 1.4rem; }
+@media (max-width: 30rem) { .sb-time { grid-template-columns: minmax(0, 1fr); } }
+
+.sb-panels { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr)); }
+.sb-panel { border: 1px solid var(--rule); border-radius: var(--radius); padding: 0.7rem 0.9rem 0.9rem; margin: 0; min-width: 0; display: grid; gap: 0.75rem; align-content: start; }
+.sb-panel legend { font-weight: 700; font-size: var(--s-1); padding: 0 0.3rem; }
+.stepper { display: grid; grid-template-columns: 2.2rem minmax(3rem, 1fr) 2.2rem; gap: 0.3rem; align-items: center; }
+.stepper-label { grid-column: 1 / -1; font-size: var(--s-1); font-weight: 650; }
+.stepper input { text-align: center; font-variant-numeric: tabular-nums; }
+.step-btn { font: inherit; font-size: 1.1rem; font-weight: 700; height: 2.2rem; border-radius: var(--radius); border: 1px solid var(--silicon); background: var(--paper); color: var(--silicon); cursor: pointer; }
+.step-btn:hover { background: var(--paper-2); }
+.bp-check { display: flex; align-items: center; gap: 0.5rem; font-size: var(--s-1); font-weight: 650; }
+.bp-check input { width: 1.1rem; height: 1.1rem; accent-color: var(--silicon); margin: 0; flex: none; }
+.sb-inv-spec { font-size: var(--s-2); color: var(--ink-2); margin: 0; }
+
+.sb-sub { font-size: var(--s0); font-family: var(--body); font-weight: 700; margin: 1.6rem 0 0.6rem; }
+ul.sb-checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
+.sb-check { margin: 0; padding: 0.5rem 0.8rem; border-left: 4px solid var(--good); background: var(--paper-2); border-radius: 0 var(--radius) var(--radius) 0; font-size: var(--s-1); }
+.sb-check.is-warn { border-left-color: var(--warn); }
+.sb-check.is-error { border-left-color: var(--hole); background: color-mix(in srgb, var(--hole) 10%, var(--paper-2)); }
+.sb-readouts { display: grid; gap: 1rem; }
+.sb-group h4 { margin: 0 0 0.4rem; font-size: var(--s-1); color: var(--ink-2); font-weight: 650; }
+.sb-group .readout { margin: 0; }
+
+.widget svg.sb-day { background: var(--paper); border: 1px solid var(--rule); }
+.mppt-axes .grid { stroke: var(--rule); stroke-width: 1; opacity: 0.7; }
+.mppt-axes .axis { stroke: var(--ink-2); stroke-width: 1; }
+.mppt-axes text { fill: var(--ink-2); font: 12px var(--body); font-variant-numeric: tabular-nums; }
+.mppt-axes text.title { font-weight: 650; }
+.sb-ac-area { fill: var(--r-wind); opacity: 0.14; }
+.sb-clip-area { fill: var(--hole); opacity: 0.35; }
+.sb-dc-line { fill: none; stroke: var(--silicon); stroke-width: 2; stroke-linejoin: round; }
+.sb-ac-line { fill: none; stroke: var(--r-wind); stroke-width: 2.5; stroke-linejoin: round; }
+.sb-limit { stroke: var(--ink-2); stroke-width: 1; }
+.sb-chart-label { fill: var(--ink-2); font: 600 12px var(--body); }
+.sb-cursor { stroke: var(--ink); stroke-width: 1; opacity: 0.5; }
+.sb-cursor-dot { fill: var(--r-wind); stroke: var(--paper); stroke-width: 2; }
+.key { display: inline-block; width: 1.1rem; height: 0.8rem; }
+.key-dc { border-top: 2px solid var(--silicon); height: 0; }
+.key-ac { background: color-mix(in srgb, var(--r-wind) 30%, transparent); border-top: 2.5px solid var(--r-wind); }
+.key-clip { background: color-mix(in srgb, var(--hole) 45%, transparent); }

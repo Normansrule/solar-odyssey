@@ -1,0 +1,12 @@
+node_modules/
+dist/
+desktop/src-tauri/target/
+desktop/src-tauri/gen/
+.pytest_cache/
+__pycache__/
+*.pyc
+.DS_Store
+*.pem
+*.key
+.env
+test-results/

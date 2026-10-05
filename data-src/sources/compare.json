@@ -1,0 +1,71 @@
+{
+  "lazard-lcoeplus-2025": {
+    "type": "report",
+    "authors": "Lazard",
+    "title": "Levelized Cost of Energy+ (LCOE+), version 18.0",
+    "container": "Lazard, June 2025",
+    "year": 2025,
+    "url": "https://www.lazard.com/media/eijnqja3/lazards-lcoeplus-june-2025.pdf",
+    "verified": "2026-10-02",
+    "note": "Unsubsidized LCOE ranges for new US plants, US$/MWh: utility PV 38–78, community & C&I PV 81–217, onshore wind 37–86, offshore wind 70–157, geothermal 66–109, gas combined cycle 48–109, coal 71–173, US nuclear 141–220, gas peaking 149–251. Key-assumption table gives capital cost, O&M, capacity factor, facility life and fuel price per technology; financing 60 % debt at 8 % and 40 % equity at 12 %. Residential rooftop solar is not included in v18.0."
+  },
+  "eia-epa-table-4-08-a": {
+    "type": "dataset",
+    "authors": "U.S. Energy Information Administration (EIA)",
+    "title": "Electric Power Annual, Table 4.08.A: Capacity factors for utility scale generators primarily using fossil fuels",
+    "year": 2025,
+    "url": "https://www.eia.gov/electricity/annual/html/epa_04_08_a.html",
+    "verified": "2026-09-30",
+    "note": "2024 annual capacity factor: coal 42.6 %, natural gas combined cycle 60.5 %."
+  },
+  "eia-epa-table-4-08-b": {
+    "type": "dataset",
+    "authors": "U.S. Energy Information Administration (EIA)",
+    "title": "Electric Power Annual, Table 4.08.B: Capacity factors for utility scale generators primarily using non-fossil fuels",
+    "year": 2025,
+    "url": "https://www.eia.gov/electricity/annual/html/epa_04_08_b.html",
+    "verified": "2026-09-30",
+    "note": "2024 annual capacity factor: nuclear 90.8 %, conventional hydro 34.6 %, wind 34.3 %, solar PV 23.2 %, solar thermal 25.0 %, geothermal 64.6 %, wood 55.8 %, other biomass 59.5 %."
+  },
+  "eia-aeo2026-emm": {
+    "type": "report",
+    "authors": "U.S. Energy Information Administration (EIA)",
+    "title": "Assumptions to the Annual Energy Outlook 2026: Electricity Market Module",
+    "container": "EIA, April 2026, Table 3 (2025 dollars)",
+    "year": 2026,
+    "url": "https://www.eia.gov/outlooks/aeo/assumptions/pdf/EMM_Assumptions.pdf",
+    "verified": "2026-09-30",
+    "note": "Overnight cost (2025 $/kW), fixed O&M ($/kW-yr), variable O&M ($/MWh): onshore wind 1712, 34.57, 0; offshore wind 3711, 161.09, 0; solar PV with tracking 1484, 23.60, 0; geothermal 3282, 167.86, 0; hydropower 3280, 51.30, 1.71; biomass 4843, 154.26, 5.93; combined cycle multi-shaft 1032, 12.69, 3.57; nuclear LWR 8255, 163.40, 2.62. New coal without carbon capture and new solar thermal are not offered as options."
+  },
+  "eia-aeo2023-costs": {
+    "type": "report",
+    "authors": "U.S. Energy Information Administration (EIA)",
+    "title": "Cost and Performance Characteristics of New Generating Technologies, Annual Energy Outlook 2023",
+    "container": "EIA, March 2023, Table 1 (2022 dollars)",
+    "year": 2023,
+    "url": "https://www.eia.gov/outlooks/aeo/assumptions/pdf/elec_cost_perf.pdf",
+    "verified": "2026-09-30",
+    "note": "Solar thermal (115 MW): overnight cost 8732 $/kW, fixed O&M 96.10 $/kW-yr, variable O&M 0."
+  },
+  "lovering-2022": {
+    "type": "article",
+    "authors": "Lovering, J.; Swain, M.; Blomqvist, L.; Hernandez, R. R.",
+    "title": "Land-use intensity of electricity production and tomorrow's energy landscape",
+    "container": "PLOS ONE 17(7), e0270155",
+    "year": 2022,
+    "doi": "10.1371/journal.pone.0270155",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0270155",
+    "verified": "2026-10-02",
+    "note": "Table 1, median land-use intensity in ha/TWh/y (direct plus indirect land): nuclear 7.1, geothermal 45, wind footprint 130, residue biomass 130, gas footprint 410, hydro 650, coal 1000, CSP 1300, gas spacing 1900, ground-mounted PV 2000, wind spacing 12000, dedicated biomass 58000. Re-checked against Table 1 of the PLOS ONE article on 2026-10-02."
+  },
+  "ipcc-ar5-wg3-annex3": {
+    "type": "report",
+    "authors": "Schlömer, S.; Bruckner, T.; Fulton, L.; Hertwich, E.; McKinnon, A.; Perczyk, D.; Roy, J.; Schaeffer, R.; Sims, R.; Smith, P.; Wiser, R. (IPCC)",
+    "title": "Annex III: Technology-specific cost and performance parameters. In: Climate Change 2014: Mitigation of Climate Change, Working Group III contribution to the IPCC Fifth Assessment Report",
+    "container": "Cambridge University Press, Table A.III.2",
+    "year": 2014,
+    "url": "https://www.ipcc.ch/report/ar5/wg3/technology-specific-cost-and-performance-parameters/",
+    "verified": "2026-09-30",
+    "note": "Table A.III.2, lifecycle emissions including albedo, gCO2eq/kWh, min/median/max: coal PC 740/820/910; gas combined cycle 410/490/650; biomass dedicated 130/230/420; geothermal 6.0/38/79; hydropower 1.0/24/2200; nuclear 3.7/12/110; CSP 8.8/27/63; PV rooftop 26/41/60; PV utility 18/48/180; wind onshore 7.0/11/56; wind offshore 8.0/12/35. The annex is listed on the report page; the table values were cross-checked against a secondary transcription because the PDF could not be fetched from this build environment (ipcc.ch and archive.ipcc.ch PDFs returned HTTP 403 again on 2026-10-02). The annex has its own page at the URL given."
+  }
+}

@@ -1,0 +1,397 @@
+{
+ "meta": {
+  "title": "Record research-cell efficiencies by technology",
+  "description": "Milestone record efficiencies of small research solar cells, by technology family, from 1954 to 2026. Shape: data.series is an array of { id, label, short (label for direct chart labels), family, colour (a CSS custom property from odyssey.css), limit (theoretical efficiency limit in % or null), limit_source, note }; data.points is an array of { tech (a series id), year, efficiency (% under the standard AM1.5 global spectrum at 1 sun unless 'suns' is given), institution, area_cm2 (optional), suns (optional, concentration ratio), certified_by (optional test centre), notes (optional), source (a bibliography id) }. Points are milestones, not every record: each one is independently verified against the primary paper, the certifying lab's or institution's announcement, or the Solar cell efficiency tables. Families with no verifiable dated milestone (multicrystalline and amorphous silicon, CdTe, single-junction GaAs) are omitted rather than guessed. Numbers from 2025 onward move fast; see state-of-the-field.json.",
+  "units": "percent (power conversion efficiency); year (CE); cm² (area)",
+  "sources": [
+   "nrel-cell-efficiency-chart",
+   "green-tables-66",
+   "green-tables-67",
+   "green-tables-68",
+   "chapin-1954",
+   "kojima-2009",
+   "longi-tandem-2026"
+  ],
+  "license": "CC BY 4.0 (Solar Odyssey compilation; values are facts from the cited sources)",
+  "last_verified": "2026-10-02"
+ },
+ "data": {
+  "series": [
+   {
+    "id": "si-mono",
+    "label": "Crystalline silicon",
+    "short": "Silicon",
+    "family": "silicon",
+    "colour": "--t-silicon",
+    "limit": 29.4,
+    "limit_source": "richter-2013",
+    "note": "Single-crystal silicon, one sun. Includes heterojunction and back-contact designs."
+   },
+   {
+    "id": "cigs",
+    "label": "CIGS thin film",
+    "short": "CIGS",
+    "family": "thinfilm",
+    "colour": "--t-thinfilm",
+    "limit": null,
+    "limit_source": null,
+    "note": "Copper indium gallium selenide."
+   },
+   {
+    "id": "perovskite",
+    "label": "Perovskite",
+    "short": "Perovskite",
+    "family": "perovskite",
+    "colour": "--t-perovskite",
+    "limit": null,
+    "limit_source": null,
+    "note": "Single-junction metal-halide perovskite; tiny research cells."
+   },
+   {
+    "id": "perovskite-si",
+    "label": "Perovskite on silicon",
+    "short": "Perovskite/Si",
+    "family": "tandem",
+    "colour": "--t-tandem",
+    "limit": null,
+    "limit_source": null,
+    "note": "Two-terminal perovskite/silicon tandem, one sun."
+   },
+   {
+    "id": "iii-v-conc",
+    "label": "III-V multijunction, concentrated",
+    "short": "III-V, concentrated",
+    "family": "multijunction",
+    "colour": "--t-multijunction",
+    "limit": null,
+    "limit_source": null,
+    "note": "Stacks of III-V semiconductors under concentrated sunlight (hundreds of suns)."
+   },
+   {
+    "id": "iii-v-1sun",
+    "label": "III-V multijunction, one sun",
+    "short": "III-V, 1 sun",
+    "family": "multijunction",
+    "colour": "--t-multijunction",
+    "limit": null,
+    "limit_source": null,
+    "note": "Same kind of stack under ordinary one-sun light."
+   },
+   {
+    "id": "organic",
+    "label": "Organic",
+    "short": "Organic",
+    "family": "emerging",
+    "colour": "--t-emerging",
+    "limit": null,
+    "limit_source": null,
+    "note": "Carbon-based (polymer and small-molecule) cells."
+   },
+   {
+    "id": "dye",
+    "label": "Dye-sensitised",
+    "short": "Dye-sensitised",
+    "family": "emerging",
+    "colour": "--t-emerging",
+    "limit": null,
+    "limit_source": null,
+    "note": "Grätzel cells: a dye on porous titanium dioxide."
+   },
+   {
+    "id": "qdot",
+    "label": "Quantum dot",
+    "short": "Quantum dot",
+    "family": "emerging",
+    "colour": "--t-emerging",
+    "limit": null,
+    "limit_source": null,
+    "note": "Colloidal nanocrystal films."
+   }
+  ],
+  "points": [
+   {
+    "tech": "si-mono",
+    "year": 1954,
+    "efficiency": 6.0,
+    "institution": "Bell Telephone Laboratories",
+    "notes": "About 6 %: the first practical silicon solar cell.",
+    "source": "chapin-1954"
+   },
+   {
+    "tech": "si-mono",
+    "year": 1989,
+    "efficiency": 22.8,
+    "institution": "University of New South Wales",
+    "notes": "PERC-type cell.",
+    "source": "blakers-1989"
+   },
+   {
+    "tech": "si-mono",
+    "year": 2017,
+    "efficiency": 26.3,
+    "institution": "Kaneka",
+    "area_cm2": 180.4,
+    "notes": "Heterojunction cell with all contacts on the back; the paper reports over 26 %, a 2.7 % relative gain on the previous 25.6 % record.",
+    "source": "yoshikawa-2017"
+   },
+   {
+    "tech": "si-mono",
+    "year": 2023,
+    "efficiency": 26.81,
+    "institution": "LONGi",
+    "area_cm2": 274,
+    "notes": "Heterojunction cell on an industrial M6 wafer.",
+    "source": "lin-2023"
+   },
+   {
+    "tech": "si-mono",
+    "year": 2025,
+    "efficiency": 27.81,
+    "institution": "LONGi",
+    "certified_by": "ISFH",
+    "notes": "Hybrid interdigitated back-contact (HIBC) cell.",
+    "source": "pv-magazine-longi-hibc-2025"
+   },
+   {
+    "tech": "si-mono",
+    "year": 2026,
+    "efficiency": 28.29,
+    "institution": "LONGi",
+    "certified_by": "ISFH",
+    "notes": "HIBC cell, announced 24 September 2026, after 28.04 % and 28.13 % earlier in 2026.",
+    "source": "pv-magazine-longi-hibc-2026"
+   },
+   {
+    "tech": "cigs",
+    "year": 2008,
+    "efficiency": 19.9,
+    "institution": "NREL",
+    "source": "repins-2008"
+   },
+   {
+    "tech": "cigs",
+    "year": 2024,
+    "efficiency": 23.64,
+    "institution": "Uppsala University",
+    "notes": "Certified; silver-alloyed absorber.",
+    "source": "keller-2024"
+   },
+   {
+    "tech": "perovskite",
+    "year": 2009,
+    "efficiency": 3.8,
+    "institution": "Toin University of Yokohama",
+    "notes": "Liquid-electrolyte cell, not certified: the starting point.",
+    "source": "kojima-2009"
+   },
+   {
+    "tech": "perovskite",
+    "year": 2012,
+    "efficiency": 9.7,
+    "institution": "Sungkyunkwan University and EPFL",
+    "notes": "First all-solid-state perovskite cell.",
+    "source": "kim-park-2012"
+   },
+   {
+    "tech": "perovskite",
+    "year": 2013,
+    "efficiency": 15.0,
+    "institution": "EPFL",
+    "notes": "About 15 %, by sequential deposition.",
+    "source": "burschka-2013"
+   },
+   {
+    "tech": "perovskite",
+    "year": 2021,
+    "efficiency": 25.5,
+    "institution": "UNIST and partners",
+    "notes": "Certified value (25.8 % in-house).",
+    "source": "min-2021"
+   },
+   {
+    "tech": "perovskite",
+    "year": 2025,
+    "efficiency": 26.95,
+    "institution": "Soochow University and UNSW",
+    "area_cm2": 0.05,
+    "certified_by": "NREL",
+    "notes": "Announced as 27 %.",
+    "source": "acap-perovskite-2025"
+   },
+   {
+    "tech": "perovskite",
+    "year": 2026,
+    "efficiency": 27.87,
+    "institution": "SolaEon",
+    "area_cm2": 0.076,
+    "certified_by": "NPVM (China)",
+    "notes": "Announced January 2026.",
+    "source": "solaeon-2026"
+   },
+   {
+    "tech": "perovskite",
+    "year": 2026,
+    "efficiency": 28.0,
+    "institution": "Hainan University",
+    "area_cm2": 0.05,
+    "notes": "Listed in the Solar cell efficiency tables, Version 68 (May 2026).",
+    "source": "green-tables-68"
+   },
+   {
+    "tech": "perovskite-si",
+    "year": 2023,
+    "efficiency": 33.9,
+    "institution": "LONGi",
+    "notes": "November 2023.",
+    "source": "longi-tandem-2026"
+   },
+   {
+    "tech": "perovskite-si",
+    "year": 2024,
+    "efficiency": 34.6,
+    "institution": "LONGi",
+    "notes": "June 2024.",
+    "source": "longi-tandem-2026"
+   },
+   {
+    "tech": "perovskite-si",
+    "year": 2025,
+    "efficiency": 34.85,
+    "institution": "LONGi",
+    "certified_by": "NREL",
+    "notes": "April 2025.",
+    "source": "longi-tandem-2025"
+   },
+   {
+    "tech": "perovskite-si",
+    "year": 2026,
+    "efficiency": 35.5,
+    "institution": "LONGi",
+    "certified_by": "ESTI (EC Joint Research Centre)",
+    "notes": "Announced 14 July 2026.",
+    "source": "longi-tandem-2026"
+   },
+   {
+    "tech": "iii-v-conc",
+    "year": 2008,
+    "efficiency": 40.8,
+    "institution": "NREL",
+    "notes": "Inverted metamorphic triple junction, concentrated light.",
+    "source": "geisz-2008"
+   },
+   {
+    "tech": "iii-v-conc",
+    "year": 2020,
+    "efficiency": 47.1,
+    "institution": "NREL",
+    "suns": 143,
+    "notes": "Six junctions.",
+    "source": "geisz-2020"
+   },
+   {
+    "tech": "iii-v-conc",
+    "year": 2022,
+    "efficiency": 47.6,
+    "institution": "Fraunhofer ISE",
+    "suns": 665,
+    "notes": "Four junctions.",
+    "source": "fraunhofer-ise-47-6"
+   },
+   {
+    "tech": "iii-v-1sun",
+    "year": 2020,
+    "efficiency": 39.2,
+    "institution": "NREL",
+    "notes": "Six-junction cell measured under the one-sun global spectrum.",
+    "source": "geisz-2020"
+   },
+   {
+    "tech": "organic",
+    "year": 1986,
+    "efficiency": 1.0,
+    "institution": "Eastman Kodak",
+    "notes": "About 1 %: Tang's two-layer cell.",
+    "source": "tang-1986"
+   },
+   {
+    "tech": "organic",
+    "year": 2022,
+    "efficiency": 19.2,
+    "institution": "Shanghai Jiao Tong University and partners",
+    "notes": "Certified value (19.3 % average in-house).",
+    "source": "zhu-2022"
+   },
+   {
+    "tech": "dye",
+    "year": 1991,
+    "efficiency": 7.1,
+    "institution": "EPFL",
+    "notes": "7.1–7.9 % in simulated sunlight.",
+    "source": "oregan-gratzel-1991"
+   },
+   {
+    "tech": "dye",
+    "year": 2014,
+    "efficiency": 13.0,
+    "institution": "EPFL",
+    "notes": "Porphyrin dye with a cobalt electrolyte.",
+    "source": "mathew-2014"
+   },
+   {
+    "tech": "dye",
+    "year": 2023,
+    "efficiency": 15.2,
+    "institution": "EPFL and partners",
+    "notes": "Co-sensitised cell.",
+    "source": "ren-2023"
+   },
+   {
+    "tech": "qdot",
+    "year": 2011,
+    "efficiency": 6.0,
+    "institution": "University of Toronto",
+    "notes": "Up to 6 %.",
+    "source": "tang-2011"
+   },
+   {
+    "tech": "qdot",
+    "year": 2014,
+    "efficiency": 8.55,
+    "institution": "MIT",
+    "notes": "Certified; stable in air for months.",
+    "source": "chuang-2014"
+   },
+   {
+    "tech": "qdot",
+    "year": 2020,
+    "efficiency": 16.6,
+    "institution": "University of Queensland and partners",
+    "notes": "Certified; perovskite quantum dots.",
+    "source": "hao-2020"
+   }
+  ],
+  "limits": {
+   "single_junction_am15g": {
+    "efficiency": 33.16,
+    "gap_eV": 1.34,
+    "source": "ruhle-2016"
+   },
+   "two_junction_blackbody_one_sun": {
+    "efficiency": 42,
+    "source": "de-vos-1980"
+   },
+   "infinite_junctions_one_sun": {
+    "efficiency": 68,
+    "source": "de-vos-1980"
+   },
+   "infinite_junctions_max_concentration": {
+    "efficiency": 86,
+    "source": "de-vos-1980"
+   },
+   "silicon_auger_limited": {
+    "efficiency": 29.4,
+    "source": "richter-2013"
+   }
+  }
+ }
+}

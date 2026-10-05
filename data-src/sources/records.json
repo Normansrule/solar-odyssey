@@ -1,0 +1,362 @@
+{
+  "green-tables-66": {
+    "type": "article",
+    "authors": "Green, M. A.; Dunlop, E. D.; Yoshita, M.; Kopidakis, N.; Bothe, K.; Siefer, G.; Hao, X.; Jiang, J. Y.",
+    "title": "Solar cell efficiency tables (Version 66)",
+    "container": "Progress in Photovoltaics: Research and Applications 33(7), 795–810",
+    "year": 2025,
+    "doi": "10.1002/pip.3919",
+    "verified": "2026-10-02",
+    "note": "Published online 26 May 2025. Lists LONGi's large-area perovskite/silicon tandem results (per LONGi's SNEC 2025 announcement)."
+  },
+  "green-tables-67": {
+    "type": "article",
+    "authors": "Green, M. A.; Dunlop, E. D.; Yoshita, M.; Kopidakis, N.; Bothe, K.; Siefer, G.; Hao, X.; Jiang, J. Y.",
+    "title": "Solar cell efficiency tables (Version 67)",
+    "container": "Progress in Photovoltaics: Research and Applications 34(4), 482–496",
+    "year": 2026,
+    "doi": "10.1002/pip.70068",
+    "verified": "2026-10-02",
+    "note": "Issued 28 January 2026; reviews new entries since July 2025. The full text is paywalled; we cite it for the method (independently confirmed results only)."
+  },
+  "green-tables-68": {
+    "type": "article",
+    "authors": "Green, M. A.; Dunlop, E. D.; Yoshita, M.; Kopidakis, N.; Bothe, K.; Siefer, G.; Jiang, J. Y.",
+    "title": "Solar cell efficiency tables: Version 68",
+    "container": "Joule 10(7), 102494",
+    "year": 2026,
+    "doi": "10.1016/j.joule.2026.102494",
+    "verified": "2026-10-02",
+    "note": "Online 28 May 2026; the first version published in Joule (earlier versions in Progress in Photovoltaics). Highlights: 28.0 % for a 0.05 cm² lead-halide perovskite cell, 28.1 % for a 140 cm² silicon cell, 35.2 % for a 1 cm² perovskite/silicon tandem, 26.4 % for a large silicon module."
+  },
+  "pv-magazine-tables-68": {
+    "type": "web",
+    "authors": "pv magazine USA",
+    "title": "All solar cell efficiencies at a glance",
+    "container": "pv magazine USA, 29 May 2026",
+    "year": 2026,
+    "url": "https://pv-magazine-usa.com/2026/05/29/all-solar-cell-efficiencies-at-a-glance-updated-4/",
+    "verified": "2026-10-02",
+    "note": "Summary of Version 68 of the efficiency tables: names Hainan University for the 28.0 % (0.05 cm²) perovskite cell and LONGi for the 28.1 % silicon cell, the 35.2 % and 34.3 % (261 cm²) tandems and the 26.4 % (1.9 m²) module."
+  },
+  "yoshikawa-2017": {
+    "type": "article",
+    "authors": "Yoshikawa, K.; Kawasaki, H.; Yoshida, W.; Irie, T.; Konishi, K.; Nakano, K.; Uto, T.; Adachi, D.; Kanematsu, M.; Uzu, H.; Yamamoto, K.",
+    "title": "Silicon heterojunction solar cell with interdigitated back contacts for a photoconversion efficiency over 26%",
+    "container": "Nature Energy 2(5), 17032",
+    "year": 2017,
+    "doi": "10.1038/nenergy.2017.32",
+    "verified": "2026-10-02"
+  },
+  "lin-2023": {
+    "type": "article",
+    "authors": "Lin, H.; et al. (LONGi Central R&D Institute)",
+    "title": "Silicon heterojunction solar cells with up to 26.81% efficiency achieved by electrically optimized nanocrystalline-silicon hole contact layers",
+    "container": "Nature Energy 8",
+    "year": 2023,
+    "doi": "10.1038/s41560-023-01255-2",
+    "verified": "2026-10-02"
+  },
+  "pv-magazine-longi-hibc-2026": {
+    "type": "web",
+    "authors": "pv magazine",
+    "title": "Longi sets 28.29% world record for single-junction silicon solar cell efficiency",
+    "container": "pv magazine, 24 September 2026",
+    "year": 2026,
+    "url": "https://www.pv-magazine.com/2026/09/24/longi-sets-28-29-world-record-for-single-junction-silicon-solar-cell-efficiency/",
+    "verified": "2026-09-30",
+    "note": "HIBC cell certified by ISFH (Institute for Solar Energy Research Hamelin)."
+  },
+  "repins-2008": {
+    "type": "article",
+    "authors": "Repins, I.; Contreras, M. A.; Egaas, B.; DeHart, C.; Scharf, J.; Perkins, C. L.; To, B.; Noufi, R.",
+    "title": "19.9%-efficient ZnO/CdS/CuInGaSe2 solar cell with 81.2% fill factor",
+    "container": "Progress in Photovoltaics: Research and Applications 16(3), 235–239",
+    "year": 2008,
+    "doi": "10.1002/pip.822",
+    "verified": "2026-09-30"
+  },
+  "keller-2024": {
+    "type": "article",
+    "authors": "Keller, J.; Kiselman, K.; Donzel-Gargand, O.; et al.",
+    "title": "High-concentration silver alloying and steep back-contact gallium grading enabling copper indium gallium selenide solar cell with 23.6% efficiency",
+    "container": "Nature Energy 9",
+    "year": 2024,
+    "doi": "10.1038/s41560-024-01472-3",
+    "verified": "2026-10-02"
+  },
+  "burschka-2013": {
+    "type": "article",
+    "authors": "Burschka, J.; Pellet, N.; et al.",
+    "title": "Sequential deposition as a route to high-performance perovskite-sensitized solar cells",
+    "container": "Nature 499(7458), 316–319",
+    "year": 2013,
+    "doi": "10.1038/nature12340",
+    "verified": "2026-10-02"
+  },
+  "min-2021": {
+    "type": "article",
+    "authors": "Min, H.; Lee, D. Y.; Kim, J.; et al.",
+    "title": "Perovskite solar cells with atomically coherent interlayers on SnO2 electrodes",
+    "container": "Nature 598",
+    "year": 2021,
+    "doi": "10.1038/s41586-021-03964-8",
+    "verified": "2026-10-02"
+  },
+  "acap-perovskite-2025": {
+    "type": "web",
+    "authors": "Australian Centre for Advanced Photovoltaics (ACAP)",
+    "title": "World-leading 27% perovskite cell efficiency record set by UNSW and Soochow University",
+    "container": "ACAP news, 31 March 2025",
+    "year": 2025,
+    "url": "https://www.acap.org.au/post/world-leading-27-perovskite-efficiency-record-achieved-by-unsw-and-soochow-university-with-acap-su",
+    "verified": "2026-09-30",
+    "note": "Certified by NREL; 0.05 cm² cell, announced as 27 %. Listed at 26.95 % in record compilations."
+  },
+  "solaeon-2026": {
+    "type": "web",
+    "authors": "Perovskite-Info",
+    "title": "SolaEon reports 27.87% efficiency for single-junction perovskite solar cell",
+    "container": "Perovskite-Info, January 2026",
+    "year": 2026,
+    "url": "https://www.perovskite-info.com/solaeon-reports-2787-efficiency-single-junction-perovskite-solar-cell",
+    "verified": "2026-09-30",
+    "note": "0.076 cm² cell certified by China's National PV Industry Metrology and Testing Center (NPVM). A company announcement reported by the trade press; not yet in a peer-reviewed paper."
+  },
+  "longi-tandem-2025": {
+    "type": "web",
+    "authors": "LONGi Green Energy Technology",
+    "title": "34.85%! LONGi breaks world record for crystalline silicon-perovskite tandem solar cell efficiency again",
+    "container": "LONGi press release, April 2025",
+    "year": 2025,
+    "url": "https://www.longi.com/en/news/silicon-perovskite-tandem-solar-cells-new-world-efficiency/",
+    "verified": "2026-09-30",
+    "note": "Certified by NREL."
+  },
+  "longi-snec-2025": {
+    "type": "web",
+    "authors": "LONGi Green Energy Technology",
+    "title": "LONGi announces two new global solar cell efficiency records",
+    "container": "LONGi press release, SNEC 2025, 12 June 2025",
+    "year": 2025,
+    "url": "https://www.longi.com/en/news/new-world-record-in-snec-2025/",
+    "verified": "2026-09-30",
+    "note": "33 % perovskite/silicon tandem on a 260.9 cm² cell, certified by NREL."
+  },
+  "geisz-2008": {
+    "type": "article",
+    "authors": "Geisz, J. F.; Friedman, D. J.; Ward, J. S.; Duda, A.; Olavarria, W. J.; Moriarty, T. E.; Kiehl, J. T.; Romero, M. J.; Norman, A. G.; Jones, K. M.",
+    "title": "40.8% efficient inverted triple-junction solar cell with two independently metamorphic junctions",
+    "container": "Applied Physics Letters 93(12), 123505",
+    "year": 2008,
+    "doi": "10.1063/1.2988497",
+    "verified": "2026-10-02"
+  },
+  "geisz-2020": {
+    "type": "article",
+    "authors": "Geisz, J. F.; France, R. M.; Schulte, K. L.; et al.",
+    "title": "Six-junction III–V solar cells with 47.1% conversion efficiency under 143 Suns concentration",
+    "container": "Nature Energy 5(4), 326–335",
+    "year": 2020,
+    "doi": "10.1038/s41560-020-0598-5",
+    "verified": "2026-10-02",
+    "note": "Also reports 39.2 % under the one-sun global spectrum."
+  },
+  "fraunhofer-ise-47-6": {
+    "type": "web",
+    "authors": "Fraunhofer Institute for Solar Energy Systems ISE",
+    "title": "Fraunhofer ISE develops the world's most efficient solar cell with 47.6 percent efficiency",
+    "container": "Press release, 30 May 2022",
+    "year": 2022,
+    "url": "https://www.ise.fraunhofer.de/en/press-media/press-releases/2022/fraunhofer-ise-develops-the-worlds-most-efficient-solar-cell-with-47-comma-6-percent-efficiency.html",
+    "verified": "2026-09-30",
+    "note": "Four-junction III-V cell at 665 suns; previous record 46.1 %."
+  },
+  "tang-1986": {
+    "type": "article",
+    "authors": "Tang, C. W.",
+    "title": "Two-layer organic photovoltaic cell",
+    "container": "Applied Physics Letters 48(2), 183–185",
+    "year": 1986,
+    "doi": "10.1063/1.96937",
+    "verified": "2026-10-02"
+  },
+  "zhu-2022": {
+    "type": "article",
+    "authors": "Zhu, L.; Zhang, M.; Xu, J.; et al.",
+    "title": "Single-junction organic solar cells with over 19% efficiency enabled by a refined double-fibril network morphology",
+    "container": "Nature Materials 21",
+    "year": 2022,
+    "doi": "10.1038/s41563-022-01244-y",
+    "verified": "2026-10-02"
+  },
+  "mathew-2014": {
+    "type": "article",
+    "authors": "Mathew, S.; Yella, A.; et al.",
+    "title": "Dye-sensitized solar cells with 13% efficiency achieved through the molecular engineering of porphyrin sensitizers",
+    "container": "Nature Chemistry 6",
+    "year": 2014,
+    "doi": "10.1038/nchem.1861",
+    "verified": "2026-10-02"
+  },
+  "ren-2023": {
+    "type": "article",
+    "authors": "Ren, Y.; Zhang, D.; et al.",
+    "title": "Hydroxamic acid pre-adsorption raises the efficiency of cosensitized solar cells",
+    "container": "Nature 613(7942), 60–65",
+    "year": 2023,
+    "doi": "10.1038/s41586-022-05460-z",
+    "verified": "2026-10-02"
+  },
+  "tang-2011": {
+    "type": "article",
+    "authors": "Tang, J.; Kemp, K.; Hoogland, S.; et al.",
+    "title": "Colloidal-quantum-dot photovoltaics using atomic-ligand passivation",
+    "container": "Nature Materials 10",
+    "year": 2011,
+    "doi": "10.1038/nmat3118",
+    "verified": "2026-10-02"
+  },
+  "chuang-2014": {
+    "type": "article",
+    "authors": "Chuang, C.-H. M.; Brown, P. R.; Bulović, V.; Bawendi, M. G.",
+    "title": "Improved performance and stability in quantum dot solar cells through band alignment engineering",
+    "container": "Nature Materials 13",
+    "year": 2014,
+    "doi": "10.1038/nmat3984",
+    "verified": "2026-10-02"
+  },
+  "hao-2020": {
+    "type": "article",
+    "authors": "Hao, M.; Bai, Y.; et al.",
+    "title": "Ligand-assisted cation-exchange engineering for high-efficiency colloidal Cs1−xFAxPbI3 quantum dot solar cells with reduced phase segregation",
+    "container": "Nature Energy 5(1)",
+    "year": 2020,
+    "doi": "10.1038/s41560-019-0535-7",
+    "verified": "2026-10-02"
+  },
+  "mailoa-2015": {
+    "type": "article",
+    "authors": "Mailoa, J. P.; Bailie, C. D.; Johlin, E. C.; Hoke, E. T.; Akey, A. J.; Nguyen, W. H.; McGehee, M. D.; Buonassisi, T.",
+    "title": "A 2-terminal perovskite/silicon multijunction solar cell enabled by a silicon tunnel junction",
+    "container": "Applied Physics Letters 106(12), 121105",
+    "year": 2015,
+    "doi": "10.1063/1.4914179",
+    "verified": "2026-10-02"
+  },
+  "henry-1980": {
+    "type": "article",
+    "authors": "Henry, C. H.",
+    "title": "Limiting efficiencies of ideal single and multiple energy gap terrestrial solar cells",
+    "container": "Journal of Applied Physics 51(8), 4494–4500",
+    "year": 1980,
+    "doi": "10.1063/1.328272",
+    "verified": "2026-09-30"
+  },
+  "de-vos-pauwels-1981": {
+    "type": "article",
+    "authors": "De Vos, A.; Pauwels, H.",
+    "title": "On the thermodynamic limit of photovoltaic energy conversion",
+    "container": "Applied Physics 25(2), 119–125",
+    "year": 1981,
+    "doi": "10.1007/BF00901283",
+    "verified": "2026-10-02"
+  },
+  "rodriguez-gallegos-2020": {
+    "type": "article",
+    "authors": "Rodríguez-Gallegos, C. D.; Liu, H.; Gandhi, O.; et al.",
+    "title": "Global techno-economic performance of bifacial and tracking photovoltaic systems",
+    "container": "Joule 4(7)",
+    "year": 2020,
+    "doi": "10.1016/j.joule.2020.05.005",
+    "verified": "2026-09-30",
+    "note": "Bifacial modules on single-axis trackers give about 35 % more energy than monofacial fixed-tilt systems and the lowest LCOE over 93.1 % of the world's land area."
+  },
+  "fraunhofer-pv-report-2026": {
+    "type": "report",
+    "authors": "Fraunhofer Institute for Solar Energy Systems ISE",
+    "title": "Photovoltaics Report",
+    "container": "Fraunhofer ISE, Freiburg, 14 July 2026",
+    "year": 2026,
+    "url": "https://www.ise.fraunhofer.de/en/publications/studies/photovoltaics-report.html",
+    "verified": "2026-10-02",
+    "note": "Weighted average efficiency of commercial wafer-based c-Si modules 22.7 % (Q4 2024); best lab module 26.0 %; module price fell about 26.6 % per doubling of cumulative production over 45 years (slide 'Price Experience Curve', p. 53; the executive summary on p. 9 and the web page say 26.7 %)."
+  },
+  "kavlak-2018": {
+    "type": "article",
+    "authors": "Kavlak, G.; McNerney, J.; Trancik, J. E.",
+    "title": "Evaluating the causes of cost reduction in photovoltaic modules",
+    "container": "Energy Policy 123, 700–710",
+    "year": 2018,
+    "doi": "10.1016/j.enpol.2018.08.015",
+    "verified": "2026-09-30",
+    "note": "1980–2012: R&D dominated early cost falls; after 2001 economies of scale became a larger cause; efficiency gains explain nearly a quarter of the decline."
+  },
+  "nemet-2019": {
+    "type": "book",
+    "authors": "Nemet, G. F.",
+    "title": "How Solar Energy Became Cheap: A Model for Low-Carbon Innovation",
+    "container": "Routledge, London",
+    "year": 2019,
+    "doi": "10.4324/9780367136604",
+    "verified": "2026-10-02",
+    "note": "Traces the cost decline through developments in the US, Japan, Germany, Australia and China."
+  },
+  "owid-solar-capacity": {
+    "type": "dataset",
+    "authors": "Our World in Data",
+    "title": "Installed solar PV capacity (indicator: total solar capacity)",
+    "container": "Our World in Data grapher; source IRENA (2026), Renewable Energy Statistics, processed by Our World in Data; metadata updated 2026-07-28",
+    "year": 2026,
+    "url": "https://ourworldindata.org/grapher/installed-solar-PV-capacity",
+    "license": "CC BY 4.0",
+    "verified": "2026-09-30"
+  },
+  "owid-lcoe": {
+    "type": "dataset",
+    "authors": "Our World in Data",
+    "title": "Levelized cost of energy by technology",
+    "container": "Our World in Data grapher; source IRENA (2026, 2025, 2024) with major processing by Our World in Data; constant 2025 US$ per kWh; metadata updated 2026-07-28",
+    "year": 2026,
+    "url": "https://ourworldindata.org/grapher/levelized-cost-of-energy",
+    "license": "CC BY 4.0",
+    "verified": "2026-09-30"
+  },
+  "babayigit-2016": {
+    "type": "article",
+    "authors": "Babayigit, A.; Ethirajan, A.; Muller, M.; Conings, B.",
+    "title": "Toxicity of organometal halide perovskite solar cells",
+    "container": "Nature Materials 15(3)",
+    "year": 2016,
+    "doi": "10.1038/nmat4572",
+    "verified": "2026-10-02",
+    "note": "Commentary on lead (and tin) toxicity hazards and controls across the life cycle of perovskite cells."
+  },
+  "cuevas-1982": {
+    "type": "article",
+    "authors": "Cuevas, A.; Luque, A.; Eguren, J.; del Alamo, J.",
+    "title": "50 per cent more output power from an albedo-collecting flat panel using bifacial solar cells",
+    "container": "Solar Energy 29, 419–420",
+    "year": 1982,
+    "doi": "10.1016/0038-092X(82)90078-0",
+    "verified": "2026-10-02"
+  },
+  "ross-nozik-1982": {
+    "type": "article",
+    "authors": "Ross, R. T.; Nozik, A. J.",
+    "title": "Efficiency of hot-carrier solar energy converters",
+    "container": "Journal of Applied Physics 53(5), 3813–3818",
+    "year": 1982,
+    "doi": "10.1063/1.331124",
+    "verified": "2026-09-30"
+  },
+  "luque-marti-1997": {
+    "type": "article",
+    "authors": "Luque, A.; Martí, A.",
+    "title": "Increasing the efficiency of ideal solar cells by photon induced transitions at intermediate levels",
+    "container": "Physical Review Letters 78, 5014–5017",
+    "year": 1997,
+    "doi": "10.1103/PhysRevLett.78.5014",
+    "verified": "2026-10-02"
+  }
+}

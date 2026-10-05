@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>Sources – Solar Odyssey</title>
+<meta name="description" content="Every reference, with links and verification dates.">
+<link rel="icon" href="assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/odyssey.css">
+<link rel="stylesheet" href="sources.css">
+<script type="module" src="assets/js/core.js"></script>
+<script type="module" src="sources.js"></script>
+</head>
+<body data-page="sources">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page sources-page">
+  <header class="page-head">
+    <h1>Sources</h1>
+    <p class="lede">Every reference behind the facts, figures and datasets on this site, with a link to the original and the date someone last checked it.</p>
+  </header>
+  <div class="src-tools wide">
+    <div class="control">
+      <label for="src-q">Search sources</label>
+      <input type="text" id="src-q" autocomplete="off" spellcheck="false" placeholder="Author, title, year or DOI" aria-describedby="src-count">
+    </div>
+    <div class="control">
+      <label for="src-type">Type</label>
+      <select id="src-type"><option value="">All types</option></select>
+    </div>
+  </div>
+  <p class="src-meta wide"><span id="src-count" aria-live="polite">Loading the bibliography…</span> <span class="data-badge" id="src-badge"></span></p>
+  <ol id="src-list" class="src-list wide">
+    <noscript><li class="noscript-note">The bibliography is loaded from a signed data file and needs JavaScript.</li></noscript>
+  </ol>
+
+  <section class="src-how" aria-labelledby="how-h">
+    <h2 id="how-h">How we check sources</h2>
+    <ol class="checks">
+      <li><strong>Primary sources first.</strong> We cite the peer-reviewed paper, the agency's own dataset or report, the standard, or the original patent. Encyclopedias and news stories are a last resort and are labelled as such.</li>
+      <li><strong>Every link is resolved.</strong> Each DOI and URL was opened and read to confirm that it exists and says what we cite it for. The date of that check is shown as “verified”.</li>
+      <li><strong>Fast-moving numbers carry dates.</strong> Records, prices and capacities change every year. On the page they carry a “Last verified” date and point to <a href="state-of-the-field.html">State of the field</a>.</li>
+      <li><strong>Datasets are signed.</strong> Every data file the site loads is listed with its size and SHA-256 hash in a manifest signed with an Ed25519 key. Pages refuse data that fails the check and say so.</li>
+      <li><strong>Worked examples are recomputed.</strong> Every worked example names the function that reproduces it, and the test suite recalculates it on every change.</li>
+    </ol>
+    <p>Found a mistake, a dead link or a better source? Please open an issue on the project's GitHub repository (<span id="issues-link">the Issues tab of this site's repository</span>) with the page, the claim and the source you suggest.</p>
+  </section>
+
+  <section class="src-licences" aria-labelledby="lic-h">
+    <h2 id="lic-h">Licences and third-party code</h2>
+    <p>The course's own code is under the MIT licence, and its text and drawings under Creative Commons Attribution 4.0 (CC BY 4.0). Datasets keep the licence of their source, shown on each entry above; the Our World in Data and Ember series are CC BY 4.0.</p>
+    <p>These libraries and fonts are bundled with the site, pinned to exact versions and checked by hash. Nothing is loaded from another website.</p>
+    <div class="table-wrap">
+      <table id="vendor-table">
+        <caption class="visually-hidden">Bundled third-party code and fonts</caption>
+        <thead><tr><th scope="col">Package</th><th scope="col">Version</th><th scope="col">Licence</th><th scope="col">Used for</th></tr></thead>
+        <tbody><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

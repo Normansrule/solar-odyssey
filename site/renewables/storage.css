@@ -1,0 +1,24 @@
+/* Energy storage page */
+.techs { display: grid; gap: 0 2rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 48rem) { .page > .techs { max-width: var(--wide); } .techs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.techs section { border-top: 2px solid var(--r-storage); padding-top: 0.2rem; }
+.techs h3 { margin-top: 0.8rem; }
+
+.day-grid { display: grid; gap: 1.4rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 56rem) { .day-grid { grid-template-columns: 16rem minmax(0, 1fr); align-items: start; } }
+.day-charts { min-width: 0; }
+.soc-chart { height: 9.5rem; }
+.chart-note { font-size: var(--s-2); margin: 0.2rem 0 0.4rem; }
+.day-legend { margin: 0.4rem 0 0; }
+.day-legend .swatch.k-direct { background: var(--r-solar); }
+.day-legend .swatch.k-wind { background: var(--r-wind); }
+.day-legend .swatch.k-charge { background: var(--r-storage); opacity: 0.4; }
+.day-legend .swatch.k-curt { background: var(--sun); opacity: 0.3; }
+.day-legend .swatch.k-dis { background: var(--r-storage); }
+.day-legend .swatch.k-unmet { background: var(--ink-2); opacity: 0.45; }
+.day-legend .lkey { width: 1.2rem; border-top: 2px solid var(--ink); display: inline-block; }
+.day-legend .lkey.flex { border-top: 2px dashed var(--good); }
+#day .readout, #game .readout { margin-top: 1.2rem; }
+.table-note { font-size: var(--s-2); }
+.segmented { max-width: 100%; }
+.tech-table { min-width: 40rem; }

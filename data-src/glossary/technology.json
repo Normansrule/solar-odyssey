@@ -1,0 +1,277 @@
+{
+ "ingot": {
+  "term": "Ingot",
+  "short": "A large solid block of crystal, grown or cast from molten material, that is later sliced into wafers.",
+  "see": [
+   "wafer",
+   "czochralski-process"
+  ]
+ },
+ "wafer": {
+  "term": "Wafer",
+  "short": "A thin slice of crystal cut from an ingot with a wire saw. Solar wafers are about 0.14 mm thick, roughly two human hairs.",
+  "see": [
+   "ingot"
+  ]
+ },
+ "monocrystalline-silicon": {
+  "term": "Monocrystalline silicon",
+  "short": "Silicon in which the whole wafer is one continuous crystal, with every atom lined up. Grown with the Czochralski process.",
+  "see": [
+   "czochralski-process",
+   "multicrystalline-silicon"
+  ]
+ },
+ "multicrystalline-silicon": {
+  "term": "Multicrystalline silicon",
+  "short": "Silicon cast as a block that freezes into many crystal grains. Cheaper to make, but the boundaries between grains trap charge carriers.",
+  "see": [
+   "monocrystalline-silicon"
+  ]
+ },
+ "passivation": {
+  "term": "Passivation",
+  "short": "Treating a surface so it stops swallowing electrons and holes. Bare crystal surfaces have broken bonds where carriers recombine; a thin coating ties them up.",
+  "see": [
+   "recombination"
+  ]
+ },
+ "anti-reflection-coating": {
+  "term": "Anti-reflection coating",
+  "short": "A very thin transparent layer on top of a cell, about a quarter of a wavelength of light thick, that cancels reflections so more light goes in. It gives silicon cells their dark blue look."
+ },
+ "emitter": {
+  "term": "Emitter",
+  "short": "The thin, heavily doped layer on one side of a solar cell that forms the p-n junction with the bulk wafer and collects one type of carrier.",
+  "see": [
+   "pn-junction",
+   "doping"
+  ]
+ },
+ "perc": {
+  "term": "PERC (passivated emitter and rear cell)",
+  "short": "A silicon cell whose back surface is coated with a passivating layer, with only small laser-cut openings for the metal contact. The industry's workhorse until TOPCon overtook it in 2024.",
+  "see": [
+   "passivation"
+  ]
+ },
+ "topcon": {
+  "term": "TOPCon (tunnel oxide passivated contact)",
+  "short": "A silicon cell whose back contact sits on an ultra-thin oxide plus a doped polysilicon layer, so carriers can pass but the surface stays passivated. The most-made cell type today.",
+  "see": [
+   "passivation",
+   "perc"
+  ]
+ },
+ "heterojunction-cell": {
+  "term": "Heterojunction cell (HJT)",
+  "short": "A silicon cell sandwiched between very thin layers of amorphous silicon, which passivate the surfaces and form the junction. High voltage and a small temperature loss.",
+  "see": [
+   "amorphous-silicon",
+   "passivation"
+  ]
+ },
+ "back-contact-cell": {
+  "term": "Back-contact cell",
+  "short": "A cell with all of its metal contacts on the back, in interleaved fingers, so nothing shades the front. Holds the silicon efficiency records."
+ },
+ "transparent-conductive-oxide": {
+  "term": "Transparent conductive oxide (TCO)",
+  "short": "A coating, such as indium tin oxide or doped zinc oxide, that conducts electricity yet lets light through. Used on heterojunction and thin-film cells."
+ },
+ "thin-film": {
+  "term": "Thin-film solar cell",
+  "short": "A cell made by depositing a semiconductor layer a few micrometres thick onto glass, metal or plastic, instead of slicing a wafer.",
+  "see": [
+   "cadmium-telluride",
+   "cigs",
+   "amorphous-silicon"
+  ]
+ },
+ "cadmium-telluride": {
+  "term": "Cadmium telluride (CdTe)",
+  "short": "A compound semiconductor with a band gap near 1.5 eV, deposited as a thin film on glass. The leading thin-film technology, made mainly by First Solar.",
+  "see": [
+   "thin-film"
+  ]
+ },
+ "cigs": {
+  "term": "CIGS (copper indium gallium selenide)",
+  "short": "A thin-film semiconductor whose band gap can be tuned by swapping gallium for indium. Can be made on flexible foils.",
+  "see": [
+   "thin-film"
+  ]
+ },
+ "amorphous-silicon": {
+  "term": "Amorphous silicon (a-Si)",
+  "short": "Silicon with no long-range crystal order, deposited from a gas as a very thin film. Absorbs light strongly but converts it less efficiently than crystal silicon.",
+  "see": [
+   "thin-film"
+  ]
+ },
+ "temperature-coefficient": {
+  "term": "Temperature coefficient",
+  "short": "How much a panel's power (or voltage) changes for each degree of warming, in % per °C. Silicon panels lose roughly 0.3 % of power per °C above 25 °C.",
+  "see": [
+   "standard-test-conditions"
+  ]
+ },
+ "degradation-rate": {
+  "term": "Degradation rate",
+  "short": "How fast a panel's output falls with age, in % per year. Field studies find about half a percent per year is typical."
+ },
+ "solar-module": {
+  "term": "Solar module",
+  "short": "What most people call a solar panel: many cells wired together, laminated between glass and a back sheet, with a frame and a junction box.",
+  "see": [
+   "string"
+  ]
+ },
+ "half-cut-cells": {
+  "term": "Half-cut cells",
+  "short": "Full-size cells cut in two with a laser. Each half carries half the current, so the wiring wastes less power as heat.",
+  "see": [
+   "solar-module"
+  ]
+ },
+ "bypass-diode": {
+  "term": "Bypass diode",
+  "short": "A one-way electrical valve wired across a group of cells. If a cell in the group is shaded, the string's current flows around the group through the diode instead of being blocked.",
+  "see": [
+   "hot-spot",
+   "partial-shading"
+  ]
+ },
+ "hot-spot": {
+  "term": "Hot spot",
+  "short": "A shaded or damaged cell that the rest of the string forces into reverse bias, so that it absorbs power instead of making it and turns it into heat. It can burn the module unless a bypass diode steps in.",
+  "see": [
+   "bypass-diode"
+  ]
+ },
+ "partial-shading": {
+  "term": "Partial shading",
+  "short": "When part of an array is shaded (by a chimney, a tree, leaves or dirt) and the rest is not. Because cells are in series, a little shade can cost a lot of power.",
+  "see": [
+   "bypass-diode"
+  ]
+ },
+ "string": {
+  "term": "String",
+  "short": "Solar modules wired one after another in series, so their voltages add. Several strings in parallel make an array.",
+  "see": [
+   "solar-module"
+  ]
+ },
+ "inverter": {
+  "term": "Inverter",
+  "short": "The box that turns the panels' direct current (DC) into alternating current (AC) in step with the grid, and keeps the panels at their best operating point.",
+  "see": [
+   "mppt"
+  ]
+ },
+ "mppt": {
+  "term": "Maximum power point tracking (MPPT)",
+  "short": "The inverter's job of constantly adjusting the panels' operating voltage to sit at the maximum power point as sun and temperature change.",
+  "see": [
+   "maximum-power-point",
+   "perturb-and-observe"
+  ]
+ },
+ "perturb-and-observe": {
+  "term": "Perturb and observe",
+  "short": "The simplest MPPT method: nudge the voltage, check whether power went up, and keep going that way if it did, or turn back if it did not.",
+  "see": [
+   "mppt"
+  ]
+ },
+ "balance-of-system": {
+  "term": "Balance of system (BOS)",
+  "short": "Everything in a solar installation except the modules: mounting structures, trackers, cables, connectors, fuses, switches, inverters and monitoring."
+ },
+ "solar-tracker": {
+  "term": "Solar tracker",
+  "short": "A motorised mount that turns panels to follow the Sun across the sky, usually rotating east to west about one axis.",
+  "see": [
+   "balance-of-system"
+  ]
+ },
+ "dc-ac-ratio": {
+  "term": "DC/AC ratio",
+  "short": "Panel power (DC, at standard test conditions) divided by inverter power (AC). Above 1, the panels can sometimes make more than the inverter can pass.",
+  "see": [
+   "clipping"
+  ]
+ },
+ "clipping": {
+  "term": "Clipping",
+  "short": "When the panels could deliver more power than the inverter's rating, the inverter caps its output and the extra is not collected. Shows up as a flat top on a sunny day's power curve.",
+  "see": [
+   "dc-ac-ratio"
+  ]
+ },
+ "anti-islanding": {
+  "term": "Anti-islanding",
+  "short": "A required inverter safety function: if the grid goes down, the inverter stops feeding power so it cannot energise lines that line workers believe are dead.",
+  "see": [
+   "inverter"
+  ]
+ },
+ "noct": {
+  "term": "NOCT (nominal operating cell temperature)",
+  "short": "The temperature a module's cells reach in a standard outdoor-like test: 800 W/m², 20 °C air, a 1 m/s breeze. Usually 40–45 °C.",
+  "see": [
+   "temperature-coefficient"
+  ]
+ },
+ "photon": {
+  "term": "Photon",
+  "short": "A single packet of light. Its energy is set by its colour: bluer light comes in bigger packets.",
+  "see": [
+   "band-gap"
+  ]
+ },
+ "module-efficiency": {
+  "term": "Module efficiency",
+  "short": "The share of sunlight falling on a whole solar panel, frame and gaps included, that comes out as electricity. Lower than cell efficiency because of the gaps, wiring and edges.",
+  "see": [
+   "conversion-efficiency"
+  ]
+ },
+ "standard-test-conditions": {
+  "term": "Standard test conditions (STC)",
+  "short": "The agreed lab conditions for rating solar cells: 1000 W/m² of light with the AM1.5 spectrum and a cell temperature of 25 °C.",
+  "see": [
+   "irradiance"
+  ]
+ },
+ "polysilicon": {
+  "term": "Polysilicon",
+  "short": "Ultra-pure silicon made of many small crystals; the raw material melted down to grow the crystals that are sliced into solar wafers.",
+  "see": [
+   "czochralski-process"
+  ]
+ },
+ "open-circuit-voltage": {
+  "term": "Open-circuit voltage (Voc)",
+  "short": "The voltage across a cell when nothing is connected and no current flows. About 0.6 to 0.75 V for silicon cells.",
+  "see": [
+   "iv-curve"
+  ]
+ },
+ "maximum-power-point": {
+  "term": "Maximum power point (MPP)",
+  "short": "The point on the I-V curve where current × voltage is largest. Inverters keep panels there by tracking it (MPPT).",
+  "see": [
+   "iv-curve",
+   "fill-factor"
+  ]
+ },
+ "recombination": {
+  "term": "Recombination",
+  "short": "A free electron falling back into a hole. The pair's energy is lost as heat or light and can no longer drive a current.",
+  "see": [
+   "electron-hole-pair"
+  ]
+ }
+}

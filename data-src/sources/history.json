@@ -1,0 +1,395 @@
+{
+  "becquerel-1839": {
+    "type": "article",
+    "authors": "Becquerel, E.",
+    "title": "Mémoire sur les effets électriques produits sous l'influence des rayons solaires",
+    "container": "Comptes rendus hebdomadaires des séances de l'Académie des sciences 9, 561–567",
+    "year": 1839,
+    "url": "https://gallica.bnf.fr/ark:/12148/bpt6k2968p/f561.item.zoom",
+    "verified": "2026-09-30",
+    "note": "Original on Gallica (BnF). An English translation was published by IPVF: https://www.ipvf.fr/edmond-becquerels-publications-are-now-translated/"
+  },
+  "smith-1873": {
+    "type": "article",
+    "authors": "Smith, W.",
+    "title": "Effect of light on selenium during the passage of an electric current",
+    "container": "Nature 7, 303 (20 February 1873)",
+    "year": 1873,
+    "doi": "10.1038/007303e0",
+    "verified": "2026-10-02"
+  },
+  "adams-day-1877": {
+    "type": "article",
+    "authors": "Adams, W. G.; Day, R. E.",
+    "title": "The action of light on selenium",
+    "container": "Proceedings of the Royal Society of London 25, 113–117",
+    "year": 1877,
+    "doi": "10.1098/rspl.1876.0024",
+    "verified": "2026-10-02"
+  },
+  "fritts-1883": {
+    "type": "article",
+    "authors": "Fritts, C. E.",
+    "title": "On a new form of selenium cell, and some electrical discoveries made by its use",
+    "container": "American Journal of Science s3-26(156), 465–472",
+    "year": 1883,
+    "doi": "10.2475/ajs.s3-26.156.465",
+    "verified": "2026-09-30"
+  },
+  "hertz-1887": {
+    "type": "article",
+    "authors": "Hertz, H.",
+    "title": "Ueber einen Einfluss des ultravioletten Lichtes auf die electrische Entladung",
+    "container": "Annalen der Physik 267(8), 983–1000",
+    "year": 1887,
+    "doi": "10.1002/andp.18872670827",
+    "verified": "2026-10-02"
+  },
+  "einstein-1905": {
+    "type": "article",
+    "authors": "Einstein, A.",
+    "title": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
+    "container": "Annalen der Physik 322(6), 132–148",
+    "year": 1905,
+    "doi": "10.1002/andp.19053220607",
+    "verified": "2026-10-02"
+  },
+  "millikan-1916": {
+    "type": "article",
+    "authors": "Millikan, R. A.",
+    "title": "A direct photoelectric determination of Planck's \"h\"",
+    "container": "Physical Review 7(3), 355–388",
+    "year": 1916,
+    "doi": "10.1103/PhysRev.7.355",
+    "verified": "2026-10-02"
+  },
+  "czochralski-1918": {
+    "type": "article",
+    "authors": "Czochralski, J.",
+    "title": "Ein neues Verfahren zur Messung der Kristallisationsgeschwindigkeit der Metalle",
+    "container": "Zeitschrift für Physikalische Chemie 92, 219–221",
+    "year": 1918,
+    "doi": "10.1515/zpch-1918-9212",
+    "verified": "2026-10-02"
+  },
+  "nobel-physics-1921": {
+    "type": "web",
+    "authors": "Nobel Prize Outreach",
+    "title": "The Nobel Prize in Physics 1921",
+    "container": "NobelPrize.org",
+    "year": 1922,
+    "url": "https://www.nobelprize.org/prizes/physics/1921/summary/",
+    "verified": "2026-09-30",
+    "note": "The 1921 prize was reserved and awarded to Einstein in 1922."
+  },
+  "chm-pn-junction-1940": {
+    "type": "web",
+    "authors": "Computer History Museum",
+    "title": "1940: Discovery of the p-n junction",
+    "container": "The Silicon Engine timeline",
+    "year": 2023,
+    "url": "https://www.computerhistory.org/siliconengine/discovery-of-the-p-n-junction/",
+    "verified": "2026-09-30"
+  },
+  "ohl-patent-1946": {
+    "type": "patent",
+    "authors": "Ohl, R. S. (Bell Telephone Laboratories)",
+    "title": "Light-sensitive electric device",
+    "container": "US Patent 2,402,662, filed 27 May 1941, granted 25 June 1946",
+    "year": 1946,
+    "url": "https://patents.google.com/patent/US2402662A/en",
+    "verified": "2026-09-30"
+  },
+  "chapin-1954": {
+    "type": "article",
+    "authors": "Chapin, D. M.; Fuller, C. S.; Pearson, G. L.",
+    "title": "A new silicon p-n junction photocell for converting solar radiation into electrical power",
+    "container": "Journal of Applied Physics 25(5), 676–677",
+    "year": 1954,
+    "doi": "10.1063/1.1721711",
+    "verified": "2026-09-30"
+  },
+  "nature-milestones-sun-power": {
+    "type": "article",
+    "authors": "Nature Milestones in Photons",
+    "title": "Sun power",
+    "container": "Nature Milestones: Photons (Milestone 8)",
+    "year": 2010,
+    "url": "https://www.nature.com/articles/milephotons08",
+    "verified": "2026-09-30",
+    "note": "Secondary retrospective; supports the 6 % figure for the 1954 Bell Labs cells."
+  },
+  "nasa-vanguard-1": {
+    "type": "web",
+    "authors": "NASA",
+    "title": "Vanguard Satellite, 1958",
+    "container": "NASA image article",
+    "year": 2023,
+    "url": "https://www.nasa.gov/image-article/vanguard-satellite-1958/",
+    "verified": "2026-09-30"
+  },
+  "shockley-queisser-1961": {
+    "type": "article",
+    "authors": "Shockley, W.; Queisser, H. J.",
+    "title": "Detailed balance limit of efficiency of p-n junction solar cells",
+    "container": "Journal of Applied Physics 32(3), 510–519",
+    "year": 1961,
+    "doi": "10.1063/1.1736034",
+    "verified": "2026-10-02"
+  },
+  "tethys-la-rance": {
+    "type": "web",
+    "authors": "Pacific Northwest National Laboratory, Tethys (OES-Environmental)",
+    "title": "La Rance Tidal Barrage",
+    "container": "Tethys project site",
+    "year": 2024,
+    "url": "https://tethys.pnnl.gov/project-sites/la-rance-tidal-barrage",
+    "verified": "2026-09-30"
+  },
+  "state-dept-oil-embargo": {
+    "type": "web",
+    "authors": "Office of the Historian, US Department of State",
+    "title": "Oil Embargo, 1973–1974",
+    "container": "Milestones in the History of U.S. Foreign Relations",
+    "year": 2017,
+    "url": "https://history.state.gov/milestones/1969-1976/oil-embargo",
+    "verified": "2026-09-30"
+  },
+  "carlson-wronski-1976": {
+    "type": "article",
+    "authors": "Carlson, D. E.; Wronski, C. R.",
+    "title": "Amorphous silicon solar cell",
+    "container": "Applied Physics Letters 28(11), 671–673",
+    "year": 1976,
+    "doi": "10.1063/1.88617",
+    "verified": "2026-10-02"
+  },
+  "nrel-at-40": {
+    "type": "web",
+    "authors": "National Renewable Energy Laboratory",
+    "title": "NREL at 40: It all started with a desire to harness the sun",
+    "container": "NREL news feature",
+    "year": 2017,
+    "url": "https://www.nrel.gov/news/features/2017/nrel-at-40-it-all-started-with-a-desire-to-harness-the-sun.html",
+    "verified": "2026-09-30"
+  },
+  "pv-magazine-nrel-rename-2025": {
+    "type": "web",
+    "authors": "pv magazine",
+    "title": "US government renames National Renewable Energy Laboratory",
+    "container": "pv magazine, 3 December 2025",
+    "year": 2025,
+    "url": "https://www.pv-magazine.com/2025/12/03/trump-administration-renames-national-renewable-energy-laboratory/",
+    "verified": "2026-09-30",
+    "note": "News report; states SERI opened in 1977, became NREL in 1991 and was renamed National Laboratory of the Rockies in December 2025."
+  },
+  "seia-solar-century": {
+    "type": "web",
+    "authors": "Solar Energy Industries Association (SEIA)",
+    "title": "The Solar Century: Landmark moments in the history of solar energy",
+    "container": "SEIA blog",
+    "year": 2024,
+    "url": "https://seia.org/blog/solar-century-landmark-moments-history-solar-energy/",
+    "verified": "2026-09-30",
+    "note": "Industry association history; used only for the ARCO Solar Hesperia (1982) and Carrizo Plain (1983) plants."
+  },
+  "blakers-1989": {
+    "type": "article",
+    "authors": "Blakers, A. W.; Wang, A.; Milne, A. M.; Zhao, J.; Green, M. A.",
+    "title": "22.8% efficient silicon solar cell",
+    "container": "Applied Physics Letters 55(13), 1363–1365",
+    "year": 1989,
+    "doi": "10.1063/1.101596",
+    "verified": "2026-10-02"
+  },
+  "oregan-gratzel-1991": {
+    "type": "article",
+    "authors": "O'Regan, B.; Grätzel, M.",
+    "title": "A low-cost, high-efficiency solar cell based on dye-sensitized colloidal TiO2 films",
+    "container": "Nature 353, 737–740",
+    "year": 1991,
+    "doi": "10.1038/353737a0",
+    "verified": "2026-10-02"
+  },
+  "orsted-vindeby-2017": {
+    "type": "web",
+    "authors": "Ørsted (formerly DONG Energy)",
+    "title": "The world's first offshore wind farm is retiring",
+    "container": "Ørsted news, March 2017",
+    "year": 2017,
+    "url": "https://orsted.com/en/media/news/2017/03/the-worlds-first-offshore-wind-farm-is-retiring",
+    "verified": "2026-09-30"
+  },
+  "bmwk-eeg-15-years": {
+    "type": "web",
+    "authors": "German Federal Ministry for Economic Affairs and Energy",
+    "title": "15 years of the EEG",
+    "container": "Energiewende direkt newsletter 02/2015",
+    "year": 2015,
+    "url": "https://energiewende.bundeswirtschaftsministerium.de/EWD/Redaktion/EN/Newsletter/2015/02/Meldung/15-years-of--eeg.html",
+    "verified": "2026-09-30"
+  },
+  "kojima-2009": {
+    "type": "article",
+    "authors": "Kojima, A.; Teshima, K.; Shirai, Y.; Miyasaka, T.",
+    "title": "Organometal halide perovskites as visible-light sensitizers for photovoltaic cells",
+    "container": "Journal of the American Chemical Society 131(17), 6050–6051",
+    "year": 2009,
+    "doi": "10.1021/ja809598r",
+    "verified": "2026-10-02"
+  },
+  "kim-park-2012": {
+    "type": "article",
+    "authors": "Kim, H.-S.; Lee, C.-R.; Im, J.-H.; Lee, K.-B.; Moehl, T.; Marchioro, A.; Moon, S.-J.; Humphry-Baker, R.; Yum, J.-H.; Moser, J. E.; Grätzel, M.; Park, N.-G.",
+    "title": "Lead iodide perovskite sensitized all-solid-state submicron thin film mesoscopic solar cell with efficiency exceeding 9%",
+    "container": "Scientific Reports 2, 591",
+    "year": 2012,
+    "doi": "10.1038/srep00591",
+    "verified": "2026-10-02"
+  },
+  "hornsdale-power-reserve": {
+    "type": "web",
+    "authors": "Hornsdale Power Reserve (Neoen)",
+    "title": "Hornsdale Power Reserve: South Australia's big battery",
+    "year": 2024,
+    "url": "https://hornsdalepowerreserve.com.au/",
+    "verified": "2026-09-30"
+  },
+  "iea-pv-supply-chains-2022": {
+    "type": "report",
+    "authors": "International Energy Agency (IEA)",
+    "title": "Special Report on Solar PV Global Supply Chains",
+    "container": "IEA, Paris, July 2022 (CC BY 4.0)",
+    "year": 2022,
+    "url": "https://www.iea.org/reports/solar-pv-global-supply-chains",
+    "verified": "2026-09-30"
+  },
+  "iea-pvps-snapshot-2023": {
+    "type": "report",
+    "authors": "IEA Photovoltaic Power Systems Programme (IEA PVPS)",
+    "title": "Snapshot of Global PV Markets 2023",
+    "container": "Report IEA-PVPS T1-44:2023",
+    "year": 2023,
+    "url": "https://iea-pvps.org/snapshot-reports/snapshot-2023/",
+    "verified": "2026-09-30"
+  },
+  "iea-pvps-snapshot-2026": {
+    "type": "report",
+    "authors": "IEA Photovoltaic Power Systems Programme (IEA PVPS)",
+    "title": "Snapshot of Global PV Markets 2026",
+    "container": "IEA PVPS Task 1, fact sheet, May 2026",
+    "year": 2026,
+    "url": "https://iea-pvps.org/fact-sheets/fs-snapshot-2026/",
+    "verified": "2026-09-30"
+  },
+  "pv-magazine-longi-hibc-2025": {
+    "type": "web",
+    "authors": "pv magazine",
+    "title": "Longi claims world's highest efficiency for silicon solar cells",
+    "container": "pv magazine, 14 April 2025",
+    "year": 2025,
+    "url": "https://www.pv-magazine.com/2025/04/14/longi-claims-worlds-highest-efficiency-for-silicon-solar-cells/",
+    "verified": "2026-09-30",
+    "note": "27.81 % hybrid interdigitated back-contact (HIBC) silicon cell, certified by ISFH."
+  },
+  "richter-2013": {
+    "type": "article",
+    "authors": "Richter, A.; Hermle, M.; Glunz, S. W.",
+    "title": "Reassessment of the limiting efficiency for crystalline silicon solar cells",
+    "container": "IEEE Journal of Photovoltaics 3(4), 1184–1191",
+    "year": 2013,
+    "doi": "10.1109/JPHOTOV.2013.2270351",
+    "verified": "2026-09-30"
+  },
+  "longi-tandem-2026": {
+    "type": "web",
+    "authors": "LONGi Green Energy Technology",
+    "title": "35.5%! LONGi once again breaks world record for crystalline silicon-perovskite tandem solar cell efficiency",
+    "container": "LONGi press release, 14 July 2026",
+    "year": 2026,
+    "url": "https://www.longi.com/en/news/crystalline-silicon-perovskite-tandem-solar-cell-new-world-efficiency-2026/",
+    "verified": "2026-09-30",
+    "note": "Certified by the European Solar Test Installation (ESTI, EC Joint Research Centre). Independent report: pv magazine, 15 July 2026."
+  },
+  "pv-magazine-longi-tandem-2026": {
+    "type": "web",
+    "authors": "pv magazine",
+    "title": "Longi sets new world record with 35.5%-efficient perovskite-silicon tandem cell",
+    "container": "pv magazine, 15 July 2026",
+    "year": 2026,
+    "url": "https://www.pv-magazine.com/2026/07/15/longi-sets-new-world-record-with-35-5-efficient-perovskite-silicon-tandem-cell/",
+    "verified": "2026-09-30"
+  },
+  "khenkin-2020": {
+    "type": "article",
+    "authors": "Khenkin, M. V.; Katz, E. A.; Abate, A.; et al.",
+    "title": "Consensus statement for stability assessment and reporting for perovskite photovoltaics based on ISOS procedures",
+    "container": "Nature Energy 5(1), 35–49",
+    "year": 2020,
+    "doi": "10.1038/s41560-019-0529-5",
+    "verified": "2026-10-02"
+  },
+  "asce-vulcan-street": {
+    "type": "web",
+    "authors": "American Society of Civil Engineers",
+    "title": "Vulcan Street Plant (historic civil engineering landmark)",
+    "year": 2020,
+    "url": "https://www.asce.org/about-civil-engineering/history-and-heritage/historic-landmarks/vulcan-street-plant",
+    "verified": "2026-09-30"
+  },
+  "maglab-hydro-1882": {
+    "type": "web",
+    "authors": "National MagLab",
+    "title": "Hydroelectric Power Station – 1882",
+    "container": "Magnet Academy, history of electricity and magnetism",
+    "year": 2020,
+    "url": "https://nationalmaglab.org/magnet-academy/history-of-electricity-magnetism/museum/hydroelectric-power-station-1882/",
+    "verified": "2026-09-30"
+  },
+  "sciam-brush-1890": {
+    "type": "article",
+    "authors": "Scientific American",
+    "title": "Mr. Brush's windmill dynamo",
+    "container": "Scientific American 63(25), 20 December 1890",
+    "year": 1890,
+    "url": "https://www.scientificamerican.com/article/mr-brushs-windmill-dynamo/",
+    "verified": "2026-09-30",
+    "note": "Rotor diameter (56 ft, about 17 m) and 144 blades as re-checked by wind-works.org/charles-brush-windmill-diameter/."
+  },
+  "la-cour-museum": {
+    "type": "web",
+    "authors": "Poul la Cour Museum",
+    "title": "Storing wind power",
+    "year": 2020,
+    "url": "https://www.poullacour.dk/?page_id=1750&lang=en",
+    "verified": "2026-09-30"
+  },
+  "lund-2005": {
+    "type": "article",
+    "authors": "Lund, J. W.",
+    "title": "100 years of geothermal power production",
+    "container": "Proceedings, Thirtieth Workshop on Geothermal Reservoir Engineering, Stanford University, SGP-TR-176",
+    "year": 2005,
+    "url": "https://pangea.stanford.edu/ERE/pdf/IGAstandard/SGW/2005/lund.pdf",
+    "verified": "2026-09-30"
+  },
+  "pveducation-first-pv": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "First photovoltaic devices",
+    "container": "PVEducation",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/manufacturing-si-cells/first-photovoltaic-devices",
+    "verified": "2026-09-30"
+  },
+  "nssdc-vanguard-1": {
+    "type": "web",
+    "authors": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+    "title": "Vanguard 1 (COSPAR 1958-002B)",
+    "container": "NSSDCA Master Catalog",
+    "year": 2024,
+    "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1958-002B",
+    "verified": "2026-09-30",
+    "note": "Catalog entry for the satellite; describes the solar-powered 108.03 MHz transmitter that operated until May 1964."
+  }
+}

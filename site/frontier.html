@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; media-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<title>The frontier – Solar Odyssey</title>
+<meta name="description" content="Perovskites, tandems, bifacial modules and the distance to the theoretical limit.">
+<link rel="icon" href="assets/img/sun.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/odyssey.css">
+<link rel="stylesheet" href="frontier.css">
+<script type="module" src="assets/js/core.js"></script>
+<script type="module" src="frontier.js"></script>
+</head>
+<body data-page="frontier">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main" class="page">
+  <header class="page-head">
+    <span class="kicker">Frontier</span>
+    <h1>The frontier</h1>
+    <p class="lede">Silicon is close to the most it can ever do. The next gains come from new materials, from stacking two cells into one, and from catching light on both sides of a panel.</p>
+  </header>
+
+  <p>A single solar cell has one <dfn data-term="band-gap">band gap</dfn>. Photons with less energy than the gap pass straight through. Photons with more give up their extra energy as heat. That is why no single-material cell can beat about 33 % in ordinary sunlight, the <dfn data-term="shockley-queisser-limit">Shockley–Queisser limit</dfn>.<sup class="cite" data-src="shockley-queisser-1961,ruhle-2016"></sup> The best silicon cell is at 28.29 %,<sup class="cite" data-src="pv-magazine-longi-hibc-2026"></sup> <span class="verified">2026-09-30</span> and silicon's own practical ceiling is about 29.4 %.<sup class="cite" data-src="richter-2013"></sup> To go much further, a cell has to waste less of each photon.</p>
+
+  <h2 id="perovskites">Perovskites</h2>
+  <p><span class="claim claim--research">Active research</span></p>
+  <p>A <dfn data-term="perovskite">perovskite</dfn> is any crystal with the same pattern of atoms as the mineral of that name. The ones used in solar cells are metal-halide perovskites, typically lead, iodine and a small organic molecule. They absorb light very strongly, so a layer a few hundred nanometres thick is enough, and they can be printed or coated from a liquid at low temperature instead of grown from molten silicon.</p>
+  <p>The first perovskite solar cell, made in 2009 by Tsutomu Miyasaka's group in Japan, turned 3.8 % of light into electricity. It used a liquid electrolyte and did not last long.<sup class="cite" data-src="kojima-2009"></sup> In 2012 teams in Korea and Switzerland made a solid version above 9 %,<sup class="cite" data-src="kim-park-2012"></sup> and the field took off. Small perovskite cells have since reached 28.0 % in the independent efficiency tables, above the record for multicrystalline silicon and close behind single-crystal silicon.<sup class="cite" data-src="green-tables-68,pv-magazine-tables-68,nrel-cell-efficiency-chart"></sup> <span class="verified">2026-10-02</span> Watch the climb on <a href="today/efficiency-records.html">efficiency over time</a>.</p>
+  <p>Two problems stand between a record and a roof:</p>
+  <ul>
+    <li><strong>Lifetime.</strong> Silicon panels are expected to work for 25 years or more. Heat, moisture, oxygen and even light itself slowly break perovskites down. Labs now test them under agreed ageing procedures so results can be compared, but decades of outdoor data do not exist yet.<sup class="cite" data-src="khenkin-2020"></sup></li>
+    <li><strong>Lead.</strong> The best perovskites contain a small amount of lead in a form that dissolves in water if a panel breaks. Researchers study ways to seal it in and recycle it, and lead-free (tin-based) versions, which so far are less efficient and raise their own toxicity questions.<sup class="cite" data-src="babayigit-2016"></sup></li>
+  </ul>
+
+  <h2 id="tandems">Two cells in one: tandems</h2>
+  <p>A <dfn data-term="tandem-cell">tandem cell</dfn> stacks two cells. The top one has a wide band gap: it takes the high-energy blue and green photons and, because its gap is wide, keeps more of each one's energy. The rest of the light passes through to a narrower-gap cell underneath, which takes the red and near-infrared. Silicon makes a natural bottom cell, and a perovskite, whose band gap can be tuned by changing its recipe, a natural top cell.</p>
+  <p>The catch is wiring. In the common two-terminal design the two cells are connected in series, so the same current flows through both. Whichever cell makes less current sets the current for the pair. Designers therefore pick the band gaps so that both make the same current; this is <dfn data-term="current-matching">current matching</dfn>.</p>
+
+  <section class="widget fr-widget" id="designer" aria-labelledby="designer-h">
+    <h2 id="designer-h">Tandem designer</h2>
+    <p class="caption">Choose the top cell's band gap. The sunlight is split between the two cells; the bars below show whether their currents match, and the chart shows how efficient the stack could be at best.</p>
+    <div class="widget-body split">
+      <div class="fr-stage">
+        <canvas id="fr-spectrum" role="img" aria-label="Sunlight spectrum against photon energy, split into the part absorbed by the top cell, the part absorbed by the bottom cell and the part that passes through both. Each absorbed part is divided into energy the cell can keep and energy lost as heat."></canvas>
+        <ul class="legend fr-legend" aria-label="Key">
+          <li><span class="swatch fr-sw fr-sw--top" aria-hidden="true"></span>Top cell keeps</li>
+          <li><span class="swatch fr-sw fr-sw--bottom" aria-hidden="true"></span>Bottom cell keeps</li>
+          <li><span class="swatch fr-sw fr-sw--heat" aria-hidden="true"></span>Lost as heat</li>
+          <li><span class="swatch fr-sw fr-sw--lost" aria-hidden="true"></span>Passes through both</li>
+        </ul>
+        <div class="fr-currents" aria-hidden="true">
+          <div class="fr-cur"><span class="fr-cur-k">Top cell current</span><span class="fr-bar"><span class="fr-fill fr-fill--top" id="fr-bar-top"></span></span></div>
+          <div class="fr-cur"><span class="fr-cur-k">Bottom cell current</span><span class="fr-bar"><span class="fr-fill fr-fill--bottom" id="fr-bar-bottom"></span></span></div>
+          <div class="fr-cur"><span class="fr-cur-k">Current through the stack</span><span class="fr-bar"><span class="fr-fill fr-fill--stack" id="fr-bar-stack"></span></span></div>
+        </div>
+        <canvas id="fr-curve" role="img" aria-label="Best possible efficiency of the two-cell stack against the top cell's band gap, compared with the best single cell."></canvas>
+      </div>
+      <div class="controls">
+        <div class="control">
+          <label for="fr-top">Top cell band gap <output id="fr-top-out" for="fr-top">1.70 eV</output></label>
+          <input type="range" id="fr-top" min="1.30" max="2.40" step="0.01" value="1.70">
+        </div>
+        <div class="btn-row" role="group" aria-label="Presets">
+          <button type="button" class="btn ghost" id="fr-best">Best match</button>
+          <button type="button" class="btn ghost" id="fr-mapi">Classic perovskite (1.62 eV)</button>
+        </div>
+        <div class="control expert">
+          <label for="fr-bottom">Bottom cell band gap <output id="fr-bottom-out" for="fr-bottom">1.12 eV (silicon)</output></label>
+          <input type="range" id="fr-bottom" min="0.60" max="1.50" step="0.01" value="1.12">
+        </div>
+        <dl class="readout" aria-live="polite">
+          <div><dt>Two-cell stack</dt><dd id="fr-eff">—</dd></div>
+          <div><dt>Bottom cell alone</dt><dd id="fr-single">—</dd></div>
+          <div><dt>Best single cell</dt><dd id="fr-sq">—</dd></div>
+          <div><dt>Current set by</dt><dd id="fr-limit">—</dd></div>
+        </dl>
+        <dl class="readout expert">
+          <div><dt>Top cell <span class="tex">J_{sc}</span></dt><dd id="fr-jt">—</dd></div>
+          <div><dt>Bottom cell <span class="tex">J_{sc}</span></dt><dd id="fr-jb">—</dd></div>
+          <div><dt>Stack voltage</dt><dd id="fr-v">—</dd></div>
+          <div><dt>Four-terminal</dt><dd id="fr-4t">—</dd></div>
+        </dl>
+        <p class="caption" id="fr-summary"></p>
+      </div>
+    </div>
+    <p class="caption">The model is the same idealised one used for the <a href="learn/band-gap.html">band gap</a> lesson: the sun as a 5772 K blackbody above the atmosphere, every photon above a gap making one electron, and no losses except the light every cell must re-emit. It gives about 30 % for the best single cell instead of the 33 % calculated with the real ground-level spectrum, so read the numbers as ceilings, not predictions.</p>
+  </section>
+
+  <section class="eq" id="eq-tandem" aria-labelledby="eq-tandem-h">
+    <h3 id="eq-tandem-h">Current matching, in one line</h3>
+    <p>In series, currents cannot add but voltages do. The stack makes the voltage of both cells together, at a current no larger than the smaller of the two.</p>
+    <div class="tex">P = J\,\bigl(V_{top}(J) + V_{bottom}(J)\bigr), \qquad J \le \min\bigl(J_{sc}^{top},\,J_{sc}^{bottom}\bigr)</div>
+    <dl class="symbols">
+      <dt><span class="tex">P</span></dt><dd>electrical power out, watts per square metre (W/m²)</dd>
+      <dt><span class="tex">J</span></dt><dd>current density flowing through both cells, amperes per square metre (A/m²)</dd>
+      <dt><span class="tex">V_{top},\ V_{bottom}</span></dt><dd>voltage of each cell when it carries current <span class="tex">J</span>, volts (V)</dd>
+      <dt><span class="tex">J_{sc}</span></dt><dd><dfn data-term="short-circuit-current">short-circuit current</dfn> of each cell: every absorbed photon in its slice of the spectrum, delivered as one electron, A/m²</dd>
+    </dl>
+    <div class="worked" data-check="tandem:tandemEfficiency" data-args="[1.77, 1.12]" data-expect="0.412" data-tol="0.002">
+      With silicon (1.12 eV) underneath, a top cell with a 1.77 eV gap makes almost exactly the same current as the silicon. The stack reaches <span class="answer">41.2 %</span> in this model, against 30.0 % for the silicon alone.
+    </div>
+    <div class="worked" data-check="tandem:tandemEfficiency" data-args="[1.50, 1.12]" data-expect="0.245" data-tol="0.002">
+      Choose a 1.50 eV top cell instead and it swallows too much light. Silicon gets only the thin slice between 1.12 and 1.50 eV, makes half the current, and drags the whole stack down to <span class="answer">24.5 %</span>: worse than silicon on its own.
+    </div>
+    <div class="expert">
+      <p>Each sub-cell is an ideal diode, <span class="tex">V_i(J) = \frac{kT}{q}\ln\!\left(\frac{J_{sc,i} - J}{J_{0,i}} + 1\right)</span>, with <span class="tex">J_{0,i}</span> its radiative dark current: the blackbody emission of a 300 K cell above its gap. <code>physics/tandem.js</code> maximises <span class="tex">P(J)</span> by golden-section search. With both gaps free, the best pair in this model is about 1.64 and 0.95 eV at 41.9 %, matching De Vos's 42 % for two cells in unconcentrated sunlight.<sup class="cite" data-src="de-vos-1980"></sup> The four-terminal readout runs each cell at its own maximum power point, so it never loses to mismatch; it costs an extra set of contacts and an inverter input. Not modelled: luminescent coupling (light re-emitted by the top cell and caught by the bottom), parasitic absorption in the contact layers, and the real AM1.5 spectrum, whose absorption dips shift the optimum gaps.</p>
+    </div>
+  </section>
+
+  <p>Real tandems are catching up with the model. LONGi's perovskite-on-silicon cell was certified at 35.5 % in July 2026.<sup class="cite" data-src="longi-tandem-2026"></sup> <span class="verified">2026-09-30</span> The same company reported 34.3 % on a 261 cm² cell, the size of a factory wafer,<sup class="cite" data-src="longi-tandem-2026"></sup> and 33 % at that size had already entered the efficiency tables in 2025.<sup class="cite" data-src="longi-snec-2025,green-tables-66"></sup> The first two-terminal perovskite/silicon cell was reported only in 2015.<sup class="cite" data-src="mailoa-2015"></sup> Whether such stacks can last as long as plain silicon is the same open question as for perovskites alone.</p>
+
+  <h2 id="bifacial">Light from behind: bifacial modules</h2>
+  <p><span class="claim claim--consensus">Current consensus</span></p>
+  <p>A normal panel has an opaque back sheet. A <dfn data-term="bifacial-module">bifacial module</dfn> uses glass, or a clear sheet, on both faces and cells that work from either side, so it also catches sunlight reflected from the ground. How much extra it collects depends on how bright the ground is (its <dfn data-term="albedo">albedo</dfn>), how high the panel stands and how the rows are spaced. A rooftop panel lying flat on the roof gains almost nothing; a raised panel over white gravel or snow gains a lot.</p>
+  <p>The idea is old: in 1982 a Spanish team reported up to 50 % more output from a flat panel collecting light reflected onto its back.<sup class="cite" data-src="cuevas-1982"></sup> What changed is cost. A worldwide study found that bifacial modules on single-axis trackers, which turn to follow the sun, make about 35 % more energy than ordinary fixed panels and give the cheapest electricity across 93 % of the world's land area.<sup class="cite" data-src="rodriguez-gallegos-2020"></sup></p>
+
+  <h2 id="others">Other paths</h2>
+  <p><span class="claim claim--research">Active research</span></p>
+  <ul>
+    <li><strong>III-V multijunction cells</strong> stack three to six layers of gallium arsenide and related crystals. They hold the absolute record, 47.6 % under 665 suns of concentrated light,<sup class="cite" data-src="fraunhofer-ise-47-6"></sup> and 39.2 % for a six-junction cell in ordinary sunlight.<sup class="cite" data-src="geisz-2020"></sup> They are too costly for rooftops, so they power satellites, and <dfn data-term="concentrator-photovoltaics">concentrator systems</dfn> that focus sunlight onto a tiny cell.</li>
+    <li><strong>Organic cells</strong> use carbon-based molecules that can be printed on flexible plastic. They passed 19 % in 2022.<sup class="cite" data-src="zhu-2022"></sup></li>
+    <li><strong>Quantum-dot cells</strong> are made from nanocrystals whose band gap depends on their size, so one material can be tuned across the spectrum; a cell certified at 16.6 % was reported in 2020.<sup class="cite" data-src="hao-2020"></sup></li>
+  </ul>
+  <div class="expert expert-note">
+    <p>Beyond junction-stacking. A <dfn data-term="hot-carrier-cell">hot-carrier cell</dfn> would extract electrons before they lose their excess energy to the crystal lattice; Ross and Nozik's 1982 analysis showed such a converter could in principle far exceed a single junction.<sup class="cite" data-src="ross-nozik-1982"></sup> An <dfn data-term="intermediate-band-cell">intermediate-band cell</dfn> adds an energy level inside the gap so two sub-gap photons can together lift one electron; Luque and Martí predicted it could beat a single-gap cell by a wide margin.<sup class="cite" data-src="luque-marti-1997"></sup> Neither has yet produced a high-efficiency device. Both remain proofs of what physics allows, not products.</p>
+  </div>
+
+  <h2 id="limits">How far from the ceiling?</h2>
+  <p>Every number below is an upper bound from physics, set against today's best certified cell. The gaps shrink every year; the table reads the latest records from the site's dataset.</p>
+  <div class="table-wrap" id="fr-limits"><p class="muted">Loading the records…</p></div>
+  <p class="caption"><span class="data-badge" id="fr-badge">Loading data</span> <span class="verified">2026-09-30</span> Current values: <a href="state-of-the-field.html">state of the field</a>.</p>
+  <p>For any number of junctions there is still a ceiling. De Vos calculated in 1980 that an infinite stack of cells, each taking one sliver of the spectrum, could reach about 68 % in ordinary sunlight and about 86 % in sunlight concentrated as far as physics allows.<sup class="cite" data-src="de-vos-1980,de-vos-pauwels-1981"></sup> Those limits come from thermodynamics: a cell at room temperature must lose some energy back to its surroundings, just like any heat engine.</p>
+  <div class="expert expert-note">
+    <p>De Vos's numbers use a blackbody sun, the same model as the tandem designer above: about 30 %, 42 % and 49 % for one, two and three cells unconcentrated, and 40 %, 55 % and 63 % at maximum concentration.<sup class="cite" data-src="de-vos-1980"></sup> Henry repeated the calculation for the terrestrial spectrum the same year.<sup class="cite" data-src="henry-1980"></sup> LONGi puts the practical ceiling for its perovskite/silicon design at about 43 %.<sup class="cite" data-src="longi-tandem-2026"></sup></p>
+  </div>
+
+  <p class="changes-note">Records on this page change several times a year. Each one is dated, and the latest values live on <a href="state-of-the-field.html">state of the field</a>.</p>
+
+  <h2 id="next">Where next</h2>
+  <p>Solar is one part of a clean grid. The next part of the course looks at <a href="renewables/index.html">the whole clean-energy system</a>: wind, water, heat, storage and the grid that ties them together.</p>
+</main>
+<footer id="site-footer"></footer>
+</body>
+</html>

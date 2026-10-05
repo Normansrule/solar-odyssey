@@ -1,0 +1,96 @@
+/* Shared, page-local styles for wind, hydro, geothermal and ocean.
+   Each page sets --src (its source colour) on .ra-page so the set reads as one family. */
+
+.ra-page { --src: var(--silicon); }
+.ra-page[data-source="wind"] { --src: var(--r-wind); }
+.ra-page[data-source="hydro"] { --src: var(--r-hydro); }
+.ra-page[data-source="geothermal"] { --src: var(--r-geothermal); }
+.ra-page[data-source="ocean"] { --src: var(--r-ocean); }
+
+/* ---------- today's share: a quiet band under the lede ---------- */
+.today-figure {
+  display: grid; gap: 0.6rem 2rem; grid-template-columns: minmax(0, 1fr);
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  padding: 1.1rem 0 1rem; margin-top: 1.6rem; margin-bottom: 2.4rem;
+}
+@media (min-width: 40rem) { .today-figure { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: end; } }
+.today-figure .tf-num {
+  font-family: var(--display); font-weight: 520; font-size: clamp(var(--s4), 7vw, var(--s5)); line-height: 1;
+  font-variant-numeric: lining-nums tabular-nums; letter-spacing: -0.02em; display: block;
+  padding-left: 0.9rem; border-left: 4px solid var(--src);
+}
+.today-figure .tf-what { font-size: var(--s-1); color: var(--ink-2); margin: 0.5rem 0 0; padding-left: calc(0.9rem + 4px); }
+.today-figure .tf-what strong { color: var(--ink); font-weight: 650; }
+.today-figure .tf-side { display: grid; gap: 0.35rem; }
+.today-figure .spark { width: 100%; max-width: 20rem; height: auto; display: block; overflow: visible; }
+.spark-line { fill: none; stroke: var(--src); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.spark-area { fill: color-mix(in srgb, var(--src) 14%, transparent); stroke: none; }
+.spark-dot { fill: var(--src); stroke: var(--paper); stroke-width: 2; }
+.spark-cap { display: flex; justify-content: space-between; max-width: 20rem; font-size: var(--s-2); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.tf-leaders { list-style: none; padding: 0; margin: 0.3rem 0 0; font-size: var(--s-1); color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 0.1rem 1rem; }
+.tf-leaders li { margin: 0; }
+.tf-leaders .lead-name { color: var(--ink); font-weight: 650; }
+.tf-leaders .lead-val { font-variant-numeric: tabular-nums; }
+.tf-leaders .lead-year { font-size: var(--s-2); }
+.tf-note { font-size: var(--s-2); color: var(--ink-2); margin: 0; }
+.today-figure .data-badge { margin-top: 0.2rem; }
+
+/* ---------- mini timeline tweaks ---------- */
+.ra-page ol.mini-timeline li::before { border-color: var(--src); }
+.ra-page ol.mini-timeline li p { margin: 0.1rem 0 0; }
+.ra-page ol.mini-timeline .mt-what { font-weight: 650; }
+
+/* ---------- widgets ---------- */
+.ra-stage-wrap { position: relative; }
+.ra-canvas { aspect-ratio: 16 / 10; }
+.ra-canvas.tall { aspect-ratio: 4 / 3; }
+@media (max-width: 40rem) { .ra-canvas, .ra-canvas.tall { aspect-ratio: 4 / 5; } }
+.ra-toolbar { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-top: 0.7rem; }
+.ra-toolbar .spacer { flex: 1; }
+.segmented { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; background: var(--paper); }
+.segmented button {
+  font: inherit; font-size: var(--s-1); font-weight: 650; border: 0; background: none; color: var(--ink-2);
+  padding: 0.45rem 0.8rem; cursor: pointer; border-right: 1px solid var(--rule);
+}
+.segmented button:last-child { border-right: 0; }
+.segmented button[aria-pressed="true"] { background: var(--silicon); color: var(--paper); }
+.segmented button:disabled { opacity: 0.45; cursor: not-allowed; }
+.control .hint { font-size: var(--s-2); color: var(--ink-2); margin: 0.15rem 0 0; }
+.readout .v small { font-size: var(--s-2); color: var(--ink-2); font-weight: 500; }
+.readout .v.warn { color: var(--hole); }
+.ra-status { font-size: var(--s-1); color: var(--ink-2); min-height: 1.6em; margin: 0.4rem 0 0; }
+.ra-status strong { color: var(--ink); }
+.widget .caption.lead { margin-top: 0; margin-bottom: 1rem; font-size: var(--s0); color: var(--ink-2); }
+.chart-title { font-family: var(--body); font-weight: 700; font-size: var(--s-1); margin: 1rem 0 0.2rem; color: var(--ink); }
+.chart-title + .muted { font-size: var(--s-2); margin: 0 0 0.3rem; }
+
+/* key for canvas drawings */
+.ra-key { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; list-style: none; padding: 0; margin: 0.6rem 0 0; font-size: var(--s-1); color: var(--ink-2); }
+.ra-key li { margin: 0; display: inline-flex; align-items: center; gap: 0.4rem; }
+.ra-key .k { width: 1.3rem; height: 0; border-top: 3px solid var(--ink-2); display: inline-block; }
+.ra-key .k.dash { border-top-style: dashed; }
+.ra-key .k.dot { width: 0.7rem; height: 0.7rem; border: 0; border-radius: 50%; }
+
+/* ---------- strengths / limits ---------- */
+.fit-grid { display: grid; gap: 0 2rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 44rem) { .fit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fit-grid h3 { margin-top: 1rem; font-size: var(--s0); font-family: var(--body); font-weight: 700; }
+.fit-grid ul { padding-left: 1.1em; }
+.fit-grid .plus li::marker { content: "+  "; color: var(--good); font-weight: 700; }
+.fit-grid .minus li::marker { content: "–  "; color: var(--hole); font-weight: 700; }
+
+.see-also { margin-top: 1.5rem; }
+
+/* tables in widgets */
+.ra-table td.num, .ra-table th.num { white-space: nowrap; }
+.ra-table tr[aria-current="true"] td { background: var(--sun-wash); }
+
+/* layout fixes on top of odyssey.css */
+.ra-page > ol.mini-timeline { margin-left: auto; padding-left: 0.4rem; }
+.readout .k, .readout .v { display: block; }
+.readout .k { font-size: var(--s-2); color: var(--ink-2); }
+.readout .v { font-family: var(--mono); font-weight: 650; font-size: var(--s1); font-variant-numeric: tabular-nums; }
+.worked + .worked { margin-top: 0.6rem; }
+.widget .chart canvas { background: transparent; }
+.today-figure { align-items: start; }
+@media (min-width: 40rem) { .today-figure { align-items: center; } }

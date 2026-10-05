@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Check your understanding: Current, voltage and power",
+    "sources": [
+      "pveducation",
+      "pveducation-efficiency",
+      "pveducation-temperature",
+      "green-2003-temperature"
+    ],
+    "license": "CC BY 4.0 (Solar Odyssey text)",
+    "last_verified": "2026-10-04"
+  },
+  "data": {
+    "lesson": "iv-curve",
+    "minutes": 35,
+    "objectives": [
+      "Identify the short-circuit current, open-circuit voltage and maximum power point on an I-V curve",
+      "Calculate fill factor and efficiency from a cell's measured values",
+      "Predict how light, temperature and resistance change the I-V curve"
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "prompt": "Thin cloud halves the light on the lab cell, from 1000 to 500 W/m². What happens to its short-circuit current (I_sc) and open-circuit voltage (V_oc)?",
+        "choices": [
+          "Both halve",
+          "I_sc halves, but V_oc falls by only about 18 mV",
+          "V_oc halves, but I_sc stays the same",
+          "I_sc halves, and V_oc rises slightly to make up for it"
+        ],
+        "answer": 1,
+        "explain": "I_sc is set by how many photons make pairs, so it follows the light. V_oc depends on the logarithm of the light current, so halving the light costs only kT/q × ln 2 ≈ 18 mV. That is why cells still give a useful voltage on cloudy days.",
+        "source": "pveducation"
+      },
+      {
+        "id": "q2",
+        "prompt": "At 500 W/m² the 243 cm² lab cell gives I_sc = 4.86 A, V_oc = 0.686 V and P_max = 2.75 W. What is its efficiency?",
+        "choices": [
+          "About 11 %",
+          "About 27 %",
+          "About 0.23 %",
+          "About 23 %"
+        ],
+        "answer": 3,
+        "explain": "Efficiency is P_max ÷ (G × A) = 2.75 ÷ (500 × 0.0243) ≈ 22.6 %, almost the same as at full sun. Dividing by 1000 W/m² gives 11 %, but the cell only received 500 W/m². Using V_oc × I_sc (3.33 W) gives 27 %, a power the cell never delivers.",
+        "source": "pveducation-efficiency"
+      },
+      {
+        "id": "q3",
+        "prompt": "On a hot roof the lab cell warms from 25 °C to 50 °C under the same light. What happens?",
+        "choices": [
+          "V_oc falls by about 2 mV per degree, the current rises slightly, and power falls",
+          "Power rises, because hot silicon absorbs more of the red end of the spectrum",
+          "The current falls sharply while the voltage stays the same",
+          "Nothing changes, because the efficiency is rated at standard test conditions"
+        ],
+        "answer": 0,
+        "explain": "Heat makes the junction leak much more, so the voltage falls, from 0.704 V to 0.656 V in the lab. The current does rise a little because hot silicon absorbs slightly more red light, but far less than the voltage falls, so the power drops by about 0.3 % per °C.",
+        "source": "pveducation-temperature"
+      },
+      {
+        "id": "q4",
+        "prompt": "In the I-V lab you raise the series resistance from 0.5 to 3 Ω·cm². What do you see?",
+        "choices": [
+          "V_oc drops sharply, while the fill factor stays the same",
+          "I_sc drops to about half, and the flat top of the curve tilts",
+          "The fill factor and maximum power fall, while V_oc stays the same",
+          "The knee becomes sharper and the maximum power rises"
+        ],
+        "answer": 2,
+        "explain": "Series resistance eats voltage in proportion to the current, so it tilts the steep right-hand side and drags the knee down: the fill factor falls from 0.82 to 0.69 and P_max from 5.60 to 4.73 W. At open circuit no current flows, so V_oc does not change. A tilted flat top is the sign of a low shunt resistance instead."
+      }
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "noaa-solar-calc": {
+    "type": "web",
+    "authors": "NOAA Global Monitoring Laboratory",
+    "title": "Solar calculation details (NOAA Solar Calculator)",
+    "url": "https://gml.noaa.gov/grad/solcalc/calcdetails.html",
+    "verified": "2026-09-30",
+    "note": "Documents the equations behind NOAA's solar position and sunrise/sunset calculators, taken from Meeus, Astronomical Algorithms, with downloadable spreadsheets. physics/solar.js follows these equations."
+  },
+  "reda-andreas-2004": {
+    "type": "article",
+    "authors": "Reda, I.; Andreas, A.",
+    "title": "Solar position algorithm for solar radiation applications",
+    "container": "Solar Energy 76(5), 577–589",
+    "year": 2004,
+    "doi": "10.1016/j.solener.2003.12.003",
+    "verified": "2026-10-02",
+    "note": "NREL's Solar Position Algorithm (SPA). pvlib's implementation of it is the reference our solar-position code is tested against."
+  },
+  "liu-jordan-1963": {
+    "type": "article",
+    "authors": "Liu, B. Y. H.; Jordan, R. C.",
+    "title": "The long-term average performance of flat-plate solar-energy collectors: with design data for the U.S., its outlying possessions and Canada",
+    "container": "Solar Energy 7(2), 53–74",
+    "year": 1963,
+    "doi": "10.1016/0038-092X(63)90006-9",
+    "verified": "2026-10-02",
+    "note": "The classic source of the tilted-surface method that treats sky light as isotropic (the isotropic sky model)."
+  },
+  "kamphuis-2020": {
+    "type": "article",
+    "authors": "Kamphuis, N. R.; Gueymard, C. A.; Holtzapple, M. T.; Duggleby, A. T.; Annamalai, K.",
+    "title": "Perspectives on the origin, derivation, meaning, and significance of the isotropic sky model",
+    "container": "Solar Energy 201, 8–12",
+    "year": 2020,
+    "doi": "10.1016/j.solener.2020.02.067",
+    "verified": "2026-09-30",
+    "note": "History and derivation of the isotropic sky model and its (1 + cos β)/2 view factor. Finds that the result usually credited to Liu and Jordan was published correctly as early as Moon and Spencer (1942); recommends anisotropic models for accurate work. Cited by pvlib's isotropic model."
+  },
+  "pveducation-air-mass": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Air mass (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/properties-of-sunlight/air-mass",
+    "verified": "2026-09-30",
+    "note": "Direct-beam intensity I_D = 1.353·0.7^(AM^0.678) kW/m² after Meinel and Meinel (1976), the altitude correction with a = 0.14 per km, and the rule that clear-day diffuse light is about 10 % of the direct beam."
+  },
+  "pveducation-arbitrary-tilt": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Arbitrary orientation and tilt (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/properties-of-sunlight/arbitrary-orientation-and-tilt",
+    "verified": "2026-09-30",
+    "note": "Direct light on a module of any tilt and azimuth: S_module = S_incident[cos α sin β cos(Ψ − Θ) + sin α cos β]."
+  },
+  "pveducation-tilted-surface": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Solar radiation on a tilted surface (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/properties-of-sunlight/solar-radiation-on-a-tilted-surface",
+    "verified": "2026-09-30",
+    "note": "States the rule of thumb that a fixed tilt equal to the latitude maximises yearly output; steeper favours winter, flatter favours summer."
+  },
+  "pveducation-insolation": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Calculation of solar insolation (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/properties-of-sunlight/calculation-of-solar-insolation",
+    "verified": "2026-09-30",
+    "note": "Clear-sky insolation from the Sun's position and air mass; notes that daily insolation in kWh/m² equals sun hours, and that these weather-free numbers are not used for system sizing."
+  },
+  "pveducation-average-radiation": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Average solar radiation (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/properties-of-sunlight/average-solar-radiation",
+    "verified": "2026-09-30",
+    "note": "Defines peak sun hours: daily insolation expressed as hours at 1 kW/m², numerically equal to kWh/m² per day."
+  },
+  "pveducation-declination": {
+    "type": "web",
+    "authors": "Honsberg, C. B.; Bowden, S. G.",
+    "title": "Declination angle (PVEducation)",
+    "year": 2019,
+    "url": "https://www.pveducation.org/pvcdrom/properties-of-sunlight/declination-angle",
+    "verified": "2026-09-30",
+    "note": "The declination swings between about +23.45° and −23.45° over the year because of the tilt of Earth's axis; it is zero at the equinoxes."
+  },
+  "pvwatts-v5-2014": {
+    "type": "report",
+    "authors": "Dobos, A. P.",
+    "title": "PVWatts Version 5 Manual",
+    "container": "National Renewable Energy Laboratory, NREL/TP-6A20-62641",
+    "year": 2014,
+    "doi": "10.2172/1158421",
+    "url": "https://docs.nrel.gov/docs/fy14osti/62641.pdf",
+    "verified": "2026-10-02",
+    "note": "Technical description of PVWatts: typical-year weather, a sky-diffuse model more detailed than the isotropic one, cell temperature, and system losses."
+  },
+  "pvwatts-calculator": {
+    "type": "web",
+    "authors": "National Laboratory of the Rockies (formerly NREL)",
+    "title": "PVWatts Calculator",
+    "year": 2026,
+    "url": "https://pvwatts.nlr.gov/",
+    "verified": "2026-09-30",
+    "note": "Free web tool that estimates a grid-connected PV system's monthly and yearly energy from typical-year weather data for an address."
+  },
+  "nsrdb-2018": {
+    "type": "article",
+    "authors": "Sengupta, M.; Xie, Y.; Lopez, A.; Habte, A.; Maclaurin, G.; Shelby, J.",
+    "title": "The National Solar Radiation Data Base (NSRDB)",
+    "container": "Renewable and Sustainable Energy Reviews 89, 51–60",
+    "year": 2018,
+    "doi": "10.1016/j.rser.2018.03.003",
+    "verified": "2026-10-02",
+    "note": "Satellite-derived hourly and half-hourly solar irradiance (GHI, DNI, DHI) with typical-year files, used by PVWatts and SAM."
+  },
+  "nsrdb-viewer": {
+    "type": "dataset",
+    "authors": "National Laboratory of the Rockies (formerly NREL)",
+    "title": "National Solar Radiation Database (NSRDB) viewer and downloads",
+    "year": 2026,
+    "url": "https://nsrdb.nlr.gov/",
+    "verified": "2026-09-30"
+  },
+  "jacobson-jadhav-2018": {
+    "type": "article",
+    "authors": "Jacobson, M. Z.; Jadhav, V.",
+    "title": "World estimates of PV optimal tilt angles and ratios of sunlight incident upon tilted and tracked PV panels relative to horizontal panels",
+    "container": "Solar Energy 169, 55–66",
+    "year": 2018,
+    "doi": "10.1016/j.solener.2018.04.030",
+    "verified": "2026-09-30",
+    "note": "Optimal tilts from PVWatts weather data. Cloudier places have flatter optimal tilts because cloud-scattered light favours near-horizontal panels (e.g. 45° at Calgary, 51.1° N, but 34° at Beek, Netherlands, 50.9° N). Northern-hemisphere fit: tilt = 1.3793 + φ(1.2011 + φ(−0.014404 + 0.000080509 φ))."
+  },
+  "pvlib-albedo": {
+    "type": "web",
+    "authors": "pvlib python developers",
+    "title": "pvlib.albedo: SURFACE_ALBEDOS (pvlib python 0.16.1 documentation)",
+    "year": 2026,
+    "url": "https://pvlib-python.readthedocs.io/en/stable/_modules/pvlib/albedo.html",
+    "verified": "2026-09-30",
+    "note": "Typical albedos used in PV modelling: grass 0.20, concrete 0.30, sand 0.40, fresh snow 0.75 (compiled from PVsyst's help pages and other sources)."
+  },
+  "geonames": {
+    "type": "dataset",
+    "authors": "GeoNames",
+    "title": "GeoNames geographical database",
+    "year": 2026,
+    "url": "https://www.geonames.org/",
+    "license": "CC BY 4.0",
+    "verified": "2026-09-30",
+    "note": "Open gazetteer of place names with coordinates and elevations; the preset places on the sun path page use rounded city-centre values."
+  }
+}
